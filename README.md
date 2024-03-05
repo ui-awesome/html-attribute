@@ -11,16 +11,13 @@
         <img src="https://github.com/ui-awesome/html-attribute/actions/workflows/build.yml/badge.svg" alt="PHPUnit">
     </a>
     <a href="https://codecov.io/gh/ui-awesome/html-attribute" target="_blank">
-        <img src="https://codecov.io/gh/ui-awesome/html-attribute/branch/main/graph/badge.svg?token=MF0XUGVLYC" alt="Codecov">
+        <img src="https://codecov.io/gh/ui-awesome/html-attribute/graph/badge.svg?token=D5xjQiJDRP" alt="Codecov">
     </a>
     <a href="https://dashboard.stryker-mutator.io/reports/github.com/ui-awesome/html-attribute/main" target="_blank">
         <img src="https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fui-awesome%2Fhtml-attribute%2Fmain" alt="Infection">
     </a>
     <a href="https://github.com/ui-awesome/html-attribute/actions/workflows/static.yml" target="_blank">
         <img src="https://github.com/ui-awesome/html-attribute/actions/workflows/static.yml/badge.svg" alt="Psalm">
-    </a>
-    <a href="https://shepherd.dev/github/ui-awesome/html-attribute" target="_blank">
-        <img src="https://shepherd.dev/github/ui-awesome/html-attribute/coverage.svg" alt="Psalm Coverage">
     </a>
     <a href="https://github.styleci.io/repos/767435734?branch=main">
         <img src="https://github.styleci.io/repos/767435734/shield?branch=main" alt="Style ci">
