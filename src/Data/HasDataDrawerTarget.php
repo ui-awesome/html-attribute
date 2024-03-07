@@ -21,7 +21,7 @@ trait HasDataDrawerTarget
      *
      * @return static A new instance of the current class with the specified toggle attributes.
      */
-    public function dataDrawerTarget(bool|string $value): static
+    public function dataDrawerTarget(bool|string $value = true): static
     {
         if (is_string($value)) {
             return $this->dataAttributes([DataAttributeValues::DRAWER_TARGET => $value]);

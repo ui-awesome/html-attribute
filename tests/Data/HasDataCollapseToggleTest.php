@@ -21,4 +21,16 @@ final class HasDataCollapseToggleTest extends \PHPUnit\Framework\TestCase
 
         $this->assertSame(['data-collapse-toggle' => 'value'], $instance->attributes);
     }
+
+    public function testImmutability(): void
+    {
+        $instance = new class () {
+            use HasData;
+            use HasDataCollapseToggle;
+
+            protected array $attributes = [];
+        };
+
+        $this->assertNotSame($instance, $instance->dataCollapseToggle(''));
+    }
 }

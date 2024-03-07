@@ -21,7 +21,7 @@ trait HasDataDropdownToggle
      *
      * @return static A new instance of the current class with the specified toggle attributes.
      */
-    public function dataDropdownToggle(bool|string $value): static
+    public function dataDropdownToggle(bool|string $value = true): static
     {
         if (is_string($value)) {
             return $this->dataAttributes([DataAttributeValues::DROPDOWN_TOGGLE => $value]);

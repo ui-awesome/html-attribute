@@ -15,20 +15,6 @@ final class HasDataDrawerTargetTest extends \PHPUnit\Framework\TestCase
             use HasDataDrawerTarget;
 
             public array $attributes = [];
-        };
-
-        $instance = $instance->dataDrawerTarget('value');
-
-        $this->assertSame(['data-drawer-target' => 'value'], $instance->attributes);
-    }
-
-    public function testDataDrawerTargetWithTrue(): void
-    {
-        $instance = new class () {
-            use HasData;
-            use HasDataDrawerTarget;
-
-            public array $attributes = [];
 
             public function getDataDrawerTarget(): bool|string
             {
@@ -36,9 +22,17 @@ final class HasDataDrawerTargetTest extends \PHPUnit\Framework\TestCase
             }
         };
 
-        $instance = $instance->dataDrawerTarget(true);
+        $instance = $instance->dataDrawerTarget('value');
+
+        $this->assertSame(['data-drawer-target' => 'value'], $instance->attributes);
+
+        $instance = $instance->dataDrawerTarget();
 
         $this->assertTrue($instance->getDataDrawerTarget());
+
+        $instance = $instance->dataDrawerTarget(false);
+
+        $this->assertFalse($instance->getDataDrawerTarget());
     }
 
     public function testImmutability(): void

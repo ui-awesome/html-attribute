@@ -9,17 +9,27 @@ namespace UIAwesome\Html\Attribute\Data;
  */
 trait HasDataBsToggle
 {
+    protected bool|string $dataBsToggle = false;
+
     abstract public function dataAttributes(array $values): static;
 
     /**
      * Set the `HTML` data-bs-toggle attribute for the toggle.
      *
-     * @param string $value The data-bs-toggle attribute value.
+     * @param bool|string $value The data-bs-toogle attribute value. If true, the value of the id attribute will be
+     * used.
      *
      * @return static A new instance of the current class with the specified toggle attributes.
      */
-    public function dataBsToggle(string $value): static
+    public function dataBsToggle(bool|string $value = true): static
     {
-        return $this->dataAttributes([DataAttributeValues::BS_TOGGLE => $value]);
+        if (is_string($value)) {
+            return $this->dataAttributes([DataAttributeValues::BS_TOGGLE => $value]);
+        }
+
+        $new = clone $this;
+        $new->dataBsToggle = $value;
+
+        return $new;
     }
 }

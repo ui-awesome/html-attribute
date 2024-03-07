@@ -15,11 +15,24 @@ final class HasDataDismissTargetTest extends \PHPUnit\Framework\TestCase
             use HasDataDismissTarget;
 
             public array $attributes = [];
+
+            public function getDataDismissTarget()
+            {
+                return $this->dataDismissTarget;
+            }
         };
 
         $instance = $instance->dataDismissTarget('value');
 
         $this->assertSame(['data-dismiss-target' => 'value'], $instance->attributes);
+
+        $instance = $instance->dataDismissTarget();
+
+        $this->assertTrue($instance->getDataDismissTarget());
+
+        $instance = $instance->dataDismissTarget(false);
+
+        $this->assertFalse($instance->getDataDismissTarget());
     }
 
     public function testImmutability(): void
@@ -31,6 +44,6 @@ final class HasDataDismissTargetTest extends \PHPUnit\Framework\TestCase
             protected array $attributes = [];
         };
 
-        $this->assertNotSame($instance, $instance->dataDismissTarget(true));
+        $this->assertNotSame($instance, $instance->dataDismissTarget());
     }
 }

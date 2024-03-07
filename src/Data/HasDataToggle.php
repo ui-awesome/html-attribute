@@ -21,7 +21,7 @@ trait HasDataToggle
      *
      * @return static A new instance of the current class with the specified toggle attributes.
      */
-    public function dataToggle(bool|string $value): static
+    public function dataToggle(bool|string $value = true): static
     {
         if (is_string($value)) {
             return $this->dataAttributes([DataAttributeValues::TOGGLE => $value]);
