@@ -15,20 +15,6 @@ final class HasDataBsTargetTest extends \PHPUnit\Framework\TestCase
             use HasDataBsTarget;
 
             public array $attributes = [];
-        };
-
-        $instance = $instance->dataBsTarget('value');
-
-        $this->assertSame(['data-bs-target' => 'value'], $instance->attributes);
-    }
-
-    public function testDataBsTargetWithTrue(): void
-    {
-        $instance = new class () {
-            use HasData;
-            use HasDataBsTarget;
-
-            public array $attributes = [];
 
             public function getDataBsTarget(): bool|string
             {
@@ -36,9 +22,17 @@ final class HasDataBsTargetTest extends \PHPUnit\Framework\TestCase
             }
         };
 
-        $instance = $instance->dataBsTarget(true);
+        $instance = $instance->dataBsTarget('value');
+
+        $this->assertSame(['data-bs-target' => 'value'], $instance->attributes);
+
+        $instance = $instance->dataBsTarget();
 
         $this->assertTrue($instance->getDataBsTarget());
+
+        $instance = $instance->dataBsTarget(false);
+
+        $this->assertFalse($instance->getDataBsTarget());
     }
 
     public function testImmutability(): void

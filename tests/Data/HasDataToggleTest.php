@@ -15,20 +15,6 @@ final class HasDataToggleTest extends \PHPUnit\Framework\TestCase
             use HasDataToggle;
 
             public array $attributes = [];
-        };
-
-        $instance = $instance->dataToggle('value');
-
-        $this->assertSame(['data-toggle' => 'value'], $instance->attributes);
-    }
-
-    public function testDataDataToggleWithTrue(): void
-    {
-        $instance = new class () {
-            use HasData;
-            use HasDataToggle;
-
-            public array $attributes = [];
 
             public function getDataDrawerToggle(): bool|string
             {
@@ -36,9 +22,17 @@ final class HasDataToggleTest extends \PHPUnit\Framework\TestCase
             }
         };
 
-        $instance = $instance->dataToggle(true);
+        $instance = $instance->dataToggle('value');
+
+        $this->assertSame(['data-toggle' => 'value'], $instance->attributes);
+
+        $instance = $instance->dataToggle();
 
         $this->assertTrue($instance->getDataDrawerToggle());
+
+        $instance = $instance->dataToggle(false);
+
+        $this->assertFalse($instance->getDataDrawerToggle());
     }
 
     public function testImmutability(): void

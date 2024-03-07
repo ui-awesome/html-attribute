@@ -19,7 +19,7 @@ trait HasDataDismissTarget
      * @param bool|string $value The data-dismiss-target attribute value. If true, the value of the id attribute will be
      * used.
      */
-    public function dataDismissTarget(bool|string $value): static
+    public function dataDismissTarget(bool|string $value = true): static
     {
         if (is_string($value)) {
             return $this->dataAttributes([DataAttributeValues::DISMISS_TARGET => $value]);

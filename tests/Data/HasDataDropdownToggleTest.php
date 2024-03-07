@@ -15,20 +15,6 @@ final class HasDataDropdownToggleTest extends \PHPUnit\Framework\TestCase
             use HasDataDropdownToggle;
 
             public array $attributes = [];
-        };
-
-        $instance = $instance->dataDropdownToggle('value');
-
-        $this->assertSame(['data-dropdown-toggle' => 'value'], $instance->attributes);
-    }
-
-    public function testDataDropdownToggleWithTrue(): void
-    {
-        $instance = new class () {
-            use HasData;
-            use HasDataDropdownToggle;
-
-            public array $attributes = [];
 
             public function getDataDropdownToggle(): bool|string
             {
@@ -36,9 +22,17 @@ final class HasDataDropdownToggleTest extends \PHPUnit\Framework\TestCase
             }
         };
 
-        $instance = $instance->dataDropdownToggle(true);
+        $instance = $instance->dataDropdownToggle('value');
+
+        $this->assertSame(['data-dropdown-toggle' => 'value'], $instance->attributes);
+
+        $instance = $instance->dataDropdownToggle();
 
         $this->assertTrue($instance->getDataDropdownToggle());
+
+        $instance = $instance->dataDropdownToggle(false);
+
+        $this->assertFalse($instance->getDataDropdownToggle());
     }
 
     public function testImmutability(): void

@@ -15,10 +15,35 @@ final class HasDataBsToggleTest extends \PHPUnit\Framework\TestCase
             use HasDataBsToggle;
 
             public array $attributes = [];
+
+            public function getDataBsToggle()
+            {
+                return $this->dataBsToggle;
+            }
         };
 
         $instance = $instance->dataBsToggle('value');
 
         $this->assertSame(['data-bs-toggle' => 'value'], $instance->attributes);
+
+        $instance = $instance->dataBsToggle();
+
+        $this->assertTrue($instance->getDataBsToggle());
+
+        $instance = $instance->dataBsToggle(false);
+
+        $this->assertFalse($instance->getDataBsToggle());
+    }
+
+    public function testImmutability(): void
+    {
+        $instance = new class () {
+            use HasData;
+            use HasDataBsToggle;
+
+            protected array $attributes = [];
+        };
+
+        $this->assertNotSame($instance, $instance->dataBsToggle());
     }
 }
