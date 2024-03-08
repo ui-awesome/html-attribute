@@ -13,7 +13,7 @@ final class HasFormenctypeTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormenctype;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -29,7 +29,7 @@ final class HasFormenctypeTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormenctype;
 
-            protected array $attributes = [];
+            public array $attributes = [];
 
             public function getFormenctype(): string
             {
@@ -57,7 +57,7 @@ final class HasFormenctypeTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormenctype;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -73,7 +73,7 @@ final class HasFormenctypeTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormenctype;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->formenctype('text/plain'));

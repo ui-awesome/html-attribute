@@ -13,7 +13,7 @@ final class HasFieldAttributesTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFieldAttributes;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->fieldAttributes('FormModel', 'property'));

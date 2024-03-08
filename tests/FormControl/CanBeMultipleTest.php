@@ -13,7 +13,7 @@ final class CanBeMultipleTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeMultiple;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->multiple());
@@ -24,7 +24,7 @@ final class CanBeMultipleTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeMultiple;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertFalse($instance->isMultiple());

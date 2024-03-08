@@ -13,7 +13,7 @@ final class HasFormTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasForm;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->form(''));

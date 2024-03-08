@@ -13,7 +13,7 @@ final class HasClassTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasClass;
 
-            protected array $attributes = [];
+            public array $attributes = [];
 
             public function getClass(): string
             {
@@ -41,7 +41,7 @@ final class HasClassTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasClass;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->class(''));

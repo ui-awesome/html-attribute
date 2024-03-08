@@ -13,7 +13,7 @@ final class HasIdTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasId;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNull($instance->getId());
@@ -25,7 +25,7 @@ final class HasIdTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasId;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->id(''));

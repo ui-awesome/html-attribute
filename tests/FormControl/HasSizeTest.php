@@ -13,7 +13,7 @@ final class HasSizeTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasSize;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->size(0));

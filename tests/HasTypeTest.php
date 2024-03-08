@@ -13,7 +13,7 @@ final class HasTypeTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasType;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->type(''));

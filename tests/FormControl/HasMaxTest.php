@@ -13,7 +13,7 @@ final class HasMaxTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasMax;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->max(0));

@@ -13,7 +13,7 @@ final class CanBeRequiredTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeRequired;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->required());
@@ -24,7 +24,7 @@ final class CanBeRequiredTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeRequired;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertFalse($instance->isRequired());

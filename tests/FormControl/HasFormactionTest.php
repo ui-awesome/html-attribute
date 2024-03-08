@@ -13,7 +13,7 @@ final class HasFormactionTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormaction;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -27,7 +27,7 @@ final class HasFormactionTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormaction;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->formaction('index'));

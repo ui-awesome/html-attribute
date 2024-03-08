@@ -13,7 +13,7 @@ final class CanBeDisableTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeDisabled;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->disabled());
@@ -24,7 +24,7 @@ final class CanBeDisableTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeDisabled;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertFalse($instance->isDisabled());

@@ -13,7 +13,7 @@ final class HasHeightTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasHeight;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->height(0));

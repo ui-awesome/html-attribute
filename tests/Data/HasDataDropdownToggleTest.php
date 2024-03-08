@@ -41,7 +41,7 @@ final class HasDataDropdownToggleTest extends \PHPUnit\Framework\TestCase
             use HasData;
             use HasDataDropdownToggle;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->dataDropdownToggle(true));

@@ -13,7 +13,7 @@ final class HasMinLengthTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasMinLength;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->minlength(0));

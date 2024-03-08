@@ -13,7 +13,7 @@ final class HasFormnovalidateTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormnovalidate;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->formnovalidate());
@@ -24,7 +24,7 @@ final class HasFormnovalidateTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormnovalidate;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertFalse($instance->isFormnovalidate());

@@ -41,7 +41,7 @@ final class HasDataDrawerTargetTest extends \PHPUnit\Framework\TestCase
             use HasData;
             use HasDataDrawerTarget;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->dataDrawerTarget(true));

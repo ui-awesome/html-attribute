@@ -41,7 +41,7 @@ final class HasDataDismissTargetTest extends \PHPUnit\Framework\TestCase
             use HasData;
             use HasDataDismissTarget;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->dataDismissTarget());

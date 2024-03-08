@@ -28,7 +28,7 @@ final class HasDataCollapseToggleTest extends \PHPUnit\Framework\TestCase
             use HasData;
             use HasDataCollapseToggle;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->dataCollapseToggle(''));

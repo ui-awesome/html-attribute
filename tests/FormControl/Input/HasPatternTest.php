@@ -13,7 +13,7 @@ final class HasPatternTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasPattern;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->pattern(''));

@@ -13,7 +13,7 @@ final class HasTitleTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasTitle;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->title(''));

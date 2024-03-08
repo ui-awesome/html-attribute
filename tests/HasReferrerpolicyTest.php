@@ -13,7 +13,7 @@ final class HasReferrerpolicyTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasReferrerpolicy;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -29,7 +29,7 @@ final class HasReferrerpolicyTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasReferrerpolicy;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -45,7 +45,7 @@ final class HasReferrerpolicyTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasReferrerpolicy;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->referrerpolicy('no-referrer'));

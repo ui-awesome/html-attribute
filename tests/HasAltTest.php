@@ -13,7 +13,7 @@ final class HasAltTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasAlt;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->alt(''));

@@ -13,7 +13,7 @@ final class HasRelTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasRel;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -29,7 +29,7 @@ final class HasRelTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasRel;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -45,7 +45,7 @@ final class HasRelTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasRel;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->rel('alternate'));

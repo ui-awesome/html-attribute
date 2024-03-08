@@ -13,7 +13,7 @@ final class CanBeReadonlyTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeReadonly;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->readonly());
@@ -24,7 +24,7 @@ final class CanBeReadonlyTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeReadonly;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertFalse($instance->isReadonly());

@@ -13,7 +13,7 @@ final class HasAcceptTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasAccept;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->accept(''));
