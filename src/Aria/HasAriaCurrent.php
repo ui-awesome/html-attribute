@@ -11,8 +11,6 @@ use UIAwesome\Html\Helper\Validator;
  */
 trait HasAriaCurrent
 {
-    protected string $ariaCurrent = '';
-
     /**
      * Set the aria-current attribute, which indicates the current item within a set of related elements.
      *
