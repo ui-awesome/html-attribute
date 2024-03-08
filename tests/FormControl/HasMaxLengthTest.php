@@ -13,7 +13,7 @@ final class HasMaxLengthTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasMaxLength;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->maxlength(1));

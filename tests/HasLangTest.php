@@ -13,7 +13,7 @@ final class HasLangTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasLang;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->lang(''));

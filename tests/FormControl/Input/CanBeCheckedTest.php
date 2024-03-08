@@ -22,7 +22,7 @@ final class CanBeCheckedTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeChecked;
 
-            protected array $attributes = [];
+            public array $attributes = [];
 
             public function getChecked(): bool
             {

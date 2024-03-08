@@ -13,7 +13,7 @@ final class HasWidthTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasWidth;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->width(0));

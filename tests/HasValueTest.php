@@ -26,7 +26,7 @@ final class HasValueTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasValue;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->value(null));

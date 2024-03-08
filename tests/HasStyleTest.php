@@ -13,7 +13,7 @@ final class HasStyleTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasStyle;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->style(''));

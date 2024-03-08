@@ -13,7 +13,7 @@ final class HasAutocompleteTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasAutocomplete;
 
-            protected array $attributes = [];
+            public array $attributes = [];
 
             public function getAttributes(): array
             {
@@ -35,7 +35,7 @@ final class HasAutocompleteTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasAutocomplete;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -49,7 +49,7 @@ final class HasAutocompleteTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasAutocomplete;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->autocomplete('on'));

@@ -13,7 +13,7 @@ final class HasFormtargetTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormtarget;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -29,7 +29,7 @@ final class HasFormtargetTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormtarget;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -45,7 +45,7 @@ final class HasFormtargetTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasFormtarget;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->formtarget('_blank'));

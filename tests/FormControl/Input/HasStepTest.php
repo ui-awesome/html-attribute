@@ -13,7 +13,7 @@ final class HasStepTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasStep;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->expectException(\InvalidArgumentException::class);
@@ -27,7 +27,7 @@ final class HasStepTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasStep;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->step(1));

@@ -13,7 +13,7 @@ final class HasSrcTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasSrc;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->src(null));

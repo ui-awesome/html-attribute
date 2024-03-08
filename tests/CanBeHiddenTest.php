@@ -13,7 +13,7 @@ final class CanBeHiddenTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeHidden;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->hidden());
@@ -24,7 +24,7 @@ final class CanBeHiddenTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeHidden;
 
-            protected array $attributes = [];
+            public array $attributes = [];
 
             public function getHidden(): bool
             {

@@ -1,6 +1,8 @@
 # Change Log
 
-## 0.1.2 Under development
+## 0.1.2 March 8, 2024
+
+## Bug #3: Change visibility poperty `attributes` to `public` in tests (@terabytesoftw)
 
 ## 0.1.1 March 7, 2024
 

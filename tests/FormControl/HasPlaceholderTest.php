@@ -13,7 +13,7 @@ final class HasPlaceholderTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasPlaceholder;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->placeholder(''));

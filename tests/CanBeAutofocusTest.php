@@ -13,7 +13,7 @@ final class CanBeAutofocusTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeAutofocus;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->autofocus());
@@ -24,7 +24,7 @@ final class CanBeAutofocusTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use CanBeAutofocus;
 
-            protected array $attributes = [];
+            public array $attributes = [];
 
             public function getAutofocus(): bool
             {

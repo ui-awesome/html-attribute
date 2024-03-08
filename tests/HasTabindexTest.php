@@ -13,7 +13,7 @@ final class HasTabindexTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasTabindex;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->tabindex(0));

@@ -41,7 +41,7 @@ final class HasDataBsToggleTest extends \PHPUnit\Framework\TestCase
             use HasData;
             use HasDataBsToggle;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->dataBsToggle());

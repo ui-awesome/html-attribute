@@ -32,7 +32,7 @@ final class HasDataTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasData;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $instance->dataAttributes([
@@ -50,7 +50,7 @@ final class HasDataTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasData;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $instance->dataAttributes([
@@ -63,7 +63,7 @@ final class HasDataTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasData;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->dataAttributes([DataAttributeValues::ACTION => 'test-action']));

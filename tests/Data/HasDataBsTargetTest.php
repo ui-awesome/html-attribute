@@ -41,7 +41,7 @@ final class HasDataBsTargetTest extends \PHPUnit\Framework\TestCase
             use HasData;
             use HasDataBsTarget;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->dataBsTarget(true));

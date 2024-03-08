@@ -26,7 +26,7 @@ final class HasNameTest extends \PHPUnit\Framework\TestCase
         $instance = new class () {
             use HasName;
 
-            protected array $attributes = [];
+            public array $attributes = [];
         };
 
         $this->assertNotSame($instance, $instance->name('value'));
