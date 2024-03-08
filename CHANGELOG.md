@@ -2,7 +2,8 @@
 
 ## 0.1.2 March 8, 2024
 
-## Bug #3: Change visibility poperty `attributes` to `public` in tests (@terabytesoftw)
+- Bug #3: Change visibility poperty `attributes` to `public` in tests (@terabytesoftw)
+- Enh #4: Add `HasAriaCurrent` trait and `ariaCurrent()` method (@terabytesoftw)
 
 ## 0.1.1 March 7, 2024
 
