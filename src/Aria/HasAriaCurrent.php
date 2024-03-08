@@ -26,19 +26,18 @@ trait HasAriaCurrent
      */
     public function ariaCurrent(string $value = 'false'): static
     {
-        if ($value !== false) {
-            Validator::inList(
-                $value,
-                'Invalid value "%s" for aria-current. Allowed values are: "%s".',
-                'date',
-                'false',
-                'location',
-                'page',
-                'step',
-                'time',
-                'true',
-            );
-        }
+        Validator::inList(
+            $value,
+            'Invalid value "%s" for aria-current. Allowed values are: "%s".',
+            'date',
+            'false',
+            'location',
+            'page',
+            'step',
+            'time',
+            'true',
+        );
+
         $new = clone $this;
         $new->attributes['aria-current'] = $value;
 
