@@ -38,7 +38,6 @@ trait HasAriaCurrent
                 'time',
                 'true',
             );
-
         }
         $new = clone $this;
         $new->attributes['aria-current'] = $value;
