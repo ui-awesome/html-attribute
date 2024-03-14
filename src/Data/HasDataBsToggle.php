@@ -11,8 +11,6 @@ trait HasDataBsToggle
 {
     protected bool|string $dataBsToggle = false;
 
-    abstract public function dataAttributes(array $values): static;
-
     /**
      * Set the `HTML` data-bs-toggle attribute for the toggle.
      *

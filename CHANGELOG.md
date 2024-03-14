@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.3 March 14, 2024
+
+- Bug #7: Remove redundant abstract method in `data` classes (@terabytesoftw)
+
 ## 0.1.2 March 8, 2024
 
 - Bug #3: Change visibility poperty `attributes` to `public` in tests (@terabytesoftw)

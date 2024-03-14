@@ -11,8 +11,6 @@ trait HasDataDrawerTarget
 {
     protected bool|string $dataDrawerTarget = false;
 
-    abstract public function dataAttributes(array $values): static;
-
     /**
      * Set the `HTML` data drawer target attribute for the toggle.
      *

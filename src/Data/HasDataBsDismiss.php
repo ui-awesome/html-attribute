@@ -9,8 +9,6 @@ namespace UIAwesome\Html\Attribute\Data;
  */
 trait HasDataBsDismiss
 {
-    abstract public function dataAttributes(array $values): static;
-
     /**
      * Set the `HTML` data-bs-dismiss attribute for the toggle.
      *
