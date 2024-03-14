@@ -1,15 +1,12 @@
 # Change Log
 
-## 0.1.3 March 14, 2024
-
-- Bug #7: Remove redundant abstract method in `data` classes (@terabytesoftw)
-
-## 0.1.2 March 8, 2024
+## 0.1.2 March 14, 2024
 
 - Bug #3: Change visibility poperty `attributes` to `public` in tests (@terabytesoftw)
 - Enh #4: Add `HasAriaCurrent` trait and `ariaCurrent()` method (@terabytesoftw)
 - Bug #5: Remove dead code in `HasAriaCurrent` trait (@terabytesoftw)
 - Bug #6: Change branch alias to `1.0-dev` in `composer.json` (@terabytesoftw)
+- Bug #7: Remove redundant abstract method in `data` classes (@terabytesoftw)
 
 ## 0.1.1 March 7, 2024
 
