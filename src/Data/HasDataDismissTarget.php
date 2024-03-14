@@ -11,8 +11,6 @@ trait HasDataDismissTarget
 {
     protected bool|string $dataDismissTarget = false;
 
-    abstract public function dataAttributes(array $values): static;
-
     /**
      * Set the `HTML` data-dismiss-target attribute for the toggle.
      *

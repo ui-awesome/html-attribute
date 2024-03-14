@@ -9,8 +9,6 @@ namespace UIAwesome\Html\Attribute\Data;
  */
 trait HasDataBsAutoClose
 {
-    abstract public function dataAttributes(array $values): static;
-
     /**
      * Set the `HTML` data-bs-auto-close attribute for the toggle.
      *

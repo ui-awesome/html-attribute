@@ -11,8 +11,6 @@ trait HasDataDropdownToggle
 {
     protected bool|string $dataDropdownToggle = false;
 
-    abstract public function dataAttributes(array $values): static;
-
     /**
      * Set the `HTML` data dropdown toggle attribute for the toggle.
      *

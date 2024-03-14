@@ -9,8 +9,6 @@ namespace UIAwesome\Html\Attribute\Data;
  */
 trait HasDataCollapseToggle
 {
-    abstract public function dataAttributes(array $values): static;
-
     /**
      * Set the `HTML` data-collapse-toggle attribute for the toggle.
      *
