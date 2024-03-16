@@ -12,10 +12,10 @@ trait HasDataDismissTarget
     protected bool|string $dataDismissTarget = false;
 
     /**
-     * Set the `HTML` data-dismiss-target attribute for the toggle.
+     * Set the `HTML` `data-dismiss-target` attribute for the toggle.
      *
-     * @param bool|string $value The data-dismiss-target attribute value. If true, the value of the id attribute will be
-     * used.
+     * @param bool|string $value The `data-dismiss-target` attribute value. If `true`, the value of the `id` attribute
+     * will be used.
      */
     public function dataDismissTarget(bool|string $value = true): static
     {

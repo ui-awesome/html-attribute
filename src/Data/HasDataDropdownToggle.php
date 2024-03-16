@@ -12,10 +12,10 @@ trait HasDataDropdownToggle
     protected bool|string $dataDropdownToggle = false;
 
     /**
-     * Set the `HTML` data dropdown toggle attribute for the toggle.
+     * Set the `HTML` `data-dropdown-toggle` attribute for the toggle.
      *
-     * @param bool|string $value The data-dropdown-toggle attribute value. If true, the value of the id attribute will
-     * be used.
+     * @param bool|string $value The `data-dropdown-toggle` attribute value. If `true`, the value of the `id` attribute
+     * will be used.
      *
      * @return static A new instance of the current class with the specified toggle attributes.
      */

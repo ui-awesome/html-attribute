@@ -16,7 +16,7 @@ final class HasDataDismissTargetTest extends \PHPUnit\Framework\TestCase
 
             public array $attributes = [];
 
-            public function getDataDismissTarget()
+            public function getDataDismissTarget(): bool|string
             {
                 return $this->dataDismissTarget;
             }
