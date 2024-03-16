@@ -12,10 +12,10 @@ trait HasDataDrawerTarget
     protected bool|string $dataDrawerTarget = false;
 
     /**
-     * Set the `HTML` data drawer target attribute for the toggle.
+     * Set the `HTML` `data-drawer-target` attribute for the toggle.
      *
-     * @param bool|string $value The data-drawer-target attribute value. If true, the value of the id attribute will be
-     * used.
+     * @param bool|string $value The `data-drawer-target` attribute value. If `true`, the value of the `id` attribute
+     * will be used.
      *
      * @return static A new instance of the current class with the specified toggle attributes.
      */

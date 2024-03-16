@@ -9,15 +9,25 @@ namespace UIAwesome\Html\Attribute\Data;
  */
 trait HasDataCollapseToggle
 {
+    protected bool|string $dataCollapseToggle = false;
+
     /**
-     * Set the `HTML` data-collapse-toggle attribute for the toggle.
+     * Set the `HTML` `data-collapse-toggle` attribute for the toggle.
      *
-     * @param string $value The data-collapse-toggle attribute value.
+     * @param bool|string $value The `data-collapse-toggle` attribute value. If `true`, the value of the `id` attribute
+     * will be used.
      *
      * @return static A new instance of the current class with the specified toggle attributes.
      */
-    public function dataCollapseToggle(string $value): static
+    public function dataCollapseToggle(bool|string $value = true): static
     {
-        return $this->dataAttributes([DataAttributeValues::COLLAPSE_TOGGLE => $value]);
+        if (is_string($value)) {
+            return $this->dataAttributes([DataAttributeValues::COLLAPSE_TOGGLE => $value]);
+        }
+
+        $new = clone $this;
+        $new->dataCollapseToggle = $value;
+
+        return $new;
     }
 }

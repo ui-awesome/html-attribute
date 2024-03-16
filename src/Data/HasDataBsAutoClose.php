@@ -9,15 +9,25 @@ namespace UIAwesome\Html\Attribute\Data;
  */
 trait HasDataBsAutoClose
 {
+    protected bool|string $dataBsAutoClose = false;
+
     /**
-     * Set the `HTML` data-bs-auto-close attribute for the toggle.
+     * Set the `HTML` `data-bs-auto-close` attribute for the toggle.
      *
-     * @param string $value The data-bs-auto-close attribute value.
+     * @param bool|string $value The `data-bs-auto-close` attribute value. If `true`, the value of the `id` attribute
+     * will be used.
      *
      * @return static A new instance of the current class with the specified toggle attributes.
      */
-    public function dataBsAutoClose(string $value): static
+    public function dataBsAutoClose(bool|string $value = true): static
     {
-        return $this->dataAttributes([DataAttributeValues::BS_AUTO_CLOSE => $value]);
+        if (is_string($value)) {
+            return $this->dataAttributes([DataAttributeValues::BS_AUTO_CLOSE => $value]);
+        }
+
+        $new = clone $this;
+        $new->dataBsAutoClose = $value;
+
+        return $new;
     }
 }

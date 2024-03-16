@@ -8,7 +8,34 @@ use UIAwesome\Html\{Attribute\Data\HasDataBsAutoClose, Attribute\HasData};
 
 final class HasDataBsAutoCloseTest extends \PHPUnit\Framework\TestCase
 {
-    public function testDataBsAutoClose(): void
+    public function testDataBsTarget(): void
+    {
+        $instance = new class () {
+            use HasData;
+            use HasDataBsAutoClose;
+
+            public array $attributes = [];
+
+            public function getDataBsAutoClose(): bool|string
+            {
+                return $this->dataBsAutoClose;
+            }
+        };
+
+        $instance = $instance->dataBsAutoClose('value');
+
+        $this->assertSame(['data-bs-auto-close' => 'value'], $instance->attributes);
+
+        $instance = $instance->dataBsAutoClose();
+
+        $this->assertTrue($instance->getDataBsAutoClose());
+
+        $instance = $instance->dataBsAutoClose(false);
+
+        $this->assertFalse($instance->getDataBsAutoClose());
+    }
+
+    public function testImmutability(): void
     {
         $instance = new class () {
             use HasData;
@@ -17,8 +44,6 @@ final class HasDataBsAutoCloseTest extends \PHPUnit\Framework\TestCase
             public array $attributes = [];
         };
 
-        $instance = $instance->dataBsAutoClose('value');
-
-        $this->assertSame(['data-bs-auto-close' => 'value'], $instance->attributes);
+        $this->assertNotSame($instance, $instance->dataBsAutoClose());
     }
 }

@@ -16,7 +16,7 @@ final class HasDataBsToggleTest extends \PHPUnit\Framework\TestCase
 
             public array $attributes = [];
 
-            public function getDataBsToggle()
+            public function getDataBsToggle(): bool|string
             {
                 return $this->dataBsToggle;
             }
