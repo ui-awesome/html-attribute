@@ -1,6 +1,8 @@
 # Change Log
 
-## 0.1.4 Under development
+## 0.2.0 March 30, 2024
+
+- Enh #9: Update `ui-awesome/html-helper` to `0.2` (@terabytesoftw)
 
 ## 0.1.3 March 16, 2024
 
