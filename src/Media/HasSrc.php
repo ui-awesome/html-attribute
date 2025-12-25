@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Media\Attribute;
 
-
 /**
  * Trait for managing the HTML `src` attribute in tag rendering.
  *
