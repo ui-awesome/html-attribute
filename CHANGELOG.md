@@ -1,6 +1,8 @@
 # Change Log
 
-## 0.2.1 Under development
+## 0.3.0 Under development
+
+- Bug #10: Refactor codebase to improve performance and maintainability (@terabytesoftw)
 
 ## 0.2.0 March 30, 2024
 
