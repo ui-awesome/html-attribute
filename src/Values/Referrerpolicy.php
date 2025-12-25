@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Core\Values;
+namespace UIAwesome\Html\Attribute\Values;
 
 /**
  * Represents standardized referrer policy values for the HTTP `Referrer-Policy` header and the HTML `referrerpolicy`

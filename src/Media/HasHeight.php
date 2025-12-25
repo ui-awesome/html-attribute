@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Media\Attribute;
+namespace UIAwesome\Html\Attribute\Media;
 
 /**
  * Trait for managing the HTML `height` attribute in tag rendering.

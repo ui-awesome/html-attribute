@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute;
+namespace UIAwesome\Html\Attribute\Link;
 
 use InvalidArgumentException;
-use UIAwesome\Html\Core\Values\Rel;
+use UIAwesome\Html\Attribute\Values\Rel;
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 

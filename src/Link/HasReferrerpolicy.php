@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Link\Attribute;
+namespace UIAwesome\Html\Attribute\Link;
 
 use InvalidArgumentException;
-use UIAwesome\Html\Core\Values\Referrerpolicy;
+use UIAwesome\Html\Attribute\Values\Referrerpolicy;
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 

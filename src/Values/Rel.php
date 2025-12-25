@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Core\Values;
+namespace UIAwesome\Html\Attribute\Values;
 
 /**
  * Represents standardized relationship types for the HTML `rel` attribute.
