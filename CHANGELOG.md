@@ -4,6 +4,7 @@
 
 - Bug #10: Refactor codebase to improve performance and maintainability (@terabytesoftw)
 - Bug #11: Improve test suite documentation for HTML attributes with detailed descriptions and coverage (@terabytesoftw)
+- Bug #12: Add `StyleCI` badge to `README.md` for code style checks (@terabytesoftw)
 
 ## 0.2.0 March 30, 2024
 
