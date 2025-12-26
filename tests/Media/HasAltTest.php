@@ -11,6 +11,25 @@ use UIAwesome\Html\Attribute\Tests\Support\Provider\Media\AltProvider;
 use UIAwesome\Html\Attribute\Tests\Support\Stub\HasAttributes;
 use UIAwesome\Html\Helper\Attributes;
 
+/**
+ * Test suite for {@see HasAlt} trait functionality and behavior.
+ *
+ * Validates the management of the HTML `alt` attribute according to the HTML Living Standard specification.
+ *
+ * Ensures correct handling, immutability, and validation of the `alt` attribute in tag rendering, supporting string and
+ * `null` for dynamic assignment.
+ *
+ * Test coverage:
+ * - Accurate rendering of attributes with the `alt` attribute.
+ * - Data provider-driven validation for edge cases and expected behaviors.
+ * - Immutability of the trait's API when setting or overriding the `alt` attribute.
+ * - Proper assignment, overriding, and validation of `alt` value.
+ *
+ * {@see AltProvider} for test case data providers.
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
 #[Group('media')]
 final class HasAltTest extends TestCase
 {
