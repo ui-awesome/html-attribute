@@ -1,6 +1,6 @@
 # ChangeLog
 
-## 0.3.0 Under development
+## 0.3.0 December 26, 2025
 
 - Bug #10: Refactor codebase to improve performance and maintainability (@terabytesoftw)
 - Bug #11: Improve test suite documentation for HTML attributes with detailed descriptions and coverage (@terabytesoftw)
