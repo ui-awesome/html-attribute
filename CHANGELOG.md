@@ -1,5 +1,7 @@
 # ChangeLog
 
+## 0.3.1 Under development
+
 ## 0.3.0 December 26, 2025
 
 - Bug #10: Refactor codebase to improve performance and maintainability (@terabytesoftw)
