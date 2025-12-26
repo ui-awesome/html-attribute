@@ -135,7 +135,7 @@ final class RelProvider
                 null,
                 ['rel' => 'noopener'],
                 '',
-                "Should unset the 'dir' attribute when 'null' is provided after a value.",
+                "Should unset the 'rel' attribute when 'null' is provided after a value.",
             ],
         ];
 
