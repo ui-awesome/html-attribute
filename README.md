@@ -77,6 +77,7 @@ For detailed configuration options and advanced usage see:
 [![Codecov](https://img.shields.io/codecov/c/github/ui-awesome/html-attribute.svg?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage)](https://codecov.io/github/ui-awesome/html-attribute)
 [![PHPStan Level Max](https://img.shields.io/badge/PHPStan-Level%20Max-4F5D95.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ui-awesome/html-attribute/actions/workflows/static.yml)
 [![Super-Linter](https://img.shields.io/github/actions/workflow/status/ui-awesome/html-attribute/linter.yml?style=for-the-badge&label=Super-Linter&logo=github)](https://github.com/ui-awesome/html-attribute/actions/workflows/linter.yml)
+[![StyleCI](https://img.shields.io/badge/StyleCI-Passed-44CC11.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.styleci.io/repos/767435734?branch=main)
 
 ## Our social networks
 
