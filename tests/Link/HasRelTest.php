@@ -15,6 +15,25 @@ use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
 use UnitEnum;
 
+/**
+ * Test suite for {@see HasRel} trait functionality and behavior.
+ *
+ * Validates the management of the HTML `rel` attribute according to the HTML Living Standard specification.
+ *
+ * Ensures correct handling, immutability, and validation of the `rel` attribute in tag rendering, supporting string and
+ * UnitEnum for dynamic assignment.
+ *
+ * Test coverage:
+ * - Accurate rendering of attributes with the `rel` attribute.
+ * - Data provider-driven validation for edge cases and expected behaviors.
+ * - Immutability of the trait's API when setting or overriding the `rel` attribute.
+ * - Proper assignment, overriding, and validation of `rel` value.
+ *
+ * {@see RelProvider} for test case data providers.
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
 #[Group('link')]
 final class HasRelTest extends TestCase
 {

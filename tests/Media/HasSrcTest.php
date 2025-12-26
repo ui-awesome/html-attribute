@@ -11,6 +11,25 @@ use UIAwesome\Html\Attribute\Tests\Support\Provider\Media\SrcProvider;
 use UIAwesome\Html\Attribute\Tests\Support\Stub\HasAttributes;
 use UIAwesome\Html\Helper\Attributes;
 
+/**
+ * Test suite for {@see HasSrc} trait functionality and behavior.
+ *
+ * Validates the management of the HTML `src` attribute according to the HTML Living Standard specification.
+ *
+ * Ensures correct handling, immutability, and validation of the `src` attribute in tag rendering, supporting string and
+ * `null` for dynamic assignment.
+ *
+ * Test coverage:
+ * - Accurate rendering of attributes with the `src` attribute.
+ * - Data provider-driven validation for edge cases and expected behaviors.
+ * - Immutability of the trait's API when setting or overriding the `src` attribute.
+ * - Proper assignment, overriding, and validation of `src` value.
+ *
+ * {@see SrcProvider} for test case data providers.
+ *
+ * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
 #[Group('media')]
 final class HasSrcTest extends TestCase
 {

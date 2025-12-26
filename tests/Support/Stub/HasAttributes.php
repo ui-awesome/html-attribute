@@ -12,22 +12,10 @@ use UnitEnum;
 use function array_merge;
 
 /**
- * Trait for managing global HTML attributes in tag rendering.
+ * Provides a reusable trait for managing HTML attributes in test stubs.
  *
- * Provides a standards-compliant, immutable API for setting arbitrary HTML attributes on elements, following the HTML
- * specification for global attributes.
- *
- * Intended for use in components that require dynamic or programmatic manipulation of element attributes, ensuring
- * correct attribute handling, type safety, and value merging.
- *
- * Key features.
- * - Designed for use in tag rendering systems.
- * - Enforces standards-compliant handling of HTML global attributes.
- * - Immutable method for setting or overriding attributes.
- * - Supports merging of multiple attribute arrays for flexible assignment.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
- * @link https://www.w3.org/TR/html52/dom.html#global-attributes
+ * Supplies methods for setting, retrieving, and removing HTML attributes, supporting deterministic assertions in unit
+ * tests involving attribute handling for HTML elements.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
