@@ -1,6 +1,8 @@
 # ChangeLog
 
-## 0.3.1 Under development
+## 0.4.0 Under development
+
+- Dep #13: Update `ui-awesome/html-helper` version constraint to `^0.6` in `composer.json` (@terabytesoftw)
 
 ## 0.3.0 December 26, 2025
 
