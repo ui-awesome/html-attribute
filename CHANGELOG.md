@@ -1,8 +1,9 @@
 # ChangeLog
 
-## 0.4.1 Under development
+## 0.5.0 Under development
 
 - Enh #14: Add `HasHref` trait and `href()` method to manage `href` attribute for HTML/SVG elements (@terabytesoftw)
+- Enh #15: Add `HasCrossorigin` trait and `crossorigin()` method to manage `crossorigin` attribute for HTML/SVG elements (@terabytesoftw)
 
 ## 0.4.0 December 27, 2025
 
