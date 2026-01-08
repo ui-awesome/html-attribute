@@ -61,8 +61,8 @@ final class CrossoriginProvider
                 Crossorigin::ANONYMOUS,
                 ['crossorigin' => 'use-credentials'],
                 ' crossorigin="anonymous"',
-                "Should return new 'crossorigin' after replacing the existing 'crossorigin' attribute with " .
-                'enum value.',
+                "Should return new 'crossorigin' after replacing the existing 'crossorigin' attribute with "
+                . 'enum value.',
             ],
             'null' => [
                 null,

@@ -61,8 +61,8 @@ final class ReferrerpolicyProvider
                 Referrerpolicy::NO_REFERRER,
                 ['referrerpolicy' => 'origin'],
                 ' referrerpolicy="no-referrer"',
-                "Should return new 'referrerpolicy' after replacing the existing 'referrerpolicy' attribute with " .
-                'enum value.',
+                "Should return new 'referrerpolicy' after replacing the existing 'referrerpolicy' attribute with "
+                . 'enum value.',
             ],
             'null' => [
                 null,
