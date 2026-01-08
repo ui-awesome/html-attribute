@@ -89,12 +89,6 @@ final class ContentEditableProvider
                 ' contenteditable="plaintext-only"',
                 "Should return new 'contenteditable' after replacing the existing 'contenteditable' attribute.",
             ],
-            'string' => [
-                'true',
-                [],
-                ' contenteditable="true"',
-                'Should return the attribute value after setting it.',
-            ],
             'string boolean false' => [
                 'false',
                 [],
@@ -165,12 +159,6 @@ final class ContentEditableProvider
                 ['contenteditable' => 'false'],
                 'plaintext-only',
                 "Should return new 'contenteditable' after replacing the existing 'contenteditable' attribute.",
-            ],
-            'string' => [
-                'true',
-                [],
-                'true',
-                'Should return the attribute value after setting it.',
             ],
             'string boolean false' => [
                 'false',

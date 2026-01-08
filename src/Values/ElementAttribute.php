@@ -25,7 +25,7 @@ enum ElementAttribute: string
      * `href` — The URL of a linked resource.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#href
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href*
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href
      */
     case HREF = 'href';
 

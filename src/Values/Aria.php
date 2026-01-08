@@ -142,13 +142,6 @@ enum Aria: string
     case DISABLED = 'disabled';
 
     /**
-     * `aria-dropeffect` — Indicates what functions may be performed when a dragged object is released.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-dropeffect
-     */
-    case DROPEFFECT = 'dropeffect';
-
-    /**
      * `aria-errormessage` — Identifies the element(s) that provides an error message for an object.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage
@@ -168,13 +161,6 @@ enum Aria: string
      * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto
      */
     case FLOWTO = 'flowto';
-
-    /**
-     * `aria-grabbed` — Indicates an element's "grabbed" state in a drag-and-drop operation.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-grabbed
-     */
-    case GRABBED = 'grabbed';
 
     /**
      * `aria-haspopup` — Indicates the availability and type of interactive popup that can be triggered.

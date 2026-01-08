@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Element\HasHeight;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\HeightProvider;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
@@ -103,7 +104,7 @@ final class HasHeightTest extends TestCase
 
         self::assertSame(
             $expected,
-            $instance->getAttributes()['height'] ?? '',
+            $instance->getAttributes()[ElementAttribute::HEIGHT->value] ?? '',
             $message,
         );
     }

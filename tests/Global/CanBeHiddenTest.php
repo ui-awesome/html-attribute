@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\CanBeHidden;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\HiddenProvider;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
@@ -103,7 +104,7 @@ final class CanBeHiddenTest extends TestCase
 
         self::assertSame(
             $expected,
-            $instance->getAttributes()['hidden'] ?? '',
+            $instance->getAttributes()[GlobalAttribute::HIDDEN->value] ?? '',
             $message,
         );
     }

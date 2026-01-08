@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasAccesskey;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\AccesskeyProvider;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
@@ -104,7 +105,7 @@ final class HasAccesskeyTest extends TestCase
 
         self::assertSame(
             $expected,
-            $instance->getAttributes()['accesskey'] ?? '',
+            $instance->getAttributes()[GlobalAttribute::ACCESSKEY->value] ?? '',
             $message,
         );
     }

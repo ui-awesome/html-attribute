@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\Global\HasClass;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\ClassProvider;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -112,7 +113,7 @@ final class HasClassTest extends TestCase
 
         self::assertSame(
             $expected,
-            $instance->getAttributes()['class'] ?? '',
+            $instance->getAttributes()[GlobalAttribute::CLASS_CSS->value] ?? '',
             $message,
         );
     }

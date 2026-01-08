@@ -88,12 +88,6 @@ final class DraggableProvider
                 ' draggable="true"',
                 "Should return new 'draggable' after replacing the existing 'draggable' attribute.",
             ],
-            'string' => [
-                'true',
-                [],
-                ' draggable="true"',
-                'Should return the attribute value after setting it.',
-            ],
             'string boolean false' => [
                 'false',
                 [],
@@ -164,12 +158,6 @@ final class DraggableProvider
                 ['draggable' => 'false'],
                 'true',
                 "Should return new 'draggable' after replacing the existing 'draggable' attribute.",
-            ],
-            'string' => [
-                'true',
-                [],
-                'true',
-                'Should return the attribute value after setting it.',
             ],
             'string boolean false' => [
                 'false',

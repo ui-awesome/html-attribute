@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasContentEditable;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\ContentEditableProvider;
-use UIAwesome\Html\Attribute\Values\ContentEditable;
+use UIAwesome\Html\Attribute\Values\{ContentEditable, GlobalAttribute};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
@@ -108,7 +108,7 @@ final class HasContentEditableTest extends TestCase
 
         self::assertSame(
             $expected,
-            $instance->getAttributes()['contenteditable'] ?? '',
+            $instance->getAttributes()[GlobalAttribute::CONTENTEDITABLE->value] ?? '',
             $message,
         );
     }
@@ -124,7 +124,7 @@ final class HasContentEditableTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                'contenteditable',
+                GlobalAttribute::CONTENTEDITABLE->value,
                 implode('\', \'', Enum::normalizeArray(ContentEditable::cases())),
             ),
         );

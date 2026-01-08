@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Element\HasWidth;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\WidthProvider;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
@@ -103,7 +104,7 @@ final class HasWidthTest extends TestCase
 
         self::assertSame(
             $expected,
-            $instance->getAttributes()['width'] ?? '',
+            $instance->getAttributes()[ElementAttribute::WIDTH->value] ?? '',
             $message,
         );
     }
