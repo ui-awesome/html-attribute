@@ -20,9 +20,8 @@ namespace UIAwesome\Html\Attribute\Media;
  * - Supports int, string, and `null` for flexible height assignment.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height
- * @property array $attributes HTML attributes array used by the implementing class.
- * @phpstan-property mixed[] $attributes
- * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing the underlying attributes array.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -59,14 +58,6 @@ trait HasHeight
      */
     public function height(int|string|null $value): static
     {
-        $new = clone $this;
-
-        if ($value === null) {
-            unset($new->attributes['height']);
-        } else {
-            $new->attributes['height'] = $value;
-        }
-
-        return $new;
+        return $this->addAttribute('height', $value);
     }
 }

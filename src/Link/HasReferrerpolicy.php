@@ -25,9 +25,8 @@ use UnitEnum;
  * - Supports string, UnitEnum, and `null` for flexible policy assignment.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy
- * @property array $attributes HTML attributes array used by the implementing class.
- * @phpstan-property mixed[] $attributes
- * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing the underlying attributes array.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -63,16 +62,8 @@ trait HasReferrerpolicy
      */
     public function referrerpolicy(string|UnitEnum|null $value): static
     {
-        $new = clone $this;
+        Validator::oneOf($value, Referrerpolicy::cases(), 'referrerpolicy');
 
-        if ($value === null) {
-            unset($new->attributes['referrerpolicy']);
-        } else {
-            Validator::oneOf($value, Referrerpolicy::cases(), 'referrerpolicy');
-
-            $new->attributes['referrerpolicy'] = $value;
-        }
-
-        return $new;
+        return $this->addAttribute('referrerpolicy', $value);
     }
 }

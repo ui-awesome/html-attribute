@@ -25,9 +25,8 @@ use UnitEnum;
  * - Supports string, UnitEnum, and `null` for flexible CORS assignment.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
- * @property array $attributes HTML attributes array used by the implementing class.
- * @phpstan-property mixed[] $attributes
- * {@see \UIAwesome\Html\Core\Mixin\HasAttributes} for managing the underlying attributes array.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -63,16 +62,8 @@ trait HasCrossorigin
      */
     public function crossorigin(string|UnitEnum|null $value): static
     {
-        $new = clone $this;
+        Validator::oneOf($value, Crossorigin::cases(), 'crossorigin');
 
-        if ($value === null) {
-            unset($new->attributes['crossorigin']);
-        } else {
-            Validator::oneOf($value, Crossorigin::cases(), 'crossorigin');
-
-            $new->attributes['crossorigin'] = $value;
-        }
-
-        return $new;
+        return $this->addAttribute('crossorigin', $value);
     }
 }
