@@ -8,8 +8,8 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Media\HasSrc;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Media\SrcProvider;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\HasAttributes;
 use UIAwesome\Html\Helper\Attributes;
+use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
  * Test suite for {@see HasSrc} trait functionality and behavior.

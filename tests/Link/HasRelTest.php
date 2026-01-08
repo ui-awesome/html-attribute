@@ -9,10 +9,10 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Link\HasRel;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Link\RelProvider;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\HasAttributes;
 use UIAwesome\Html\Attribute\Values\Rel;
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
+use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**

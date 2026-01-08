@@ -8,8 +8,8 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Media\HasHeight;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Media\HeightProvider;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\HasAttributes;
 use UIAwesome\Html\Helper\Attributes;
+use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
  * Test suite for {@see HasHeight} trait functionality and behavior.
