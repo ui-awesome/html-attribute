@@ -5,6 +5,7 @@
 - Enh #14: Add `HasHref` trait and `href()` method to manage `href` attribute for HTML/SVG elements (@terabytesoftw)
 - Enh #15: Add `HasCrossorigin` trait and `crossorigin()` method to manage `crossorigin` attribute for HTML/SVG elements (@terabytesoftw)
 - Enh #16: Use package `ui-awesome/html-mixin` for mixin traits and update related imports accordingly (@terabytesoftw)
+- Enh #17: Add development guide and sync metadata instructions and update testing documentation (@terabytesoftw)
 
 ## 0.4.0 December 27, 2025
 
