@@ -6,6 +6,7 @@
 - Enh #15: Add `HasCrossorigin` trait and `crossorigin()` method to manage `crossorigin` attribute for HTML/SVG elements (@terabytesoftw)
 - Enh #16: Use package `ui-awesome/html-mixin` for mixin traits and update related imports accordingly (@terabytesoftw)
 - Enh #17: Add development guide and sync metadata instructions and update testing documentation (@terabytesoftw)
+- Enh #18: Move attribute traits from `ui-awesome/html-core` package and update related imports accordingly (@terabytesoftw)
 
 ## 0.4.0 December 27, 2025
 
