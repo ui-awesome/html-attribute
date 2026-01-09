@@ -7,8 +7,8 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents standardized values for the HTML `role` global attribute.
  *
- * Provides a type-safe, standards-compliant set of translate identifiers for use in element rendering, attributes, and
- * view helpers, ensuring technical consistency with the HTML specification and modern web standards.
+ * Provides a type-safe, standards-compliant set of role identifiers for use in element rendering, attributes, and view
+ * helpers, ensuring technical consistency with the HTML specification and modern web standards.
  *
  * Key features.
  * - Designed for use in tags, components, and helpers requiring role assignment.

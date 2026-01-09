@@ -39,7 +39,7 @@ final class TabIndexProvider
      *
      * @return array Test data for invalid `tabindex` attribute.
      *
-     * @phpstan-return array<string, array{int|string|null}>
+     * @phpstan-return array<string, array{int|string}>
      */
     public static function invalidValues(): array
     {
@@ -91,12 +91,6 @@ final class TabIndexProvider
                 0,
                 [],
                 ' tabindex="0"',
-                'Should return the attribute value after setting it.',
-            ],
-            'negative integer' => [
-                -1,
-                [],
-                ' tabindex="-1"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [

@@ -18,8 +18,8 @@ use UnitEnum;
  *
  * Validates the management of the global HTML `style` attribute according to the HTML Living Standard specification.
  *
- * Ensures correct handling, immutability, and validation of the `style` attribute in tag rendering, supporting string,
- * UnitEnum, and null for dynamic style assignment.
+ * Ensures correct handling, immutability, and validation of the `style` attribute in tag rendering, supporting array,
+ * string, Stringable, UnitEnum, and null for dynamic style assignment.
  *
  * Test coverage.
  * - Accurate rendering of attributes with the `style` attribute.

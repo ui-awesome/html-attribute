@@ -21,7 +21,7 @@ use UnitEnum;
  * - Designed for use in tags and components.
  * - Enforces standards-compliant handling of the HTML `style` global attributes.
  * - Immutable method for setting or overriding the `style` attribute.
- * - Supports string, UnitEnum, and `null` for flexible style assignment.
+ * - Supports array, string, Stringable, UnitEnum, and `null` for flexible style assignment.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
