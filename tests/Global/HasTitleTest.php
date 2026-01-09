@@ -33,7 +33,7 @@ use UnitEnum;
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-#[Group('attributes')]
+#[Group('global')]
 final class HasTitleTest extends TestCase
 {
     public function testReturnEmptyWhenTitleAttributeNotSet(): void

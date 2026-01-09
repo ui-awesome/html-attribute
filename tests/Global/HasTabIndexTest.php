@@ -34,7 +34,7 @@ use UIAwesome\Html\Mixin\HasAttributes;
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-#[Group('attributes')]
+#[Group('global')]
 final class HasTabIndexTest extends TestCase
 {
     public function testReturnEmptyWhenTabIndexAttributeNotSet(): void
