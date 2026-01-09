@@ -72,7 +72,7 @@ final class HasSpellcheckTest extends TestCase
         bool|string|null $spellcheck,
         array $attributes,
         bool|string $expectedValue,
-        string $expectedReanderAttribute,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -88,7 +88,7 @@ final class HasSpellcheckTest extends TestCase
             $message,
         );
         self::assertSame(
-            $expectedReanderAttribute,
+            $expectedRenderAttribute,
             Attributes::render($instance->getAttributes()),
             $message,
         );
