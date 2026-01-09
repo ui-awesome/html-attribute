@@ -32,6 +32,13 @@ use function sprintf;
 enum Message: string
 {
     /**
+     * Error when an attribute value is invalid.
+     *
+     * Format: 'Invalid value "%s" for attribute "%s". Expected: %s.'
+     */
+    case ATTRIBUTE_INVALID_VALUE = 'Invalid value "%s" for attribute "%s". Expected: %s.';
+
+    /**
      * Error when a attribute value is not a `scalar` or `Closure`.
      *
      * Format: "Attribute value must be of type 'scalar' or 'Closure', '%s' given."
