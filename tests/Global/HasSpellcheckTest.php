@@ -9,6 +9,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasSpellcheck;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\SpellcheckProvider;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
@@ -36,30 +37,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('attributes')]
 final class HasSpellcheckTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(SpellcheckProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithSpellcheckAttribute(
-        bool|string|null $spellcheck,
-        array $attributes,
-        bool|string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasSpellcheck;
-        };
-
-        $instance = $instance->attributes($attributes)->spellcheck($spellcheck);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenSpellcheckAttributeNotSet(): void
     {
         $instance = new class {
@@ -94,7 +71,8 @@ final class HasSpellcheckTest extends TestCase
     public function testSetSpellcheckAttributeValue(
         bool|string|null $spellcheck,
         array $attributes,
-        bool|string $expected,
+        bool|string $expectedValue,
+        string $expectedReanderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -105,8 +83,13 @@ final class HasSpellcheckTest extends TestCase
         $instance = $instance->attributes($attributes)->spellcheck($spellcheck);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['spellcheck'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::SPELLCHECK->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedReanderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
@@ -122,7 +105,7 @@ final class HasSpellcheckTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                'spellcheck',
+                GlobalAttribute::SPELLCHECK->value,
                 implode('\', \'', ['false', 'true']),
             ),
         );

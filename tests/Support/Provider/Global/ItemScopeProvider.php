@@ -30,55 +30,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class ItemScopeProvider
 {
     /**
-     * Provides test cases for rendered HTML `itemscope` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `itemscope` attribute,
-     * including bool and `null` for attribute removal.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `itemscope` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{bool|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'boolean false' => [
-                false,
-                [],
-                '',
-                "Should return an empty string when setting boolean 'false'.",
-            ],
-            'boolean true' => [
-                true,
-                [],
-                ' itemscope',
-                "Should return 'itemscope' when setting boolean 'true'.",
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                true,
-                ['itemscope' => false],
-                ' itemscope',
-                "Should return 'itemscope' after replacing the existing 'itemscope' attribute.",
-            ],
-            'unset with null' => [
-                null,
-                ['itemscope' => true],
-                '',
-                "Should unset the 'itemscope' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `itemscope` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `itemscope` attribute,
@@ -89,7 +40,7 @@ final class ItemScopeProvider
      *
      * @return array Test data for `itemscope` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool|null, mixed[], bool|string, string}>
+     * @phpstan-return array<string, array{bool|null, mixed[], bool|string, string, string}>
      */
     public static function values(): array
     {
@@ -98,17 +49,20 @@ final class ItemScopeProvider
                 false,
                 [],
                 false,
+                '',
                 "Should return 'false' when setting boolean 'false'.",
             ],
             'boolean true' => [
                 true,
                 [],
                 true,
+                ' itemscope',
                 "Should return 'true' when setting boolean 'true'.",
             ],
             'null' => [
                 null,
                 [],
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -116,11 +70,13 @@ final class ItemScopeProvider
                 true,
                 ['itemscope' => false],
                 true,
+                ' itemscope',
                 "Should return 'true' after replacing the existing 'itemscope' attribute.",
             ],
             'unset with null' => [
                 null,
                 ['itemscope' => true],
+                '',
                 '',
                 "Should unset the 'itemscope' attribute when 'null' is provided after a value.",
             ],

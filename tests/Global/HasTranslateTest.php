@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasTranslate;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\TranslateProvider;
-use UIAwesome\Html\Attribute\Values\Translate;
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Translate};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
@@ -38,30 +38,6 @@ use UnitEnum;
 #[Group('attributes')]
 final class HasTranslateTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(TranslateProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithTranslateAttribute(
-        bool|string|UnitEnum|null $translate,
-        array $attributes,
-        bool|string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasTranslate;
-        };
-
-        $instance = $instance->attributes($attributes)->translate($translate);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenTranslateAttributeNotSet(): void
     {
         $instance = new class {
@@ -96,7 +72,8 @@ final class HasTranslateTest extends TestCase
     public function testSetTranslateAttributeValue(
         bool|string|UnitEnum|null $translate,
         array $attributes,
-        bool|string|UnitEnum $expected,
+        bool|string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -107,8 +84,13 @@ final class HasTranslateTest extends TestCase
         $instance = $instance->attributes($attributes)->translate($translate);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['translate'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::TRANSLATE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
@@ -124,7 +106,7 @@ final class HasTranslateTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                'translate',
+                GlobalAttribute::TRANSLATE->value,
                 implode('\', \'', Enum::normalizeArray(Translate::cases())),
             ),
         );

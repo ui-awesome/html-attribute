@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 
 use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
-use UIAwesome\Html\Attribute\Values\Referrerpolicy;
+use UIAwesome\Html\Attribute\Values\{ElementAttribute, Referrerpolicy};
 use UnitEnum;
 
 /**
@@ -34,66 +34,6 @@ use UnitEnum;
 final class ReferrerpolicyProvider
 {
     /**
-     * Provides test cases for rendered HTML `referrerpolicy` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the HTML `referrerpolicy` attribute,
-     * including string, UnitEnum, and `null`, as well as replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `referrerpolicy` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        $enumCases = EnumDataGenerator::cases(Referrerpolicy::class, 'referrerpolicy', true);
-
-        $staticCase = [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'enum replace existing' => [
-                Referrerpolicy::NO_REFERRER,
-                ['referrerpolicy' => 'origin'],
-                ' referrerpolicy="no-referrer"',
-                "Should return new 'referrerpolicy' after replacing the existing 'referrerpolicy' attribute with "
-                . 'enum value.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'no-referrer',
-                ['referrerpolicy' => 'origin'],
-                ' referrerpolicy="no-referrer"',
-                "Should return new 'referrerpolicy' after replacing the existing 'referrerpolicy' attribute.",
-            ],
-            'string' => [
-                'no-referrer',
-                [],
-                ' referrerpolicy="no-referrer"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['referrerpolicy' => 'no-referrer'],
-                '',
-                "Should unset the 'referrerpolicy' attribute when 'null' is provided after a value.",
-            ],
-        ];
-
-        return [...$staticCase, ...$enumCases];
-    }
-
-    /**
      * Provides test cases for HTML `referrerpolicy` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the HTML `referrerpolicy` attribute,
@@ -104,16 +44,17 @@ final class ReferrerpolicyProvider
      *
      * @return array Test data for `referrerpolicy` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Referrerpolicy::class, 'referrerpolicy', false);
+        $enumCases = EnumDataGenerator::cases(Referrerpolicy::class, ElementAttribute::REFERRERPOLICY);
 
         $staticCase = [
             'empty string' => [
                 '',
                 [],
+                '',
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -121,23 +62,35 @@ final class ReferrerpolicyProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 'no-referrer',
                 ['referrerpolicy' => 'origin'],
                 'no-referrer',
+                ' referrerpolicy="no-referrer"',
                 "Should return new 'referrerpolicy' after replacing the existing 'referrerpolicy' attribute.",
+            ],
+            'replace existing with enum' => [
+                Referrerpolicy::NO_REFERRER,
+                ['referrerpolicy' => 'origin'],
+                Referrerpolicy::NO_REFERRER,
+                ' referrerpolicy="no-referrer"',
+                "Should return new 'referrerpolicy' after replacing the existing 'referrerpolicy' attribute with "
+                . 'enum value.',
             ],
             'string' => [
                 'no-referrer',
                 [],
                 'no-referrer',
+                ' referrerpolicy="no-referrer"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['referrerpolicy' => 'no-referrer'],
+                '',
                 '',
                 "Should unset the 'referrerpolicy' attribute when 'null' is provided after a value.",
             ],

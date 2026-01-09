@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Global;
 
 use InvalidArgumentException;
-use UIAwesome\Html\Attribute\Values\{ElementAttribute, Role};
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Role};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
@@ -69,8 +69,8 @@ trait HasRole
      */
     public function role(string|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, Role::cases(), ElementAttribute::ROLE);
+        Validator::oneOf($value, Role::cases(), GlobalAttribute::ROLE);
 
-        return $this->addAttribute(ElementAttribute::ROLE, $value);
+        return $this->addAttribute(GlobalAttribute::ROLE, $value);
     }
 }

@@ -27,55 +27,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 final class AltProvider
 {
     /**
-     * Provides test cases for rendered HTML `alt` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the HTML `alt` attribute, including string
-     * and `null`, as well as replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `alt` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'A descriptive alt text.',
-                ['alt' => 'A different alt text.'],
-                ' alt="A descriptive alt text."',
-                "Should return new 'alt' after replacing the existing 'alt' attribute.",
-            ],
-            'string' => [
-                'A descriptive alt text.',
-                [],
-                ' alt="A descriptive alt text."',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['alt' => 'A different alt text.'],
-                '',
-                "Should unset the 'alt' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `alt` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the HTML `alt` attribute, including string
@@ -86,7 +37,7 @@ final class AltProvider
      *
      * @return array Test data for `alt` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
      */
     public static function values(): array
     {
@@ -95,11 +46,13 @@ final class AltProvider
                 '',
                 [],
                 '',
+                '',
                 'Should return an empty string when setting an empty string.',
             ],
             'null' => [
                 null,
                 [],
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -107,17 +60,20 @@ final class AltProvider
                 'A descriptive alt text.',
                 ['alt' => 'A different alt text.'],
                 'A descriptive alt text.',
+                ' alt="A descriptive alt text."',
                 "Should return new 'alt' after replacing the existing 'alt' attribute.",
             ],
             'string' => [
                 'A descriptive alt text.',
                 [],
                 'A descriptive alt text.',
+                ' alt="A descriptive alt text."',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['alt' => 'A descriptive alt text.'],
+                '',
                 '',
                 "Should unset the 'alt' attribute when 'null' is provided after a value.",
             ],

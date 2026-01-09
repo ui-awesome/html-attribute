@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
 use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
-use UIAwesome\Html\Attribute\Values\Translate;
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Translate};
 use UnitEnum;
 
 /**
@@ -35,89 +35,6 @@ use UnitEnum;
 final class TranslateProvider
 {
     /**
-     * Provides test cases for rendered HTML `translate` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `translate` attribute,
-     * including bool, string, UnitEnum, and replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `translate` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        $enumCases = EnumDataGenerator::cases(Translate::class, 'translate', true);
-
-        $staticCase = [
-            'boolean false' => [
-                false,
-                [],
-                ' translate="no"',
-                'Should return the attribute value after setting it.',
-            ],
-            'boolean true' => [
-                true,
-                [],
-                ' translate="yes"',
-                'Should return the attribute value after setting it.',
-            ],
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'enum replace existing' => [
-                Translate::YES,
-                ['translate' => 'no'],
-                ' translate="yes"',
-                "Should return new 'translate' after replacing the existing 'translate' attribute with enum value.",
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'true',
-                ['translate' => 'no'],
-                ' translate="yes"',
-                "Should return new 'translate' after replacing the existing 'translate' attribute.",
-            ],
-            'string' => [
-                'true',
-                [],
-                ' translate="yes"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string boolean false' => [
-                'false',
-                [],
-                ' translate="no"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string boolean true' => [
-                'true',
-                [],
-                ' translate="yes"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['translate' => 'yes'],
-                '',
-                "Should unset the 'translate' attribute when 'null' is provided after a value.",
-            ],
-        ];
-
-        return [...$staticCase, ...$enumCases];
-    }
-
-    /**
      * Provides test cases for HTML `translate` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `translate` attribute,
@@ -128,28 +45,31 @@ final class TranslateProvider
      *
      * @return array Test data for `translate` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Translate::class, 'translate', false);
+        $enumCases = EnumDataGenerator::cases(Translate::class, GlobalAttribute::TRANSLATE->value);
 
         $staticCase = [
             'boolean false' => [
                 false,
                 [],
                 'no',
+                ' translate="no"',
                 'Should return the attribute value after setting it.',
             ],
             'boolean true' => [
                 true,
                 [],
                 'yes',
+                ' translate="yes"',
                 'Should return the attribute value after setting it.',
             ],
             'empty string' => [
                 '',
                 [],
+                '',
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -157,35 +77,41 @@ final class TranslateProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 'true',
                 ['translate' => 'no'],
                 'yes',
+                ' translate="yes"',
                 "Should return new 'translate' after replacing the existing 'translate' attribute.",
             ],
             'string' => [
                 'true',
                 [],
                 'yes',
+                ' translate="yes"',
                 'Should return the attribute value after setting it.',
             ],
             'string boolean false' => [
                 'false',
                 [],
                 'no',
+                ' translate="no"',
                 'Should return the attribute value after setting it.',
             ],
             'string boolean true' => [
                 'true',
                 [],
                 'yes',
+                ' translate="yes"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['translate' => 'yes'],
+                '',
                 '',
                 "Should unset the 'translate' attribute when 'null' is provided after a value.",
             ],

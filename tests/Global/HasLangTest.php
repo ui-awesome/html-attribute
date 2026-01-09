@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasLang;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\LangProvider;
-use UIAwesome\Html\Attribute\Values\Language;
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Language};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
@@ -37,30 +37,6 @@ use UnitEnum;
 #[Group('attributes')]
 final class HasLangTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(LangProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithLangAttribute(
-        string|UnitEnum|null $lang,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasLang;
-        };
-
-        $instance = $instance->attributes($attributes)->lang($lang);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenLangAttributeNotSet(): void
     {
         $instance = new class {
@@ -95,7 +71,8 @@ final class HasLangTest extends TestCase
     public function testSetLangAttributeValue(
         string|UnitEnum|null $lang,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -106,8 +83,13 @@ final class HasLangTest extends TestCase
         $instance = $instance->attributes($attributes)->lang($lang);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['lang'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::LANG->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

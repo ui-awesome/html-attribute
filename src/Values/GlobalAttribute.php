@@ -206,6 +206,13 @@ enum GlobalAttribute: string
     case POPOVER = 'popover';
 
     /**
+     * `role` — Defines an explicit ARIA role for the element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
+     */
+    case ROLE = 'role';
+
+    /**
      * `slot` — Assigns a slot in a shadow DOM shadow tree to an element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/slot

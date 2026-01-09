@@ -34,30 +34,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('element')]
 final class HasHeightTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(HeightProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithHeightAttribute(
-        string|null $height,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasHeight;
-        };
-
-        $instance = $instance->attributes($attributes)->height($height);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenHeightAttributeNotSet(): void
     {
         $instance = new class {
@@ -92,7 +68,8 @@ final class HasHeightTest extends TestCase
     public function testSetHeightAttributeValue(
         string|null $height,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -103,8 +80,13 @@ final class HasHeightTest extends TestCase
         $instance = $instance->attributes($attributes)->height($height);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[ElementAttribute::HEIGHT->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

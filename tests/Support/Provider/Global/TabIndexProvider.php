@@ -60,79 +60,6 @@ final class TabIndexProvider
     }
 
     /**
-     * Provides test cases for rendered HTML `tabindex` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `tabindex` attribute,
-     * including int, string, and `null`, as well as replacement and unset scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `tabindex` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{int|string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'integer' => [
-                1,
-                [],
-                ' tabindex="1"',
-                'Should return the attribute value after setting it.',
-            ],
-            'integer negative' => [
-                -1,
-                [],
-                ' tabindex="-1"',
-                'Should return the attribute value after setting it.',
-            ],
-            'integer zero' => [
-                0,
-                [],
-                ' tabindex="0"',
-                'Should return the attribute value after setting it.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                2,
-                ['tabindex' => 1],
-                ' tabindex="2"',
-                "Should return new 'tabindex' after replacing the existing 'tabindex' attribute.",
-            ],
-            'string negative' => [
-                '-1',
-                [],
-                ' tabindex="-1"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string numeric' => [
-                '3',
-                [],
-                ' tabindex="3"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string zero' => [
-                '0',
-                [],
-                ' tabindex="0"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['tabindex' => 1],
-                '',
-                "Should unset the 'tabindex' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `tabindex` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `tabindex` attribute,
@@ -143,7 +70,7 @@ final class TabIndexProvider
      *
      * @return array Test data for `tabindex` attribute scenarios.
      *
-     * @phpstan-return array<string, array{int|string|null, mixed[], mixed[], string}>
+     * @phpstan-return array<string, array{int|string|null, mixed[], int|string, string, string}>
      */
     public static function values(): array
     {
@@ -151,55 +78,64 @@ final class TabIndexProvider
             'integer' => [
                 1,
                 [],
-                ['tabindex' => 1],
+                1,
+                ' tabindex="1"',
                 'Should return the attribute value after setting it.',
             ],
             'integer negative' => [
                 -1,
                 [],
-                ['tabindex' => -1],
+                -1,
+                ' tabindex="-1"',
                 'Should return the attribute value after setting it.',
             ],
             'integer zero' => [
                 0,
                 [],
-                ['tabindex' => 0],
+                0,
+                ' tabindex="0"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
                 [],
-                [],
+                '',
+                '',
                 "Should return an empty 'array' when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 2,
                 ['tabindex' => 1],
-                ['tabindex' => 2],
+                2,
+                ' tabindex="2"',
                 "Should return new 'tabindex' after replacing the existing 'tabindex' attribute.",
             ],
             'string negative' => [
                 '-1',
                 [],
-                ['tabindex' => '-1'],
+                '-1',
+                ' tabindex="-1"',
                 'Should return the attribute value after setting it.',
             ],
             'string numeric' => [
                 '3',
                 [],
-                ['tabindex' => '3'],
+                '3',
+                ' tabindex="3"',
                 'Should return the attribute value after setting it.',
             ],
             'string zero' => [
                 '0',
                 [],
-                ['tabindex' => '0'],
+                '0',
+                ' tabindex="0"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['tabindex' => 1],
-                [],
+                '',
+                '',
                 "Should unset the 'tabindex' attribute when 'null' is provided after a value.",
             ],
         ];

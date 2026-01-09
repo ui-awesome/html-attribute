@@ -30,55 +30,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class ItemRefProvider
 {
     /**
-     * Provides test cases for rendered HTML `itemref` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `itemref` attribute,
-     * including empty string, `null`, and standard string.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `itemref` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'a b',
-                ['itemref' => 'c'],
-                ' itemref="a b"',
-                "Should return new 'itemref' after replacing the existing 'itemref' attribute.",
-            ],
-            'string' => [
-                'a',
-                [],
-                ' itemref="a"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['itemref' => 'a'],
-                '',
-                "Should unset the 'itemref' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `itemref` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `itemref` attribute,
@@ -89,7 +40,7 @@ final class ItemRefProvider
      *
      * @return array Test data for `itemref` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
      */
     public static function values(): array
     {
@@ -98,11 +49,13 @@ final class ItemRefProvider
                 '',
                 [],
                 '',
+                '',
                 'Should return an empty string when setting an empty string.',
             ],
             'null' => [
                 null,
                 [],
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -110,17 +63,20 @@ final class ItemRefProvider
                 'a b',
                 ['itemref' => 'c'],
                 'a b',
+                ' itemref="a b"',
                 "Should return new 'itemref' after replacing the existing 'itemref' attribute.",
             ],
             'string' => [
                 'a b',
                 [],
                 'a b',
+                ' itemref="a b"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['itemref' => 'a b'],
+                '',
                 '',
                 "Should unset the 'itemref' attribute when 'null' is provided after a value.",
             ],

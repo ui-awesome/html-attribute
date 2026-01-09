@@ -38,30 +38,6 @@ use UnitEnum;
 #[Group('global')]
 final class HasContentEditableTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(ContentEditableProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithContentEditableAttribute(
-        bool|string|UnitEnum|null $contenteditable,
-        array $attributes,
-        bool|string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasContentEditable;
-        };
-
-        $instance = $instance->attributes($attributes)->contentEditable($contenteditable);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenContentEditableAttributeNotSet(): void
     {
         $instance = new class {
@@ -96,7 +72,8 @@ final class HasContentEditableTest extends TestCase
     public function testSetContentEditableAttributeValue(
         bool|string|UnitEnum|null $contenteditable,
         array $attributes,
-        bool|string|UnitEnum $expected,
+        bool|string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -107,8 +84,13 @@ final class HasContentEditableTest extends TestCase
         $instance = $instance->attributes($attributes)->contentEditable($contenteditable);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[GlobalAttribute::CONTENTEDITABLE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

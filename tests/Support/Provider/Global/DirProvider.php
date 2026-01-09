@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
 use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
-use UIAwesome\Html\Attribute\Values\Direction;
+use UIAwesome\Html\Attribute\Values\{Direction, GlobalAttribute};
 use UnitEnum;
 
 /**
@@ -33,65 +33,6 @@ use UnitEnum;
 final class DirProvider
 {
     /**
-     * Provides test cases for rendered HTML `dir` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `dir` attribute, including
-     * string, UnitEnum, and replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `dir` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        $enumCases = EnumDataGenerator::cases(Direction::class, 'dir', true);
-
-        $staticCase = [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'enum replace existing' => [
-                Direction::AUTO,
-                ['dir' => 'ltr'],
-                ' dir="auto"',
-                "Should return new 'dir' after replacing the existing 'dir' attribute with enum value.",
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'auto',
-                ['dir' => 'ltr'],
-                ' dir="auto"',
-                "Should return new 'dir' after replacing the existing 'dir' attribute.",
-            ],
-            'string' => [
-                'ltr',
-                [],
-                ' dir="ltr"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['dir' => 'ltr'],
-                '',
-                "Should unset the 'dir' attribute when 'null' is provided after a value.",
-            ],
-        ];
-
-        return [...$staticCase, ...$enumCases];
-    }
-
-    /**
      * Provides test cases for HTML `dir` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `dir` attribute,
@@ -102,16 +43,17 @@ final class DirProvider
      *
      * @return array Test data for `dir` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Direction::class, 'dir', false);
+        $enumCases = EnumDataGenerator::cases(Direction::class, GlobalAttribute::DIR->value);
 
         $staticCase = [
             'empty string' => [
                 '',
                 [],
+                '',
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -119,23 +61,27 @@ final class DirProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 'auto',
                 ['dir' => 'ltr'],
                 'auto',
+                ' dir="auto"',
                 "Should return new 'dir' after replacing the existing 'dir' attribute.",
             ],
             'string' => [
                 'ltr',
                 [],
                 'ltr',
+                ' dir="ltr"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['dir' => 'ltr'],
+                '',
                 '',
                 "Should unset the 'dir' attribute when 'null' is provided after a value.",
             ],

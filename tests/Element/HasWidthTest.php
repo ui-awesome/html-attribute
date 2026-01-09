@@ -34,30 +34,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('element')]
 final class HasWidthTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(WidthProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithWidthAttribute(
-        string|null $width,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasWidth;
-        };
-
-        $instance = $instance->attributes($attributes)->width($width);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenWidthAttributeNotSet(): void
     {
         $instance = new class {
@@ -92,7 +68,8 @@ final class HasWidthTest extends TestCase
     public function testSetWidthAttributeValue(
         string|null $width,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -103,8 +80,13 @@ final class HasWidthTest extends TestCase
         $instance = $instance->attributes($attributes)->width($width);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[ElementAttribute::WIDTH->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

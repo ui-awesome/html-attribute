@@ -37,30 +37,6 @@ use UnitEnum;
 #[Group('element')]
 final class HasReferrerpolicyTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(ReferrerpolicyProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithReferrerpolicyAttribute(
-        string|UnitEnum|null $referrerpolicy,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasReferrerpolicy;
-        };
-
-        $instance = $instance->attributes($attributes)->referrerpolicy($referrerpolicy);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenReferrerpolicyAttributeNotSet(): void
     {
         $instance = new class {
@@ -95,7 +71,8 @@ final class HasReferrerpolicyTest extends TestCase
     public function testSetReferrerpolicyAttributeValue(
         string|UnitEnum|null $referrerpolicy,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -106,8 +83,13 @@ final class HasReferrerpolicyTest extends TestCase
         $instance = $instance->attributes($attributes)->referrerpolicy($referrerpolicy);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[ElementAttribute::REFERRERPOLICY->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

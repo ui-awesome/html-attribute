@@ -29,55 +29,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class IdProvider
 {
     /**
-     * Provides test cases for HTML `id` attribute rendering scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `id` attribute, including
-     * empty string, `null`, and standard string.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for `id` attribute rendering scenarios.
-     *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'new-id',
-                ['id' => 'old-id'],
-                ' id="new-id"',
-                "Should return new 'id' after replacing the existing 'id' attribute.",
-            ],
-            'string' => [
-                'id-one',
-                [],
-                ' id="id-one"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['id' => 'id-two'],
-                '',
-                "Should unset the 'id' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `id` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `id` attribute,
@@ -88,7 +39,7 @@ final class IdProvider
      *
      * @return array Test data for `id` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
      */
     public static function values(): array
     {
@@ -97,11 +48,13 @@ final class IdProvider
                 '',
                 [],
                 '',
+                '',
                 'Should return an empty string when setting an empty string.',
             ],
             'null' => [
                 null,
                 [],
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -109,17 +62,20 @@ final class IdProvider
                 'new-id',
                 ['id' => 'old-id'],
                 'new-id',
+                ' id="new-id"',
                 "Should return new 'id' after replacing the existing 'id' attribute.",
             ],
             'string' => [
                 'id-one',
                 [],
                 'id-one',
+                ' id="id-one"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['id' => 'id-two'],
+                '',
                 '',
                 "Should unset the 'id' attribute when 'null' is provided after a value.",
             ],

@@ -38,30 +38,6 @@ use UnitEnum;
 #[Group('attribute')]
 final class HasCrossoriginTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(CrossoriginProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithCrossoriginAttribute(
-        string|UnitEnum|null $crossorigin,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasCrossorigin;
-        };
-
-        $instance = $instance->attributes($attributes)->crossorigin($crossorigin);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenCrossoriginAttributeNotSet(): void
     {
         $instance = new class {
@@ -96,7 +72,8 @@ final class HasCrossoriginTest extends TestCase
     public function testSetCrossoriginAttributeValue(
         string|UnitEnum|null $crossorigin,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttributes,
         string $message,
     ): void {
         $instance = new class {
@@ -107,8 +84,13 @@ final class HasCrossoriginTest extends TestCase
         $instance = $instance->attributes($attributes)->crossorigin($crossorigin);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[Attribute::CROSSORIGIN->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttributes,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

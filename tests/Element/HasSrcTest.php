@@ -34,30 +34,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('element')]
 final class HasSrcTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(SrcProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithSrcAttribute(
-        string|null $src,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasSrc;
-        };
-
-        $instance = $instance->attributes($attributes)->src($src);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenSrcAttributeNotSet(): void
     {
         $instance = new class {
@@ -92,7 +68,8 @@ final class HasSrcTest extends TestCase
     public function testSetSrcAttributeValue(
         string|null $src,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -103,8 +80,13 @@ final class HasSrcTest extends TestCase
         $instance = $instance->attributes($attributes)->src($src);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[ElementAttribute::SRC->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\Global\HasStyle;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\StyleProvider;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -35,31 +36,6 @@ use UnitEnum;
 #[Group('attributes')]
 final class HasStyleTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[]|string|Stringable|UnitEnum|null $style
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(StyleProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithStyleAttribute(
-        array|string|Stringable|UnitEnum|null $style,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasStyle;
-        };
-
-        $instance = $instance->attributes($attributes)->style($style);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenStyleAttributeNotSet(): void
     {
         $instance = new class {
@@ -90,13 +66,14 @@ final class HasStyleTest extends TestCase
     /**
      * @phpstan-param mixed[]|string|Stringable|UnitEnum|null $style
      * @phpstan-param mixed[] $attributes
-     * @phpstan-param mixed[]|string|Stringable|UnitEnum $expected
+     * @phpstan-param mixed[]|string|Stringable|UnitEnum $expectedValue
      */
     #[DataProviderExternal(StyleProvider::class, 'values')]
     public function testSetStyleAttributeValue(
         array|string|Stringable|UnitEnum|null $style,
         array $attributes,
-        array|string|Stringable|UnitEnum $expected,
+        array|string|Stringable|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -107,8 +84,13 @@ final class HasStyleTest extends TestCase
         $instance = $instance->attributes($attributes)->style($style);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['style'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::STYLE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

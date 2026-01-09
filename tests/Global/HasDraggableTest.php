@@ -38,30 +38,6 @@ use UnitEnum;
 #[Group('global')]
 final class HasDraggableTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(DraggableProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithDraggableAttribute(
-        bool|string|UnitEnum|null $draggable,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasDraggable;
-        };
-
-        $instance = $instance->attributes($attributes)->draggable($draggable);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenDraggableAttributeNotSet(): void
     {
         $instance = new class {
@@ -96,7 +72,8 @@ final class HasDraggableTest extends TestCase
     public function testSetDraggableAttributeValue(
         bool|string|UnitEnum|null $draggable,
         array $attributes,
-        bool|string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -107,8 +84,13 @@ final class HasDraggableTest extends TestCase
         $instance = $instance->attributes($attributes)->draggable($draggable);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[GlobalAttribute::DRAGGABLE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

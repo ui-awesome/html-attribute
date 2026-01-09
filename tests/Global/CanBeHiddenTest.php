@@ -34,30 +34,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('global')]
 final class CanBeHiddenTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(HiddenProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithHiddenAttribute(
-        bool $value,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use CanBeHidden;
-            use HasAttributes;
-        };
-
-        $instance = $instance->attributes($attributes)->hidden($value);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenHiddenAttributeNotSet(): void
     {
         $instance = new class {
@@ -92,7 +68,8 @@ final class CanBeHiddenTest extends TestCase
     public function testSetHiddenAttributeValue(
         bool $value,
         array $attributes,
-        bool|string $expected,
+        bool|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -103,8 +80,13 @@ final class CanBeHiddenTest extends TestCase
         $instance = $instance->attributes($attributes)->hidden($value);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[GlobalAttribute::HIDDEN->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

@@ -36,34 +36,6 @@ use UnitEnum;
 #[Group('global')]
 final class HasClassTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(ClassProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithClassAttribute(
-        string|Stringable|UnitEnum|null $cssClasses,
-        array $attributes,
-        bool $override,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasClass;
-        };
-
-        $instance = match ($override) {
-            true => $instance->attributes($attributes)->class($cssClasses, true),
-            default => $instance->attributes($attributes)->class($cssClasses),
-        };
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenClassAttributeNotSet(): void
     {
         $instance = new class {
@@ -95,8 +67,12 @@ final class HasClassTest extends TestCase
      * @phpstan-param array<array{value: string|Stringable|UnitEnum|null, override?: bool}> $operations
      */
     #[DataProviderExternal(ClassProvider::class, 'values')]
-    public function testSetClassAttributeValue(array $operations, string $expected, string $message): void
-    {
+    public function testSetClassAttributeValue(
+        array $operations,
+        string $expectedValue,
+        string $expectedRenderAttribute,
+        string $message,
+    ): void {
         $instance = new class {
             use HasAttributes;
             use HasClass;
@@ -112,8 +88,13 @@ final class HasClassTest extends TestCase
         }
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[GlobalAttribute::CLASS_CSS->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

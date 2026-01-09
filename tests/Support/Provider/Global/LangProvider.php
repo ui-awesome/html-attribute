@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
 use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Attribute\Values\Language;
 use UnitEnum;
 
@@ -35,65 +36,6 @@ use UnitEnum;
 final class LangProvider
 {
     /**
-     * Provides test cases for rendered HTML `lang` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `lang` attribute,
-     * including empty string, UnitEnum, `null`, and standard string.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `lang` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        $enumCases = EnumDataGenerator::cases(Language::class, 'lang', true);
-
-        $staticCase = [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'enum replace existing' => [
-                Language::SPANISH,
-                ['lang' => 'it'],
-                ' lang="es"',
-                "Should return new 'lang' after replacing the existing 'lang' attribute with enum value.",
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                Language::GERMAN,
-                ['lang' => 'it'],
-                ' lang="de"',
-                "Should return new 'lang' after replacing the existing 'lang' attribute.",
-            ],
-            'string' => [
-                'en',
-                [],
-                ' lang="en"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['lang' => 'fr'],
-                '',
-                "Should unset the 'lang' attribute when 'null' is provided after a value.",
-            ],
-        ];
-
-        return [...$staticCase, ...$enumCases];
-    }
-
-    /**
      * Provides test cases for HTML `lang` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `lang` attribute,
@@ -104,16 +46,17 @@ final class LangProvider
      *
      * @return array Test data for `lang` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Language::class, 'lang', false);
+        $enumCases = EnumDataGenerator::cases(Language::class, GlobalAttribute::LANG);
 
         $staticCase = [
             'empty string' => [
                 '',
                 [],
+                '',
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -121,23 +64,27 @@ final class LangProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 Language::GERMAN,
                 ['lang' => 'it'],
                 Language::GERMAN,
+                ' lang="de"',
                 "Should return new 'lang' after replacing the existing 'lang' attribute.",
             ],
             'string' => [
                 'en',
                 [],
                 'en',
+                ' lang="en"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['lang' => 'fr'],
+                '',
                 '',
                 "Should unset the 'lang' attribute when 'null' is provided after a value.",
             ],

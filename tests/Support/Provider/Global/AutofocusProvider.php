@@ -29,49 +29,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class AutofocusProvider
 {
     /**
-     * Provides test cases for rendered HTML `autofocus` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `autofocus` attribute,
-     * including bool and replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `autofocus` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{bool, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'boolean false' => [
-                false,
-                [],
-                '',
-                'Should return the attribute value after setting it.',
-            ],
-            'boolean true' => [
-                true,
-                [],
-                ' autofocus',
-                'Should return the attribute value after setting it.',
-            ],
-            'replace existing false' => [
-                false,
-                ['autofocus' => true],
-                '',
-                "Should return an empty string when replacing existing 'autofocus' attribute with 'false'.",
-            ],
-            'replace existing true' => [
-                true,
-                ['autofocus' => false],
-                ' autofocus',
-                "Should return the attribute value when replacing existing 'autofocus' attribute with 'true'.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `autofocus` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `autofocus` attribute,
@@ -82,7 +39,7 @@ final class AutofocusProvider
      *
      * @return array Test data for `autofocus` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool, mixed[], bool|string, string}>
+     * @phpstan-return array<string, array{bool, mixed[], bool|string, string, string}>
      */
     public static function values(): array
     {
@@ -91,24 +48,28 @@ final class AutofocusProvider
                 false,
                 [],
                 false,
+                '',
                 'Should return the attribute value after setting it.',
             ],
             'boolean true' => [
                 true,
                 [],
                 true,
+                ' autofocus',
                 'Should return the attribute value after setting it.',
             ],
             'replace existing false' => [
                 false,
                 ['autofocus' => true],
                 false,
+                '',
                 "Should return 'false' when replacing existing 'autofocus' attribute with 'false'.",
             ],
             'replace existing true' => [
                 true,
                 ['autofocus' => false],
                 true,
+                ' autofocus',
                 "Should return 'true' when replacing existing 'autofocus' attribute with 'true'.",
             ],
         ];

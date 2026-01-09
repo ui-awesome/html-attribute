@@ -37,13 +37,6 @@ enum ElementAttribute: string
     case REFERRERPOLICY = 'referrerpolicy';
 
     /**
-     * `role` — Defines an explicit ARIA role for the element.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
-     */
-    case ROLE = 'role';
-
-    /**
      * `src` — URL of embeddable content.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#src

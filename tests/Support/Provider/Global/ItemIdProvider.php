@@ -29,55 +29,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class ItemIdProvider
 {
     /**
-     * Provides test cases for rendered HTML `itemid` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `itemid` attribute,
-     * including empty string and `null` for attribute removal.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `itemid` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'new-id',
-                ['itemid' => 'old-id'],
-                ' itemid="new-id"',
-                "Should return new 'itemid' after replacing the existing 'itemid' attribute.",
-            ],
-            'string' => [
-                'id-one',
-                [],
-                ' itemid="id-one"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['itemid' => 'id-two'],
-                '',
-                "Should unset the 'itemid' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `itemid` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `itemid` attribute,
@@ -88,7 +39,7 @@ final class ItemIdProvider
      *
      * @return array Test data for `itemid` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
      */
     public static function values(): array
     {
@@ -97,11 +48,13 @@ final class ItemIdProvider
                 '',
                 [],
                 '',
+                '',
                 'Should return an empty string when setting an empty string.',
             ],
             'null' => [
                 null,
                 [],
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -109,17 +62,20 @@ final class ItemIdProvider
                 'new-id',
                 ['itemid' => 'old-id'],
                 'new-id',
+                ' itemid="new-id"',
                 "Should return new 'itemid' after replacing the existing 'itemid' attribute.",
             ],
             'string' => [
                 'id-one',
                 [],
                 'id-one',
+                ' itemid="id-one"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['itemid' => 'id-two'],
+                '',
                 '',
                 "Should unset the 'itemid' attribute when 'null' is provided after a value.",
             ],

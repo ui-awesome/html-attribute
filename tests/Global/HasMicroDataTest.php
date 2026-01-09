@@ -14,6 +14,7 @@ use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\{
     ItemScopeProvider,
     ItemTypeProvider,
 };
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
@@ -41,126 +42,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('attributes')]
 final class HasMicroDataTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(ItemIdProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithItemIdAttribute(
-        string|null $itemId,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasMicroData;
-        };
-
-        $instance = $instance->attributes($attributes)->itemId($itemId);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(ItemPropProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithItemPropAttribute(
-        string|null $itemProp,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasMicroData;
-        };
-
-        $instance = $instance->attributes($attributes)->itemProp($itemProp);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(ItemRefProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithItemRefAttribute(
-        string|null $itemRef,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasMicroData;
-        };
-
-        $instance = $instance->attributes($attributes)->itemRef($itemRef);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(ItemScopeProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithItemScopeAttribute(
-        bool|null $itemScope,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasMicroData;
-        };
-
-        $instance = $instance->attributes($attributes)->itemScope($itemScope);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(ItemTypeProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithItemTypeAttribute(
-        string|null $itemType,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasMicroData;
-        };
-
-        $instance = $instance->attributes($attributes)->itemType($itemType);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenMicroDataNotSet(): void
     {
         $instance = new class {
@@ -251,7 +132,8 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemIdAttributeValue(
         string|null $itemId,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -262,8 +144,13 @@ final class HasMicroDataTest extends TestCase
         $instance = $instance->attributes($attributes)->itemId($itemId);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['itemid'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::ITEMID->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
@@ -275,7 +162,8 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemPropAttributeValue(
         string|null $itemProp,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -286,8 +174,13 @@ final class HasMicroDataTest extends TestCase
         $instance = $instance->attributes($attributes)->itemProp($itemProp);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['itemprop'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::ITEMPROP->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
@@ -299,7 +192,8 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemRefAttributeValue(
         string|null $itemRef,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -310,8 +204,13 @@ final class HasMicroDataTest extends TestCase
         $instance = $instance->attributes($attributes)->itemRef($itemRef);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['itemref'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::ITEMREF->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
@@ -323,7 +222,8 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemScopeAttributeValue(
         bool|null $itemScope,
         array $attributes,
-        bool|string $expected,
+        bool|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -334,8 +234,13 @@ final class HasMicroDataTest extends TestCase
         $instance = $instance->attributes($attributes)->itemScope($itemScope);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['itemscope'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::ITEMSCOPE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
@@ -347,7 +252,8 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemTypeAttributeValue(
         string|null $itemType,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -358,8 +264,13 @@ final class HasMicroDataTest extends TestCase
         $instance = $instance->attributes($attributes)->itemType($itemType);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['itemtype'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::ITEMTYPE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

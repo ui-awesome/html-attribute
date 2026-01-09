@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasId;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\IdProvider;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
@@ -33,30 +34,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('attributes')]
 final class HasIdTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(IdProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithIdAttribute(
-        string|null $id,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasId;
-        };
-
-        $instance = $instance->attributes($attributes)->id($id);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenIdAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,7 +68,8 @@ final class HasIdTest extends TestCase
     public function testSetIdAttributeValue(
         string|null $id,
         array $attributes,
-        string|null $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -102,8 +80,13 @@ final class HasIdTest extends TestCase
         $instance = $instance->attributes($attributes)->id($id);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['id'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::ID->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

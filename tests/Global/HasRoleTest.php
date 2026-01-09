@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasRole;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\RoleProvider;
-use UIAwesome\Html\Attribute\Values\Role;
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Role};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
@@ -37,30 +37,6 @@ use UnitEnum;
 #[Group('attributes')]
 final class HasRoleTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(RoleProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithRoleAttribute(
-        string|UnitEnum|null $role,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasRole;
-        };
-
-        $instance = $instance->attributes($attributes)->role($role);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenRoleAttributeNotSet(): void
     {
         $instance = new class {
@@ -95,7 +71,8 @@ final class HasRoleTest extends TestCase
     public function testSetRoleAttributeValue(
         string|UnitEnum|null $role,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -106,8 +83,13 @@ final class HasRoleTest extends TestCase
         $instance = $instance->attributes($attributes)->role($role);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['role'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::ROLE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
@@ -123,7 +105,7 @@ final class HasRoleTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                'role',
+                GlobalAttribute::ROLE->value,
                 implode('\', \'', Enum::normalizeArray(Role::cases())),
             ),
         );

@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\Global\HasTitle;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\TitleProvider;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -35,30 +36,6 @@ use UnitEnum;
 #[Group('attributes')]
 final class HasTitleTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(TitleProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithTitleAttribute(
-        string|Stringable|UnitEnum|null $title,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasTitle;
-        };
-
-        $instance = $instance->attributes($attributes)->title($title);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenTitleAttributeNotSet(): void
     {
         $instance = new class {
@@ -93,7 +70,8 @@ final class HasTitleTest extends TestCase
     public function testSetTitleAttributeValue(
         string|Stringable|UnitEnum|null $title,
         array $attributes,
-        string|Stringable|UnitEnum $expected,
+        string|Stringable|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -104,8 +82,13 @@ final class HasTitleTest extends TestCase
         $instance = $instance->attributes($attributes)->title($title);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes()['title'] ?? '',
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::TITLE->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

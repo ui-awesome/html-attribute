@@ -29,49 +29,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class HiddenProvider
 {
     /**
-     * Provides test cases for rendered HTML `hidden` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `hidden` attribute,
-     * including bool and replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `hidden` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{bool, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'boolean false' => [
-                false,
-                [],
-                '',
-                'Should return the attribute value after setting it.',
-            ],
-            'boolean true' => [
-                true,
-                [],
-                ' hidden',
-                'Should return the attribute value after setting it.',
-            ],
-            'replace existing false' => [
-                false,
-                ['hidden' => true],
-                '',
-                "Should return an empty string when replacing existing 'hidden' attribute with 'false'.",
-            ],
-            'replace existing true' => [
-                true,
-                ['hidden' => false],
-                ' hidden',
-                "Should return the attribute value when replacing existing 'hidden' attribute with 'true'.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `hidden` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `hidden` attribute,
@@ -82,7 +39,7 @@ final class HiddenProvider
      *
      * @return array Test data for `hidden` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool, mixed[], bool|string, string}>
+     * @phpstan-return array<string, array{bool, mixed[], bool|string, string, string}>
      */
     public static function values(): array
     {
@@ -91,24 +48,28 @@ final class HiddenProvider
                 false,
                 [],
                 false,
+                '',
                 'Should return the attribute value after setting it.',
             ],
             'boolean true' => [
                 true,
                 [],
                 true,
+                ' hidden',
                 'Should return the attribute value after setting it.',
             ],
             'replace existing false' => [
                 false,
                 ['hidden' => true],
                 false,
+                '',
                 "Should return 'false' when replacing existing 'hidden' attribute with 'false'.",
             ],
             'replace existing true' => [
                 true,
                 ['hidden' => false],
                 true,
+                ' hidden',
                 "Should return 'true' when replacing existing 'hidden' attribute with 'true'.",
             ],
         ];

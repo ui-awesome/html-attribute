@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
 use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
-use UIAwesome\Html\Attribute\Values\Role;
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Role};
 use UnitEnum;
 
 /**
@@ -33,65 +33,6 @@ use UnitEnum;
 final class RoleProvider
 {
     /**
-     * Provides test cases for rendered HTML `role` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `role` attribute,
-     * including string, UnitEnum, and replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `role` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        $enumCases = EnumDataGenerator::cases(Role::class, 'role', true);
-
-        $staticCase = [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'enum replace existing' => [
-                Role::CHECKBOX,
-                ['role' => 'alert'],
-                ' role="checkbox"',
-                "Should return new 'role' after replacing the existing 'role' attribute with enum value.",
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'button',
-                ['role' => 'alert'],
-                ' role="button"',
-                "Should return new 'role' after replacing the existing 'role' attribute.",
-            ],
-            'string' => [
-                'alert',
-                [],
-                ' role="alert"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['role' => 'alert'],
-                '',
-                "Should unset the 'role' attribute when 'null' is provided after a value.",
-            ],
-        ];
-
-        return [...$staticCase, ...$enumCases];
-    }
-
-    /**
      * Provides test cases for HTML `role` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `role` attribute,
@@ -102,16 +43,17 @@ final class RoleProvider
      *
      * @return array Test data for `role` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Role::class, 'role', false);
+        $enumCases = EnumDataGenerator::cases(Role::class, GlobalAttribute::ROLE);
 
         $staticCase = [
             'empty string' => [
                 '',
                 [],
+                '',
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -119,23 +61,27 @@ final class RoleProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 'button',
                 ['role' => 'alert'],
                 'button',
+                ' role="button"',
                 "Should return new 'role' after replacing the existing 'role' attribute.",
             ],
             'string' => [
                 'alert',
                 [],
                 'alert',
+                ' role="alert"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['role' => 'alert'],
+                '',
                 '',
                 "Should unset the 'role' attribute when 'null' is provided after a value.",
             ],

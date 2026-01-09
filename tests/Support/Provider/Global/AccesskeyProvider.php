@@ -29,55 +29,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class AccesskeyProvider
 {
     /**
-     * Provides test cases for HTML `accesskey` attribute rendering scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `accesskey` attribute,
-     * including empty string, `null`, and standard string.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for `accesskey` attribute rendering scenarios.
-     *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'key',
-                ['accesskey' => 'old-key'],
-                ' accesskey="key"',
-                "Should return new 'accesskey' after replacing the existing 'accesskey' attribute.",
-            ],
-            'string' => [
-                'key',
-                [],
-                ' accesskey="key"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['accesskey' => 'old-key'],
-                '',
-                "Should unset the 'accesskey' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `accesskey` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `accesskey` attribute,
@@ -88,7 +39,7 @@ final class AccesskeyProvider
      *
      * @return array Test data for `accesskey` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
      */
     public static function values(): array
     {
@@ -97,11 +48,13 @@ final class AccesskeyProvider
                 '',
                 [],
                 '',
+                '',
                 'Should return an empty string when setting an empty string.',
             ],
             'null' => [
                 null,
                 [],
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -109,17 +62,20 @@ final class AccesskeyProvider
                 'key',
                 ['accesskey' => 'old-key'],
                 'key',
+                ' accesskey="key"',
                 "Should return new 'accesskey' after replacing the existing 'accesskey' attribute.",
             ],
             'string' => [
                 'key',
                 [],
                 'key',
+                ' accesskey="key"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['accesskey' => 'old-key'],
+                '',
                 '',
                 "Should unset the 'accesskey' attribute when 'null' is provided after a value.",
             ],

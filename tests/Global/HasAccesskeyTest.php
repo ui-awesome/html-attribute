@@ -35,30 +35,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('global')]
 final class HasAccesskeyTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(AccesskeyProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithAccesskeyAttribute(
-        string|null $accesskey,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAccesskey;
-            use HasAttributes;
-        };
-
-        $instance = $instance->attributes($attributes)->accesskey($accesskey);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenAccesskeyAttributeNotSet(): void
     {
         $instance = new class {
@@ -93,7 +69,8 @@ final class HasAccesskeyTest extends TestCase
     public function testSetAccesskeyAttributeValue(
         string|null $accesskey,
         array $attributes,
-        string|null $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -104,8 +81,13 @@ final class HasAccesskeyTest extends TestCase
         $instance = $instance->attributes($attributes)->accesskey($accesskey);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[GlobalAttribute::ACCESSKEY->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

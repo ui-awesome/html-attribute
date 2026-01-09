@@ -37,30 +37,6 @@ use UnitEnum;
 #[Group('attributes')]
 final class HasDirTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(DirProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithDirectionAttribute(
-        string|UnitEnum|null $dir,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasDir;
-        };
-
-        $instance = $instance->attributes($attributes)->dir($dir);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenDirAttributeNotSet(): void
     {
         $instance = new class {
@@ -95,7 +71,8 @@ final class HasDirTest extends TestCase
     public function testSetDirAttributeValue(
         string|UnitEnum|null $dir,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -106,8 +83,13 @@ final class HasDirTest extends TestCase
         $instance = $instance->attributes($attributes)->dir($dir);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[GlobalAttribute::DIR->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

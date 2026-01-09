@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
 use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
-use UIAwesome\Html\Attribute\Values\Draggable;
+use UIAwesome\Html\Attribute\Values\{Draggable, GlobalAttribute};
 use UnitEnum;
 
 /**
@@ -35,83 +35,6 @@ use UnitEnum;
 final class DraggableProvider
 {
     /**
-     * Provides test cases for rendered HTML `draggable` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `draggable` attribute,
-     * including bool, string, UnitEnum, and replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `draggable` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        $enumCases = EnumDataGenerator::cases(Draggable::class, 'draggable', true);
-
-        $staticCase = [
-            'boolean false' => [
-                false,
-                [],
-                ' draggable="false"',
-                'Should return the attribute value after setting it.',
-            ],
-            'boolean true' => [
-                true,
-                [],
-                ' draggable="true"',
-                'Should return the attribute value after setting it.',
-            ],
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'enum replace existing' => [
-                Draggable::TRUE,
-                ['draggable' => 'false'],
-                ' draggable="true"',
-                "Should return new 'draggable' after replacing the existing 'draggable' attribute with enum value.",
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'true',
-                ['draggable' => 'false'],
-                ' draggable="true"',
-                "Should return new 'draggable' after replacing the existing 'draggable' attribute.",
-            ],
-            'string boolean false' => [
-                'false',
-                [],
-                ' draggable="false"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string boolean true' => [
-                'true',
-                [],
-                ' draggable="true"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['draggable' => 'true'],
-                '',
-                "Should unset the 'draggable' attribute when 'null' is provided after a value.",
-            ],
-        ];
-
-        return [...$staticCase, ...$enumCases];
-    }
-
-    /**
      * Provides test cases for HTML `draggable` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `draggable` attribute,
@@ -122,28 +45,31 @@ final class DraggableProvider
      *
      * @return array Test data for `draggable` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Draggable::class, 'draggable', false);
+        $enumCases = EnumDataGenerator::cases(Draggable::class, GlobalAttribute::DRAGGABLE->value);
 
         $staticCase = [
             'boolean false' => [
                 false,
                 [],
                 'false',
+                ' draggable="false"',
                 'Should return the attribute value after setting it.',
             ],
             'boolean true' => [
                 true,
                 [],
                 'true',
+                ' draggable="true"',
                 'Should return the attribute value after setting it.',
             ],
             'empty string' => [
                 '',
                 [],
+                '',
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -151,29 +77,34 @@ final class DraggableProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 'true',
                 ['draggable' => 'false'],
                 'true',
+                ' draggable="true"',
                 "Should return new 'draggable' after replacing the existing 'draggable' attribute.",
             ],
             'string boolean false' => [
                 'false',
                 [],
                 'false',
+                ' draggable="false"',
                 'Should return the attribute value after setting it.',
             ],
             'string boolean true' => [
                 'true',
                 [],
                 'true',
+                ' draggable="true"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['draggable' => 'true'],
+                '',
                 '',
                 "Should unset the 'draggable' attribute when 'null' is provided after a value.",
             ],

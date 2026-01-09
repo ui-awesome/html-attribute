@@ -34,30 +34,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('element')]
 final class HasHrefTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(HrefProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithHrefAttribute(
-        string|null $href,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasHref;
-        };
-
-        $instance = $instance->attributes($attributes)->href($href);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenHrefAttributeNotSet(): void
     {
         $instance = new class {
@@ -92,7 +68,8 @@ final class HasHrefTest extends TestCase
     public function testSetHrefAttributeValue(
         string|null $href,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -103,8 +80,13 @@ final class HasHrefTest extends TestCase
         $instance = $instance->attributes($attributes)->href($href);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[ElementAttribute::HREF->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

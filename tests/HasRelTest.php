@@ -37,30 +37,6 @@ use UnitEnum;
 #[Group('attribute')]
 final class HasRelTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(RelProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithRelAttribute(
-        string|UnitEnum|null $rel,
-        array $attributes,
-        string|UnitEnum $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasRel;
-        };
-
-        $instance = $instance->attributes($attributes)->rel($rel);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenRelAttributeNotSet(): void
     {
         $instance = new class {
@@ -95,7 +71,8 @@ final class HasRelTest extends TestCase
     public function testSetRelAttributeValue(
         string|UnitEnum|null $rel,
         array $attributes,
-        string|UnitEnum $expected,
+        string|UnitEnum $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -106,8 +83,13 @@ final class HasRelTest extends TestCase
         $instance = $instance->attributes($attributes)->rel($rel);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[Attribute::REL->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
 use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Attribute\Values\Rel;
 use UnitEnum;
 
@@ -31,65 +32,6 @@ use UnitEnum;
 final class RelProvider
 {
     /**
-     * Provides test cases for rendered HTML `rel` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the HTML `rel` attribute,
-     * including string, UnitEnum, and `null`, as well as replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `rel` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        $enumCases = EnumDataGenerator::cases(Rel::class, 'rel', true);
-
-        $staticCase = [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'enum replace existing' => [
-                Rel::NOREFERRER,
-                ['rel' => 'noopener'],
-                ' rel="noreferrer"',
-                "Should return new 'rel' after replacing the existing 'rel' attribute with enum value.",
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'noopener',
-                ['rel' => 'alternate'],
-                ' rel="noopener"',
-                "Should return new 'rel' after replacing the existing 'rel' attribute.",
-            ],
-            'string' => [
-                'noopener',
-                [],
-                ' rel="noopener"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['rel' => 'noopener'],
-                '',
-                "Should unset the 'rel' attribute when 'null' is provided after a value.",
-            ],
-        ];
-
-        return [...$staticCase, ...$enumCases];
-    }
-
-    /**
      * Provides test cases for HTML `rel` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the HTML `rel` attribute, including
@@ -100,16 +42,17 @@ final class RelProvider
      *
      * @return array Test data for `rel` attribute scenarios.
      *
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Rel::class, 'rel', false);
+        $enumCases = EnumDataGenerator::cases(Rel::class, Attribute::REL);
 
         $staticCase = [
             'empty string' => [
                 '',
                 [],
+                '',
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -117,23 +60,27 @@ final class RelProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 'noopener',
                 ['rel' => 'alternate'],
                 'noopener',
+                ' rel="noopener"',
                 "Should return new 'rel' after replacing the existing 'rel' attribute.",
             ],
             'string' => [
                 'noopener',
                 [],
                 'noopener',
+                ' rel="noopener"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['rel' => 'noopener'],
+                '',
                 '',
                 "Should unset the 'rel' attribute when 'null' is provided after a value.",
             ],

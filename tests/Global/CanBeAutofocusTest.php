@@ -35,30 +35,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('global')]
 final class CanBeAutofocusTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(AutofocusProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithAutofocusAttribute(
-        bool $value,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use CanBeAutofocus;
-            use HasAttributes;
-        };
-
-        $instance = $instance->attributes($attributes)->autofocus($value);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenAutofocusAttributeNotSet(): void
     {
         $instance = new class {
@@ -93,7 +69,8 @@ final class CanBeAutofocusTest extends TestCase
     public function testSetAutofocusAttributeValue(
         bool $value,
         array $attributes,
-        bool|string $expected,
+        bool|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -104,8 +81,13 @@ final class CanBeAutofocusTest extends TestCase
         $instance = $instance->attributes($attributes)->autofocus($value);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[GlobalAttribute::AUTOFOCUS->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

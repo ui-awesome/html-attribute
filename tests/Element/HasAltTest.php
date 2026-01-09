@@ -34,30 +34,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('element')]
 final class HasAltTest extends TestCase
 {
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(AltProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithAltAttribute(
-        string|null $alt,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAlt;
-            use HasAttributes;
-        };
-
-        $instance = $instance->attributes($attributes)->alt($alt);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenAltAttributeNotSet(): void
     {
         $instance = new class {
@@ -92,7 +68,8 @@ final class HasAltTest extends TestCase
     public function testSetAltAttributeValue(
         string|null $alt,
         array $attributes,
-        string $expected,
+        string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -103,8 +80,13 @@ final class HasAltTest extends TestCase
         $instance = $instance->attributes($attributes)->alt($alt);
 
         self::assertSame(
-            $expected,
+            $expectedValue,
             $instance->getAttributes()[ElementAttribute::ALT->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }

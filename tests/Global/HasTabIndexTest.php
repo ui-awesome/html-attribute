@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Attribute\Global\HasTabindex;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\TabIndexProvider;
+use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
@@ -36,31 +37,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 #[Group('attributes')]
 final class HasTabIndexTest extends TestCase
 {
-    /**
-     * @phpstan-param int|string|null $tabIndex
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(TabIndexProvider::class, 'renderAttribute')]
-    public function testRenderAttributesWithTabIndexAttribute(
-        int|string|null $tabIndex,
-        array $attributes,
-        string $expected,
-        string $message,
-    ): void {
-        $instance = new class {
-            use HasAttributes;
-            use HasTabindex;
-        };
-
-        $instance = $instance->attributes($attributes)->tabIndex($tabIndex);
-
-        self::assertSame(
-            $expected,
-            Attributes::render($instance->getAttributes()),
-            $message,
-        );
-    }
-
     public function testReturnEmptyWhenTabIndexAttributeNotSet(): void
     {
         $instance = new class {
@@ -91,13 +67,13 @@ final class HasTabIndexTest extends TestCase
     /**
      * @phpstan-param int|string|null $tabIndex
      * @phpstan-param mixed[] $attributes
-     * @phpstan-param mixed[] $expected
      */
     #[DataProviderExternal(TabIndexProvider::class, 'values')]
     public function testSetTabIndexAttributeValue(
         int|string|null $tabIndex,
         array $attributes,
-        array $expected,
+        int|string $expectedValue,
+        string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
@@ -108,8 +84,13 @@ final class HasTabIndexTest extends TestCase
         $instance = $instance->attributes($attributes)->tabIndex($tabIndex);
 
         self::assertSame(
-            $expected,
-            $instance->getAttributes(),
+            $expectedValue,
+            $instance->getAttributes()[GlobalAttribute::TABINDEX->value] ?? '',
+            $message,
+        );
+        self::assertSame(
+            $expectedRenderAttribute,
+            Attributes::render($instance->getAttributes()),
             $message,
         );
     }
@@ -124,7 +105,7 @@ final class HasTabIndexTest extends TestCase
 
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
-            Message::ATTRIBUTE_INVALID_VALUE->getMessage($tabIndex, 'tabindex', 'value >= -1'),
+            Message::ATTRIBUTE_INVALID_VALUE->getMessage($tabIndex, GlobalAttribute::TABINDEX->value, 'value >= -1'),
         );
 
         $instance->tabIndex($tabIndex);

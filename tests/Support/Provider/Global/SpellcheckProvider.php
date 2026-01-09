@@ -30,73 +30,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class SpellcheckProvider
 {
     /**
-     * Provides test cases for rendered HTML `spellcheck` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `spellcheck` attribute,
-     * including bool, string, and replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `spellcheck` attribute scenarios.
-     *
-     * @phpstan-return array<string, array{bool|string|null, mixed[], string, string}>
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'boolean false' => [
-                false,
-                [],
-                ' spellcheck="false"',
-                'Should return the attribute value after setting it.',
-            ],
-            'boolean true' => [
-                true,
-                [],
-                ' spellcheck="true"',
-                'Should return the attribute value after setting it.',
-            ],
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'true',
-                ['spellcheck' => 'false'],
-                ' spellcheck="true"',
-                "Should return new 'spellcheck' after replacing the existing 'spellcheck' attribute.",
-            ],
-            'string boolean false' => [
-                'false',
-                [],
-                ' spellcheck="false"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string boolean true' => [
-                'true',
-                [],
-                ' spellcheck="true"',
-                'Should return the attribute value after setting it.',
-            ],
-            'unset with null' => [
-                null,
-                ['spellcheck' => 'true'],
-                '',
-                "Should unset the 'spellcheck' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `spellcheck` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `spellcheck` attribute,
@@ -107,7 +40,7 @@ final class SpellcheckProvider
      *
      * @return array Test data for `spellcheck` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool|string|null, mixed[], string, string}>
+     * @phpstan-return array<string, array{bool|string|null, mixed[], string, string, string}>
      */
     public static function values(): array
     {
@@ -116,17 +49,20 @@ final class SpellcheckProvider
                 false,
                 [],
                 'false',
+                ' spellcheck="false"',
                 'Should return the attribute value after setting it.',
             ],
             'boolean true' => [
                 true,
                 [],
                 'true',
+                ' spellcheck="true"',
                 'Should return the attribute value after setting it.',
             ],
             'empty string' => [
                 '',
                 [],
+                '',
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -134,29 +70,34 @@ final class SpellcheckProvider
                 null,
                 [],
                 '',
+                '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
                 'true',
                 ['spellcheck' => 'false'],
                 'true',
+                ' spellcheck="true"',
                 "Should return new 'spellcheck' after replacing the existing 'spellcheck' attribute.",
             ],
             'string boolean false' => [
                 'false',
                 [],
                 'false',
+                ' spellcheck="false"',
                 'Should return the attribute value after setting it.',
             ],
             'string boolean true' => [
                 'true',
                 [],
                 'true',
+                ' spellcheck="true"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
                 ['spellcheck' => 'true'],
+                '',
                 '',
                 "Should unset the 'spellcheck' attribute when 'null' is provided after a value.",
             ],

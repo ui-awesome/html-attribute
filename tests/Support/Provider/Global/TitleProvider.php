@@ -33,81 +33,6 @@ use UnitEnum;
 final class TitleProvider
 {
     /**
-     * Provides test cases for rendered HTML `title` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `title` attribute,
-     * including empty string, UnitEnum, `null` and standard string.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `title` attribute scenarios.
-     *
-     * @phpstan-return array<
-     *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string},
-     * >
-     */
-    public static function renderAttribute(): array
-    {
-        return [
-            'empty string' => [
-                '',
-                [],
-                '',
-                'Should return an empty string when setting an empty string.',
-            ],
-            'enum' => [
-                Status::ACTIVE,
-                [],
-                ' title="active"',
-                'Should return the attribute value after setting it.',
-            ],
-            'enum replace existing' => [
-                Status::INACTIVE,
-                ['title' => 'active'],
-                ' title="inactive"',
-                "Should return new 'title' after replacing the existing 'title' attribute with enum value.",
-            ],
-            'null' => [
-                null,
-                [],
-                '',
-                "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'replace existing' => [
-                'inactive',
-                ['title' => 'active'],
-                ' title="inactive"',
-                "Should return new 'title' after replacing the existing 'title' attribute.",
-            ],
-            'string' => [
-                'active',
-                [],
-                ' title="active"',
-                'Should return the attribute value after setting it.',
-            ],
-            'stringable' => [
-                new class implements Stringable {
-                    public function __toString(): string
-                    {
-                        return 'active';
-                    }
-                },
-                [],
-                ' title="active"',
-                'Should return the attribute value after setting it with a Stringable instance.',
-            ],
-            'unset with null' => [
-                null,
-                ['title' => 'active'],
-                '',
-                "Should unset the 'title' attribute when 'null' is provided after a value.",
-            ],
-        ];
-    }
-
-    /**
      * Provides test cases for HTML `title` attribute scenarios.
      *
      * Supplies test data for validating assignment, override, and removal of the global HTML `title` attribute,
@@ -120,7 +45,7 @@ final class TitleProvider
      *
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string}
      * >
      */
     public static function values(): array
@@ -137,17 +62,20 @@ final class TitleProvider
                 '',
                 [],
                 '',
+                '',
                 'Should return an empty string when setting an empty string.',
             ],
             'enum' => [
                 Status::ACTIVE,
                 [],
                 Status::ACTIVE,
+                ' title="active"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
                 [],
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -155,23 +83,27 @@ final class TitleProvider
                 'inactive',
                 ['title' => 'active'],
                 'inactive',
+                ' title="inactive"',
                 "Should return new 'title' after replacing the existing 'title' attribute.",
             ],
             'string' => [
                 'active',
                 [],
                 'active',
+                ' title="active"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
+                ' title="active"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
                 ['title' => 'active'],
+                '',
                 '',
                 "Should unset the 'title' attribute when 'null' is provided after a value.",
             ],
