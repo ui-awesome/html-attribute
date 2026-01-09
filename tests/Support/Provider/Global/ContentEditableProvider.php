@@ -45,7 +45,7 @@ final class ContentEditableProvider
      *
      * @return array Test data for `contenteditable` attribute scenarios.
      *
-     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string}>
+     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
