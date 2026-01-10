@@ -52,7 +52,7 @@ enum ElementAttribute: string
     /**
      * `referrerpolicy` — Referrer information to send when fetching the resource.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy
+     * @link https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-referrerpolicy
      */
     case REFERRERPOLICY = 'referrerpolicy';
 

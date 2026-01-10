@@ -51,7 +51,7 @@ trait HasReferrerpolicy
      *
      * @return static New instance with the updated `referrerpolicy` attribute.
      *
-     * @link https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-header
+     * @link https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-referrerpolicy
      *
      * Usage example:
      * ```php
