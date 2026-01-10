@@ -7,6 +7,7 @@
 - Enh #16: Use package `ui-awesome/html-mixin` for mixin traits and update related imports accordingly (@terabytesoftw)
 - Enh #17: Add development guide and sync metadata instructions and update testing documentation (@terabytesoftw)
 - Enh #18: Move attribute traits from `ui-awesome/html-core` package and update related imports accordingly (@terabytesoftw)
+- Bug #19: Update alert content in SVGs to reflect accurate descriptions for MDN standards compliance and specific & lightweight features (@terabytesoftw)
 
 ## 0.4.0 December 27, 2025
 
