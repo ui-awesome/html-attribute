@@ -14,6 +14,13 @@ enum ElementAttribute: string
     case ALT = 'alt';
 
     /**
+     * `decoding` — Provides a hint to the browser for image decoding behavior.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
+     */
+    case DECODING = 'decoding';
+
+    /**
      * `height` — Specifies the height of certain elements.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#height
