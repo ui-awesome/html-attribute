@@ -9,6 +9,7 @@
 - Enh #18: Move attribute traits from `ui-awesome/html-core` package and update related imports accordingly (@terabytesoftw)
 - Bug #19: Update alert content in SVGs to reflect accurate descriptions for MDN standards compliance and specific & lightweight features (@terabytesoftw)
 - Enh #20: Add `HasDecoding` trait and `decoding()` method to manage `decoding` attribute for HTML/SVG elements (@terabytesoftw)
+- Ebh #21: Add `HasFetchpriority` trait and `fetchpriority()` method to manage `fetchpriority` attribute for HTML/SVG elements (@terabytesoftw)
 
 ## 0.4.0 December 27, 2025
 
