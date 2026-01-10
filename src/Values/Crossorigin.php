@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents standardized crossorigin values for HTML and SVG elements.
+ * Represents standardized values for the HTML `crossorigin` attribute.
  *
  * Provides a type-safe set of CORS (Cross-Origin Resource Sharing) policy tokens and concise documentation aligned with
  * the MDN reference and the CORS specification.

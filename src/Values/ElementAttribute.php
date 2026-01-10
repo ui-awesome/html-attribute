@@ -4,6 +4,19 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Values;
 
+/**
+ * Represents standardized HTML element attribute names.
+ *
+ * Provides a type-safe, standards-compliant set of element attribute identifiers for use in element rendering, tag
+ * helpers and view helpers. The enum values match the attribute names as used in HTML source.
+ *
+ * Key features.
+ * - Designed for use in tags, components, and helpers requiring element attribute assignment.
+ * - Integration-ready for tag rendering and element generation APIs.
+ * - Values follow the MDN HTML element attribute reference.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+ */
 enum ElementAttribute: string
 {
     /**
