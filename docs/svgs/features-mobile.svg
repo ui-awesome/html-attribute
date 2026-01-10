@@ -47,11 +47,11 @@
             <div class="container">
                 <div class="alert-box">
                     <p class="alert-title"><strong>MDN Standards Compliant</strong></p>
-                    <p class="alert-content">Organized by Content Categories • Media &amp; Link • Strict Semantics</p>
+                    <p class="alert-content">Organized by Element • Global • Values</p>
                 </div>
                 <div class="alert-box">
                     <p class="alert-title"><strong>Specific &amp; Lightweight</strong></p>
-                    <p class="alert-content">Non-Global Attributes Only • Clean Architecture • Focused Traits</p>
+                    <p class="alert-content">Attributes • Clean Architecture • Focused Traits</p>
                 </div>
             </div>
         </div>
