@@ -85,7 +85,7 @@ final class HasDraggableTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::DRAGGABLE, null),
+            $instance->getAttribute(GlobalAttribute::DRAGGABLE, ''),
             $message,
         );
         self::assertSame(

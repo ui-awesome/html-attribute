@@ -81,7 +81,7 @@ final class HasHrefTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(ElementAttribute::HREF->value, null),
+            $instance->getAttribute(ElementAttribute::HREF, ''),
             $message,
         );
         self::assertSame(

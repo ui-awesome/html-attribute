@@ -81,7 +81,7 @@ final class HasAltTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(ElementAttribute::ALT->value, null),
+            $instance->getAttribute(ElementAttribute::ALT, ''),
             $message,
         );
         self::assertSame(

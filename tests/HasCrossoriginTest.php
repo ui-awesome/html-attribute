@@ -85,7 +85,7 @@ final class HasCrossoriginTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::CROSSORIGIN->value, null),
+            $instance->getAttribute(Attribute::CROSSORIGIN, ''),
             $message,
         );
         self::assertSame(

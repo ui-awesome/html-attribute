@@ -82,7 +82,7 @@ final class CanBeAutofocusTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::AUTOFOCUS, null),
+            $instance->getAttribute(GlobalAttribute::AUTOFOCUS, ''),
             $message,
         );
         self::assertSame(

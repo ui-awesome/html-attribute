@@ -81,7 +81,7 @@ final class HasHeightTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(ElementAttribute::HEIGHT->value, null),
+            $instance->getAttribute(ElementAttribute::HEIGHT, ''),
             $message,
         );
         self::assertSame(

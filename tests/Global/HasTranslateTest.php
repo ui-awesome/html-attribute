@@ -85,7 +85,7 @@ final class HasTranslateTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::TRANSLATE, null),
+            $instance->getAttribute(GlobalAttribute::TRANSLATE, ''),
             $message,
         );
         self::assertSame(

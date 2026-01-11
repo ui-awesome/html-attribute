@@ -84,7 +84,7 @@ final class HasReferrerpolicyTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(ElementAttribute::REFERRERPOLICY->value, null),
+            $instance->getAttribute(ElementAttribute::REFERRERPOLICY, ''),
             $message,
         );
         self::assertSame(

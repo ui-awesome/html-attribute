@@ -85,7 +85,7 @@ final class HasStyleTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::STYLE, null),
+            $instance->getAttribute(GlobalAttribute::STYLE, ''),
             $message,
         );
         self::assertSame(

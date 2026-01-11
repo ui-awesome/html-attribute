@@ -84,7 +84,7 @@ final class HasRelTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::REL->value, null),
+            $instance->getAttribute(Attribute::REL, ''),
             $message,
         );
         self::assertSame(

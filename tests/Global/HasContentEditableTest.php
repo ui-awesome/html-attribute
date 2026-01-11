@@ -85,7 +85,7 @@ final class HasContentEditableTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::CONTENTEDITABLE, null),
+            $instance->getAttribute(GlobalAttribute::CONTENTEDITABLE, ''),
             $message,
         );
         self::assertSame(
