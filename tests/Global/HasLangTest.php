@@ -84,7 +84,7 @@ final class HasLangTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[GlobalAttribute::LANG->value] ?? '',
+            $instance->getAttribute(GlobalAttribute::LANG, ''),
             $message,
         );
         self::assertSame(

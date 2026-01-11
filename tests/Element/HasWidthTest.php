@@ -81,7 +81,7 @@ final class HasWidthTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[ElementAttribute::WIDTH->value] ?? '',
+            $instance->getAttribute(ElementAttribute::WIDTH, ''),
             $message,
         );
         self::assertSame(

@@ -85,7 +85,7 @@ final class HasFetchpriorityTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[Attribute::FETCHPRIORITY->value] ?? '',
+            $instance->getAttribute(Attribute::FETCHPRIORITY, ''),
             $message,
         );
         self::assertSame(

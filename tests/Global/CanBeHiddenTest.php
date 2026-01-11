@@ -81,7 +81,7 @@ final class CanBeHiddenTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[GlobalAttribute::HIDDEN->value] ?? '',
+            $instance->getAttribute(GlobalAttribute::HIDDEN, ''),
             $message,
         );
         self::assertSame(

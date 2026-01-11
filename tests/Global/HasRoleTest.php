@@ -84,7 +84,7 @@ final class HasRoleTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[GlobalAttribute::ROLE->value] ?? '',
+            $instance->getAttribute(GlobalAttribute::ROLE, ''),
             $message,
         );
         self::assertSame(

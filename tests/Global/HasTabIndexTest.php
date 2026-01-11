@@ -85,7 +85,7 @@ final class HasTabIndexTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[GlobalAttribute::TABINDEX->value] ?? '',
+            $instance->getAttribute(GlobalAttribute::TABINDEX, ''),
             $message,
         );
         self::assertSame(

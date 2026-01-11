@@ -84,7 +84,7 @@ final class HasDirTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[GlobalAttribute::DIR->value] ?? '',
+            $instance->getAttribute(GlobalAttribute::DIR, ''),
             $message,
         );
         self::assertSame(
