@@ -85,7 +85,7 @@ final class HasDecodingTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[ElementAttribute::DECODING->value] ?? '',
+            $instance->getAttribute(ElementAttribute::DECODING->value, null),
             $message,
         );
         self::assertSame(

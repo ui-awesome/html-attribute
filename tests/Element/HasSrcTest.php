@@ -81,7 +81,7 @@ final class HasSrcTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttributes()[ElementAttribute::SRC->value] ?? '',
+            $instance->getAttribute(ElementAttribute::SRC->value, null),
             $message,
         );
         self::assertSame(
