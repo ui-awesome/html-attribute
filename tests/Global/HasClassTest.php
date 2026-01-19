@@ -15,18 +15,14 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasClass} trait functionality and behavior.
+ * Unit tests for the {@see HasClass} trait managing the `class` global HTML attribute.
  *
- * Validates the management of the global HTML `class` attribute according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of the `class` attribute in tag rendering, supporting string,
- * UnitEnum, and `null` for dynamic class assignment.
+ * Verifies rendered output, immutability, and class composition behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `class` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `class` attribute.
- * - Proper assignment and overriding of `class` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `class` attribute is not provided.
+ * - Sets the `class` global HTML attribute and renders the expected output.
  *
  * {@see ClassProvider} for test case data providers.
  *

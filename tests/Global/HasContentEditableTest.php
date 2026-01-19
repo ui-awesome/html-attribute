@@ -16,19 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasContentEditable} trait functionality and behavior.
+ * Unit tests for the {@see HasContentEditable} trait managing the `contenteditable` global HTML attribute.
  *
- * Validates the management of the global HTML `contenteditable` attribute according to the HTML Living Standard
- * specification.
- *
- * Ensures correct handling, immutability, and validation of the `contenteditable` attribute in tag rendering,
- * supporting bool, string, UnitEnum, and `null` for dynamic content editable state assignment.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `contenteditable` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `contenteditable` attribute.
- * - Proper assignment and overriding of `contenteditable` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `contenteditable` attribute is not provided.
+ * - Sets the `contenteditable` global HTML attribute and renders the expected output.
+ * - Throws an exception when the `contenteditable` attribute value is invalid.
  *
  * {@see ContentEditableProvider} for test case data providers.
  *

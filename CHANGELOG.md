@@ -13,6 +13,7 @@
 - Bug #22: Update documentation for `Crossorigin` and `ElementAttribute` enums to clarify attribute representation and compliance with MDN standards (@terabytesoftw)
 - Bug #23: Update attribute retrieval in tests to use `getAttribute()` method for consistency (@terabytesoftw)
 - Bug #24: Update documentation traits and enums for clarity and consistency (@terabytesoftw)
+- Bug #25: Update documentation tests classes for clarity and consistency (@terabytesoftw)
 
 ## 0.4.0 December 27, 2025
 

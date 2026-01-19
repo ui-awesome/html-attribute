@@ -16,19 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasFetchpriority} trait functionality and behavior.
+ * Unit tests for the {@see HasFetchpriority} trait managing the `fetchpriority` HTML attribute.
  *
- * Validates the management of the HTML `fetchpriority` attribute according to the HTML Living Standard specification.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
- * Ensures correct handling, immutability, and validation of the `fetchpriority` attribute in tag rendering, supporting
- * string and UnitEnum for dynamic assignment.
- *
- * Test coverage:
- * - Accurate rendering of attributes with the `fetchpriority` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `fetchpriority` attribute.
- * - Proper assignment, overriding, and validation of `fetchpriority` value.
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `fetchpriority` attribute is not provided.
+ * - Sets the `fetchpriority` HTML attribute and renders the expected output.
+ * - Throws an exception when the `fetchpriority` attribute value is invalid.
  *
  * {@see FetchpriorityProvider} for test case data providers.
  *

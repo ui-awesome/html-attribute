@@ -9,23 +9,9 @@ use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\Status;
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasTitleTest} class.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasTitleTest} test cases.
  *
- * Supplies comprehensive test data for validating the handling of the global HTML `title` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to the HTML
- * specification.
- *
- * The test data covers real-world scenarios for setting, overriding, and removing the `title` attribute, supporting
- * explicit string, UnitEnum for enum-based, and `null` for attribute removal, to maintain consistent output across
- * different rendering configurations.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, assignment, and override of the `title` attribute in HTML element rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of empty string, UnitEnum and `null` for the `title` attribute.
+ * Provides representative input/output pairs for the `title` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -33,16 +19,6 @@ use UnitEnum;
 final class TitleProvider
 {
     /**
-     * Provides test cases for HTML `title` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `title` attribute,
-     * including empty string, UnitEnum, `null` and standard string.
-     *
-     * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
-     * clear identification.
-     *
-     * @return array Test data for `title` attribute scenarios.
-     *
      * @phpstan-return array<
      *   string,
      *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string}

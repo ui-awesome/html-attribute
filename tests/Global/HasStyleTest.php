@@ -15,18 +15,14 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasStyle} trait functionality and behavior.
+ * Unit tests for the {@see HasStyle} trait managing the `style` global HTML attribute.
  *
- * Validates the management of the global HTML `style` attribute according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of the `style` attribute in tag rendering, supporting array,
- * string, Stringable, UnitEnum, and null for dynamic style assignment.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `style` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `style` attribute.
- * - Proper assignment and overriding of `style` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `style` attribute is not provided.
+ * - Sets the `style` global HTML attribute and renders the expected output.
  *
  * {@see StyleProvider} for test case data providers.
  *

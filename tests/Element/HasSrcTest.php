@@ -13,18 +13,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see HasSrc} trait functionality and behavior.
+ * Unit tests for the {@see HasSrc} trait managing the `src` HTML attribute.
  *
- * Validates the management of the HTML `src` attribute according to the HTML Living Standard specification.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
- * Ensures correct handling, immutability, and validation of the `src` attribute in tag rendering, supporting string and
- * `null` for dynamic assignment.
- *
- * Test coverage:
- * - Accurate rendering of attributes with the `src` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `src` attribute.
- * - Proper assignment, overriding, and validation of `src` value.
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `src` attribute is not provided.
+ * - Sets the `src` HTML attribute and renders the expected output.
  *
  * {@see SrcProvider} for test case data providers.
  *

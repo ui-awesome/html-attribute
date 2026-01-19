@@ -9,24 +9,9 @@ use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\AlertType;
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasClassTest} class.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasClassTest} test cases.
  *
- * Supplies comprehensive test data for validating the handling of the global HTML `class` attribute in tag rendering,
- * ensuring standards-compliant assignment, appending, override behavior, and value propagation according to the HTML
- * specification.
- *
- * The test data covers real-world scenarios for setting, appending, overriding, and removing the `class` attribute,
- * supporting explicit string, Stringable, UnitEnum for enum-based, and `null` for attribute removal, to maintain
- * consistent output across different rendering configurations.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, assignment, appending, override, and removal of the `class` attribute in HTML element
- *   rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of string (including empty strings), UnitEnum and `null` for the `class` attribute.
+ * Provides representative input/output pairs for the `class` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -34,15 +19,6 @@ use UnitEnum;
 final class ClassProvider
 {
     /**
-     * Provides test cases for HTML `class` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, appending, and override of the global HTML `class` attribute,
-     * including empty string, UnitEnum, `null`, standard string and Stringable.
-     *
-     * Each test case includes the input value, the expected output, and an assertion message for clear identification.
-     *
-     * @return array Test data for `class` attribute scenarios.
-     *
      * @phpstan-return array<
      *   string,
      *   array{array<array{value: string|Stringable|UnitEnum|null, override?: bool}>, string, string, string}

@@ -10,23 +10,9 @@ use UIAwesome\Html\Attribute\Values\Event;
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasEventsTest} class.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasEventsTest} test cases.
  *
- * Supplies comprehensive test data for validating the handling of HTML `on*` event handler attributes in tag rendering,
- * ensuring standards-compliant attribute generation, key normalization, override behavior, and value propagation.
- *
- * The test data covers real-world scenarios for setting, overriding, and removing `on*` event attributes, supporting
- * string, Stringable, UnitEnum, and deferred evaluation via \Closure, to maintain consistent output across different
- * rendering configurations.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, assignment, override, and removal of `on*` event attributes in HTML element rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of string (including empty strings), UnitEnum, \Closure, and `null` handling for `on*` event attributes,
- *   including enforcement of `on` prefix and unset scenarios.
+ * Provides representative input/output pairs for `on*` event handler attributes.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -34,15 +20,6 @@ use UnitEnum;
 final class EventProvider
 {
     /**
-     * Provides test cases for invalid HTML `on-*` attribute keys.
-     *
-     * Supplies test data for validating exception handling when setting HTML `on-*` attributes with invalid keys,
-     * including empty string, UnitEnum and without `on` prefix in keys.
-     *
-     * Each test case includes the invalid key input.
-     *
-     * @return array Test data for invalid `on-*` attribute keys.
-     *
      * @phpstan-return array<string, array{mixed[]}>
      */
     public static function invalidKey(): array
@@ -64,15 +41,6 @@ final class EventProvider
     }
 
     /**
-     * Provides test cases for invalid single HTML `on-*` attribute keys.
-     *
-     * Supplies test data for validating exception handling when setting a single HTML `on-*` attribute with an invalid
-     * key, including empty string, UnitEnum and without `on` prefix in keys.
-     *
-     * Each test case includes the attribute key and the input value.
-     *
-     * @return array Test data for invalid single `on-*` attribute keys.
-     *
      * @phpstan-return array<string, array{scalar|UnitEnum|null, string}>
      */
     public static function invalidSingleKey(): array
@@ -90,16 +58,6 @@ final class EventProvider
     }
 
     /**
-     * Provides test cases for rendered HTML `on*` event attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of HTML `on*` attributes, including scalar,
-     * array rendered as JSON, Stringable, UnitEnum, \Closure and without `on*` prefix in keys.
-     *
-     * Each test case includes the input value, the initial attributes, the expected rendered output, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for rendered `on*` event attribute scenarios.
-     *
      * @phpstan-return array<string, array{mixed[], mixed[], string, string}>
      */
     public static function renderAttribute(): array
@@ -215,17 +173,6 @@ final class EventProvider
     }
 
     /**
-     * Provides test cases for single HTML `on*` event attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of a single HTML `on*` event attribute,
-     * including string keys, enum-based keys via UnitEnum, and values provided as string, Stringable, \Closure, `null`,
-     * and without `on` prefix in keys.
-     *
-     * Each test case includes the attribute key, the input value, the expected attributes array, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for single `on*` event attribute scenarios.
-     *
      * @phpstan-return array<
      *   string,
      *   array{string|UnitEnum, string|Stringable|UnitEnum|\Closure(): mixed|null, mixed[], string},
@@ -341,17 +288,6 @@ final class EventProvider
     }
 
     /**
-     * Provides test cases for HTML `on*` event attribute map scenarios.
-     *
-     * Supplies test data for validating bulk assignment, normalization, and removal of HTML `on*` event handler
-     * attributes, ensuring consistent key prefixing (`on`), event name handling, and value propagation for string,
-     * Stringable, UnitEnum, Closure, `null` and without `on` prefix in keys.
-     *
-     * Each test case includes the input value, the expected normalized attributes array, and an assertion message for
-     * clear identification.
-     *
-     * @return array Test data for `on*` event attribute map scenarios.
-     *
      * @phpstan-return array<string, array{mixed[], mixed[], string}>
      */
     public static function values(): array

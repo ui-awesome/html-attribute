@@ -10,25 +10,9 @@ use UIAwesome\Html\Attribute\Values\Language;
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasLangTest} class.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasLangTest} test cases.
  *
- * Supplies comprehensive test data for validating the handling of the global HTML `lang` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to the HTML
- * specification.
- *
- * The test data covers real-world scenarios for setting, overriding, and removing the `lang` attribute, supporting
- * explicit string, UnitEnum for enum-based, and `null` for attribute removal, to maintain consistent output across
- * different rendering configurations.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, assignment, and override of the `lang` attribute in HTML element rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of string (including empty strings), UnitEnum and `null` for the `lang` attribute.
- *
- * {@see Language} for enum test case usage.
+ * Provides representative input/output pairs for the `lang` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -36,16 +20,6 @@ use UnitEnum;
 final class LangProvider
 {
     /**
-     * Provides test cases for HTML `lang` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `lang` attribute,
-     * including empty string, UnitEnum, `null`, and standard string.
-     *
-     * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
-     * clear identification.
-     *
-     * @return array Test data for `lang` attribute scenarios.
-     *
      * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array

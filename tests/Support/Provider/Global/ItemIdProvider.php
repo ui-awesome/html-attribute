@@ -5,23 +5,9 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasMicroDataTest} class.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasMicroDataTest} test cases.
  *
- * Supplies comprehensive test data for validating the handling of the global HTML `itemid` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to the HTML
- * specification.
- *
- * The test data covers real-world scenarios for setting, overriding, and removing the `itemid` attribute, supporting
- * both explicit string and `null` for attribute removal, to maintain consistent output across different rendering
- * configurations.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, assignment, override, and removal of the `itemid` attribute in HTML element rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of string (including empty strings) and `null` for the `itemid` attribute.
+ * Provides representative input/output pairs for the `itemid` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -29,16 +15,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 final class ItemIdProvider
 {
     /**
-     * Provides test cases for HTML `itemid` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the global HTML `itemid` attribute,
-     * including empty string and `null` for attribute removal.
-     *
-     * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
-     * clear identification.
-     *
-     * @return array Test data for `itemid` attribute scenarios.
-     *
      * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
      */
     public static function values(): array

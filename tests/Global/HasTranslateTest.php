@@ -16,19 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasTranslate} trait functionality and behavior.
+ * Unit tests for the {@see HasTranslate} trait managing the `translate` global HTML attribute.
  *
- * Validates the management of the global HTML `translate` attribute according to the HTML Living Standard
- * specification.
- *
- * Ensures correct handling, immutability, and validation of the `translate` attribute in tag rendering, supporting
- * bool, string, UnitEnum, and `null` for dynamic translate state assignment.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `translate` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `translate` attribute.
- * - Proper assignment and overriding of `translate` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `translate` attribute is not provided.
+ * - Sets the `translate` global HTML attribute and renders the expected output.
+ * - Throws an exception when the `translate` attribute value is invalid.
  *
  * {@see TranslateProvider} for test case data providers.
  *

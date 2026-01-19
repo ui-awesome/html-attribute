@@ -16,18 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasDir} trait functionality and behavior.
+ * Unit tests for the {@see HasDir} trait managing the `dir` global HTML attribute.
  *
- * Validates the management of the global HTML `dir` attribute according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of the `dir` attribute in tag rendering, supporting string,
- * UnitEnum, and `null` for dynamic direction assignment.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `dir` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `dir` attribute.
- * - Proper assignment and overriding of `dir` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `dir` attribute is not provided.
+ * - Sets the `dir` global HTML attribute and renders the expected output.
+ * - Throws an exception when the `dir` attribute value is invalid.
  *
  * {@see DirProvider} for test case data providers.
  *

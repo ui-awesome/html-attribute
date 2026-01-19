@@ -16,18 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasRole} trait functionality and behavior.
+ * Unit tests for the {@see HasRole} trait managing the `role` global HTML attribute.
  *
- * Validates the management of the global HTML `role` attribute according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of the `role` attribute in tag rendering, supporting string,
- * UnitEnum, and `null` for dynamic role assignment.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `role` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `role` attribute.
- * - Proper assignment and overriding of `role` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `role` attribute is not provided.
+ * - Sets the `role` global HTML attribute and renders the expected output.
+ * - Throws an exception when the `role` attribute value is invalid.
  *
  * {@see RoleProvider} for test case data providers.
  *

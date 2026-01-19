@@ -13,19 +13,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see CanBeAutofocus} trait functionality and behavior.
+ * Unit tests for the {@see CanBeAutofocus} trait managing the `autofocus` global HTML attribute.
  *
- * Validates the management of the global HTML `autofocus` attribute according to the HTML Living Standard
- * specification.
- *
- * Ensures correct handling, immutability, and validation of the `autofocus` attribute in tag rendering, supporting bool
- * for dynamic autofocus state assignment.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `autofocus` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `autofocus` attribute.
- * - Proper assignment and overriding of `autofocus` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `autofocus` attribute is not provided.
+ * - Sets the `autofocus` global HTML attribute and renders the expected output.
  *
  * {@see AutofocusProvider} for test case data providers.
  *

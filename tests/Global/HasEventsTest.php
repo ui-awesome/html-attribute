@@ -18,21 +18,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasEvents} trait functionality and behavior.
+ * Unit tests for the {@see HasEvents} trait managing global `on*` HTML event handler attributes.
  *
- * Validates the management of global HTML `on*` event handler attributes according to the HTML Living Standard
- * specification.
- *
- * Ensures correct handling, immutability, and validation of `on*` event attributes in tag rendering, supporting string,
- * Stringable, UnitEnum, and Closure for dynamic event handler assignment.
+ * Verifies rendered output, immutability, key normalization, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with `on*` event attributes.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Exception handling for invalid keys and values.
- * - Immutability of the trait's API when setting or overriding `on*` event attributes.
- * - Proper assignment and overriding of `on*` event handler values.
- * - Validation of `on` prefix enforcement for event attribute keys.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures invalid keys and values throw expected exceptions.
+ * - Normalizes keys and values when setting `on*` event attributes.
+ * - Renders expected output when `on*` event attributes are set.
  *
  * {@see EventProvider} for test case data providers.
  *

@@ -18,19 +18,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasAria} trait functionality and behavior.
+ * Unit tests for the {@see HasAria} trait managing global `aria-*` HTML attributes.
  *
- * Validates the management of global HTML `aria-*` attributes according to the WAI-ARIA specification.
- *
- * Ensures correct handling, immutability, and validation of `aria-*` attributes in tag rendering, supporting scalar,
- * Stringable, UnitEnum, and Closure for dynamic attribute assignment.
+ * Verifies rendered output, immutability, key normalization, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with `aria-*` attributes.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Exception handling for invalid keys and values.
- * - Immutability of the trait's API when setting or overriding `aria-*` attributes.
- * - Proper assignment and overriding of `aria-*` attribute values.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures invalid keys and values throw expected exceptions.
+ * - Normalizes keys and values when setting `aria-*` attributes.
+ * - Renders expected output when `aria-*` attributes are set.
  *
  * {@see AriaProvider} for test case data providers.
  *

@@ -10,23 +10,9 @@ use UIAwesome\Html\Attribute\Values\Aria;
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Attribute\Global\HasAriaTest} class.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasAriaTest} test cases.
  *
- * Supplies comprehensive test data for validating the handling of HTML `aria-*` attributes in tag rendering, ensuring
- * standards-compliant attribute generation, key normalization, override behavior, and value propagation.
- *
- * The test data covers real-world scenarios for setting, overriding, and removing `aria-*` attributes, supporting bool,
- * scalar, UnitEnum, and deferred evaluation via \Closure, to maintain consistent output across different rendering
- * configurations.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, assignment, override, and removal of `aria-*` attributes in HTML element rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of bool, string (including empty strings), int, float, array, UnitEnum, \Closure, and `null` handling
- *   for `aria-*` attributes, including hyphenated keys and unset scenarios.
+ * Provides representative input/output pairs for `aria-*` attributes.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -34,15 +20,6 @@ use UnitEnum;
 final class AriaProvider
 {
     /**
-     * Provides test cases for invalid HTML `aria-*` attribute keys.
-     *
-     * Supplies test data for validating exception handling when setting HTML `aria-*` attributes with invalid keys,
-     * including empty string and non-string types.
-     *
-     * Each test case includes the invalid key input.
-     *
-     * @return array Test data for invalid `aria-*` attribute keys.
-     *
      * @phpstan-return array<string, array{mixed[]}>
      */
     public static function invalidKey(): array
@@ -64,15 +41,6 @@ final class AriaProvider
     }
 
     /**
-     * Provides test cases for invalid single HTML `aria-*` attribute keys.
-     *
-     * Supplies test data for validating exception handling when setting a single HTML `aria-*` attribute with an
-     * invalid key, including empty string and UnitEnum.
-     *
-     * Each test case includes the invalid key and value input.
-     *
-     * @return array Test data for invalid single `aria-*` attribute keys.
-     *
      * @phpstan-return array<string, array{scalar|UnitEnum|null, string}>
      */
     public static function invalidSingleKey(): array
@@ -90,16 +58,6 @@ final class AriaProvider
     }
 
     /**
-     * Provides test cases for rendered HTML `aria-*` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of HTML `aria-*` attributes, including
-     * scalar, array rendered as JSON, Stringable, UnitEnum, \Closure and without `aria-` prefix in keys.
-     *
-     * Each test case includes the input value, the initial attributes, the override flag, the expected rendered output,
-     * and an assertion message for clear identification.
-     *
-     * @return array Test data for rendered `aria-*` attribute scenarios.
-     *
      * @phpstan-return array<string, array{mixed[], mixed[], string, string}>
      */
     public static function renderAttribute(): array
@@ -245,17 +203,6 @@ final class AriaProvider
     }
 
     /**
-     * Provides test cases for single HTML `aria-*` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of a single HTML `aria-*` attribute,
-     * including string keys, enum-based keys via UnitEnum, and values provided as scalars, Stringable, UnitEnum,
-     * \Closure, `null` and without `aria-` prefix in keys.
-     *
-     * Each test case includes the attribute key, the input value, the expected attributes array, and an assertion
-     * message for clear identification.
-     *
-     * @return array Test data for single `aria-*` attribute scenarios.
-     *
      * @phpstan-return array<
      *   string,
      *   array{string|UnitEnum, scalar|Stringable|UnitEnum|null|\Closure(): mixed, mixed[], string},
@@ -407,17 +354,6 @@ final class AriaProvider
     }
 
     /**
-     * Provides test cases for HTML `aria-*` attribute map scenarios.
-     *
-     * Supplies test data for validating bulk assignment, normalization, and removal of HTML `aria-*` attributes,
-     * ensuring consistent key prefixing (`aria-`), hyphenated key handling, and value propagation for scalars,
-     * Stringable, UnitEnum, \Closure, `null` and without `aria-` prefix in keys.
-     *
-     * Each test case includes the input value, the expected normalized attributes array, and an assertion message for
-     * clear identification.
-     *
-     * @return array Test data for `aria-*` attribute map scenarios.
-     *
      * @phpstan-return array<string, array{mixed[], mixed[], string}>
      */
     public static function values(): array

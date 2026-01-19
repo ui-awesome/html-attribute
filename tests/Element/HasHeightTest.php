@@ -13,18 +13,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see HasHeight} trait functionality and behavior.
+ * Unit tests for the {@see HasHeight} trait managing the `height` HTML attribute.
  *
- * Validates the management of the HTML `height` attribute according to the HTML Living Standard specification.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
- * Ensures correct handling, immutability, and validation of the `height` attribute in tag rendering, supporting string
- * and `null` for dynamic assignment.
- *
- * Test coverage:
- * - Accurate rendering of attributes with the `height` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `height` attribute.
- * - Proper assignment, overriding, and validation of `height` value.
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `height` attribute is not provided.
+ * - Sets the `height` HTML attribute and renders the expected output.
  *
  * {@see HeightProvider} for test case data providers.
  *

@@ -13,18 +13,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see HasId} trait functionality and behavior.
+ * Unit tests for the {@see HasId} trait managing the `id` global HTML attribute.
  *
- * Validates the management of the global HTML `id` attribute according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of the `id` attribute in tag rendering, supporting both string
- * and `null` for dynamic identifier assignment.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `id` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `id` attribute.
- * - Proper assignment and overriding of `id` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `id` attribute is not provided.
+ * - Sets the `id` global HTML attribute and renders the expected output.
  *
  * {@see IdProvider} for test case data providers.
  *
