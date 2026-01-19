@@ -12,21 +12,20 @@ use UnitEnum;
 /**
  * Trait for managing the global HTML `lang` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `lang` attribute on HTML elements, following the HTML
- * specification for global attributes.
+ * Provides an immutable API for setting the `lang` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of language identifiers,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of language identifiers and value validation.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `lang` global attributes.
+ * - Handles the HTML `lang` global attribute.
  * - Immutable method for setting or overriding the `lang` attribute.
  * - Supports string, UnitEnum, and `null` for flexible language assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -40,10 +39,9 @@ trait HasLang
      * the HTML specification for global attributes.
      *
      * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * MDN-compliant {@see Language::cases()} are accepted.
+     * {@see Language::cases()} are accepted.
      *
-     * This allows users to create custom enums with compliant values while preventing browser errors from invalid
-     * attribute values.
+     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
      *
      * @param string|UnitEnum|null $value Language to set for the element. Can be `null` to unset the attribute.
      *
@@ -56,13 +54,8 @@ trait HasLang
      *
      * Usage example:
      * ```php
-     * // sets the `lang` attribute to 'en-US'
      * $element->lang('en-US');
-     *
-     * // sets the `lang` attribute to 'en-US' if `Language::ENGLISH_US` is a `UnitEnum`
      * $element->lang(Language::ENGLISH_US);
-     *
-     * // unsets the `lang` attribute
      * $element->lang(null);
      * ```
      */

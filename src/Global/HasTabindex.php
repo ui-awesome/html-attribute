@@ -12,21 +12,20 @@ use UIAwesome\Html\Helper\Validator;
 /**
  * Trait for managing the global HTML `tabindex` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `tabindex` attribute on HTML elements, following the
- * HTML specification for global attributes.
+ * Provides an immutable API for setting the `tabindex` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of element tab order,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of element tab order and value validation.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `tabindex` global attribute.
+ * - Handles the HTML `tabindex` global attribute.
  * - Immutable method for setting or overriding the `tabindex` attribute.
  * - Supports int, string, and `null` for flexible tab order assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -49,7 +48,6 @@ trait HasTabindex
      *
      * Usage example:
      * ```php
-     * // sets the `tabindex` attribute to `3`
      * $element->tabIndex(3);
      * ```
      */

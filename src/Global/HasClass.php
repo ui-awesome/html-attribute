@@ -12,22 +12,21 @@ use UnitEnum;
 /**
  * Trait for managing the global HTML `class` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `class` attribute on HTML elements, following the HTML
- * specification for global attributes.
+ * Provides an immutable API for setting the `class` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of CSS classes, ensuring
- * correct attribute handling and value merging.
+ * Intended for use in tags and components that require manipulation of CSS classes.
  *
  * Key features.
  * - Designed for use in tags and components.
+ * - Handles the HTML `class` global attribute.
  * - Immutable method for setting or overriding the `class` attribute.
  * - Integration with CSS class management utilities for safe and predictable value updates.
- * - Standards-compliant handling of the HTML `class` global attributes.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class
  * @property array $attributes HTML attributes array used by the implementing class.
  * @phpstan-property mixed[] $attributes
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -39,8 +38,7 @@ trait HasClass
      *
      * Creates a new instance with the specified CSS class, optionally overriding any existing class.
      *
-     * This method ensures standards-compliant handling of the `class` global attributes, supporting both additive and
-     * override semantics as required by the HTML specification.
+     * Supports both additive and override semantics for the `class` attribute.
      *
      * @param string|Stringable|UnitEnum|null $value CSS class to set for the element. Can be `null` to unset the
      * attribute.
@@ -52,13 +50,8 @@ trait HasClass
      *
      * Usage example:
      * ```php
-     * // sets the `class` attribute to 'my-class'
      * $element->class('my-class');
-     *
-     * // sets the `class` attribute to 'primary' if `Theme::PRIMARY` is a `UnitEnum`
      * $element->class(Theme::PRIMARY);
-     *
-     * // sets the `class` attribute to Stringable
      * $element->class(
      *     new class implements Stringable {
      *         public function __toString(): string
@@ -67,11 +60,7 @@ trait HasClass
      *         }
      *     },
      * );
-     *
-     * // overrides the `class` attribute with 'another-class'
      * $element->class('another-class', true);
-     *
-     * // unsets the `class` attribute
      * $element->class(null);
      * ```
      */

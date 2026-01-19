@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents standardized language codes for the HTML `lang` global attribute.
+ * Represents language codes for the HTML `lang` global attribute.
  *
- * Provides a type-safe, standards-compliant set of language identifiers for use in element rendering, attributes,
- * and view helpers, ensuring technical consistency with the HTML specification and IETF BCP 47 standard.
+ * Defines a curated set of language identifiers as enum cases.
  *
  * Key features.
  * - Designed for use in tags, components, and helpers requiring language code assignment.
- * - Strict mapping of language codes for semantic markup generation and accessibility.
+ * - Enum values map to language codes as `string` tokens.
+ * - Includes common language and region variants.
  * - Integration-ready for tag rendering and element generation APIs.
- * - Values follow IETF BCP 47, primarily ISO 639-1 two-letter codes and region variants.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
  * @link https://tools.ietf.org/html/bcp47

@@ -9,21 +9,20 @@ use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 /**
  * Trait for managing the global HTML `accesskey` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `accesskey` attribute on HTML elements, following the
- * HTML specification for global attributes.
+ * Provides an immutable API for setting the `accesskey` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of element access keys,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of element access keys.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `accesskey` global attributes.
+ * - Handles the HTML `accesskey` global attribute.
  * - Immutable method for setting or overriding the `accesskey` attribute.
  * - Supports string and `null` for flexible access key assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -44,10 +43,7 @@ trait HasAccesskey
      *
      * Usage example:
      * ```php
-     * // sets the `accesskey` attribute to 'k'
      * $element->accesskey('k');
-     *
-     * // unsets the `accesskey` attribute
      * $element->accesskey(null);
      * ```
      */

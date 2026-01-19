@@ -9,22 +9,21 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
 /**
  * Trait for managing the HTML and SVG `href` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `href` attribute on HTML and SVG elements, following
- * the HTML and SVG specifications for hyperlink and resource reference assignment.
+ * Provides an immutable API for setting the `href` attribute on HTML and SVG elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the `href` attribute,
- * ensuring correct attribute handling and flexible link or resource control.
+ * Intended for use in tags and components that require manipulation of the `href` attribute.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML and SVG `href` attribute.
+ * - Handles the HTML and SVG `href` attribute.
  * - Immutable method for setting or overriding the `href` attribute.
  * - Supports string and `null` for flexible URL assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#href
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#href
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -50,16 +49,9 @@ trait HasHref
      *
      * Usage example:
      * ```php
-     * // sets the `href` attribute to an absolute URL
      * $element->href('https://example.com/page');
-     *
-     * // sets the `href` attribute to a relative path
      * $element->href('/about');
-     *
-     * // sets the `href` attribute to a fragment identifier
      * $element->href('#section');
-     *
-     * // unsets the `href` attribute
      * $element->href(null);
      * ```
      */

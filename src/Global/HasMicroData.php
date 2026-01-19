@@ -9,25 +9,25 @@ use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 /**
  * Trait for managing the global HTML microdata attributes in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the microdata attributes (`itemid`, `itemprop`, `itemref`,
- * `itemscope`, `itemtype`) on HTML elements, following the HTML specification for global attributes.
+ * Provides an immutable API for setting microdata attributes (`itemid`, `itemprop`, `itemref`, `itemscope`, `itemtype`)
+ * on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of microdata, ensuring
- * correct attribute handling, type safety and value validation.
+ * Intended for use in tags and components that require manipulation of microdata.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML microdata global attributes.
+ * - Handles the HTML microdata global attributes.
  * - Immutable methods for setting or overriding microdata attributes.
  * - Supports bool, string and `null` for flexible microdata assignment.
+ *
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemid
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemprop
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemref
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemscope
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemtype
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -48,10 +48,7 @@ trait HasMicroData
      *
      * Usage example:
      * ```php
-     * // sets the `itemid` attribute to 'http://example.com/item'
      * $element = $element->itemId('http://example.com/item');
-     *
-     * // unsets the `itemid` attribute
      * $element = $element->itemId(null);
      * ```
      */
@@ -74,10 +71,7 @@ trait HasMicroData
      *
      * Usage example:
      * ```php
-     * // sets the `itemprop` attribute to 'name'
      * $element = $element->itemProp('name');
-     *
-     * // unsets the `itemprop` attribute
      * $element = $element->itemProp(null);
      * ```
      */
@@ -100,10 +94,7 @@ trait HasMicroData
      *
      * Usage example:
      * ```php
-     * // sets the `itemref` attribute to 'additional-info'
      * $element = $element->itemRef('additional-info');
-     *
-     * // unsets the `itemref` attribute
      * $element = $element->itemRef(null);
      * ```
      */
@@ -126,10 +117,7 @@ trait HasMicroData
      *
      * Usage example:
      * ```php
-     * // sets the `itemscope` attribute
      * $element = $element->itemScope(true);
-     *
-     * // unsets the `itemscope` attribute
      * $element = $element->itemScope(null);
      * ```
      */
@@ -152,10 +140,7 @@ trait HasMicroData
      *
      * Usage example:
      * ```php
-     * // sets the `itemtype` attribute to 'http://schema.org/Person'
      * $element = $element->itemType('http://schema.org/Person');
-     *
-     * // unsets the `itemtype` attribute
      * $element = $element->itemType(null);
      * ```
      */

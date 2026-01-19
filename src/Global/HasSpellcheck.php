@@ -13,21 +13,20 @@ use function is_bool;
 /**
  * Trait for managing the global HTML `spellcheck` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `spellcheck` attribute on HTML elements, following the
- * HTML specification for global attributes.
+ * Provides an immutable API for setting the `spellcheck` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of spellchecking behavior,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of spellchecking behavior and value validation.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `spellcheck` global attribute.
+ * - Handles the HTML `spellcheck` global attribute.
  * - Immutable method for setting or overriding the `spellcheck` attribute.
  * - Supports bool, string, and `null` for flexible spellcheck assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -50,10 +49,7 @@ trait HasSpellcheck
      *
      * Usage example:
      * ```php
-     * // sets the `spellcheck` attribute to `false`
      * $element->spellcheck(false);
-     *
-     * // sets the `spellcheck` attribute to `true`
      * $element->spellcheck(true);
      * ```
      */

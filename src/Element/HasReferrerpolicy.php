@@ -12,17 +12,18 @@ use UnitEnum;
 /**
  * Trait for managing the HTML `referrerpolicy` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `referrerpolicy` attribute on HTML elements, following
- * the HTML and HTTP specification for referrer policy control.
+ * Provides an immutable API for setting the `referrerpolicy` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the referrer policy,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of the referrer policy and value validation.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `referrerpolicy` attribute.
+ * - Handles the HTML `referrerpolicy` attribute.
  * - Immutable method for setting or overriding the `referrerpolicy` attribute.
  * - Supports string, UnitEnum, and `null` for flexible policy assignment.
+ *
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#referrerpolicy
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/area#href
@@ -30,8 +31,6 @@ use UnitEnum;
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#referrerpolicy
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#referrerpolicy
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script#referrerpolicy
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -55,13 +54,8 @@ trait HasReferrerpolicy
      *
      * Usage example:
      * ```php
-     * // sets the `referrerpolicy` attribute to `origin`
      * $element->referrerpolicy('origin');
-     *
-     * // sets the `referrerpolicy` attribute using enum
      * $element->referrerpolicy(Referrerpolicy::NO_REFERRER);
-     *
-     * // unsets the `referrerpolicy` attribute
      * $element->referrerpolicy(null);
      * ```
      */

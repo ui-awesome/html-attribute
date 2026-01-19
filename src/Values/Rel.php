@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents standardized relationship types for the HTML `rel` attribute.
+ * Represents relationship types for the HTML `rel` attribute.
  *
- * Provides a type-safe, standards-compliant set of relationship tokens for use in link, anchor, area, and form
- * elements, ensuring technical consistency with the HTML specification and IANA link relation registry.
+ * Defines a curated set of relationship tokens as enum cases.
  *
  * Key features:
  * - Designed for use in tags, components, and helpers requiring relationship assignment via the `rel` attribute.
+ * - Enum values map to relationship tokens as `string` values.
+ * - Includes standard, experimental, deprecated, and non-standard tokens as documented by the case descriptions.
  * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of relationship types for semantic markup generation and interoperability.
- * - Values follow the HTML Living Standard and IANA link relation registry.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
  * @link https://www.iana.org/assignments/link-relations/link-relations.xhtml

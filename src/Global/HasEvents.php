@@ -17,23 +17,22 @@ use function gettype;
 /**
  * Trait for managing the global HTML event handler attributes (the `on*` attributes).
  *
- * Provides a standards-compliant, immutable API for setting event handler attributes on HTML elements, following the
- * HTML specification for global attributes.
+ * Provides an immutable API for setting event handler attributes on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of event handler
- * attributes, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of event handler attributes.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `on*` global event handler attributes.
+ * - Handles the HTML `on*` global event handler attributes.
  * - Immutable method for setting or overriding the event handler attributes.
  * - Supports scalar, Closure and UnitEnum for advanced dynamic event scenarios.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#event_handler_attributes
  * @phpstan-type Key string|UnitEnum
  * @phpstan-type Value scalar|Stringable|UnitEnum|null|Closure(): mixed
  * @method void setAttribute(Key $key, Value $value, string $prefix = '', bool $boolToString = false) Sets a single
  * attribute with prefix handling. Available via {@see \UIAwesome\Html\Mixin\HasAttributes} trait composition.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#event_handler_attributes
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -59,16 +58,9 @@ trait HasEvents
      *
      * Usage example:
      * ```php
-     * // sets `onclick` attribute using enum
      * $element->addEvent(Event::CLICK, "alert('hello')");
-     *
-     * // sets `onclick` using string key without `on` prefix
      * $element->addEvent('click', "alert('x')");
-     *
-     * // sets `onsubmit` attribute with a Closure
      * $element->addEvent('submit', static fn(): string => 'return validate()');
-     *
-     * // removes `onclick` attribute
      * $element->addEvent(Event::CLICK, null);
      * ```
      */
@@ -84,8 +76,8 @@ trait HasEvents
     /**
      * Sets one or more global `on*` event attributes at once.
      *
-     * Creates a new instance with the specified event attributes, supporting both string and Closure. Enforces
-     * standards-compliant key and value types, and throws an exception for invalid input.
+     * Creates a new instance with the specified event attributes, supporting both string and Closure, and throws an
+     * exception for invalid input.
      *
      * @param array $values Associative array where keys are event names or enum cases and values are handler strings,
      * Closure, Stringable or `null`.

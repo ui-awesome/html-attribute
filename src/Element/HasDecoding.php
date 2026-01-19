@@ -12,22 +12,21 @@ use UnitEnum;
 /**
  * Trait for managing the HTML/SVG `decoding` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `decoding` attribute on HTML and SVG image elements,
- * following the HTML specification for image decoding hints.
+ * Provides an immutable API for setting the `decoding` attribute on HTML and SVG image elements.
  *
- * Intended for use in image elements that require dynamic or programmatic manipulation of the decoding behavior,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in image elements that require manipulation of the decoding behavior and value validation.
  *
  * Key features.
  * - Designed for use in image elements (img, SVG image) requiring decoding hint assignment.
- * - Enforces standards-compliant handling of the HTML/SVG `decoding` attribute.
+ * - Handles the HTML/SVG `decoding` attribute.
  * - Immutable method for setting or overriding the `decoding` attribute.
  * - Supports string, UnitEnum, and `null` for flexible decoding hint assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#decoding
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#decoding
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -51,13 +50,8 @@ trait HasDecoding
      *
      * Usage example:
      * ```php
-     * // sets the `decoding` attribute to `async`
      * $element->decoding('async');
-     *
-     * // sets the `decoding` attribute using enum
      * $element->decoding(Decoding::ASYNC);
-     *
-     * // unsets the `decoding` attribute
      * $element->decoding(null);
      * ```
      */

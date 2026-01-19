@@ -12,21 +12,20 @@ use UnitEnum;
 /**
  * Trait for managing the global HTML `role` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `role` attribute on HTML elements, following the HTML
- * specification for global attributes.
+ * Provides an immutable API for setting the `role` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of element roles, ensuring
- * correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of element roles and value validation.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `role` global attribute.
+ * - Handles the HTML `role` global attribute.
  * - Immutable method for setting or overriding the `role` attribute.
  * - Supports string, UnitEnum, and `null` for flexible role assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -40,10 +39,9 @@ trait HasRole
      * HTML specification for global attributes.
      *
      * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * MDN-compliant {@see Role::cases()} are accepted.
+     * {@see Role::cases()} are accepted.
      *
-     * This allows users to create custom enums with compliant values while preventing browser errors from invalid
-     * attribute values.
+     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
      *
      * @param string|UnitEnum|null $value Role to set for the element. Can be `null` to unset the
      * attribute.
@@ -57,13 +55,8 @@ trait HasRole
      *
      * Usage example:
      * ```php
-     * // sets the `role` attribute to 'button'
      * $element->role('button');
-     *
-     * // sets the `role` attribute to 'alert'
      * $element->role(Role::ALERT);
-     *
-     * // unsets the `role` attribute
      * $element->role(null);
      * ```
      */

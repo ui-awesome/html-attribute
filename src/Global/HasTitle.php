@@ -11,21 +11,20 @@ use UnitEnum;
 /**
  * Trait for managing the global HTML `title` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `title` attribute on HTML elements, following the HTML
- * specification for global attributes.
+ * Provides an immutable API for setting the `title` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of tooltip text, ensuring
- * correct attribute handling and type safety.
+ * Intended for use in tags and components that require manipulation of tooltip text.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `title` global attributes.
+ * - Handles the HTML `title` global attribute.
  * - Immutable method for setting or overriding the `title` attribute.
  * - Supports string, Stringable, UnitEnum, and `null` for flexible title assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -47,13 +46,8 @@ trait HasTitle
      *
      * Usage example:
      * ```php
-     * // sets the `title` attribute to 'Tooltip text'
      * $element->title('Tooltip text');
-     *
-     * // sets the `title` attribute to 'Tooltip text' if `TitleEnum::TOOLTIP` is a `UnitEnum`.
      * $element->title(TitleEnum::TOOLTIP);
-     *
-     * // sets the `title` attribute with a Stringable
      * $element->title(
      *     new class implements Stringable {
      *         public function __toString(): string {
@@ -61,8 +55,6 @@ trait HasTitle
      *         }
      *     }
      * );
-     *
-     * // unsets the `title` attribute
      * $element->title(null);
      * ```
      */

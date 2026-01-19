@@ -9,22 +9,21 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
 /**
  * Trait for managing the HTML `width` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `width` attribute on HTML elements, following the HTML
- * specification for element sizing and layout.
+ * Provides an immutable API for setting the `width` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the `width` attribute,
- * ensuring correct attribute handling and flexible sizing control.
+ * Intended for use in tags and components that require manipulation of the `width` attribute.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `width` attribute.
+ * - Handles the HTML `width` attribute.
  * - Immutable method for setting or overriding the `width` attribute.
  * - Supports int, string, and `null` for flexible width assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#width
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/width
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#width
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/width
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -50,16 +49,9 @@ trait HasWidth
      *
      * Usage example:
      * ```php
-     * // sets the `width` attribute to 400 pixels
      * $element->width(400);
-     *
-     * // sets the `width` attribute to 50 percent
      * $element->width('50%');
-     *
-     * // sets the `width` attribute to auto
      * $element->width('auto');
-     *
-     * // unsets the `width` attribute
      * $element->width(null);
      * ```
      */

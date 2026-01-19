@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents standardized directionality values for the HTML `dir` global attribute.
+ * Represents values for the HTML `dir` global attribute.
  *
- * Provides a type-safe, standards-compliant set of direction identifiers for use in element rendering, attributes, and
- * view helpers, ensuring technical consistency with the HTML specification and internationalization standards.
+ * Defines the supported directionality tokens as enum cases.
  *
  * Key features.
  * - Designed for use in tags, components, and helpers requiring text direction assignment.
+ * - Enum values are represented as `string` tokens.
+ * - Enum values map to `auto`, `ltr`, and `rtl`.
  * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of direction values for semantic markup generation and accessibility.
- * - Values follow the HTML specification for directionality: automatic, left-to-right, and right-to-left.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir
  *

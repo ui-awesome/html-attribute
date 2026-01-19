@@ -11,21 +11,20 @@ use UnitEnum;
 /**
  * Trait for managing the global HTML `style` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `style` attribute on HTML elements, following the HTML
- * specification for global attributes.
+ * Provides an immutable API for setting the `style` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of inline CSS styles,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of inline CSS styles.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `style` global attributes.
+ * - Handles the HTML `style` global attributes.
  * - Immutable method for setting or overriding the `style` attribute.
  * - Supports array, string, Stringable, UnitEnum, and `null` for flexible style assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -58,18 +57,13 @@ trait HasStyle
      *
      * Usage example:
      * ```php
-     * // sets the `style` attribute to 'color: red;'
      * $element->style('color: red;');
-     *
-     * // sets the `style` attribute to an array of styles
      * $element->style(
      *     [
      *         'color' => 'red',
      *         'font-size' => '16px',
      *     ]
      * );
-     *
-     * // sets the `style` attribute to 'color: red;' if `StyleEnum::RED_TEXT` is a `UnitEnum`
      * $element->style(StyleEnum::RED_TEXT);
      *
      * // set the `style` attribute with a Stringable
@@ -80,8 +74,6 @@ trait HasStyle
      *         }
      *     }
      * );
-     *
-     * // unsets the `style` attribute
      * $element->style(null);
      * ```
      */

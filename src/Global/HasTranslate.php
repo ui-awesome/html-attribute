@@ -14,21 +14,20 @@ use function is_bool;
 /**
  * Trait for managing the global HTML `translate` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `translate` attribute on HTML elements, following the
- * HTML specification for global attributes.
+ * Provides an immutable API for setting the `translate` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of element translate
- * behavior, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of element translate behavior and value validation.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `translate` global attribute.
+ * - Handles the HTML `translate` global attribute.
  * - Immutable method for setting or overriding the `translate` attribute.
  * - Supports bool, string, UnitEnum, and `null` for flexible translate assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/translate
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/translate
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -42,10 +41,9 @@ trait HasTranslate
      * to the HTML specification for global attributes.
      *
      * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * MDN-compliant {@see Translate::cases()} (`no`, `yes`) are accepted.
+     * {@see Translate::cases()} (`no`, `yes`) are accepted.
      *
-     * This allows users to create custom enums with compliant values while preventing browser errors from invalid
-     * attribute values.
+     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
      *
      * @param bool|string|UnitEnum|null $value Translate to set for the element. Can be `null` to unset the attribute.
      *
@@ -58,10 +56,7 @@ trait HasTranslate
      *
      * Usage example:
      * ```php
-     * // sets the `translate` attribute to `no`
      * $element->translate(false);
-     *
-     * // sets the `translate` attribute to `yes`
      * $element->translate(Translate::YES);
      * ```
      */

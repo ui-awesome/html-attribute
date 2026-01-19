@@ -17,14 +17,14 @@ use function sprintf;
  * Each case represents a specific type of error, with a message template that can be populated with dynamic values
  * using the {@see Message::getMessage()} method.
  *
- * This centralized approach improves the consistency of error messages and simplifies potential internationalization.
+ * This centralized approach improves the consistency of error messages and keeps formatting logic in one place.
  *
  * Key features.
- * - Centralization of an error text for easier maintenance.
- * - Consistent error handling across the system.
- * - Integration with specific exception classes.
- * - Message formatting with dynamic parameters.
- * - Standardized error messages for common and utility cases.
+ * - Can be used by call sites that need formatted messages.
+ * - Centralizes message templates as enum cases.
+ * - Formats templates with `sprintf()` via {@see Message::getMessage()}.
+ * - Supports message formatting with dynamic parameters.
+ * - Uses the enum case `value` as the template string.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -34,9 +34,9 @@ enum Message: string
     /**
      * Error when an attribute value is invalid.
      *
-     * Format: 'Invalid value "%s" for attribute "%s". Expected: %s.'
+     * Format: "Invalid value '%s' for attribute '%s'. Expected: '%s'."
      */
-    case ATTRIBUTE_INVALID_VALUE = 'Invalid value "%s" for attribute "%s". Expected: %s.';
+    case ATTRIBUTE_INVALID_VALUE = "Invalid value '%s' for attribute '%s'. Expected: '%s'.";
 
     /**
      * Error when a attribute value is not a `scalar` or `Closure`.
