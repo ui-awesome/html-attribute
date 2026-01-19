@@ -13,18 +13,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see CanBeHidden} trait functionality and behavior.
+ * Unit tests for the {@see CanBeHidden} trait managing the `hidden` global HTML attribute.
  *
- * Validates the management of the global HTML `hidden` attribute according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of the `hidden` attribute in tag rendering, supporting bool
- * for dynamic hidden state assignment.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `hidden` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `hidden` attribute.
- * - Proper assignment and overriding of `hidden` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `hidden` attribute is not provided.
+ * - Sets the `hidden` global HTML attribute and renders the expected output.
  *
  * {@see HiddenProvider} for test case data providers.
  *

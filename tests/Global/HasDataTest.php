@@ -18,19 +18,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasData} trait functionality and behavior.
+ * Unit tests for the {@see HasData} trait managing global `data-*` HTML attributes.
  *
- * Validates the management of the global HTML `data-*` attributes according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of `data-*` attributes in tag rendering, supporting both
- * string and Closure for dynamic data assignment.
+ * Verifies rendered output, immutability, key normalization, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with `data-*` attributes.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Exception handling for invalid keys and values.
- * - Immutability of the trait's API when setting or overriding `data-*` attributes.
- * - Proper assignment and overriding of `data-*` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures invalid keys and values throw expected exceptions.
+ * - Normalizes keys and values when setting `data-*` attributes.
+ * - Renders expected output when `data-*` attributes are set.
  *
  * {@see DataProvider} for test case data providers.
  *

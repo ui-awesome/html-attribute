@@ -5,23 +5,9 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasHrefTest} class.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasHrefTest} test cases.
  *
- * Supplies comprehensive test data for validating the handling of the HTML and SVG `href` attribute in tag rendering,
- * ensuring standards-compliant assignment, override behavior, and value propagation according to the HTML and SVG
- * specifications.
- *
- * The test data covers real-world scenarios for setting, overriding, and removing the `href` attribute, supporting
- * string and `null`, to maintain consistent output across different rendering configurations.
- *
- * The provider organizes test cases with descriptive names for clear identification of failure cases during test
- * execution and debugging sessions.
- *
- * Key features.
- * - Ensures correct propagation, assignment, override, and removal of the `href` attribute in HTML/SVG element
- *   rendering.
- * - Named test data sets for precise failure identification.
- * - Validation of string and `null` for the `href` attribute, including replacement and unset scenarios.
+ * Provides representative input/output pairs for the `href` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -29,16 +15,6 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 final class HrefProvider
 {
     /**
-     * Provides test cases for HTML/SVG `href` attribute scenarios.
-     *
-     * Supplies test data for validating assignment, override, and removal of the `href` attribute, including string and
-     * `null`, as well as replacement scenarios.
-     *
-     * Each test case includes the input value, the initial attributes, the expected value, and an assertion message for
-     * clear identification.
-     *
-     * @return array Test data for `href` attribute scenarios.
-     *
      * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
      */
     public static function values(): array

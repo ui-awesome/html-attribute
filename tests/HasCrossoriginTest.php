@@ -16,19 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasCrossorigin} trait functionality and behavior.
+ * Unit tests for the {@see HasCrossorigin} trait managing the `crossorigin` HTML attribute.
  *
- * Validates the management of the HTML `crossorigin` attribute according to the HTML Living Standard specification.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
- * Ensures correct handling, immutability, and validation of the `crossorigin` attribute in tag rendering, supporting
- * string and UnitEnum for dynamic assignment.
- *
- * Test coverage:
- * - Accurate rendering of attributes with the `crossorigin` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `crossorigin` attribute.
- * - Proper assignment, overriding, and validation of `crossorigin` value.
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `crossorigin` attribute is not provided.
+ * - Sets the `crossorigin` HTML attribute and renders the expected output.
+ * - Throws an exception when the `crossorigin` attribute value is invalid.
  *
  * {@see CrossoriginProvider} for test case data providers.
  *

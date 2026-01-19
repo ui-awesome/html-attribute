@@ -15,19 +15,15 @@ use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see HasSpellcheck} trait functionality and behavior.
+ * Unit tests for the {@see HasSpellcheck} trait managing the `spellcheck` global HTML attribute.
  *
- * Validates the management of the global HTML `spellcheck` attribute according to the HTML Living Standard
- * specification.
- *
- * Ensures correct handling, immutability, and validation of the `spellcheck` attribute in tag rendering, supporting
- * bool, string, and `null` for dynamic spellcheck state assignment.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `spellcheck` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `spellcheck` attribute.
- * - Proper assignment and overriding of `spellcheck` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `spellcheck` attribute is not provided.
+ * - Sets the `spellcheck` global HTML attribute and renders the expected output.
+ * - Throws an exception when the `spellcheck` attribute value is invalid.
  *
  * {@see SpellcheckProvider} for test case data providers.
  *

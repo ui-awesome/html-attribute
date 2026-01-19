@@ -16,18 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasRel} trait functionality and behavior.
+ * Unit tests for the {@see HasRel} trait managing the `rel` HTML attribute.
  *
- * Validates the management of the HTML `rel` attribute according to the HTML Living Standard specification.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
- * Ensures correct handling, immutability, and validation of the `rel` attribute in tag rendering, supporting string and
- * UnitEnum for dynamic assignment.
- *
- * Test coverage:
- * - Accurate rendering of attributes with the `rel` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `rel` attribute.
- * - Proper assignment, overriding, and validation of `rel` value.
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `rel` attribute is not provided.
+ * - Sets the `rel` HTML attribute and renders the expected output.
+ * - Throws an exception when the `rel` attribute value is invalid.
  *
  * {@see RelProvider} for test case data providers.
  *

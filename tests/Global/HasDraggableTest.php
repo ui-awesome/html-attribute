@@ -16,19 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasDraggable} trait functionality and behavior.
+ * Unit tests for the {@see HasDraggable} trait managing the `draggable` global HTML attribute.
  *
- * Validates the management of the global HTML `draggable` attribute according to the HTML Living Standard
- * specification.
- *
- * Ensures correct handling, immutability, and validation of the `draggable` attribute in tag rendering, supporting
- * bool, string, UnitEnum, and `null` for dynamic draggable state assignment.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `draggable` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `draggable` attribute.
- * - Proper assignment and overriding of `draggable` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `draggable` attribute is not provided.
+ * - Sets the `draggable` global HTML attribute and renders the expected output.
+ * - Throws an exception when the `draggable` attribute value is invalid.
  *
  * {@see DraggableProvider} for test case data providers.
  *

@@ -16,18 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasLang} trait functionality and behavior.
+ * Unit tests for the {@see HasLang} trait managing the `lang` global HTML attribute.
  *
- * Validates the management of the global HTML `lang` attribute according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of the `lang` attribute in tag rendering, supporting string,
- * UnitEnum, and `null` for dynamic language assignment.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `lang` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `lang` attribute.
- * - Proper assignment and overriding of `lang` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `lang` attribute is not provided.
+ * - Sets the `lang` global HTML attribute and renders the expected output.
+ * - Throws an exception when the `lang` attribute value is invalid.
  *
  * {@see LangProvider} for test case data providers.
  *

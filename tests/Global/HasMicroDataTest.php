@@ -19,19 +19,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see HasMicroData} trait functionality and behavior.
+ * Unit tests for the {@see HasMicroData} trait managing global microdata HTML attributes.
  *
- * Validates the management of the global HTML microdata attributes (`itemid`, `itemprop`, `itemref`, `itemscope`,
- * `itemtype`) according to the HTML Living Standard specification.
- *
- * Ensures correct handling, immutability, and validation of the microdata attributes in tag rendering, supporting bool,
- * string and `null` for dynamic assignment.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the microdata attributes.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the microdata attributes.
- * - Proper assignment and overriding of microdata value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when microdata attributes are not provided.
+ * - Sets microdata HTML attributes and renders the expected output.
  *
  * {@see ItemIdProvider}, {@see ItemPropProvider}, {@see ItemRefProvider}, {@see ItemScopeProvider},
  * {@see ItemTypeProvider} for test case data providers.

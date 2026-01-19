@@ -13,19 +13,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see HasAccesskey} trait functionality and behavior.
+ * Unit tests for the {@see HasAccesskey} trait managing the `accesskey` global HTML attribute.
  *
- * Validates the management of the global HTML `accesskey` attribute according to the HTML Living Standard
- * specification.
- *
- * Ensures correct handling, immutability, and validation of the `accesskey` attribute in tag rendering, supporting both
- * string and `null` for dynamic identifier assignment.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
- * - Accurate rendering of attributes with the `accesskey` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `accesskey` attribute.
- * - Proper assignment and overriding of `accesskey` value.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `accesskey` attribute is not provided.
+ * - Sets the `accesskey` global HTML attribute and renders the expected output.
  *
  * {@see AccesskeyProvider} for test case data providers.
  *

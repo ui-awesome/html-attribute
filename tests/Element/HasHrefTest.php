@@ -13,18 +13,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see HasHref} trait functionality and behavior.
+ * Unit tests for the {@see HasHref} trait managing the `href` HTML and SVG attribute.
  *
- * Validates the management of the HTML and SVG `href` attribute according to the HTML and SVG specifications.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
- * Ensures correct handling, immutability, and validation of the `href` attribute in tag rendering, supporting string
- * and `null` for dynamic assignment.
- *
- * Test coverage:
- * - Accurate rendering of attributes with the `href` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `href` attribute.
- * - Proper assignment, overriding, and validation of `href` value.
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `href` attribute is not provided.
+ * - Sets the `href` HTML and SVG attribute and renders the expected output.
  *
  * {@see HrefProvider} for test case data providers.
  *

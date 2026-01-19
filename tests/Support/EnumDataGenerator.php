@@ -10,13 +10,9 @@ use UnitEnum;
 use function sprintf;
 
 /**
- * Utility class for generating structured test data for enum-based HTML attribute scenarios.
+ * Test data generator for enum-based attribute scenarios.
  *
- * Provides a standardized API for producing test cases involving PHP enums and HTML attributes, supporting
- * normalization and comparison of enum values for robust validation in PHPUnit test suites.
- *
- * Designed to facilitate consistent and type-safe generation of test data for attribute rendering, value extraction,
- * and output verification in HTML contexts.
+ * Builds deterministic datasets for PHPUnit data providers using {@see UnitEnum} cases and normalized values.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -35,7 +31,7 @@ final class EnumDataGenerator
      * @return array Structured test cases indexed by normalized enum value.
      *
      * @phpstan-param class-string<UnitEnum> $enumClass Enum class name implementing UnitEnum.
-     * @phpstan-return array<string, array{UnitEnum, mixed[], string|UnitEnum, string, string}>
+     * @phpstan-return array<string, array{UnitEnum, mixed[], UnitEnum, string, string}>
      */
     public static function cases(string $enumClass, string|UnitEnum $attribute): array
     {
@@ -62,14 +58,15 @@ final class EnumDataGenerator
     /**
      * Generates test cases for tag-related enum scenarios.
      *
-     * Produces a dataset mapping descriptive test names to enum cases and their string values,
-     * suitable for data provider methods in PHPUnit tests.
+     * Produces a dataset mapping descriptive test names to enum cases and their string values, suitable for data
+     * provider methods in PHPUnit tests.
      *
      * @phpstan-param class-string<UnitEnum> $enumClass Enum class name implementing UnitEnum.
      * @param string $enumClass Enum class name implementing UnitEnum.
      * @param string $category Descriptive category label for the tag type.
      *
-     * @phpstan-return array<string, array{UnitEnum, string}> Structured test cases indexed by descriptive keys.
+     * @phpstan-return array<string, array{UnitEnum, string}>
+     * @return array<string, array{UnitEnum, string}>
      */
     public static function tagCases(string $enumClass, string $category): array
     {

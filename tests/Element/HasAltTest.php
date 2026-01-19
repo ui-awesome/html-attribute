@@ -13,18 +13,14 @@ use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Test suite for {@see HasAlt} trait functionality and behavior.
+ * Unit tests for the {@see HasAlt} trait managing the `alt` HTML attribute.
  *
- * Validates the management of the HTML `alt` attribute according to the HTML Living Standard specification.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
- * Ensures correct handling, immutability, and validation of the `alt` attribute in tag rendering, supporting string and
- * `null` for dynamic assignment.
- *
- * Test coverage:
- * - Accurate rendering of attributes with the `alt` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Immutability of the trait's API when setting or overriding the `alt` attribute.
- * - Proper assignment, overriding, and validation of `alt` value.
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `alt` attribute is not provided.
+ * - Sets the `alt` HTML attribute and renders the expected output.
  *
  * {@see AltProvider} for test case data providers.
  *

@@ -16,19 +16,15 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Test suite for {@see HasDecoding} trait functionality and behavior.
+ * Unit tests for the {@see HasDecoding} trait managing the `decoding` HTML/SVG attribute.
  *
- * Validates the management of the HTML/SVG `decoding` attribute according to the HTML Living Standard specification.
+ * Verifies rendered output, immutability, attribute override, and validation behavior.
  *
- * Ensures correct handling, immutability, and validation of the `decoding` attribute in tag rendering, supporting
- * string, UnitEnum, and `null` for dynamic assignment.
- *
- * Test coverage:
- * - Accurate rendering of attributes with the `decoding` attribute.
- * - Data provider-driven validation for edge cases and expected behaviors.
- * - Error handling for invalid attributes.
- * - Immutability of the trait's API when setting or overriding the `decoding` attribute.
- * - Proper assignment, overriding, and validation of `decoding` value.
+ * Test coverage.
+ * - Ensures fluent setters return new instances (immutability).
+ * - Ensures no attributes are set when the `decoding` attribute is not provided.
+ * - Sets the `decoding` HTML/SVG attribute and renders the expected output.
+ * - Throws an exception when the `decoding` attribute value is invalid.
  *
  * {@see DecodingProvider} for test case data providers.
  *
