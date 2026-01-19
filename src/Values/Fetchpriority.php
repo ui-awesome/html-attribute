@@ -5,15 +5,14 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents standardized values for the HTML/SVG `fetchpriority` attribute.
+ * Represents values for the HTML/SVG `fetchpriority` attribute.
  *
- * Provides a type-safe set of fetch priority hints for resource loading optimization, aligned with the MDN reference
- * and the HTML specification for resource prioritization.
+ * Defines the supported fetch priority hint tokens as enum cases.
  *
  * Key features.
  * - Designed for use in img, link, and script elements.
+ * - Enum values map to `auto`, `high`, and `low`.
  * - Suitable for rendering HTML attributes in view helpers and components.
- * - Values follow the enumerated attribute tokens listed in the MDN documentation.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
  *

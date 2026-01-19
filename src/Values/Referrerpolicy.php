@@ -5,16 +5,14 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents standardized referrer policy values for the HTTP `Referrer-Policy` header and the HTML `referrerpolicy`
- * attribute.
+ * Represents referrer policy values for the HTTP `Referrer-Policy` header and the HTML `referrerpolicy` attribute.
  *
- * Provides a type-safe set of policy tokens and concise documentation aligned with the MDN reference and the Referrer
- * Policy specification.
+ * Defines supported policy tokens as enum cases.
  *
  * Key features.
  * - Designed for use in headers, attributes and helpers that need an explicit referrer policy.
+ * - Enum values map to policy tokens as `string` values.
  * - Suitable for rendering HTTP headers or HTML attributes in view helpers and components.
- * - Values follow the Referrer Policy tokens listed in the MDN documentation.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy
  * @link https://w3c.github.io/webappsec-referrer-policy/

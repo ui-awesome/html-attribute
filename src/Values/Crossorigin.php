@@ -5,15 +5,14 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents standardized values for the HTML `crossorigin` attribute.
+ * Represents values for the HTML `crossorigin` attribute.
  *
- * Provides a type-safe set of CORS (Cross-Origin Resource Sharing) policy tokens and concise documentation aligned with
- * the MDN reference and the CORS specification.
+ * Defines the supported `crossorigin` tokens as enum cases.
  *
  * Key features.
  * - Designed for use in media elements (img, video, audio), script, link, and SVG elements.
+ * - Enum values map to the attribute tokens used in markup.
  * - Suitable for rendering HTML attributes in view helpers and components.
- * - Values follow the CORS tokens listed in the MDN documentation.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
  *

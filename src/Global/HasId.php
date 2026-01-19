@@ -9,21 +9,20 @@ use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 /**
  * Trait for managing the global HTML `id` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `id` attribute on HTML elements, following the HTML
- * specification for global attributes.
+ * Provides an immutable API for setting the `id` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of element identifiers,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of element identifiers.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `id` global attributes.
+ * - Handles the HTML `id` global attribute.
  * - Immutable method for setting or overriding the `id` attribute.
  * - Supports string and `null` for flexible identifier assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -44,10 +43,7 @@ trait HasId
      *
      * Usage example:
      * ```php
-     * // sets the `id` attribute to 'unique-element-id'
      * $element->id('unique-element-id');
-     *
-     * // unsets the `id` attribute
      * $element->id(null);
      * ```
      */

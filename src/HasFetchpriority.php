@@ -12,21 +12,21 @@ use UnitEnum;
 /**
  * Trait for managing the HTML `fetchpriority` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `fetchpriority` attribute on HTML elements, following
- * the HTML specification for resource fetch prioritization.
+ * Provides an immutable API for setting the `fetchpriority` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the fetch priority
- * attribute, ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of the fetch priority attribute and value
+ * validation.
  *
  * Key features.
  * - Designed for use in img, link, svg, and script elements.
- * - Enforces standards-compliant handling of the HTML `fetchpriority` attribute.
+ * - Handles the HTML `fetchpriority` attribute.
  * - Immutable method for setting or overriding the `fetchpriority` attribute.
  * - Supports string, UnitEnum, and `null` for flexible priority assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -50,13 +50,8 @@ trait HasFetchpriority
      *
      * Usage example:
      * ```php
-     * // sets the `fetchpriority` attribute to `high`
      * $element->fetchpriority('high');
-     *
-     * // sets the `fetchpriority` attribute using enum
      * $element->fetchpriority(Fetchpriority::HIGH);
-     *
-     * // unsets the `fetchpriority` attribute
      * $element->fetchpriority(null);
      * ```
      */

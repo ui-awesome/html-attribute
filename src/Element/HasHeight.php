@@ -9,22 +9,21 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
 /**
  * Trait for managing the HTML `height` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `height` attribute on HTML elements, following the HTML
- * and CSS specification for element sizing.
+ * Provides an immutable API for setting the `height` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the `height` attribute,
- * ensuring correct attribute handling and flexible sizing control.
+ * Intended for use in tags and components that require manipulation of the `height` attribute.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `height` attribute.
+ * - Handles the HTML `height` attribute.
  * - Immutable method for setting or overriding the `height` attribute.
  * - Supports int, string, and `null` for flexible height assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#height
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/height
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#height
+ * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/height
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -50,13 +49,8 @@ trait HasHeight
      *
      * Usage example:
      * ```php
-     * // sets the `height` attribute to 200 pixels
      * $element->height(200);
-     *
-     * // sets the `height` attribute to 50 percent
      * $element->height('50%');
-     *
-     * // sets the `height` attribute to auto
      * $element->height('auto');
      * ```
      */

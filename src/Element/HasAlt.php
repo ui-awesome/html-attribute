@@ -9,21 +9,20 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
 /**
  * Trait for managing the HTML `alt` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `alt` attribute on HTML elements, following the HTML
- * specification for alternative text for images.
+ * Provides an immutable API for setting the `alt` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the `alt` attribute,
- * ensuring correct attribute handling and accessibility compliance.
+ * Intended for use in tags and components that require manipulation of the `alt` attribute.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `alt` attribute.
+ * - Handles the HTML `alt` attribute.
  * - Immutable method for setting or overriding the `alt` attribute.
  * - Supports string and `null` for flexible alternative text assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#alt
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#alt
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -49,13 +48,8 @@ trait HasAlt
      *
      * Usage example:
      * ```php
-     * // sets the `alt` attribute to a descriptive text
      * $element->alt('A penguin on a beach.');
-     *
-     * // sets the `alt` attribute to an empty string for decorative images
      * $element->alt('');
-     *
-     * // unsets the `alt` attribute
      * $element->alt(null);
      * ```
      */

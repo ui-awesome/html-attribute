@@ -12,21 +12,20 @@ use UnitEnum;
 /**
  * Trait for managing the HTML `crossorigin` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `crossorigin` attribute on HTML elements, following the
- * HTML specification for CORS (Cross-Origin Resource Sharing) settings.
+ * Provides an immutable API for setting the `crossorigin` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the CORS attribute,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of the CORS attribute and value validation.
  *
  * Key features.
  * - Designed for use in media elements (img, video, audio), script, link, and SVG elements.
- * - Enforces standards-compliant handling of the HTML `crossorigin` attribute.
+ * - Handles the HTML `crossorigin` attribute.
  * - Immutable method for setting or overriding the `crossorigin` attribute.
  * - Supports string, UnitEnum, and `null` for flexible CORS assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -50,13 +49,8 @@ trait HasCrossorigin
      *
      * Usage example:
      * ```php
-     * // sets the `crossorigin` attribute to `anonymous`
      * $element->crossorigin('anonymous');
-     *
-     * // sets the `crossorigin` attribute using enum
      * $element->crossorigin(Crossorigin::ANONYMOUS);
-     *
-     * // unsets the `crossorigin` attribute
      * $element->crossorigin(null);
      * ```
      */

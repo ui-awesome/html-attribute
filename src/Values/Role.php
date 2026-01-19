@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents standardized values for the HTML `role` global attribute.
+ * Represents values for the HTML `role` global attribute.
  *
- * Provides a type-safe, standards-compliant set of role identifiers for use in element rendering, attributes, and view
- * helpers, ensuring technical consistency with the HTML specification and modern web standards.
+ * Defines a curated set of role identifiers as enum cases.
  *
  * Key features.
  * - Designed for use in tags, components, and helpers requiring role assignment.
+ * - Enum values map to role tokens as `string` values.
+ * - Includes both concrete and abstract role tokens.
  * - Integration-ready for tag rendering and element generation APIs.
- * - Strict mapping of role values for semantic markup generation and accessibility.
- * - Values follow the HTML specification for role.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
  *

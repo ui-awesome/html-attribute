@@ -12,21 +12,20 @@ use UnitEnum;
 /**
  * Trait for managing the HTML `rel` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `rel` attribute on HTML elements, following the HTML
- * specification for link relationship types.
+ * Provides an immutable API for setting the `rel` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the `rel` attribute,
- * ensuring correct attribute handling, type safety, and value validation.
+ * Intended for use in tags and components that require manipulation of the `rel` attribute and value validation.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `rel` attribute.
+ * - Handles the HTML `rel` attribute.
  * - Immutable method for setting or overriding the `rel` attribute.
  * - Supports string, UnitEnum, and `null` for flexible relationship assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -50,13 +49,8 @@ trait HasRel
      *
      * Usage example:
      * ```php
-     * // sets the `rel` attribute to `noopener`
      * $element->rel('noopener');
-     *
-     * // sets the `rel` attribute using enum
      * $element->rel(Rel::NOOPENER);
-     *
-     * // unsets the `rel` attribute
      * $element->rel(null);
      * ```
      */

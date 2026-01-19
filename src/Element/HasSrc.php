@@ -9,21 +9,20 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
 /**
  * Trait for managing the HTML `src` attribute in tag rendering.
  *
- * Provides a standards-compliant, immutable API for setting the `src` attribute on HTML elements, following the HTML
- * specification for image source assignment.
+ * Provides an immutable API for setting the `src` attribute on HTML elements.
  *
- * Intended for use in tags and components that require dynamic or programmatic manipulation of the `src` attribute,
- * ensuring correct attribute handling and flexible image source control.
+ * Intended for use in tags and components that require manipulation of the `src` attribute.
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Enforces standards-compliant handling of the HTML `src` attribute.
+ * - Handles the HTML `src` attribute.
  * - Immutable method for setting or overriding the `src` attribute.
  * - Supports string and `null` for flexible source assignment.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#src
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
+ *
+ * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#src
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -48,13 +47,8 @@ trait HasSrc
      *
      * Usage example:
      * ```php
-     * // sets the `src` attribute to an image URL
      * $element->src('https://example.com/image.png');
-     *
-     * // sets the `src` attribute to a relative path
      * $element->src('images/photo.jpg');
-     *
-     * // unsets the `src` attribute
      * $element->src(null);
      * ```
      */
