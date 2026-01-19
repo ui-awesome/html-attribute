@@ -1,5 +1,7 @@
 # ChangeLog
 
+## 0.5.1 Under development
+
 ## 0.5.0 January 19, 2026
 
 - Enh #14: Add `HasHref` trait and `href()` method to manage `href` attribute for HTML/SVG elements (@terabytesoftw)
