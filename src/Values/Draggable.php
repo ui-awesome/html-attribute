@@ -12,7 +12,7 @@ namespace UIAwesome\Html\Attribute\Values;
  * Key features.
  * - Designed for use in tags, components, and helpers requiring draggable assignment.
  * - Enum values are represented as `string` tokens.
- * - Enum values map to `false` and `true`.
+ * - Enum values map to `'false'` and `'true'` tokens.
  * - Integration-ready for tag rendering and element generation APIs.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable

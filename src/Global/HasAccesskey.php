@@ -15,7 +15,7 @@ use UIAwesome\Html\Attribute\Values\GlobalAttribute;
  *
  * Key features.
  * - Designed for use in tags and components.
- * - Handles the HTML `accesskey` global attributes.
+ * - Handles the HTML `accesskey` global attribute.
  * - Immutable method for setting or overriding the `accesskey` attribute.
  * - Supports string and `null` for flexible access key assignment.
  *
