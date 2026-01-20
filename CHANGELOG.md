@@ -1,5 +1,7 @@
 # ChangeLog
 
+## 0.5.2 Under development
+
 ## 0.5.1 January 20, 2026
 
 - Enh #27: Add `php-forge/support` as a development dependency and update related test classes (@terabytesoftw)
