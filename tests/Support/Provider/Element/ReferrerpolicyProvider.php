@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Attribute\Values\{ElementAttribute, Referrerpolicy};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class ReferrerpolicyProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Referrerpolicy::class, ElementAttribute::REFERRERPOLICY);
+        $enumCases = EnumDataProvider::attributeCases(Referrerpolicy::class, ElementAttribute::REFERRERPOLICY);
 
         $staticCase = [
             'empty string' => [

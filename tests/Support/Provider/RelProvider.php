@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
-use UIAwesome\Html\Attribute\Values\Attribute;
-use UIAwesome\Html\Attribute\Values\Rel;
+use PHPForge\Support\EnumDataProvider;
+use UIAwesome\Html\Attribute\Values\{Attribute, Rel};
 use UnitEnum;
 
 /**
@@ -24,7 +23,7 @@ final class RelProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Rel::class, Attribute::REL);
+        $enumCases = EnumDataProvider::attributeCases(Rel::class, Attribute::REL);
 
         $staticCase = [
             'empty string' => [

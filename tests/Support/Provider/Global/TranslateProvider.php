@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Translate};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class TranslateProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Translate::class, GlobalAttribute::TRANSLATE->value);
+        $enumCases = EnumDataProvider::attributeCases(Translate::class, GlobalAttribute::TRANSLATE);
 
         $staticCase = [
             'boolean false' => [

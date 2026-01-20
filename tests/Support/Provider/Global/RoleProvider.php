@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Role};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class RoleProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Role::class, GlobalAttribute::ROLE);
+        $enumCases = EnumDataProvider::attributeCases(Role::class, GlobalAttribute::ROLE);
 
         $staticCase = [
             'empty string' => [
