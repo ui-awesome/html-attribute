@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Attribute\Values\{ContentEditable, GlobalAttribute};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class ContentEditableProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(ContentEditable::class, GlobalAttribute::CONTENTEDITABLE);
+        $enumCases = EnumDataProvider::attributeCases(ContentEditable::class, GlobalAttribute::CONTENTEDITABLE);
 
         $staticCase = [
             'boolean false' => [

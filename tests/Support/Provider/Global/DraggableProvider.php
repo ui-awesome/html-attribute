@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Attribute\Values\{Draggable, GlobalAttribute};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class DraggableProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Draggable::class, GlobalAttribute::DRAGGABLE->value);
+        $enumCases = EnumDataProvider::attributeCases(Draggable::class, GlobalAttribute::DRAGGABLE);
 
         $staticCase = [
             'boolean false' => [

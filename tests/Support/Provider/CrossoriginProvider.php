@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Crossorigin};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class CrossoriginProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Crossorigin::class, Attribute::CROSSORIGIN);
+        $enumCases = EnumDataProvider::attributeCases(Crossorigin::class, Attribute::CROSSORIGIN);
 
         $staticCase = [
             'empty string' => [

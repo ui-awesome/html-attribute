@@ -2,6 +2,8 @@
 
 ## 0.5.1 Under development
 
+- Enh #27: Add `php-forge/support` as a development dependency and update related test classes (@terabytesoftw)
+
 ## 0.5.0 January 19, 2026
 
 - Enh #14: Add `HasHref` trait and `href()` method to manage `href` attribute for HTML/SVG elements (@terabytesoftw)

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Fetchpriority};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class FetchpriorityProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Fetchpriority::class, Attribute::FETCHPRIORITY);
+        $enumCases = EnumDataProvider::attributeCases(Fetchpriority::class, Attribute::FETCHPRIORITY);
 
         $staticCase = [
             'empty string' => [

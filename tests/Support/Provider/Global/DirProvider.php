@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
+use PHPForge\Support\EnumDataProvider;
 use UIAwesome\Html\Attribute\Values\{Direction, GlobalAttribute};
 use UnitEnum;
 
@@ -23,7 +23,7 @@ final class DirProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Direction::class, GlobalAttribute::DIR->value);
+        $enumCases = EnumDataProvider::attributeCases(Direction::class, GlobalAttribute::DIR);
 
         $staticCase = [
             'empty string' => [

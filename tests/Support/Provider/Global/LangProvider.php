@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Global;
 
-use UIAwesome\Html\Attribute\Tests\Support\EnumDataGenerator;
-use UIAwesome\Html\Attribute\Values\GlobalAttribute;
-use UIAwesome\Html\Attribute\Values\Language;
+use PHPForge\Support\EnumDataProvider;
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Language};
 use UnitEnum;
 
 /**
@@ -24,7 +23,7 @@ final class LangProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataGenerator::cases(Language::class, GlobalAttribute::LANG);
+        $enumCases = EnumDataProvider::attributeCases(Language::class, GlobalAttribute::LANG);
 
         $staticCase = [
             'empty string' => [
