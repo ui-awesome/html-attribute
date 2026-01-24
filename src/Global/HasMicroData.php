@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Global;
 
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
+use UnitEnum;
 
 /**
  * Trait for managing the global HTML microdata attributes in tag rendering.
@@ -20,7 +21,7 @@ use UIAwesome\Html\Attribute\Values\GlobalAttribute;
  * - Immutable methods for setting or overriding microdata attributes.
  * - Supports bool, string and `null` for flexible microdata assignment.
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemid

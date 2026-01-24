@@ -2,6 +2,8 @@
 
 ## 0.5.2 Under development
 
+- Enh #28: Add `php-forge/coding-standard` to development dependencies for code quality checks (@terabytesoftw)
+
 ## 0.5.1 January 20, 2026
 
 - Enh #27: Add `php-forge/support` as a development dependency and update related test classes (@terabytesoftw)

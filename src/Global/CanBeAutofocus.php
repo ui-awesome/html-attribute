@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Global;
 
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
+use UnitEnum;
 
 /**
  * Trait for managing the global HTML `autofocus` attribute in tag rendering.
@@ -19,7 +20,7 @@ use UIAwesome\Html\Attribute\Values\GlobalAttribute;
  * - Immutable method for setting or overriding the `autofocus` attribute.
  * - Supports bool for explicit focus control.
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus

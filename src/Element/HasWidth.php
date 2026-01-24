@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Element;
 
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
+use UnitEnum;
 
 /**
  * Trait for managing the HTML `width` attribute in tag rendering.
@@ -19,7 +20,7 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
  * - Immutable method for setting or overriding the `width` attribute.
  * - Supports int, string, and `null` for flexible width assignment.
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#width
