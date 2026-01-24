@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Attribute\Global;
 use InvalidArgumentException;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Validator;
+use UnitEnum;
 
 use function is_bool;
 
@@ -23,7 +24,7 @@ use function is_bool;
  * - Immutable method for setting or overriding the `spellcheck` attribute.
  * - Supports bool, string, and `null` for flexible spellcheck assignment.
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck
