@@ -20,7 +20,7 @@ use UnitEnum;
  * - Immutable method for setting or overriding the `height` attribute.
  * - Supports int, string, and `null` for flexible height assignment.
  *
- * @method static addAttribute((string|UnitEnum) $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#height
