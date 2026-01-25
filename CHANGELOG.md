@@ -2,6 +2,8 @@
 
 ## 0.5.3 Under development
 
+- Bug #29: Add section for automated refactoring using `Rector` in testing documentation (@terabytesoftw)
+
 ## 0.5.2 January 24, 2026
 
 - Enh #28: Add `php-forge/coding-standard` to development dependencies for code quality checks (@terabytesoftw)
