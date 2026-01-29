@@ -4,6 +4,7 @@
 
 - Enh #32: Add `HasBlocking` trait and `blocking()` method to manage `blocking` attribute for HTML elements (@terabytesoftw)
 - Enh #33: Add `HasMedia` trait and `media()` method to manage `media` attribute for HTML elements (@terabytesoftw)
+- Enh #34: Add `HasType` trait and `type()` method to manage `type` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

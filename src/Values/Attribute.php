@@ -196,4 +196,11 @@ enum Attribute: string
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/step
      */
     case STEP = 'step';
+
+    /**
+     * `type` — Defines the type of the element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/type
+     */
+    case TYPE = 'type';
 }
