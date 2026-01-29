@@ -37,6 +37,13 @@ enum Attribute: string
     case AUTOCOMPLETE = 'autocomplete';
 
     /**
+     * `blocking` — Indicates that certain operations should be blocked on the fetching of an external resource.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style#blocking
+     */
+    case BLOCKING = 'blocking';
+
+    /**
      * `capture` — Media capture hint for file inputs.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/capture
