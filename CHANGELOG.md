@@ -2,6 +2,8 @@
 
 ## 0.5.3 Under development
 
+- Enh #32: Add `HasBlocking` trait and `blocking()` method to manage `blocking` attribute for HTML elements (@terabytesoftw)
+
 ## 0.5.2 January 29, 2026
 
 - Enh #28: Add `php-forge/coding-standard` to development dependencies for code quality checks (@terabytesoftw)
@@ -15,14 +17,14 @@
 
 ## 0.5.0 January 19, 2026
 
-- Enh #14: Add `HasHref` trait and `href()` method to manage `href` attribute for HTML/SVG elements (@terabytesoftw)
-- Enh #15: Add `HasCrossorigin` trait and `crossorigin()` method to manage `crossorigin` attribute for HTML/SVG elements (@terabytesoftw)
+- Enh #14: Add `HasHref` trait and `href()` method to manage `href` attribute for HTML elements (@terabytesoftw)
+- Enh #15: Add `HasCrossorigin` trait and `crossorigin()` method to manage `crossorigin` attribute for HTML elements (@terabytesoftw)
 - Enh #16: Use package `ui-awesome/html-mixin` for mixin traits and update related imports accordingly (@terabytesoftw)
 - Enh #17: Add development guide and sync metadata instructions and update testing documentation (@terabytesoftw)
 - Enh #18: Move attribute traits from `ui-awesome/html-core` package and update related imports accordingly (@terabytesoftw)
 - Bug #19: Update alert content in SVGs to reflect accurate descriptions for MDN standards compliance and specific & lightweight features (@terabytesoftw)
-- Enh #20: Add `HasDecoding` trait and `decoding()` method to manage `decoding` attribute for HTML/SVG elements (@terabytesoftw)
-- Enh #21: Add `HasFetchpriority` trait and `fetchpriority()` method to manage `fetchpriority` attribute for HTML/SVG elements (@terabytesoftw)
+- Enh #20: Add `HasDecoding` trait and `decoding()` method to manage `decoding` attribute for HTML elements (@terabytesoftw)
+- Enh #21: Add `HasFetchpriority` trait and `fetchpriority()` method to manage `fetchpriority` attribute for HTML elements (@terabytesoftw)
 - Bug #22: Update documentation for `Crossorigin` and `ElementAttribute` enums to clarify attribute representation and compliance with MDN standards (@terabytesoftw)
 - Bug #23: Update attribute retrieval in tests to use `getAttribute()` method for consistency (@terabytesoftw)
 - Bug #24: Update documentation traits and enums for clarity and consistency (@terabytesoftw)
