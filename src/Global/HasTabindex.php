@@ -36,8 +36,8 @@ trait HasTabindex
     /**
      * Sets the HTML `tabindex` attribute for the element.
      *
-     * Creates a new instance with the specified tab order, supporting both explicit and nullable assignment according
-     * to the HTML specification for global attributes.
+     * Creates a new instance with the specified tabindex value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * @param int|string|null $value Tab order to set for the element. Can be `null` to unset the attribute.
      *

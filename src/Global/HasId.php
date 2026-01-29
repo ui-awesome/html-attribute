@@ -33,8 +33,8 @@ trait HasId
     /**
      * Sets the HTML `id` attribute for the element.
      *
-     * Creates a new instance with the specified identifier, supporting both explicit and nullable assignment according
-     * to the HTML specification for global attributes.
+     * Creates a new instance with the specified identifier value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * @param string|null $value Identifier to set for the element. Can be `null` to unset the attribute.
      *

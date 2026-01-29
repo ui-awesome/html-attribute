@@ -36,7 +36,8 @@ trait HasClass
     /**
      * Sets the HTML `class` attribute for the element.
      *
-     * Creates a new instance with the specified CSS class, optionally overriding any existing class.
+     * Creates a new instance with the specified CSS class value, optionally overriding any existing class, supporting
+     * explicit assignment according to the HTML specification for global attributes.
      *
      * Supports both additive and override semantics for the `class` attribute.
      *

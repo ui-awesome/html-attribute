@@ -37,8 +37,8 @@ trait HasSpellcheck
     /**
      * Sets the HTML `spellcheck` attribute for the element.
      *
-     * Creates a new instance with the specified spellcheck, supporting both explicit and nullable assignment
-     * according to the HTML specification for global attributes.
+     * Creates a new instance with the specified spellcheck value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * @param bool|string|null $value Spellcheck to set for the element. Can be `null` to unset the attribute.
      *

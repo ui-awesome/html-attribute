@@ -35,8 +35,8 @@ trait HasRole
     /**
      * Sets the HTML `role` attribute for the element.
      *
-     * Creates a new instance with the specified role, supporting both explicit and nullable assignment according to the
-     * HTML specification for global attributes.
+     * Creates a new instance with the specified role value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
      * {@see Role::cases()} are accepted.

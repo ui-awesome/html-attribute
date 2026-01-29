@@ -37,8 +37,8 @@ trait HasContentEditable
     /**
      * Sets the HTML `contenteditable` attribute for the element.
      *
-     * Creates a new instance with the specified content editability, supporting both explicit and nullable assignment
-     * according to the HTML specification for global attributes.
+     * Creates a new instance with the specified content editability value, supporting explicit assignment according to
+     * the HTML specification for global attributes.
      *
      * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
      * {@see ContentEditable::cases()} (`false`, `plaintext-only`, `true`) are accepted.

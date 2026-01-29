@@ -78,8 +78,8 @@ trait HasData
     /**
      * Sets one or more HTML `data-*` attributes for the element.
      *
-     * Creates a new instance with the specified custom data attributes, supporting both string and Closure as required
-     * by the HTML specification for global attributes, and throws an exception for invalid input.
+     * Creates a new instance with the specified custom data value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * @param array $values Associative array of data attribute keys and values. Keys must be string; values must be
      * scalar, Closure, Stringable, UnitEnum or `null`.

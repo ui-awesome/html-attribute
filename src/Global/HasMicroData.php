@@ -38,8 +38,8 @@ trait HasMicroData
     /**
      * Sets the HTML `itemid` attribute for the element.
      *
-     * Creates a new instance with the specified microdata item ID, supporting explicit and nullable assignment
-     * according to the HTML specification for global attributes.
+     * Creates a new instance with the specified microdata item ID value, supporting explicit assignment according to
+     * the HTML specification for global attributes.
      *
      * @param string|null $value Microdata item ID to set for the element. Can be `null` to unset the attribute.
      *
@@ -61,8 +61,8 @@ trait HasMicroData
     /**
      * Sets the HTML `itemprop` attribute for the element.
      *
-     * Creates a new instance with the specified microdata item property, supporting explicit and nullable assignment
-     * according to the HTML specification for global attributes.
+     * Creates a new instance with the specified microdata item property value, supporting explicit assignment according
+     * to the HTML specification for global attributes.
      *
      * @param string|null $value Microdata item property to set for the element. Can be `null` to unset the attribute.
      *
@@ -84,8 +84,8 @@ trait HasMicroData
     /**
      * Sets the HTML `itemref` attribute for the element.
      *
-     * Creates a new instance with the specified microdata item reference, supporting explicit and nullable
-     * assignment according to the HTML specification for global attributes.
+     * Creates a new instance with the specified microdata item reference value, supporting explicit assignment
+     * according to the HTML specification for global attributes.
      *
      * @param string|null $value Microdata item reference to set for the element. Can be `null` to unset the attribute.
      *
@@ -107,8 +107,8 @@ trait HasMicroData
     /**
      * Sets the HTML `itemscope` attribute for the element.
      *
-     * Creates a new instance with the specified microdata item scope, supporting explicit assignment according to the
-     * HTML specification for global attributes.
+     * Creates a new instance with the specified microdata item scope value, supporting explicit assignment according to
+     * the HTML specification for global attributes.
      *
      * @param bool|null $value Microdata item scope to set for the element. Can be `null` to unset the attribute.
      *
@@ -130,8 +130,8 @@ trait HasMicroData
     /**
      * Sets the HTML `itemtype` attribute for the element.
      *
-     * Creates a new instance with the specified microdata item type, supporting explicit and nullable assignment
-     * according to the HTML specification for global attributes.
+     * Creates a new instance with the specified microdata item type value, supporting explicit assignment according to
+     * the HTML specification for global attributes.
      *
      * @param string|null $value Microdata item type to set for the element. Can be `null` to unset the attribute.
      *

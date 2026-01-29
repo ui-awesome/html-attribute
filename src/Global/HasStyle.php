@@ -34,8 +34,8 @@ trait HasStyle
     /**
      * Sets the HTML `style` attribute for the element.
      *
-     * Creates a new instance with the specified style, supporting array, string, Stringable, UnitEnum, and `null`
-     * assignment according to the HTML specification for global attributes.
+     * Creates a new instance with the specified style value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * @param array|string|Stringable|UnitEnum|null $value Style to set for the element. Can be `null` to unset the
      * attribute.

@@ -37,8 +37,8 @@ trait HasTranslate
     /**
      * Sets the HTML `translate` attribute for the element.
      *
-     * Creates a new instance with the specified translate, supporting both explicit and nullable assignment according
-     * to the HTML specification for global attributes.
+     * Creates a new instance with the specified translate value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
      * {@see Translate::cases()} (`no`, `yes`) are accepted.

@@ -44,8 +44,8 @@ trait HasAria
     /**
      * Sets a single HTML `aria-*` attribute for the element.
      *
-     * Creates a new instance with the specified custom aria attribute, supporting scalar, Closure and UnitEnum values
-     * as required by the ARIA specification for global attributes.
+     * Creates a new instance with the specified custom aria value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * @param string|UnitEnum $key Aria attribute key (without the `aria-` prefix).
      * @param bool|Closure|float|int|string|Stringable|UnitEnum|null $value Aria attribute value. Can be `null` to unset

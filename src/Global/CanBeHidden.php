@@ -33,7 +33,7 @@ trait CanBeHidden
     /**
      * Sets the HTML `hidden` attribute for the element.
      *
-     * Creates a new instance with the specified visibility, supporting explicit assignment according to the HTML
+     * Creates a new instance with the specified visibility value, supporting explicit assignment according to the HTML
      * specification for global attributes.
      *
      * @param bool $value Visibility to set for the element.
