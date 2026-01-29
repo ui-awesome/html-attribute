@@ -35,8 +35,8 @@ trait HasBlocking
     /**
      * Sets the HTML `blocking` attribute for the element.
      *
-     * Creates a new instance with the specified token value, supporting explicit assignment according to the
-     * specification-defined token set.
+     * Creates a new instance with the specified blocking token value, supporting explicit assignment according to the
+     * HTML specification for blocking attributes.
      *
      * @param string|UnitEnum|null $value Token value to set for the element. Use a valid token (for example, `render`).
      * Can be `null` to unset the attribute.
