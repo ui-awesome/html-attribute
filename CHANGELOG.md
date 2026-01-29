@@ -4,6 +4,7 @@
 
 - Bug #29: Add section for automated refactoring using `Rector` in testing documentation (@terabytesoftw)
 - Bug #30: Update examples in `testing.md` for running Composer script with arguments and update `.styleci.yml` accordingly (@terabytesoftw)
+- Bug #31: Remove redundant ignore rule in `actionlint.yml` configuration and update Rector command in `composer.json` to remove unnecessary 'src' argument (@terabytesoftw)
 
 ## 0.5.2 January 24, 2026
 
