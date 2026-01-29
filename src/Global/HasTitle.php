@@ -34,8 +34,8 @@ trait HasTitle
     /**
      * Sets the HTML `title` attribute for the element.
      *
-     * Creates a new instance with the specified title, supporting both explicit and nullable assignment according to
-     * the HTML specification for global attributes.
+     * Creates a new instance with the specified title value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * @param string|Stringable|UnitEnum|null $value Title value to set for the element. Can be `null` to unset the
      * attribute.

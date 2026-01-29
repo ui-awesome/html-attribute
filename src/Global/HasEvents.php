@@ -42,9 +42,9 @@ trait HasEvents
     /**
      * Sets a single global `on*` event attribute for the element.
      *
-     * Creates a new instance with the specified event handler attribute, supporting both string and Closure values as
-     * required by the HTML specification. The event key can be provided as a raw string (for example, `'onclick'` or
-     * `'click'`) or as a `UnitEnum` (for example, `Event::CLICK`).
+     * Creates a new instance with the specified event handler value, supporting explicit assignment according to the
+     * HTML specification for global attributes. The event key can be provided as a raw string (for example, `'onclick'`
+     * or `'click'`) or as a `UnitEnum` (for example, `Event::CLICK`).
      *
      * @param string|UnitEnum $event Event attribute key (with or without the leading `on` prefix) or enum case.
      * @param Closure|string|Stringable|UnitEnum|null $handler JavaScript handler code. Can be `null` to unset the

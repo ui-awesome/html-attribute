@@ -33,7 +33,7 @@ trait CanBeAutofocus
     /**
      * Sets the HTML `autofocus` attribute for the element.
      *
-     * Creates a new instance with the specified focus, supporting explicit assignment according to the HTML
+     * Creates a new instance with the specified focus value, supporting explicit assignment according to the HTML
      * specification for global attributes.
      *
      * @param bool $value Focus to set for the element.

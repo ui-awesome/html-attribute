@@ -37,8 +37,8 @@ trait HasDraggable
     /**
      * Sets the HTML `draggable` attribute for the element.
      *
-     * Creates a new instance with the specified draggable, supporting both explicit and nullable assignment according
-     * to the HTML specification for global attributes.
+     * Creates a new instance with the specified draggable value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
      * {@see Draggable::cases()} (`false`, `true`) are accepted.

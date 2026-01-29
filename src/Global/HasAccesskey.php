@@ -33,8 +33,8 @@ trait HasAccesskey
     /**
      * Sets the HTML `accesskey` attribute for the element.
      *
-     * Creates a new instance with the specified access key, supporting both explicit and nullable assignment according
-     * to the HTML specification for global attributes.
+     * Creates a new instance with the specified access key value, supporting explicit assignment according to the HTML
+     * specification for global attributes.
      *
      * @param string|null $value Access key to set for the element. Can be `null` to unset the attribute.
      *
