@@ -121,6 +121,13 @@ enum Attribute: string
     case MAXLENGTH = 'maxlength';
 
     /**
+     * `media` — Specifies the media that the linked resource applies to.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/media
+     */
+    case MEDIA = 'media';
+
+    /**
      * `min` — Indicates the minimum value allowed.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/min
