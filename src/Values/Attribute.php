@@ -178,6 +178,13 @@ enum Attribute: string
     case READONLY = 'readonly';
 
     /**
+     * `referrerpolicy` — Specifies which referrer to use when fetching the resource.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/referrerpolicy
+     */
+    case REFERRERPOLICY = 'referrerpolicy';
+
+    /**
      * `rel` — Specifies the relationship of the target object to the link object.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
