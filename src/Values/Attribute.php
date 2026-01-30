@@ -30,6 +30,13 @@ enum Attribute: string
     case ACCEPT = 'accept';
 
     /**
+     * `as` — Specifies the type of content being loaded by the link element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#as
+     */
+    case AS = 'as';
+
+    /**
      * `autocomplete` — Indicates whether controls can have their values automatically completed.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete
