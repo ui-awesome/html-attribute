@@ -42,8 +42,8 @@ trait HasDecoding
      * - Use `async` to decode the image asynchronously, reducing delay in presenting other content but potentially
      *   causing the image to be rendered later.
      * - Use `sync` to decode the image synchronously before presenting other content, ensuring the image is ready but
-     *   potentially causing a delay. Use `auto` to let the browser decide the best decoding strategy based on its own
-     *   heuristics.
+     *   potentially causing a delay.
+     * - Use `auto` to let the browser decide the best decoding strategy based on its own heuristics.
      *
      * @param string|UnitEnum|null $value Decoding hint value to set for the element. Use `async` for asynchronous
      * decoding, `sync` for synchronous decoding, or `auto` for browser-determined strategy.
