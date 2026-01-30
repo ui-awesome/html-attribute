@@ -17,7 +17,7 @@ namespace UIAwesome\Html\Attribute\Values;
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes#list_of_global_event_handler_attributes
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 enum Event: string

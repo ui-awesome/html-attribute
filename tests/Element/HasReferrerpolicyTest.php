@@ -28,7 +28,7 @@ use UnitEnum;
  *
  * {@see ReferrerpolicyProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('element')]
@@ -91,7 +91,7 @@ final class HasReferrerpolicyTest extends TestCase
         );
     }
 
-    public function testThrowExceptionWhenSettingInvalidReferrerpolicyValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingReferrerpolicyValue(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -103,7 +103,7 @@ final class HasReferrerpolicyTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 ElementAttribute::REFERRERPOLICY->value,
-                implode('\', \'', Enum::normalizeArray(Referrerpolicy::cases())),
+                implode('", "', Enum::normalizeArray(Referrerpolicy::cases())),
             ),
         );
 
