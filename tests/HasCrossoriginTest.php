@@ -103,7 +103,7 @@ final class HasCrossoriginTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::CROSSORIGIN->value,
-                implode('", "', Enum::normalizeArray(Crossorigin::cases())),
+                implode("', '", Enum::normalizeArray(Crossorigin::cases())),
             ),
         );
 

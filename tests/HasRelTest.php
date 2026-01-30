@@ -103,7 +103,7 @@ final class HasRelTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::REL->value,
-                implode('", "', Enum::normalizeArray(Rel::cases())),
+                implode("', '", Enum::normalizeArray(Rel::cases())),
             ),
         );
 

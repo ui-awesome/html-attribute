@@ -103,7 +103,7 @@ final class HasReferrerpolicyTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 ElementAttribute::REFERRERPOLICY->value,
-                implode('", "', Enum::normalizeArray(Referrerpolicy::cases())),
+                implode("', '", Enum::normalizeArray(Referrerpolicy::cases())),
             ),
         );
 
