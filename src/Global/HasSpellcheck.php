@@ -37,10 +37,16 @@ trait HasSpellcheck
     /**
      * Sets the HTML `spellcheck` attribute for the element.
      *
-     * Creates a new instance with the specified spellcheck value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified spellcheck value.
      *
-     * @param bool|string|null $value Spellcheck to set for the element. Can be `null` to unset the attribute.
+     * Controls whether the browser should check the element's content for spelling errors.
+     * - Use `true` to enable spell-checking (typically underlines misspelled words).
+     * - Use `false` to disable spell-checking, which is useful for code inputs, technical fields, or names where
+     *   standard dictionary checking would be counterproductive.
+     *
+     * The browser uses the language specified by the `lang` attribute to determine which dictionary to use.
+     *
+     * @param bool|string|null $value Spellcheck state to set for the element. Use `true` to enable, `false` to disable.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -50,8 +56,8 @@ trait HasSpellcheck
      *
      * Usage example:
      * ```php
-     * $element->spellcheck(false);
      * $element->spellcheck(true);
+     * $element->spellcheck(false);
      * ```
      */
     public function spellcheck(bool|string|null $value): static

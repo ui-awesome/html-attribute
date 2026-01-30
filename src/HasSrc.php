@@ -34,11 +34,16 @@ trait HasSrc
     /**
      * Sets the HTML `src` attribute for the element.
      *
-     * Creates a new instance with the specified source URL value, supporting explicit assignment according to the
-     * HTML specification for src attributes.
+     * Creates a new instance with the specified source URL value.
      *
-     * @param string|Stringable|UnitEnum|null $value Source URL value to set for the element. Can be `null` to unset the
-     * attribute.
+     * Specifies the URL of the external resource to be embedded or loaded by the element.
+     * - The URL can be absolute (for example, `https://example.com/file.js`) or relative (for example,
+     *   `./scripts/app.js` or `/assets/image.png`).
+     * - For external resources, consider using the `crossorigin` attribute to control CORS behavior, and the
+     *   `integrity` attribute for Subresource Integrity verification.
+     *
+     * @param string|Stringable|UnitEnum|null $value Source URL value to set for the element. Use absolute or relative
+     * URLs. Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `src` attribute.
      *
@@ -47,6 +52,7 @@ trait HasSrc
      * Usage example:
      * ```php
      * $element->src('https://example.com/script.js');
+     * $element->src('./local/file.css');
      * $element->src(null);
      * ```
      */

@@ -36,10 +36,18 @@ trait HasTabindex
     /**
      * Sets the HTML `tabindex` attribute for the element.
      *
-     * Creates a new instance with the specified tabindex value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified tabindex value.
      *
-     * @param int|string|null $value Tab order to set for the element. Can be `null` to unset the attribute.
+     * Controls whether the element is focusable and its position in the keyboard tab navigation order.
+     * - Use `0` to make the element focusable in the natural tab order (after positive values, before elements without
+     *   tabindex).
+     * - Use positive values (for example, `1`, `2`) to define explicit tab order (lower numbers come first).
+     * - Use `-1` to make the element focusable via JavaScript but not via keyboard tabbing.
+     *
+     * This is essential for creating accessible custom interactive components.
+     *
+     * @param int|string|null $value Tab order to set for the element. Use `0` for natural order, positive integers
+     * for explicit order, or `-1` for JavaScript-only focus.
      *
      * @throws InvalidArgumentException if the value is not a valid integer or string representation of an
      * `value >= -1`.
@@ -49,7 +57,9 @@ trait HasTabindex
      *
      * Usage example:
      * ```php
-     * $element->tabIndex(3);
+     * $element->tabIndex(0);
+     * $element->tabIndex(-1);
+     * $element->tabIndex(1);
      * ```
      */
     public function tabIndex(int|string|null $value): static

@@ -36,11 +36,17 @@ trait HasDecoding
     /**
      * Sets the HTML/SVG `decoding` attribute for the element.
      *
-     * Creates a new instance with the specified decoding hint value, supporting explicit assignment according to the
-     * HTML specification for decoding attributes.
+     * Creates a new instance with the specified decoding hint value.
      *
-     * @param string|UnitEnum|null $value Decoding hint value to set for the element. Use a valid decoding token (for
-     * example, `async`, `sync`, `auto`). Can be `null` to unset the attribute.
+     * Provides a hint to the browser on how to decode the image data.
+     * - Use `async` to decode the image asynchronously, reducing delay in presenting other content but potentially
+     *   causing the image to be rendered later.
+     * - Use `sync` to decode the image synchronously before presenting other content, ensuring the image is ready but
+     *   potentially causing a delay.
+     * - Use `auto` to let the browser decide the best decoding strategy based on its own heuristics.
+     *
+     * @param string|UnitEnum|null $value Decoding hint value to set for the element. Use `async` for asynchronous
+     * decoding, `sync` for synchronous decoding, or `auto` for browser-determined strategy.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *

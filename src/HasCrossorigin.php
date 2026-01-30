@@ -35,11 +35,18 @@ trait HasCrossorigin
     /**
      * Sets the HTML `crossorigin` attribute for the element.
      *
-     * Creates a new instance with the specified CORS setting value, supporting explicit assignment according to the
-     * HTML specification for crossorigin attributes.
+     * Creates a new instance with the specified CORS setting value.
      *
-     * @param string|UnitEnum|null $value CORS setting value to set for the element. Use a valid CORS token (for
-     * example, `anonymous`, `use-credentials`). Can be `null` to unset the attribute.
+     * Controls how the browser handles cross-origin requests for the element.
+     * - When set to `anonymous`, CORS requests are sent without credentials (cookies, authorization headers, or TLS
+     *   client certificates).
+     * - When set to `use-credentials`, credentials are included in CORS requests.
+     *
+     * This is essential for resources that require authentication or when error logging is needed for cross-origin
+     * resources.
+     *
+     * @param string|UnitEnum|null $value CORS setting value to set for the element. Use `anonymous` for requests
+     * without credentials, or `use-credentials` to include credentials. Can be `null` to unset the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *

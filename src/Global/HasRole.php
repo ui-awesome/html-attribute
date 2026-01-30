@@ -35,16 +35,18 @@ trait HasRole
     /**
      * Sets the HTML `role` attribute for the element.
      *
-     * Creates a new instance with the specified role value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified role value.
      *
-     * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * {@see Role::cases()} are accepted.
+     * Defines the semantic role of the element for accessibility purposes, helping assistive technologies understand
+     * the element's purpose.
      *
-     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
+     * Common roles include `button` for clickable elements, `navigation` for nav menus, `alert` for important messages,
+     * `dialog` for modal windows, and `search` for search regions.
      *
-     * @param string|UnitEnum|null $value Role to set for the element. Can be `null` to unset the
-     * attribute.
+     * This is essential for building accessible custom components that don't use native HTML semantic elements.
+     *
+     * @param string|UnitEnum|null $value ARIA role to set for the element. Use standard ARIA roles (for example,
+     * 'button', 'navigation', 'alert', 'dialog').
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -56,8 +58,8 @@ trait HasRole
      * Usage example:
      * ```php
      * $element->role('button');
+     * $element->role('navigation');
      * $element->role(Role::ALERT);
-     * $element->role(null);
      * ```
      */
     public function role(string|UnitEnum|null $value): static

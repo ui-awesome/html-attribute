@@ -37,15 +37,16 @@ trait HasTranslate
     /**
      * Sets the HTML `translate` attribute for the element.
      *
-     * Creates a new instance with the specified translate value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified translate value.
      *
-     * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * {@see Translate::cases()} (`no`, `yes`) are accepted.
+     * Controls whether the element's content should be translated when the page is localized.
+     * - Use `yes` (or `true`) to indicate the content should be translated.
+     * - Use `no` (or `false`) to indicate the content should not be translated, which is useful for brand names,
+     *   technical terms, code samples, or proper names that should remain in their original language across all
+     *   localized versions of the page.
      *
-     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
-     *
-     * @param bool|string|UnitEnum|null $value Translate to set for the element. Can be `null` to unset the attribute.
+     * @param bool|string|UnitEnum|null $value Translation behavior to set for the element. Use `yes` or `true` to
+     * allow translation, `no` or `false` to prevent translation.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -56,8 +57,9 @@ trait HasTranslate
      *
      * Usage example:
      * ```php
+     * $element->translate(true);
      * $element->translate(false);
-     * $element->translate(Translate::YES);
+     * $element->translate(Translate::NO);
      * ```
      */
     public function translate(bool|string|UnitEnum|null $value): static

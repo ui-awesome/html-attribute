@@ -35,11 +35,16 @@ trait HasRel
     /**
      * Sets the HTML `rel` attribute for the element.
      *
-     * Creates a new instance with the specified relationship value, supporting explicit assignment according to the
-     * HTML specification for link relationship types.
+     * Creates a new instance with the specified relationship value.
      *
-     * @param string|UnitEnum|null $value Relationship value to set for the element. Use a valid relationship token
-     * (for example, `noopener`, `noreferrer`, `canonical`, `stylesheet`). Can be `null` to unset the attribute.
+     * Defines the relationship between the current document and the linked resource.
+     * - Common values include `stylesheet` for CSS files, `noopener` to prevent the linked page from accessing the
+     *   `window.opener` property (security best practice for external links), `noreferrer` to omit the Referer header,
+     *   `canonical` for specifying the canonical URL, `preload` for resource hints, and `modulepreload` for JavaScript
+     *   modules.
+     *
+     * @param string|UnitEnum|null $value Relationship value to set for the element. Use valid link types such as
+     * `noopener`, `noreferrer`, `stylesheet`, `canonical`, `preload`. Can be `null` to unset the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *

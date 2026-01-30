@@ -35,11 +35,17 @@ trait HasIntegrity
     /**
      * Sets the HTML `integrity` attribute for the element.
      *
-     * Creates a new instance with the specified integrity metadata value, supporting explicit assignment according to
-     * the Subresource Integrity specification. The value should contain the cryptographic hash(es) of the resource.
+     * Creates a new instance with the specified integrity metadata value.
      *
-     * @param string|Stringable|UnitEnum|null $value Integrity metadata value to set for the element. Typically contains
-     * a hash algorithm and base64-encoded hash (for example, `sha384-abc123...`). Can be `null` to unset the attribute.
+     * Enables Subresource Integrity (SRI) to verify that the fetched resource has been delivered without unexpected
+     * manipulation. The browser computes the hash of the fetched resource and compares it with the provided value; if
+     * they do not match, the resource is not executed.
+     *
+     * The value must contain a hash algorithm (for example, `sha384`, `sha512`) followed by a hyphen and the
+     * base64-encoded hash of the resource.
+     *
+     * @param string|Stringable|UnitEnum|null $value Integrity metadata value to set for the element. Must be in the
+     * format `algorithm-base64hash` (for example, `sha384-abc123...`). Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `integrity` attribute.
      *

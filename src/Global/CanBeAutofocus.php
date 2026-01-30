@@ -33,10 +33,17 @@ trait CanBeAutofocus
     /**
      * Sets the HTML `autofocus` attribute for the element.
      *
-     * Creates a new instance with the specified focus value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified focus value.
      *
-     * @param bool $value Focus to set for the element.
+     * When `true`, the element will automatically receive focus when the page loads, allowing users to start
+     * interacting with it immediately without clicking.
+     *
+     * This is particularly useful for search boxes, login forms, or modal dialogs where immediate user input is
+     * expected.
+     *
+     * Only one element per page should have autofocus for optimal user experience.
+     *
+     * @param bool $value Whether the element should automatically receive focus when the page loads.
      *
      * @return static New instance with the updated `autofocus` attribute.
      *
@@ -44,8 +51,8 @@ trait CanBeAutofocus
      *
      * Usage example:
      * ```php
-     * $element->autofocus(false);
      * $element->autofocus(true);
+     * $element->autofocus(false);
      * ```
      */
     public function autofocus(bool $value): static

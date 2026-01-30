@@ -34,17 +34,23 @@ trait HasType
     /**
      * Sets the HTML `type` attribute for the element.
      *
-     * Creates a new instance with the specified type value, supporting explicit assignment according to the HTML
-     * specification for type attributes.
+     * Creates a new instance with the specified type value.
      *
-     * @param string|Stringable|UnitEnum|null $value Type value to set for the element. Can be `null` to unset the
-     * attribute.
+     * Defines the type of the element or the MIME type of the linked resource.
+     * - For `<script>` elements, use `module` to indicate a JavaScript module, `importmap` for import maps, or MIME
+     *   types like `text/javascript`. For `<style>` elements, use `text/css`.
+     * - For `<input>` elements, use values like `text`, `email`, `password`, `checkbox`, etc.
+     * - When omitted, the browser uses the default type for the element.
+     *
+     * @param string|Stringable|UnitEnum|null $value Type value to set for the element. Use MIME types (for example,
+     * `text/css`, `text/javascript`) or element-specific type values. Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `type` attribute.
      *
      * Usage example:
      * ```php
      * $element->type('text/css');
+     * $element->type('module');
      * $element->type(null);
      * ```
      */

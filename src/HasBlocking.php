@@ -35,11 +35,15 @@ trait HasBlocking
     /**
      * Sets the HTML `blocking` attribute for the element.
      *
-     * Creates a new instance with the specified blocking token value, supporting explicit assignment according to the
-     * HTML specification for blocking attributes.
+     * Creates a new instance with the specified blocking token value.
      *
-     * @param string|UnitEnum|null $value Token value to set for the element. Use a valid token (for example, `render`).
-     * Can be `null` to unset the attribute.
+     * When set to `render`, the rendering of content on the screen is blocked until the external resource (`script`,
+     * `style`, or `link`) has been fetched and executed.
+     *
+     * This ensures critical resources are available before the page is displayed to the user.
+     *
+     * @param string|UnitEnum|null $value Blocking token value to set for the element. Use `render` to block rendering
+     * until the resource is ready. Can be `null` to unset the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
