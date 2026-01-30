@@ -103,7 +103,7 @@ final class HasTargetTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-target',
                 Attribute::TARGET->value,
-                implode('", "', Enum::normalizeArray(Target::cases())),
+                implode("', '", Enum::normalizeArray(Target::cases())),
             ),
         );
 
