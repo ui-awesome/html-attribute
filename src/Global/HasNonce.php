@@ -34,18 +34,23 @@ trait HasNonce
     /**
      * Sets the HTML `nonce` attribute for the element.
      *
-     * Creates a new instance with the specified nonce value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified nonce value.
      *
-     * @param string|Stringable|UnitEnum|null $value Nonce value to set for the element. Can be `null` to unset the
-     * attribute.
+     * Provides a cryptographic nonce (number used once) that allows inline scripts or styles to execute when Content
+     * Security Policy (CSP) is enabled.
+     * - The nonce must match the value specified in the CSP header (for example, `script-src 'nonce-abc123'`).
+     * - This enables strict CSP policies while still allowing specific inline scripts that have the correct nonce,
+     *   protecting against XSS attacks.
+     *
+     * @param string|Stringable|UnitEnum|null $value Cryptographic nonce value to set for the element. Must match the
+     * nonce value in the CSP header.
      *
      * @return static New instance with the updated `nonce` attribute.
      *
      * Usage example:
      * ```php
-     * $element->nonce('nonce-value');
-     * $element->nonce(null);
+     * $element->nonce('abc123xyz');
+     * $element->nonce($cspNonce);
      * ```
      */
     public function nonce(string|Stringable|UnitEnum|null $value): static

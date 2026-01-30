@@ -33,10 +33,17 @@ trait CanBeHidden
     /**
      * Sets the HTML `hidden` attribute for the element.
      *
-     * Creates a new instance with the specified visibility value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified visibility value.
      *
-     * @param bool $value Visibility to set for the element.
+     * When `true`, the element is hidden from the page and not rendered visually, though it remains in the DOM.
+     *
+     * This is useful for temporarily hiding content that may be shown later via JavaScript, or for accessibility
+     * purposes where content should be available to assistive technologies but not visible to sighted users.
+     *
+     * Unlike CSS `display: none`, the `hidden` attribute is semantic and indicates the element is not yet or no longer
+     * relevant.
+     *
+     * @param bool $value Whether the element should be hidden from rendering.
      *
      * @return static New instance with the updated `hidden` attribute.
      *
@@ -44,8 +51,8 @@ trait CanBeHidden
      *
      * Usage example:
      * ```php
-     * $element->hidden(false);
      * $element->hidden(true);
+     * $element->hidden(false);
      * ```
      */
     public function hidden(bool $value): static

@@ -33,10 +33,15 @@ trait HasId
     /**
      * Sets the HTML `id` attribute for the element.
      *
-     * Creates a new instance with the specified identifier value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified identifier value.
      *
-     * @param string|null $value Identifier to set for the element. Can be `null` to unset the attribute.
+     * Defines a unique identifier for the element within the document, which can be used for CSS styling, JavaScript
+     * manipulation, or as the target of anchor links.
+     *
+     * The ID must be unique across the entire page - duplicate IDs will cause accessibility issues and unpredictable
+     * behavior. IDs are case-sensitive and should be descriptive (for example, 'main-navigation' rather than 'id1').
+     *
+     * @param string|null $value Unique identifier to set for the element. Must be unique across the document.
      *
      * @return static New instance with the updated `id` attribute.
      *
@@ -44,8 +49,8 @@ trait HasId
      *
      * Usage example:
      * ```php
-     * $element->id('unique-element-id');
-     * $element->id(null);
+     * $element->id('main-navigation');
+     * $element->id('user-profile-form');
      * ```
      */
     public function id(string|null $value): static

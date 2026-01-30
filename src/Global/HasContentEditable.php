@@ -37,16 +37,16 @@ trait HasContentEditable
     /**
      * Sets the HTML `contenteditable` attribute for the element.
      *
-     * Creates a new instance with the specified content editability value, supporting explicit assignment according to
-     * the HTML specification for global attributes.
+     * Creates a new instance with the specified content editability value.
      *
-     * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * {@see ContentEditable::cases()} (`false`, `plaintext-only`, `true`) are accepted.
+     * Controls whether the element's content is editable by the user.
+     * - Use `true` to allow full rich text editing with HTML formatting. Use `plaintext-only` to allow editing but
+     *   strip HTML formatting (text only).
+     * - Use `false` to disable editing. This enables building rich text editors, inline editing interfaces, or
+     *   user-generated content areas directly in HTML.
      *
-     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
-     *
-     * @param bool|string|UnitEnum|null $value Content editability to set for the element. Can be `null` to unset
-     * the attribute.
+     * @param bool|string|UnitEnum|null $value Content editability to set for the element. Use `true` for rich text
+     * editing, `plaintext-only` for text-only editing, or `false` to disable.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -57,7 +57,8 @@ trait HasContentEditable
      *
      * Usage example:
      * ```php
-     * $element->contentEditable('false');
+     * $element->contentEditable(true);
+     * $element->contentEditable('plaintext-only');
      * $element->contentEditable(ContentEditable::TRUE);
      * ```
      */

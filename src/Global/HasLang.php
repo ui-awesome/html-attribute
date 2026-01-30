@@ -35,15 +35,18 @@ trait HasLang
     /**
      * Sets the HTML `lang` attribute for the element.
      *
-     * Creates a new instance with the specified language value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified language value.
      *
-     * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * {@see Language::cases()} are accepted.
+     * Defines the primary language of the element's content, which is essential for accessibility (screen readers use
+     * it for proper pronunciation), search engine optimization, and browser features like hyphenation and
+     * spell-checking.
      *
-     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
+     * Use standard language codes like 'en' for English, 'es' for Spanish, or 'en-US' for US English.
      *
-     * @param string|UnitEnum|null $value Language to set for the element. Can be `null` to unset the attribute.
+     * This helps assistive technologies provide the correct voice and pronunciation for the content.
+     *
+     * @param string|UnitEnum|null $value Language code to set for the element. Use standard language codes (for example,
+     * 'en', 'es', 'fr', 'en-US').
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -54,9 +57,9 @@ trait HasLang
      *
      * Usage example:
      * ```php
-     * $element->lang('en-US');
+     * $element->lang('en');
+     * $element->lang('es');
      * $element->lang(Language::ENGLISH_US);
-     * $element->lang(null);
      * ```
      */
     public function lang(string|UnitEnum|null $value): static

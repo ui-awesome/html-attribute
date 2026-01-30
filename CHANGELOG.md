@@ -10,6 +10,7 @@
 - Enh #37: Add `HasIntegrity` trait and `integrity()` method to manage `integrity` attribute for HTML elements (@terabytesoftw)
 - Enh #38: Add `HasReferrerpolicy` trait and `referrerpolicy()` method to manage `referrerpolicy` attribute for HTML elements (@terabytesoftw)
 - Enh #39: Add `HasSrc` trait and `src()` method to manage `src` attribute for HTML elements (@terabytesoftw)
+- Bug #40: Enhance documentation for HTML attributes (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

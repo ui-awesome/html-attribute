@@ -36,11 +36,17 @@ trait HasReferrerpolicy
     /**
      * Sets the HTML `referrerpolicy` attribute for the element.
      *
-     * Creates a new instance with the specified referrer policy value, supporting explicit assignment according to the
-     * HTML specification for referrerpolicy attributes.
+     * Creates a new instance with the specified referrer policy value.
      *
-     * @param string|UnitEnum|null $value Referrer policy value to set for the element. Use a valid policy token (for
-     * example, `no-referrer`, `origin`, `strict-origin-when-cross-origin`). Can be `null` to unset the attribute.
+     * Controls how much referrer information is included when fetching the resource or navigating.
+     * - Use `no-referrer` to omit the Referer header entirely for maximum privacy. Use `origin` to send only the origin
+     *   (scheme, host, port) without the path.
+     * - Use `strict-origin-when-cross-origin` (default) to send the full URL for same-origin requests and only the
+     *   origin for cross-origin requests. Avoid `unsafe-url` as it leaks the full URL including path and query
+     *   parameters.
+     *
+     * @param string|UnitEnum|null $value Referrer policy value to set for the element. Use `no-referrer`, `origin`,
+     * `strict-origin-when-cross-origin`, or other valid tokens. Can be `null` to unset the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *

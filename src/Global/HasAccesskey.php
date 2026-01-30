@@ -33,10 +33,14 @@ trait HasAccesskey
     /**
      * Sets the HTML `accesskey` attribute for the element.
      *
-     * Creates a new instance with the specified access key value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified access key value.
      *
-     * @param string|null $value Access key to set for the element. Can be `null` to unset the attribute.
+     * Defines a keyboard shortcut that activates or focuses the element.
+     * - The value is a single character (for example, 's' for Alt+S or Ctrl+S depending on the browser).
+     * - While useful for power users, consider that access keys can conflict with screen reader shortcuts and browser
+     *   defaults, so they should be used sparingly and documented clearly.
+     *
+     * @param string|null $value Access key character to set for the element. Use a single alphanumeric character.
      *
      * @return static New instance with the updated `accesskey` attribute.
      *
@@ -44,8 +48,8 @@ trait HasAccesskey
      *
      * Usage example:
      * ```php
-     * $element->accesskey('k');
-     * $element->accesskey(null);
+     * $element->accesskey('s');
+     * $element->accesskey('1');
      * ```
      */
     public function accesskey(string|null $value): static

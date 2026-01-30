@@ -36,11 +36,16 @@ trait HasFetchpriority
     /**
      * Sets the HTML `fetchpriority` attribute for the element.
      *
-     * Creates a new instance with the specified fetch priority value, supporting explicit assignment according to the
-     * HTML specification for fetchpriority attributes.
+     * Creates a new instance with the specified fetch priority value.
      *
-     * @param string|UnitEnum|null $value Fetch priority value to set for the element. Use a valid priority hint (for
-     * example, `high`, `low`, `auto`). Can be `null` to unset the attribute.
+     * Provides a hint to the browser about the relative priority for fetching the external resource.
+     * - Use `high` for resources that significantly contribute to user experience metrics such as Largest Contentful
+     *   Paint (LCP).
+     * - Use `low` for resources that are not immediately necessary for the initial page load and can be deferred.
+     * - Use `auto` for browser-determined priority.
+     *
+     * @param string|UnitEnum|null $value Fetch priority value to set for the element. Use `high` for critical resources,
+     * `low` for deferred resources, or `auto` for browser-determined priority. Can be `null` to unset the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *

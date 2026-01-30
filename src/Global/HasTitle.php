@@ -34,11 +34,18 @@ trait HasTitle
     /**
      * Sets the HTML `title` attribute for the element.
      *
-     * Creates a new instance with the specified title value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified title value.
      *
-     * @param string|Stringable|UnitEnum|null $value Title value to set for the element. Can be `null` to unset the
-     * attribute.
+     * Provides advisory information about the element, typically displayed as a tooltip when the user hovers over the
+     * element.
+     *
+     * This is useful for providing additional context, explanations, or help text without cluttering the interface.
+     *
+     * For accessibility, the title should supplement (not replace) proper labeling. Note that touch devices cannot
+     * trigger tooltips, so critical information should not be placed only in the title attribute.
+     *
+     * @param string|Stringable|UnitEnum|null $value Advisory title text to set for the element. Use concise,
+     * helpful text that appears as a tooltip on hover.
      *
      * @return static New instance with the updated `title` attribute.
      *
@@ -46,16 +53,8 @@ trait HasTitle
      *
      * Usage example:
      * ```php
-     * $element->title('Tooltip text');
-     * $element->title(TitleEnum::TOOLTIP);
-     * $element->title(
-     *     new class implements Stringable {
-     *         public function __toString(): string {
-     *             return 'Tooltip text from Stringable';
-     *         }
-     *     }
-     * );
-     * $element->title(null);
+     * $element->title('Click to save changes');
+     * $element->title('Enter your full name');
      * ```
      */
     public function title(string|Stringable|UnitEnum|null $value): static

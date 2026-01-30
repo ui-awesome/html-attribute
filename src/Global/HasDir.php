@@ -35,16 +35,16 @@ trait HasDir
     /**
      * Sets the HTML `dir` attribute for the element.
      *
-     * Creates a new instance with the specified directionality value, supporting explicit assignment according to the
-     * HTML specification for global attributes.
+     * Creates a new instance with the specified directionality value.
      *
-     * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * {@see Direction::cases()} (`auto`, `ltr`, `rtl`) are accepted.
+     * Controls the text direction for the element's content.
+     * - Use `ltr` for left-to-right languages (for example, English, Spanish).
+     * - Use `rtl` for right-to-left languages (for example, Arabic, Hebrew).
+     * - Use `auto` to let the browser determine the direction based on the first character.
      *
-     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
+     * This is essential for proper rendering of multilingual content and mixed-language interfaces.
      *
-     * @param string|UnitEnum|null $value Directionality to set for the element. Can be `null` to unset the
-     * attribute.
+     * @param string|UnitEnum|null $value Directionality to set for the element. Use `ltr`, `rtl`, or `auto`.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -56,7 +56,8 @@ trait HasDir
      * Usage example:
      * ```php
      * $element->dir('ltr');
-     * $element->dir(Direction::RTL);
+     * $element->dir('rtl');
+     * $element->dir(Direction::AUTO);
      * ```
      */
     public function dir(string|UnitEnum|null $value): static

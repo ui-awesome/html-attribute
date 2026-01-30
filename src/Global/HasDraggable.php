@@ -37,16 +37,17 @@ trait HasDraggable
     /**
      * Sets the HTML `draggable` attribute for the element.
      *
-     * Creates a new instance with the specified draggable value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
+     * Creates a new instance with the specified draggable value.
      *
-     * While the method accepts any UnitEnum for flexibility, runtime validation ensures only values matching
-     * {@see Draggable::cases()} (`false`, `true`) are accepted.
+     * Controls whether the element can be dragged as part of HTML5 Drag and Drop API operations.
+     * - Use `true` to make the element draggable, allowing users to drag it to drop zones.
+     * - Use `false` to explicitly prevent dragging.
      *
-     * This allows users to provide custom enums while rejecting values that are not present in the allowed token set.
+     * This enables building drag-and-drop interfaces for reordering lists, uploading files, or moving items between
+     * containers.
      *
-     * @param bool|string|UnitEnum|null $value Draggable to set for the element. Can be `null` to unset
-     * the attribute.
+     * @param bool|string|UnitEnum|null $value Draggable state to set for the element. Use `true` to enable dragging,
+     * `false` to disable.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -57,6 +58,7 @@ trait HasDraggable
      *
      * Usage example:
      * ```php
+     * $element->draggable(true);
      * $element->draggable(false);
      * $element->draggable(Draggable::TRUE);
      * ```
