@@ -7,6 +7,7 @@
 - Enh #34: Add `HasType` trait and `type()` method to manage `type` attribute for HTML elements (@terabytesoftw)
 - Enh #35: Add `HasNonce` trait and `nonce()` method to manage `nonce` attribute for HTML elements (@terabytesoftw)
 - Bug #36: Clarify documentation for various HTML attributes to specify value types for better understanding (@terabytesoftw)
+- Enh #37: Add `HasIntegrity` trait and `integrity()` method to manage `integrity` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
