@@ -11,6 +11,7 @@
 - Enh #38: Add `HasReferrerpolicy` trait and `referrerpolicy()` method to manage `referrerpolicy` attribute for HTML elements (@terabytesoftw)
 - Enh #39: Add `HasSrc` trait and `src()` method to manage `src` attribute for HTML elements (@terabytesoftw)
 - Bug #40: Enhance documentation for HTML attributes (@terabytesoftw)
+- Enh #41: Add `HasTarget` trait and `target()` method to manage `target` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

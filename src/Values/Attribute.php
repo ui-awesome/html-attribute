@@ -220,6 +220,13 @@ enum Attribute: string
     case STEP = 'step';
 
     /**
+     * `target` — Specifies the browsing context for hyperlink navigation or form submission.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/target
+     */
+    case TARGET = 'target';
+
+    /**
      * `type` — Defines the type of the element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/type
