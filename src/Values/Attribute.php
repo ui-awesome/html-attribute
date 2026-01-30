@@ -107,6 +107,14 @@ enum Attribute: string
     case FORM = 'form';
 
     /**
+     * `integrity` — Contains inline metadata that a user agent can use to verify that a fetched resource has been
+     * delivered without unexpected manipulation (Subresource Integrity).
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/integrity
+     */
+    case INTEGRITY = 'integrity';
+
+    /**
      * `max` — Indicates the maximum value allowed.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/max
