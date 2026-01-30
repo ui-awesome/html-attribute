@@ -37,11 +37,14 @@ trait CanBeHidden
      *
      * When `true`, the element is hidden from the page and not rendered visually, though it remains in the DOM.
      *
-     * This is useful for temporarily hiding content that may be shown later via JavaScript, or for accessibility
-     * purposes where content should be available to assistive technologies but not visible to sighted users.
+     * This is useful for temporarily hiding content that may be shown later via JavaScript, or for marking content
+     * as not currently relevant to the user.
      *
      * Unlike CSS `display: none`, the `hidden` attribute is semantic and indicates the element is not yet or no longer
      * relevant.
+     *
+     * Note: For content that should be visually hidden but remain accessible to screen readers and other assistive
+     * technologies, use CSS techniques like `.visually-hidden` classes instead of the `hidden` attribute.
      *
      * @param bool $value Whether the element should be hidden from rendering.
      *
