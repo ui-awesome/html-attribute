@@ -206,6 +206,13 @@ enum Attribute: string
     case SIZE = 'size';
 
     /**
+     * `src` — Specifies the URL of the resource.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/src
+     */
+    case SRC = 'src';
+
+    /**
      * `step` — Defines the granularity of the value in an input of type number or range.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/step
