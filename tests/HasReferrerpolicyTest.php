@@ -91,7 +91,7 @@ final class HasReferrerpolicyTest extends TestCase
         );
     }
 
-    public function testThrowExceptionWhenSettingInvalidReferrerpolicyValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingReferrerpolicyValue(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -103,7 +103,7 @@ final class HasReferrerpolicyTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::REFERRERPOLICY->value,
-                implode('\', \'', Enum::normalizeArray(Referrerpolicy::cases())),
+                implode("', '", Enum::normalizeArray(Referrerpolicy::cases())),
             ),
         );
 

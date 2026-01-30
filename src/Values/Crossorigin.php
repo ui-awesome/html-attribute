@@ -16,7 +16,7 @@ namespace UIAwesome\Html\Attribute\Values;
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 enum Crossorigin: string

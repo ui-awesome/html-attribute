@@ -28,7 +28,7 @@ use UnitEnum;
  *
  * {@see TargetProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
@@ -91,7 +91,7 @@ final class HasTargetTest extends TestCase
         );
     }
 
-    public function testThrowExceptionWhenSettingInvalidTargetValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingTargetValue(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -103,7 +103,7 @@ final class HasTargetTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-target',
                 Attribute::TARGET->value,
-                implode('\', \'', Enum::normalizeArray(Target::cases())),
+                implode("', '", Enum::normalizeArray(Target::cases())),
             ),
         );
 

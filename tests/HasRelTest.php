@@ -28,7 +28,7 @@ use UnitEnum;
  *
  * {@see RelProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
@@ -91,7 +91,7 @@ final class HasRelTest extends TestCase
         );
     }
 
-    public function testThrowExceptionWhenSettingInvalidRelValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingRelValue(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -103,7 +103,7 @@ final class HasRelTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::REL->value,
-                implode('\', \'', Enum::normalizeArray(Rel::cases())),
+                implode("', '", Enum::normalizeArray(Rel::cases())),
             ),
         );
 

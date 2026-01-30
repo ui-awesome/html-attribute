@@ -91,7 +91,7 @@ final class HasDecodingTest extends TestCase
         );
     }
 
-    public function testThrowExceptionWhenSettingInvalidDecodingValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingDecodingValue(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -103,7 +103,7 @@ final class HasDecodingTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 ElementAttribute::DECODING->value,
-                implode('\', \'', Enum::normalizeArray(Decoding::cases())),
+                implode("', '", Enum::normalizeArray(Decoding::cases())),
             ),
         );
 

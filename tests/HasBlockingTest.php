@@ -91,7 +91,7 @@ final class HasBlockingTest extends TestCase
         );
     }
 
-    public function testThrowExceptionWhenSettingInvalidBlockingValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingBlockingValue(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -103,7 +103,7 @@ final class HasBlockingTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::BLOCKING->value,
-                implode('\', \'', Enum::normalizeArray(Blocking::cases())),
+                implode("', '", Enum::normalizeArray(Blocking::cases())),
             ),
         );
 

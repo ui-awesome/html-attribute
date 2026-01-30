@@ -91,7 +91,7 @@ final class HasFetchpriorityTest extends TestCase
         );
     }
 
-    public function testThrowExceptionWhenSettingInvalidFetchpriorityValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingFetchpriorityValue(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -103,7 +103,7 @@ final class HasFetchpriorityTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::FETCHPRIORITY->value,
-                implode('\', \'', Enum::normalizeArray(Fetchpriority::cases())),
+                implode("', '", Enum::normalizeArray(Fetchpriority::cases())),
             ),
         );
 

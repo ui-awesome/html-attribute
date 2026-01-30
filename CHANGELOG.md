@@ -13,6 +13,7 @@
 - Bug #40: Enhance documentation for HTML attributes (@terabytesoftw)
 - Enh #41: Add `HasTarget` trait and `target()` method to manage `target` attribute for HTML elements (@terabytesoftw)
 - Enh #42: Add `HasAs` trait and `as()` method to manage `as` attribute for HTML elements (@terabytesoftw)
+- Bug #43: Update copyright year to `2026` in multiple files (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

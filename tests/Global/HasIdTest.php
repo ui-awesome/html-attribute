@@ -24,7 +24,7 @@ use UIAwesome\Html\Mixin\HasAttributes;
  *
  * {@see IdProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('global')]
