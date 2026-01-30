@@ -103,7 +103,7 @@ final class HasAsTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::AS->value,
-                implode('", "', Enum::normalizeArray(AsValue::cases())),
+                implode("', '", Enum::normalizeArray(AsValue::cases())),
             ),
         );
 
