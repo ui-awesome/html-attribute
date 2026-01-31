@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasCharset;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\CharsetProvider;
-use UIAwesome\Html\Attribute\Values\Attribute;
-use UIAwesome\Html\Helper\Attributes;
+use UIAwesome\Html\Attribute\Values\{Attribute, Charset};
+use UIAwesome\Html\Helper\Exception\Message;
+use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
@@ -22,6 +24,7 @@ use UnitEnum;
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `charset` attribute is not provided.
  * - Sets the `charset` HTML attribute and renders the expected output.
+ * - Throws an exception when the `charset` attribute value is invalid.
  *
  * {@see CharsetProvider} for test case data providers.
  *
@@ -86,5 +89,24 @@ final class HasCharsetTest extends TestCase
             Attributes::render($instance->getAttributes()),
             $message,
         );
+    }
+
+    public function testThrowInvalidArgumentExceptionWhenSettingCharsetValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasCharset;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                Attribute::CHARSET->value,
+                implode("', '", Enum::normalizeArray(Charset::cases())),
+            ),
+        );
+
+        $instance->charset('invalid-value');
     }
 }
