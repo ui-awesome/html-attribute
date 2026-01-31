@@ -15,6 +15,7 @@
 - Enh #42: Add `HasAs` trait and `as()` method to manage `as` attribute for HTML elements (@terabytesoftw)
 - Bug #43: Update copyright year to `2026` in multiple files (@terabytesoftw)
 - Enh #44: Add `HasDisabled` trait and `disabled()` method to manage `disabled` attribute for HTML elements (@terabytesoftw)
+- Enh #45: Add `HasHrefLang` trait and `hreflang()` method to manage `hreflang` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

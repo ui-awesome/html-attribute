@@ -114,6 +114,13 @@ enum Attribute: string
     case FORM = 'form';
 
     /**
+     * `hreflang` — Indicates the language of the linked resource.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#hreflang
+     */
+    case HREFLANG = 'hreflang';
+
+    /**
      * `integrity` — Contains inline metadata that a user agent can use to verify that a fetched resource has been
      * delivered without unexpected manipulation (Subresource Integrity).
      *
