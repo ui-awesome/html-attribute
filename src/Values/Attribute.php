@@ -199,6 +199,13 @@ enum Attribute: string
     case MULTIPLE = 'multiple';
 
     /**
+     * `name` — Specifies the metadata name for the meta element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name
+     */
+    case NAME = 'name';
+
+    /**
      * `pattern` — Defines a regular expression which the element's value will be validated against.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/pattern
