@@ -1,0 +1,67 @@
+<?php
+
+declare(strict_types=1);
+
+namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
+
+/**
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasImagesizesTest} test cases.
+ *
+ * Provides representative input/output pairs for the `imagesizes` attribute.
+ *
+ * @copyright Copyright (C) 2026 Terabytesoftw.
+ * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ */
+final class ImagesizesProvider
+{
+    /**
+     * @phpstan-return array<string, array{string|\UnitEnum|null, mixed[], string|\UnitEnum, string, string}>
+     */
+    public static function values(): array
+    {
+        return [
+            'empty string' => [
+                '',
+                [],
+                '',
+                '',
+                'Should return an empty string when setting an empty string.',
+            ],
+            'null' => [
+                null,
+                [],
+                '',
+                '',
+                "Should return an empty string when the attribute is set to 'null'.",
+            ],
+            'replace existing' => [
+                '50vw',
+                ['imagesizes' => '100vw'],
+                '50vw',
+                ' imagesizes="50vw"',
+                "Should return new 'imagesizes' after replacing the existing 'imagesizes' attribute.",
+            ],
+            'string 100vw' => [
+                '100vw',
+                [],
+                '100vw',
+                ' imagesizes="100vw"',
+                'Should return the attribute value after setting it to 100vw.',
+            ],
+            'string media query' => [
+                '(max-width: 600px) 100vw, 50vw',
+                [],
+                '(max-width: 600px) 100vw, 50vw',
+                ' imagesizes="(max-width: 600px) 100vw, 50vw"',
+                'Should return the attribute value after setting it with media query.',
+            ],
+            'unset with null' => [
+                null,
+                ['imagesizes' => '100vw'],
+                '',
+                '',
+                "Should unset the 'imagesizes' attribute when 'null' is provided after a value.",
+            ],
+        ];
+    }
+}

@@ -121,6 +121,13 @@ enum Attribute: string
     case HREFLANG = 'hreflang';
 
     /**
+     * `imagesizes` — Specifies the image sizes for preload.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#imagesizes
+     */
+    case IMAGESIZES = 'imagesizes';
+
+    /**
      * `integrity` — Contains inline metadata that a user agent can use to verify that a fetched resource has been
      * delivered without unexpected manipulation (Subresource Integrity).
      *

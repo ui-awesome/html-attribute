@@ -16,6 +16,7 @@
 - Bug #43: Update copyright year to `2026` in multiple files (@terabytesoftw)
 - Enh #44: Add `HasDisabled` trait and `disabled()` method to manage `disabled` attribute for HTML elements (@terabytesoftw)
 - Enh #45: Add `HasHreflang` trait and `hreflang()` method to manage `hreflang` attribute for HTML elements (@terabytesoftw)
+- Enh #46: Add `HasImagesizes` trait and `imagesizes()` method to manage `imagesizes` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
