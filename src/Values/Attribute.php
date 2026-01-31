@@ -128,6 +128,13 @@ enum Attribute: string
     case HREFLANG = 'hreflang';
 
     /**
+     * `http-equiv` — Defines a pragma directive for processing the document.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv
+     */
+    case HTTP_EQUIV = 'http-equiv';
+
+    /**
      * `imagesizes` — Specifies the image sizes for preload.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#imagesizes

@@ -21,6 +21,7 @@
 - Enh #48: Add `HasSizes` trait and `sizes()` method to manage `sizes` attribute for HTML elements (@terabytesoftw)
 - Enh #49: Add `HasCharset` trait and `charset()` method to manage `charset` attribute for HTML elements (@terabytesoftw)
 - Enh #50: Add `HasContent` trait and `content()` method to manage `content` attribute for HTML elements (@terabytesoftw)
+- Enh #51: Add `HasHttpEquiv` trait and `httpEquiv()` method to manage `http-equiv` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
