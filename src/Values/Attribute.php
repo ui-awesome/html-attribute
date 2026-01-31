@@ -234,6 +234,13 @@ enum Attribute: string
     case SIZE = 'size';
 
     /**
+     * `sizes` — Defines the sizes of icons for visual media.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#sizes
+     */
+    case SIZES = 'sizes';
+
+    /**
      * `src` — Specifies the URL of the resource.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/src
