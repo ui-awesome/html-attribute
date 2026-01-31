@@ -128,6 +128,13 @@ enum Attribute: string
     case IMAGESIZES = 'imagesizes';
 
     /**
+     * `imagesrcset` — Specifies the image srcset for preload.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset
+     */
+    case IMAGESRCSET = 'imagesrcset';
+
+    /**
      * `integrity` — Contains inline metadata that a user agent can use to verify that a fetched resource has been
      * delivered without unexpected manipulation (Subresource Integrity).
      *
