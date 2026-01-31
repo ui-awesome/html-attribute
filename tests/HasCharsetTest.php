@@ -10,8 +10,8 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasCharset;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\CharsetProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Charset};
-use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
