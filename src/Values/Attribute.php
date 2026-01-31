@@ -58,6 +58,13 @@ enum Attribute: string
     case CAPTURE = 'capture';
 
     /**
+     * `charset` — Declares the document's character encoding.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta#charset
+     */
+    case CHARSET = 'charset';
+
+    /**
      * `content` — A value associated with a meta element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/content
