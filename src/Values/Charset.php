@@ -132,6 +132,7 @@ enum Charset: string
      * `utf-32le` — Unicode UTF-32 Little Endian.
      */
     case UTF_32LE = 'utf-32le';
+
     /**
      * `utf-8` — Unicode UTF-8 encoding (the only valid encoding for HTML5 documents).
      */
