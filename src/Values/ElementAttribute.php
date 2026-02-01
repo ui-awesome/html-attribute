@@ -45,20 +45,20 @@ enum ElementAttribute: string
     case HEIGHT = 'height';
 
     /**
-     * `loading` — Indicates how the browser should load the image.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
-     */
-    case LOADING = 'loading';
-
-    /**
      * `href` — The URL of a linked resource.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#href
      * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href
      */
     case HREF = 'href';
+
+    /**
+     * `loading` — Indicates how the browser should load the image.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
+     */
+    case LOADING = 'loading';
 
     /**
      * `referrerpolicy` — Referrer information to send when fetching the resource.
