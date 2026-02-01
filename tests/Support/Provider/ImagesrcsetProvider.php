@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
+use UnitEnum;
+
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasImagesrcsetTest} test cases.
  *
@@ -15,7 +17,7 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 final class ImagesrcsetProvider
 {
     /**
-     * @phpstan-return array<string, array{string|\UnitEnum|null, mixed[], string|\UnitEnum, string, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
@@ -41,19 +43,19 @@ final class ImagesrcsetProvider
                 ' imagesrcset="image-200.jpg 200w"',
                 "Should return new 'imagesrcset' after replacing the existing 'imagesrcset' attribute.",
             ],
-            'string single' => [
+            'string' => [
                 'image-400.jpg 400w',
                 [],
                 'image-400.jpg 400w',
                 ' imagesrcset="image-400.jpg 400w"',
                 'Should return the attribute value after setting it.',
             ],
-            'string multiple' => [
+            'string with multiple' => [
                 'image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w',
                 [],
                 'image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w',
                 ' imagesrcset="image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w"',
-                'Should return the attribute value after setting multiple sources.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,

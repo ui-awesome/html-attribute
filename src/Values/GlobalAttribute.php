@@ -138,6 +138,7 @@ enum GlobalAttribute: string
      * `is` — Specifies that a standard HTML element should behave like a defined custom element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/is
+     * @link https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is
      */
     case IS = 'is';
 

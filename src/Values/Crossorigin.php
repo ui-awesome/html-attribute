@@ -27,7 +27,7 @@ enum Crossorigin: string
      * This is the default value when the attribute is present without a value. When not specified, the resource is
      * fetched without a CORS request (i.e., without sending the Origin HTTP header).
      *
-     * @link https://html.spec.whatwg.org/multipage/urls-and-fetching.html#cors-settings-attributes
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin#anonymous
      */
     case ANONYMOUS = 'anonymous';
 
@@ -37,7 +37,7 @@ enum Crossorigin: string
      * This value will include credentials (cookies, authorization headers, or TLS client certificates) in CORS
      * requests.
      *
-     * @link https://html.spec.whatwg.org/multipage/urls-and-fetching.html#cors-settings-attributes
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin#use-credentials
      */
     case USE_CREDENTIALS = 'use-credentials';
 }

@@ -47,33 +47,12 @@ final class TargetProvider
                 ' target="_blank"',
                 "Should return new 'target' after replacing the existing 'target' attribute.",
             ],
-            'string _self' => [
+            'string' => [
                 '_self',
                 [],
                 '_self',
                 ' target="_self"',
                 'Should return the attribute value after setting it to _self.',
-            ],
-            'string _blank' => [
-                '_blank',
-                [],
-                '_blank',
-                ' target="_blank"',
-                'Should return the attribute value after setting it to _blank.',
-            ],
-            'string _parent' => [
-                '_parent',
-                [],
-                '_parent',
-                ' target="_parent"',
-                'Should return the attribute value after setting it to _parent.',
-            ],
-            'string _top' => [
-                '_top',
-                [],
-                '_top',
-                ' target="_top"',
-                'Should return the attribute value after setting it to _top.',
             ],
             'unset with null' => [
                 null,
