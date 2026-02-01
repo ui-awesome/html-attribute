@@ -27,6 +27,7 @@ use UnitEnum;
  * - Ensures invalid keys and values throw expected exceptions.
  * - Normalizes keys and values when setting `on*` event attributes.
  * - Renders expected output when `on*` event attributes are set.
+ * - Throws an exception when the `on*` event attribute value is invalid.
  *
  * {@see EventProvider} for test case data providers.
  *
@@ -120,7 +121,7 @@ final class HasEventsTest extends TestCase
     }
 
     /**
-     * @phpstan-param string|\UnitEnum $key
+     * @phpstan-param string|UnitEnum $key
      * @phpstan-param string|Stringable|null|Closure(): mixed $handler
      * @phpstan-param mixed[] $expected
      */

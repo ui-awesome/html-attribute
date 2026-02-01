@@ -27,6 +27,7 @@ use UnitEnum;
  * - Ensures invalid keys and values throw expected exceptions.
  * - Normalizes keys and values when setting `data-*` attributes.
  * - Renders expected output when `data-*` attributes are set.
+ * - Throws an exception when the `data-*` attribute value is invalid.
  *
  * {@see DataProvider} for test case data providers.
  *

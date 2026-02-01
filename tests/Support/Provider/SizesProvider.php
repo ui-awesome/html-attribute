@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
+use UnitEnum;
+
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasSizesTest} test cases.
  *
@@ -15,7 +17,7 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 final class SizesProvider
 {
     /**
-     * @phpstan-return array<string, array{string|\UnitEnum|null, mixed[], string|\UnitEnum, string, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
@@ -41,26 +43,19 @@ final class SizesProvider
                 ' sizes="32x32"',
                 "Should return new 'sizes' after replacing the existing 'sizes' attribute.",
             ],
-            'string any' => [
+            'string' => [
                 'any',
                 [],
                 'any',
                 ' sizes="any"',
-                'Should return the attribute value after setting it to any.',
+                'Should return the attribute value after setting it.',
             ],
-            'string single size' => [
-                '16x16',
-                [],
-                '16x16',
-                ' sizes="16x16"',
-                'Should return the attribute value after setting it to single size.',
-            ],
-            'string multiple sizes' => [
+            'string with multiple sizes' => [
                 '16x16 32x32 48x48',
                 [],
                 '16x16 32x32 48x48',
                 ' sizes="16x16 32x32 48x48"',
-                'Should return the attribute value after setting multiple sizes.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,

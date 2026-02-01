@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
+use UnitEnum;
+
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasHreflangTest} test cases.
  *
@@ -15,7 +17,7 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 final class HreflangProvider
 {
     /**
-     * @phpstan-return array<string, array{string|\UnitEnum|null, mixed[], string|\UnitEnum, string, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
@@ -41,26 +43,12 @@ final class HreflangProvider
                 ' hreflang="es"',
                 "Should return new 'hreflang' after replacing the existing 'hreflang' attribute.",
             ],
-            'string en' => [
+            'string' => [
                 'en',
                 [],
                 'en',
                 ' hreflang="en"',
-                'Should return the attribute value after setting it to en.',
-            ],
-            'string es' => [
-                'es',
-                [],
-                'es',
-                ' hreflang="es"',
-                'Should return the attribute value after setting it to es.',
-            ],
-            'string fr' => [
-                'fr',
-                [],
-                'fr',
-                ' hreflang="fr"',
-                'Should return the attribute value after setting it to fr.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,

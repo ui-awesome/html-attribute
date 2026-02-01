@@ -27,6 +27,7 @@ use UnitEnum;
  * - Ensures invalid keys and values throw expected exceptions.
  * - Normalizes keys and values when setting `aria-*` attributes.
  * - Renders expected output when `aria-*` attributes are set.
+ * - Throws an exception when the `aria-*` attribute value is invalid.
  *
  * {@see AriaProvider} for test case data providers.
  *

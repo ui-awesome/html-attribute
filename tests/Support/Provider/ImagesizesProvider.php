@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
+use UnitEnum;
+
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasImagesizesTest} test cases.
  *
@@ -15,7 +17,7 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 final class ImagesizesProvider
 {
     /**
-     * @phpstan-return array<string, array{string|\UnitEnum|null, mixed[], string|\UnitEnum, string, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
@@ -41,19 +43,19 @@ final class ImagesizesProvider
                 ' imagesizes="50vw"',
                 "Should return new 'imagesizes' after replacing the existing 'imagesizes' attribute.",
             ],
-            'string 100vw' => [
+            'string' => [
                 '100vw',
                 [],
                 '100vw',
                 ' imagesizes="100vw"',
-                'Should return the attribute value after setting it to 100vw.',
+                'Should return the attribute value after setting it.',
             ],
-            'string media query' => [
+            'string with media query' => [
                 '(max-width: 600px) 100vw, 50vw',
                 [],
                 '(max-width: 600px) 100vw, 50vw',
                 ' imagesizes="(max-width: 600px) 100vw, 50vw"',
-                'Should return the attribute value after setting it with media query.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,

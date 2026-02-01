@@ -43,7 +43,7 @@ final class ContentProvider
                 ' content="new-content"',
                 "Should return new 'content' after replacing the existing 'content' attribute.",
             ],
-            'string simple' => [
+            'string' => [
                 'width=device-width, initial-scale=1',
                 [],
                 'width=device-width, initial-scale=1',
@@ -55,7 +55,7 @@ final class ContentProvider
                 [],
                 '3;url=https://example.com',
                 ' content="3;url=https://example.com"',
-                'Should return the attribute value with special characters.',
+                'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
