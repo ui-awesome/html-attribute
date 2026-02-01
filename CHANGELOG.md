@@ -25,6 +25,7 @@
 - Enh #52: Add `HasName` trait and `name()` method to manage `name` attribute for HTML elements (@terabytesoftw)
 - Bug #53: Update documentation for various HTML attributes and their usage in elements (@terabytesoftw)
 - Enh #54: Add `HasDownload` trait and `download()` method to manage `download` attribute for HTML elements (@terabytesoftw)
+- Enh #55: Add `HasPing` trait and `ping()` method to manage `ping` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

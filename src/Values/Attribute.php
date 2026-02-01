@@ -220,6 +220,13 @@ enum Attribute: string
     case PATTERN = 'pattern';
 
     /**
+     * `ping` — A space-separated list of URLs to which the browser will send POST requests when the link is followed.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#ping
+     */
+    case PING = 'ping';
+
+    /**
      * `placeholder` — Provides a hint to the user of what can be entered in the field.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/placeholder
