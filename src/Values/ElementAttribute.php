@@ -53,6 +53,14 @@ enum ElementAttribute: string
     case HREF = 'href';
 
     /**
+     * `loading` — Indicates how the browser should load the image.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
+     */
+    case LOADING = 'loading';
+
+    /**
      * `referrerpolicy` — Referrer information to send when fetching the resource.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#referrerpolicy
