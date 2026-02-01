@@ -93,6 +93,13 @@ enum Attribute: string
     case DISABLED = 'disabled';
 
     /**
+     * `download` — Indicates that the hyperlink is to be used for downloading a resource.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#download
+     */
+    case DOWNLOAD = 'download';
+
+    /**
      * `elementtiming` — Marks the element for observation by the `PerformanceElementTiming` API.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/elementtiming
