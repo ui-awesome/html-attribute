@@ -85,6 +85,13 @@ enum ElementAttribute: string
     case SRCSET = 'srcset';
 
     /**
+     * `usemap` — Associates the image with a `<map>` element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#usemap
+     */
+    case USEMAP = 'usemap';
+
+    /**
      * `width` — Specifies the width of certain elements.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#width
