@@ -27,6 +27,7 @@
 - Enh #54: Add `HasDownload` trait and `download()` method to manage `download` attribute for HTML elements (@terabytesoftw)
 - Enh #55: Add `HasPing` trait and `ping()` method to manage `ping` attribute for HTML elements (@terabytesoftw)
 - Enh #56: Add `HasLoading` trait and `loading()` method to manage `loading` attribute for HTML elements (@terabytesoftw)
+- Enh #57: Add `HasSrcset` trait and `srcset()` method to manage `srcset` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
