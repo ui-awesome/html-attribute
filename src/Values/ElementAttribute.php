@@ -55,8 +55,8 @@ enum ElementAttribute: string
     /**
      * `loading` — Indicates how the browser should load the image.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
      */
     case LOADING = 'loading';
 
@@ -73,6 +73,16 @@ enum ElementAttribute: string
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#src
      */
     case SRC = 'src';
+
+
+    /**
+     * `srcset` — Defines a set of images for the browser to choose from.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#srcset
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#srcset
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/source#srcset
+     */
+    case SRCSET = 'srcset';
 
     /**
      * `width` — Specifies the width of certain elements.
