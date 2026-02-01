@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents values for the HTML `loading` attribute on `<img>` elements.
+ * Represents values for the HTML `loading` attribute on `<img>` and `<iframe>` elements.
  *
  * Defines the supported loading strategy tokens as enum cases.
  *
