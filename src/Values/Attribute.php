@@ -302,4 +302,11 @@ enum Attribute: string
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/type
      */
     case TYPE = 'type';
+
+    /**
+     * `value` — Indicates the current ordinal value of the list item.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/li#value
+     */
+    case VALUE = 'value';
 }
