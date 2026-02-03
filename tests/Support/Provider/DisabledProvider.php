@@ -17,7 +17,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 final class DisabledProvider
 {
     /**
-     * @phpstan-return array<string, array{bool|null, mixed[], bool|null, string, string}>
+     * @phpstan-return array<string, array{bool|null, mixed[], bool|string, string, string}>
      */
     public static function values(): array
     {
@@ -39,7 +39,7 @@ final class DisabledProvider
             'null' => [
                 null,
                 [],
-                null,
+                '',
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -53,7 +53,7 @@ final class DisabledProvider
             'unset with null' => [
                 null,
                 ['disabled' => true],
-                null,
+                '',
                 '',
                 "Should unset the 'disabled' attribute when 'null' is provided after a value.",
             ],

@@ -64,7 +64,7 @@ final class HasDisabledTest extends TestCase
     public function testSetDisabledAttributeValue(
         bool|null $disabled,
         array $attributes,
-        bool|null $expectedValue,
+        bool|string $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {
@@ -77,7 +77,7 @@ final class HasDisabledTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::DISABLED, null),
+            $instance->getAttribute(Attribute::DISABLED, ''),
             $message,
         );
         self::assertSame(

@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasForm;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\FormProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasForm} trait managing the `form` HTML attribute.
@@ -62,9 +64,9 @@ final class HasFormTest extends TestCase
      */
     #[DataProviderExternal(FormProvider::class, 'values')]
     public function testSetFormAttributeValue(
-        string|null $form,
+        string|Stringable|UnitEnum|null $form,
         array $attributes,
-        string|null $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -79,7 +79,7 @@
 
 ## 0.1.2 March 14, 2024
 
-- Bug #3: Change visibility poperty `attributes` to `public` in tests (@terabytesoftw)
+- Bug #3: Change visibility property `attributes` to `public` in tests (@terabytesoftw)
 - Enh #4: Add `HasAriaCurrent` trait and `ariaCurrent()` method (@terabytesoftw)
 - Bug #5: Remove dead code in `HasAriaCurrent` trait (@terabytesoftw)
 - Bug #6: Change branch alias to `1.0-dev` in `composer.json` (@terabytesoftw)

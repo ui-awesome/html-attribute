@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
 use Stringable;
+use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\Status;
 use UnitEnum;
 
 /**
@@ -25,6 +26,13 @@ final class FormProvider
      */
     public static function values(): array
     {
+        $stringable = new class implements Stringable {
+            public function __toString(): string
+            {
+                return 'form-id';
+            }
+        };
+
         return [
             'empty string' => [
                 '',
@@ -32,6 +40,13 @@ final class FormProvider
                 '',
                 '',
                 'Should return an empty string when setting an empty string.',
+            ],
+            'enum' => [
+                Status::ACTIVE,
+                [],
+                Status::ACTIVE,
+                ' form="active"',
+                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -46,6 +61,13 @@ final class FormProvider
                 'myForm',
                 ' form="myForm"',
                 'Should return the attribute value after setting it.',
+            ],
+            'stringable' => [
+                $stringable,
+                [],
+                $stringable,
+                ' form="form-id"',
+                'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'replace existing' => [
                 'myForm',
