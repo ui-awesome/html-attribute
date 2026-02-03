@@ -194,21 +194,29 @@ enum Type: string
     /**
      * `text` — Single-line text input control (`<input>`).
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/text
+     * @link @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
      */
     case TEXT = 'text';
 
     /**
      * `text/css` — CSS MIME type used by `<style>` and other elements that interpret `type` as a MIME type.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style#type
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
      */
     case TEXT_CSS = 'text/css';
 
     /**
-     * `text/javascript` — JavaScript MIME type used by `<script>` and other elements that interpret `type` as a MIME type.
+     * `text/html` — HTML MIME type used by elements that interpret `type` as a MIME type.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
+     */
+    case TEXT_HTML = 'text/html';
+
+    /**
+     * `text/javascript` — JavaScript MIME type used by `<script>` and other elements that interpret `type` as a MIME
+     * type.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
      */
     case TEXT_JAVASCRIPT = 'text/javascript';
 

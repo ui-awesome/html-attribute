@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests\Element;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Element\HasHeight;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\HeightProvider;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasHeight} trait managing the `height` HTML attribute.
@@ -62,9 +64,9 @@ final class HasHeightTest extends TestCase
      */
     #[DataProviderExternal(HeightProvider::class, 'values')]
     public function testSetHeightAttributeValue(
-        string|null $height,
+        string|Stringable|UnitEnum|null $height,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

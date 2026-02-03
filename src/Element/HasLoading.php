@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Element;
 
 use InvalidArgumentException;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{ElementAttribute, Loading};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
@@ -17,10 +18,10 @@ use UnitEnum;
  * Intended for use in tags and components that require manipulation of the loading attribute and value validation.
  *
  * Key features.
- * - Designed for use in image elements (img, iframe) requiring loading strategy assignment.
+ * - Designed for use in image elements (`<img>`, `<iframe>`) requiring loading strategy assignment.
  * - Handles the HTML `loading` attribute.
  * - Immutable method for setting or overriding the `loading` attribute.
- * - Supports string, UnitEnum, and `null` for flexible loading strategy assignment.
+ * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible loading strategy assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -44,8 +45,8 @@ trait HasLoading
      * - Use `lazy` to defer loading of the image until it reaches a calculated distance from the viewport, as defined
      *   by the browser.
      *
-     * @param string|UnitEnum|null $value Loading strategy value to set for the element. Use `eager` for immediate
-     * loading, or `lazy` for deferred loading. Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Loading strategy value to set for the element. Use `eager` for
+     * immediate loading, or `lazy` for deferred loading. Can be `null` to unset the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -58,7 +59,7 @@ trait HasLoading
      * $element->loading(null);
      * ```
      */
-    public function loading(string|UnitEnum|null $value): static
+    public function loading(string|Stringable|UnitEnum|null $value): static
     {
         Validator::oneOf($value, Loading::cases(), ElementAttribute::LOADING);
 

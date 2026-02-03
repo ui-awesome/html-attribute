@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Element;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
@@ -18,7 +19,7 @@ use UnitEnum;
  * - Designed for use in tags and components.
  * - Handles the HTML `width` attribute.
  * - Immutable method for setting or overriding the `width` attribute.
- * - Supports int, string, and `null` for flexible width assignment.
+ * - Supports `int`, `string`, `Stringable`, `UnitEnum`, and `null` for flexible width assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -40,8 +41,8 @@ trait HasWidth
      * The `width` attribute defines the horizontal dimension of the element's content area. Accepts integer values
      * (interpreted as CSS pixels) or strings with valid CSS units (for example, `px`, `em`, `%`, `auto`).
      *
-     * @param int|string|null $value Width value to set for the element. Use an integer for pixel values or a string for
-     * CSS units (for example, `100%`, `auto`, `10em`). Can be `null` to unset the attribute.
+     * @param int|string|Stringable|UnitEnum|null $value Width value to set for the element. Use an integer for pixel
+     * values or a string for CSS units (for example, `100%`, `auto`, `10em`). Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `width` attribute.
      *
@@ -56,7 +57,7 @@ trait HasWidth
      * $element->width(null);
      * ```
      */
-    public function width(int|string|null $value): static
+    public function width(int|string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(ElementAttribute::WIDTH, $value);
     }

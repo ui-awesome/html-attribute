@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Element;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
@@ -18,7 +19,7 @@ use UnitEnum;
  * - Designed for use in tags and components.
  * - Handles the HTML `alt` attribute.
  * - Immutable method for setting or overriding the `alt` attribute.
- * - Supports string and `null` for flexible alternative text assignment.
+ * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible alternative text assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -40,8 +41,8 @@ trait HasAlt
      * displayed if the image cannot be loaded. Setting `alt` to an empty string (`''`) indicates the image is
      * decorative.
      *
-     * @param string|null $value Alternative text to set for the element. Use a concise description of the image's
-     * content or purpose. Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Alternative text to set for the element. Use a concise description
+     * of the image's content or purpose. Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `alt` attribute.
      *
@@ -54,7 +55,7 @@ trait HasAlt
      * $element->alt(null);
      * ```
      */
-    public function alt(string|null $value): static
+    public function alt(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(ElementAttribute::ALT, $value);
     }

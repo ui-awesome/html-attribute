@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests\Element;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Element\HasAlt;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\AltProvider;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasAlt} trait managing the `alt` HTML attribute.
@@ -62,9 +64,9 @@ final class HasAltTest extends TestCase
      */
     #[DataProviderExternal(AltProvider::class, 'values')]
     public function testSetAltAttributeValue(
-        string|null $alt,
+        string|Stringable|UnitEnum|null $alt,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests\Element;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Element\HasSrc;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\SrcProvider;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasSrc} trait managing the `src` HTML attribute.
@@ -62,9 +64,9 @@ final class HasSrcTest extends TestCase
      */
     #[DataProviderExternal(SrcProvider::class, 'values')]
     public function testSetSrcAttributeValue(
-        string|null $src,
+        string|Stringable|UnitEnum|null $src,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

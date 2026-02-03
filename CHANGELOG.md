@@ -36,6 +36,7 @@
 - Enh #63: Add `HasReadonly`, `HasStep` traits and `readonly()`, `step()` methods to manage `readonly` and `step` attributes for HTML elements (@terabytesoftw)
 - Enh #64: Add `HasMaxlength`, `HasMinlength` traits and `maxlength()`, `minlength()` methods to manage `maxlength` and `minlength` attributes for HTML elements (@terabytesoftw)
 - Enh #65: Add `HasRequired` trait and `required()` method to manage `required` attribute for HTML elements (@terabytesoftw)
+- Bug #66: Enhance HTML attribute element handling with Stringable and UnitEnum support (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
