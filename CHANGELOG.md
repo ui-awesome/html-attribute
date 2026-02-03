@@ -37,6 +37,7 @@
 - Enh #64: Add `HasMaxlength`, `HasMinlength` traits and `maxlength()`, `minlength()` methods to manage `maxlength` and `minlength` attributes for HTML elements (@terabytesoftw)
 - Enh #65: Add `HasRequired` trait and `required()` method to manage `required` attribute for HTML elements (@terabytesoftw)
 - Bug #66: Enhance HTML attribute element handling with Stringable and UnitEnum support (@terabytesoftw)
+- Enh #67: Add `HasAccept`, `HasAutocomplete` traits and `accept()`, `autocomplete()` methods to manage `accept` and `autocomplete` attributes for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
