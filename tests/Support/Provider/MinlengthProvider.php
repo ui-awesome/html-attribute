@@ -23,13 +23,13 @@ final class MinlengthProvider
     {
         return [
             'integer negative less than -1' => [
-                -2,
+                -1,
             ],
             'string float' => [
                 '5.5',
             ],
             'string negative less than -1' => [
-                '-2',
+                '-1',
             ],
             'string non-numeric' => [
                 'invalid',

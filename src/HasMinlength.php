@@ -52,6 +52,8 @@ trait HasMinlength
      * @param int|string|Stringable|null $value Minimum length (number of characters) to set for the element. Must be 0
      * or higher. Can be `null` to unset the attribute.
      *
+     * @throws InvalidArgumentException if the value is not a valid integer or string representation of an `value >= 0`.
+     *
      * @return static New instance with the updated `minlength` attribute.
      *
      * Usage example:
