@@ -32,6 +32,7 @@
 - Enh #59: Add `HasValue` trait and `value()` method to manage `value` attribute for HTML elements (@terabytesoftw)
 - Enh #60: Add `HasForm` trait and `form()` method to manage `form` attribute for HTML elements (@terabytesoftw)
 - Enh #61: Add `Type` enum for common `type` attribute values (@terabytesoftw)
+- Enh #62: Add `HasMax`, `HasMin` traits and `max()`, `min()` methods to manage `max` and `min` attributes for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
