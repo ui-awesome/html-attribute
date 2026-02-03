@@ -4,13 +4,15 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasType;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\TypeProvider;
-use UIAwesome\Html\Attribute\Values\Attribute;
-use UIAwesome\Html\Helper\Attributes;
+use UIAwesome\Html\Attribute\Values\{Attribute, Type};
+use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
@@ -87,5 +89,24 @@ final class HasTypeTest extends TestCase
             Attributes::render($instance->getAttributes()),
             $message,
         );
+    }
+
+    public function testThrowInvalidArgumentExceptionWhenSettingTypeValue(): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasType;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::VALUE_NOT_IN_LIST->getMessage(
+                'invalid-value',
+                Attribute::TYPE->value,
+                implode("', '", Enum::normalizeArray(Type::cases())),
+            ),
+        );
+
+        $instance->type('invalid-value');
     }
 }

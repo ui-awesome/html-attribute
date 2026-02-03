@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider;
 
+use PHPForge\Support\EnumDataProvider;
 use Stringable;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\Status;
+use UIAwesome\Html\Attribute\Values\{Attribute, Type};
 use UnitEnum;
 
 /**
@@ -26,6 +27,8 @@ final class TypeProvider
      */
     public static function values(): array
     {
+        $enumCases = EnumDataProvider::attributeCases(Type::class, Attribute::TYPE);
+
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
@@ -33,20 +36,13 @@ final class TypeProvider
             }
         };
 
-        return [
+        $staticCases = [
             'empty string' => [
                 '',
                 [],
                 '',
                 '',
                 'Should return an empty string when setting an empty string.',
-            ],
-            'enum' => [
-                Status::ACTIVE,
-                [],
-                Status::ACTIVE,
-                ' type="active"',
-                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -57,16 +53,16 @@ final class TypeProvider
             ],
             'replace existing' => [
                 'text/css',
-                ['type' => 'text/plain'],
+                ['type' => 'text'],
                 'text/css',
                 ' type="text/css"',
                 "Should return new 'type' after replacing the existing 'type' attribute.",
             ],
             'string' => [
-                'text/plain',
+                'text',
                 [],
-                'text/plain',
-                ' type="text/plain"',
+                'text',
+                ' type="text"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
@@ -84,5 +80,7 @@ final class TypeProvider
                 "Should unset the 'type' attribute when 'null' is provided after a value.",
             ],
         ];
+
+        return [...$staticCases, ...$enumCases];
     }
 }

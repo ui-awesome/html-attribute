@@ -31,6 +31,7 @@
 - Enh #58: Add `HasUsemap` trait and `usemap()` method to manage `usemap` attribute for HTML elements (@terabytesoftw)
 - Enh #59: Add `HasValue` trait and `value()` method to manage `value` attribute for HTML elements (@terabytesoftw)
 - Enh #60: Add `HasForm` trait and `form()` method to manage `form` attribute for HTML elements (@terabytesoftw)
+- Enh #61: Add `Type` enum for common `type` attribute values (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
