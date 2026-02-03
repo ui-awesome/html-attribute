@@ -194,7 +194,7 @@ enum Type: string
     /**
      * `text` — Single-line text input control (`<input>`).
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
+     * @link @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
      */
     case TEXT = 'text';
 
