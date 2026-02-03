@@ -30,6 +30,7 @@
 - Enh #57: Add `HasSrcset` trait and `srcset()` method to manage `srcset` attribute for HTML elements (@terabytesoftw)
 - Enh #58: Add `HasUsemap` trait and `usemap()` method to manage `usemap` attribute for HTML elements (@terabytesoftw)
 - Enh #59: Add `HasValue` trait and `value()` method to manage `value` attribute for HTML elements (@terabytesoftw)
+- Enh #60: Add `HasForm` trait and `form()` method to manage `form` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
@@ -78,7 +79,7 @@
 
 ## 0.1.2 March 14, 2024
 
-- Bug #3: Change visibility poperty `attributes` to `public` in tests (@terabytesoftw)
+- Bug #3: Change visibility property `attributes` to `public` in tests (@terabytesoftw)
 - Enh #4: Add `HasAriaCurrent` trait and `ariaCurrent()` method (@terabytesoftw)
 - Bug #5: Remove dead code in `HasAriaCurrent` trait (@terabytesoftw)
 - Bug #6: Change branch alias to `1.0-dev` in `composer.json` (@terabytesoftw)

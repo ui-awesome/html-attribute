@@ -6,35 +6,37 @@ namespace UIAwesome\Html\Attribute\Tests;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use UIAwesome\Html\Attribute\HasDisabled;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\DisabledProvider;
+use Stringable;
+use UIAwesome\Html\Attribute\HasForm;
+use UIAwesome\Html\Attribute\Tests\Support\Provider\FormProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
- * Unit tests for the {@see HasDisabled} trait managing the `disabled` HTML attribute.
+ * Unit tests for the {@see HasForm} trait managing the `form` HTML attribute.
  *
  * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `disabled` attribute is not provided.
- * - Sets the `disabled` HTML attribute and renders the expected output.
+ * - Ensures no attributes are set when the `form` attribute is not provided.
+ * - Sets the `form` HTML attribute and renders the expected output.
  *
- * {@see DisabledProvider} for test case data providers.
+ * {@see FormProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
-final class HasDisabledTest extends TestCase
+final class HasFormTest extends TestCase
 {
-    public function testReturnEmptyWhenDisabledAttributeNotSet(): void
+    public function testReturnEmptyWhenFormAttributeNotSet(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasDisabled;
+            use HasForm;
         };
 
         self::assertEmpty(
@@ -43,16 +45,16 @@ final class HasDisabledTest extends TestCase
         );
     }
 
-    public function testReturnNewInstanceWhenSettingDisabledAttribute(): void
+    public function testReturnNewInstanceWhenSettingFormAttribute(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasDisabled;
+            use HasForm;
         };
 
         self::assertNotSame(
             $instance,
-            $instance->disabled(null),
+            $instance->form(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -60,24 +62,24 @@ final class HasDisabledTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(DisabledProvider::class, 'values')]
-    public function testSetDisabledAttributeValue(
-        bool|null $disabled,
+    #[DataProviderExternal(FormProvider::class, 'values')]
+    public function testSetFormAttributeValue(
+        string|Stringable|UnitEnum|null $form,
         array $attributes,
-        bool|string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {
         $instance = new class {
             use HasAttributes;
-            use HasDisabled;
+            use HasForm;
         };
 
-        $instance = $instance->attributes($attributes)->disabled($disabled);
+        $instance = $instance->attributes($attributes)->form($form);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::DISABLED, ''),
+            $instance->getAttribute(Attribute::FORM, ''),
             $message,
         );
         self::assertSame(
