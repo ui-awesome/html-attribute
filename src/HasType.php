@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute;
 
+use InvalidArgumentException;
 use Stringable;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\{Attribute, Type};
+use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
 /**
@@ -45,6 +47,8 @@ trait HasType
      * @param string|Stringable|UnitEnum|null $value Type value to set for the element. Use MIME types (for example,
      * `text/css`, `text/javascript`) or element-specific type values. Can be `null` to unset the attribute.
      *
+     * @throws InvalidArgumentException if the provided value is not valid.
+     *
      * @return static New instance with the updated `type` attribute.
      *
      * Usage example:
@@ -56,6 +60,8 @@ trait HasType
      */
     public function type(string|Stringable|UnitEnum|null $value): static
     {
+        Validator::oneOf($value, Type::cases(), Attribute::TYPE);
+
         return $this->addAttribute(Attribute::TYPE, $value);
     }
 }
