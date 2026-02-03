@@ -77,7 +77,7 @@ final class HasFormTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::FORM, null),
+            $instance->getAttribute(Attribute::FORM, ''),
             $message,
         );
         self::assertSame(
