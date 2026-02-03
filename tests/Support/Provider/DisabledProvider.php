@@ -22,26 +22,26 @@ final class DisabledProvider
     public static function values(): array
     {
         return [
+            'boolean false' => [
+                false,
+                [],
+                false,
+                '',
+                'Should return the attribute value after setting it.',
+            ],
+            'boolean true' => [
+                true,
+                [],
+                true,
+                ' disabled',
+                'Should return the attribute value after setting it.',
+            ],
             'null' => [
                 null,
                 [],
                 null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
-            ],
-            'true' => [
-                true,
-                [],
-                true,
-                ' disabled',
-                'Should return the attribute value after setting it to true.',
-            ],
-            'false' => [
-                false,
-                [],
-                false,
-                '',
-                'Should return empty string when setting false (boolean attribute).',
             ],
             'replace existing' => [
                 true,
