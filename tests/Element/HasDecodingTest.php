@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Attribute\Tests\Element;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Element\HasDecoding;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\DecodingProvider;
 use UIAwesome\Html\Attribute\Values\{Decoding, ElementAttribute};
@@ -66,9 +67,9 @@ final class HasDecodingTest extends TestCase
      */
     #[DataProviderExternal(DecodingProvider::class, 'values')]
     public function testSetDecodingAttributeValue(
-        string|UnitEnum|null $decoding,
+        string|Stringable|UnitEnum|null $decoding,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

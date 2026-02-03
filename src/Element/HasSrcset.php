@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Element;
 
+use Stringable;
 use UnitEnum;
 
 /**
@@ -17,7 +18,7 @@ use UnitEnum;
  * - Designed for use in image elements (img) requiring responsive image source sets.
  * - Handles the HTML `srcset` attribute.
  * - Immutable method for setting or overriding the `srcset` attribute.
- * - Supports string and `null` for flexible source set assignment.
+ * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible source set assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -42,9 +43,9 @@ trait HasSrcset
      * density, and other factors. Each image in the set is specified with a URL and either a width descriptor ('w') or
      * pixel density descriptor ('x').
      *
-     * @param string|UnitEnum|null $value Source set descriptor to set for the element. Use comma-separated image URLs
-     * with size descriptors (for example, "small.jpg 480w, medium.jpg 800w, large.jpg 1200w"). Can be `null` to unset
-     * the attribute.
+     * @param string|Stringable|UnitEnum|null $value Source set descriptor to set for the element. Use comma-separated
+     * image URLs with size descriptors (for example, "small.jpg 480w, medium.jpg 800w, large.jpg 1200w"). Can be `null`
+     * to unset the attribute.
      *
      * @return static New instance with the updated `srcset` attribute.
      *
@@ -55,7 +56,7 @@ trait HasSrcset
      * $element->srcset(null);
      * ```
      */
-    public function srcset(string|UnitEnum|null $value): static
+    public function srcset(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute('srcset', $value);
     }

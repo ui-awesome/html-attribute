@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests\Element;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Element\HasWidth;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\WidthProvider;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasWidth} trait managing the `width` HTML attribute.
@@ -62,9 +64,9 @@ final class HasWidthTest extends TestCase
      */
     #[DataProviderExternal(WidthProvider::class, 'values')]
     public function testSetWidthAttributeValue(
-        string|null $width,
+        string|Stringable|UnitEnum|null $width,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 
+use Stringable;
+use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\{Backed, Unit};
+use UnitEnum;
+
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasSrcTest} test cases.
  *
@@ -15,10 +19,20 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 final class SrcProvider
 {
     /**
-     * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
+     * @phpstan-return array<
+     *   string,
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     * >
      */
     public static function values(): array
     {
+        $stringable = new class implements Stringable {
+            public function __toString(): string
+            {
+                return 'http://example.com/image.png';
+            }
+        };
+
         return [
             'empty string' => [
                 '',
@@ -26,6 +40,20 @@ final class SrcProvider
                 '',
                 '',
                 'Should return an empty string when setting an empty string.',
+            ],
+            'enum backed' => [
+                Backed::VALUE,
+                [],
+                Backed::VALUE,
+                ' src="value"',
+                'Should return the attribute value after setting it.',
+            ],
+            'enum unit' => [
+                Unit::value,
+                [],
+                Unit::value,
+                ' src="value"',
+                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -47,6 +75,13 @@ final class SrcProvider
                 'http://example.com/image.png',
                 ' src="http://example.com/image.png"',
                 'Should return the attribute value after setting it.',
+            ],
+            'stringable' => [
+                $stringable,
+                [],
+                $stringable,
+                ' src="http://example.com/image.png"',
+                'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,

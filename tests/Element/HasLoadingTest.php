@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Attribute\Tests\Element;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Element\HasLoading;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\LoadingProvider;
 use UIAwesome\Html\Attribute\Values\{ElementAttribute, Loading};
@@ -66,9 +67,9 @@ final class HasLoadingTest extends TestCase
      */
     #[DataProviderExternal(LoadingProvider::class, 'values')]
     public function testSetLoadingAttributeValue(
-        string|UnitEnum|null $loading,
+        string|Stringable|UnitEnum|null $loading,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

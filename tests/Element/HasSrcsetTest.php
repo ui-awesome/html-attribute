@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests\Element;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Element\HasSrcset;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\SrcsetProvider;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasSrcset} trait managing the `srcset` HTML attribute.
@@ -62,9 +64,9 @@ final class HasSrcsetTest extends TestCase
      */
     #[DataProviderExternal(SrcsetProvider::class, 'values')]
     public function testSetSrcsetAttributeValue(
-        string|null $srcset,
+        string|Stringable|UnitEnum|null $srcset,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

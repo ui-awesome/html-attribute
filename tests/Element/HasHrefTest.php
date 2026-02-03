@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests\Element;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Element\HasHref;
 use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\HrefProvider;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasHref} trait managing the `href` HTML and SVG attribute.
@@ -62,9 +64,9 @@ final class HasHrefTest extends TestCase
      */
     #[DataProviderExternal(HrefProvider::class, 'values')]
     public function testSetHrefAttributeValue(
-        string|null $href,
+        string|Stringable|UnitEnum|null $href,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

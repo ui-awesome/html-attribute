@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 
+use Stringable;
+use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\{Backed, Unit};
+use UnitEnum;
+
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasHrefTest} test cases.
  *
@@ -15,10 +19,20 @@ namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 final class HrefProvider
 {
     /**
-     * @phpstan-return array<string, array{string|null, mixed[], string, string, string}>
+     * @phpstan-return array<
+     *   string,
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     * >
      */
     public static function values(): array
     {
+        $stringable = new class implements Stringable {
+            public function __toString(): string
+            {
+                return 'https://example.com/page';
+            }
+        };
+
         return [
             'empty string' => [
                 '',
@@ -26,6 +40,20 @@ final class HrefProvider
                 '',
                 '',
                 'Should return an empty string when setting an empty string.',
+            ],
+            'enum backed' => [
+                Backed::VALUE,
+                [],
+                Backed::VALUE,
+                ' href="value"',
+                'Should return the attribute value after setting it.',
+            ],
+            'enum unit' => [
+                Unit::value,
+                [],
+                Unit::value,
+                ' href="value"',
+                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -48,19 +76,26 @@ final class HrefProvider
                 ' href="https://example.com/page"',
                 'Should return the attribute value after setting it.',
             ],
-            'string fragment identifier' => [
+            'string with fragment identifier' => [
                 '#section',
                 [],
                 '#section',
                 ' href="#section"',
-                'Should return a fragment identifier as the href attribute value.',
+                'Should return the attribute value after setting it.',
             ],
-            'string relative path' => [
+            'string with relative path' => [
                 '/about',
                 [],
                 '/about',
                 ' href="/about"',
-                'Should return a relative path as the href attribute value.',
+                'Should return the attribute value after setting it.',
+            ],
+            'stringable' => [
+                $stringable,
+                [],
+                $stringable,
+                ' href="https://example.com/page"',
+                'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,

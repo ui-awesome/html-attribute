@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Element;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
@@ -18,7 +19,7 @@ use UnitEnum;
  * - Designed for use in tags and components.
  * - Handles the HTML `height` attribute.
  * - Immutable method for setting or overriding the `height` attribute.
- * - Supports int, string, and `null` for flexible height assignment.
+ * - Supports `int`, `string`, `Stringable`, `UnitEnum`, and `null` for flexible height assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -40,8 +41,8 @@ trait HasHeight
      * The `height` attribute defines the vertical dimension of the element's content area. Accepts integer values
      * (interpreted as pixels) or strings with valid CSS units (for example, `px`, `em`, `%`, `auto`).
      *
-     * @param int|string|null $value Height value to set for the element. Use an integer for pixel values or a string
-     * for CSS units (for example, `100%`, `auto`, `10em`). Can be `null` to unset the attribute.
+     * @param int|string|Stringable|UnitEnum|null $value Height value to set for the element. Use an integer for pixel
+     * values or a string for CSS units (for example, `100%`, `auto`, `10em`). Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `height` attribute.
      *
@@ -55,7 +56,7 @@ trait HasHeight
      * $element->height('auto');
      * ```
      */
-    public function height(int|string|null $value): static
+    public function height(int|string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(ElementAttribute::HEIGHT, $value);
     }

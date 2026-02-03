@@ -2,41 +2,39 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Element;
+namespace UIAwesome\Html\Attribute\Tests;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use Stringable;
-use UIAwesome\Html\Attribute\Element\HasAlt;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\AltProvider;
-use UIAwesome\Html\Attribute\Values\ElementAttribute;
+use UIAwesome\Html\Attribute\HasSize;
+use UIAwesome\Html\Attribute\Tests\Support\Provider\SizeProvider;
+use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
-use UnitEnum;
 
 /**
- * Unit tests for the {@see HasAlt} trait managing the `alt` HTML attribute.
+ * Unit tests for the {@see HasSize} trait managing the `size` HTML attribute.
  *
  * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `alt` attribute is not provided.
- * - Sets the `alt` HTML attribute and renders the expected output.
+ * - Ensures no attributes are set when the `size` attribute is not provided.
+ * - Sets the `size` HTML attribute and renders the expected output.
  *
- * {@see AltProvider} for test case data providers.
+ * {@see SizeProvider} for test case data providers.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-#[Group('element')]
-final class HasAltTest extends TestCase
+#[Group('attribute')]
+final class HasSizeTest extends TestCase
 {
-    public function testReturnEmptyWhenAltAttributeNotSet(): void
+    public function testReturnEmptyWhenSizeAttributeNotSet(): void
     {
         $instance = new class {
-            use HasAlt;
             use HasAttributes;
+            use HasSize;
         };
 
         self::assertEmpty(
@@ -45,16 +43,16 @@ final class HasAltTest extends TestCase
         );
     }
 
-    public function testReturnNewInstanceWhenSettingAltAttribute(): void
+    public function testReturnNewInstanceWhenSettingSizeAttribute(): void
     {
         $instance = new class {
-            use HasAlt;
             use HasAttributes;
+            use HasSize;
         };
 
         self::assertNotSame(
             $instance,
-            $instance->alt(''),
+            $instance->size(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -62,28 +60,28 @@ final class HasAltTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(AltProvider::class, 'values')]
-    public function testSetAltAttributeValue(
-        string|Stringable|UnitEnum|null $alt,
+    #[DataProviderExternal(SizeProvider::class, 'values')]
+    public function testSetSizeAttributeValue(
+        int|null $size,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
-        string $expectedRenderAttribute,
+        int|null $expectedValue,
+        string $expectedRenderAttributes,
         string $message,
     ): void {
         $instance = new class {
-            use HasAlt;
             use HasAttributes;
+            use HasSize;
         };
 
-        $instance = $instance->attributes($attributes)->alt($alt);
+        $instance = $instance->attributes($attributes)->size($size);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(ElementAttribute::ALT, ''),
+            $instance->getAttribute(Attribute::SIZE, null),
             $message,
         );
         self::assertSame(
-            $expectedRenderAttribute,
+            $expectedRenderAttributes,
             Attributes::render($instance->getAttributes()),
             $message,
         );

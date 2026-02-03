@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Element;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
@@ -18,7 +19,7 @@ use UnitEnum;
  * - Designed for use in tags and components.
  * - Handles the HTML and SVG `href` attribute.
  * - Immutable method for setting or overriding the `href` attribute.
- * - Supports string and `null` for flexible URL assignment.
+ * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible URL assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -38,10 +39,10 @@ trait HasHref
      * the HTML and SVG specifications for hyperlink and resource attributes.
      *
      * The `href` attribute defines the target URL or resource reference for the element. Accepts a string representing
-     * a valid URL, path, or fragment. Setting `href` to `null` unsets the attribute.
+     * a valid URL, path, or fragment.
      *
-     * @param string|null $value URL or resource reference to set for the element. Use a valid URL, path, or fragment as
-     * a string. Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value URL or resource reference to set for the element. Use a valid URL,
+     * path, or fragment as a string. Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `href` attribute.
      *
@@ -56,7 +57,7 @@ trait HasHref
      * $element->href(null);
      * ```
      */
-    public function href(string|null $value): static
+    public function href(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(ElementAttribute::HREF, $value);
     }

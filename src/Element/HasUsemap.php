@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Element;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
@@ -15,10 +16,10 @@ use UnitEnum;
  * Intended for use in tags and components that require manipulation of the `usemap` attribute.
  *
  * Key features.
- * - Designed for use in image elements (img) requiring client-side image map assignment.
+ * - Designed for use in image elements (`<img>`) requiring client-side image map assignment.
  * - Handles the HTML `usemap` attribute.
  * - Immutable method for setting or overriding the `usemap` attribute.
- * - Supports string, `UnitEnum`, and `null` for flexible image map reference assignment.
+ * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible image map reference assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -39,9 +40,9 @@ trait HasUsemap
      * The `usemap` attribute associates the image with a `<map>` element, creating a client-side image map. The value
      * must be a valid hash-name reference to a `<map>` element in the same document (for example, "#mapname").
      *
-     * @param string|UnitEnum|null $value Image map reference to set for the element. Use a hash-name reference
-     * (for example, "#mapname") that matches the `name` attribute of a `<map>` element. Can be `null` to unset the
-     * attribute.
+     * @param string|Stringable|UnitEnum|null $value Image map reference to set for the element. Use a hash-name
+     * reference (for example, "#mapname") that matches the `name` attribute of a `<map>` element. Can be `null` to
+     * unset the attribute.
      *
      * @return static New instance with the updated `usemap` attribute.
      *
@@ -53,7 +54,7 @@ trait HasUsemap
      * $element->usemap(null);
      * ```
      */
-    public function usemap(string|UnitEnum|null $value): static
+    public function usemap(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(ElementAttribute::USEMAP, $value);
     }

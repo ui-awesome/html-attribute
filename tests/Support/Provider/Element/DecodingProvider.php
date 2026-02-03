@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
 
 use PHPForge\Support\EnumDataProvider;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{Decoding, ElementAttribute};
 use UnitEnum;
 
@@ -19,11 +20,21 @@ use UnitEnum;
 final class DecodingProvider
 {
     /**
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
+     * @phpstan-return array<
+     *   string,
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     * >
      */
     public static function values(): array
     {
         $enumCases = EnumDataProvider::attributeCases(Decoding::class, ElementAttribute::DECODING);
+
+        $stringable = new class implements Stringable {
+            public function __toString(): string
+            {
+                return 'async';
+            }
+        };
 
         $staticCase = [
             'empty string' => [
@@ -53,6 +64,13 @@ final class DecodingProvider
                 'async',
                 ' decoding="async"',
                 'Should return the attribute value after setting it.',
+            ],
+            'stringable' => [
+                $stringable,
+                [],
+                $stringable,
+                ' decoding="async"',
+                'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,

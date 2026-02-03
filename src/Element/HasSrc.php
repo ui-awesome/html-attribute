@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Element;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
@@ -18,7 +19,7 @@ use UnitEnum;
  * - Designed for use in tags and components.
  * - Handles the HTML `src` attribute.
  * - Immutable method for setting or overriding the `src` attribute.
- * - Supports string and `null` for flexible source assignment.
+ * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible source assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -37,10 +38,10 @@ trait HasSrc
      * specification for image source attributes.
      *
      * The `src` attribute defines the URL of the image to display in the element. Accepts a string representing a valid
-     * URL or path to the image resource. Setting `src` to `null` unsets the attribute.
+     * URL or path to the image resource.
      *
-     * @param string|null $value Image source URL or path to set for the element. Use a valid URL or relative path as a
-     * string. Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Image source URL or path to set for the element. Use a valid URL or
+     * relative path as a string. Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `src` attribute.
      *
@@ -53,7 +54,7 @@ trait HasSrc
      * $element->src(null);
      * ```
      */
-    public function src(string|null $value): static
+    public function src(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(ElementAttribute::SRC, $value);
     }

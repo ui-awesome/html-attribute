@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Element;
 
 use InvalidArgumentException;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{ElementAttribute, Referrerpolicy};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
@@ -20,7 +21,7 @@ use UnitEnum;
  * - Designed for use in tags and components.
  * - Handles the HTML `referrerpolicy` attribute.
  * - Immutable method for setting or overriding the `referrerpolicy` attribute.
- * - Supports string, UnitEnum, and `null` for flexible policy assignment.
+ * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible policy assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -49,8 +50,8 @@ trait HasReferrerpolicy
      *   origin for cross-origin requests.
      * - Avoid `unsafe-url` as it leaks the full URL including path and query parameters.
      *
-     * @param string|UnitEnum|null $value Referrer policy value to set for the element. Use `no-referrer`, `origin`,
-     * `strict-origin-when-cross-origin`, or other valid tokens.
+     * @param string|Stringable|UnitEnum|null $value Referrer policy value to set for the element. Use `no-referrer`,
+     * `origin`, `strict-origin-when-cross-origin`, or other valid tokens. Can be `null` to unset the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -65,7 +66,7 @@ trait HasReferrerpolicy
      * $element->referrerpolicy(null);
      * ```
      */
-    public function referrerpolicy(string|UnitEnum|null $value): static
+    public function referrerpolicy(string|Stringable|UnitEnum|null $value): static
     {
         Validator::oneOf($value, Referrerpolicy::cases(), ElementAttribute::REFERRERPOLICY);
 
