@@ -79,7 +79,7 @@ final class HasAutocompleteTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::AUTOCOMPLETE, null),
+            $instance->getAttribute(Attribute::AUTOCOMPLETE, ''),
             $message,
         );
         self::assertSame(
