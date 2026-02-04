@@ -41,6 +41,7 @@
 - Enh #68: Add `HasChecked`, `HasDirname` traits and `checked()`, `dirname()` methods to manage `checked` and `dirname` attributes for HTML elements (@terabytesoftw)
 - Enh #69: Add `HasList`, `HasMultiple` traits and `list()`, `multiple()` methods to manage `list` and `multiple` attributes for HTML elements (@terabytesoftw)
 - Enh #70: Add `HasPattern`, `HasPlaceholder`, `HasSize` traits and `pattern()`, `placeholder()`, `size()` methods to manage `pattern`, `placeholder`, and `size` attributes for HTML elements (@terabytesoftw)
+- Bug #71: Move HTML attribute traits to `Form` namespace and update related imports accordingly (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
