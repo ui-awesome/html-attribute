@@ -39,10 +39,13 @@ trait HasList
      * The `list` attribute identifies a `<datalist>` element that provides a list of predefined options to suggest to
      * the user. The value must be the `id` of a `<datalist>` element in the same document.
      *
-     * It is valid on `<text>`, `<search>`, `<url>`, `<tel>`, `<email>`, `<date>`, `<month>`, `<week>`, `<time>`,
-     * `<datetime-local>`, `<number>`, `<range>`, and `<color>` input types.
+     * It is valid on `<input type="text">`, `<input type="search">`, `<input type="url">`, `<input type="tel">`,
+     * `<input type="email">`, `<input type="date">`, `<input type="month">`, `<input type="week">`,
+     * `<input type="time">`, `<input type="datetime-local">`, `<input type="number">`, `<input type="range">`, and
+     * `<input type="color">`.
      *
-     * It is not supported by `<hidden>`, `<password>`, `<checkbox>`, `<radio>`, `<file>`, or button types.
+     * It is not supported by `<input type="hidden">`, `<input type="password">`, `<input type="checkbox">`,
+     * `<input type="radio">`, `<input type="file">`, or button types.
      *
      * Values in the datalist that are not compatible with the input's `type` are not included in the suggested options.
      *
