@@ -26,6 +26,13 @@ final class SizeProvider
      */
     public static function values(): array
     {
+        $stringable = new class implements Stringable {
+            public function __toString(): string
+            {
+                return '12';
+            }
+        };
+
         return [
             'enum backed integer' => [
                 BackedInteger::VALUE,
@@ -61,6 +68,13 @@ final class SizeProvider
                 '15',
                 ' size="15"',
                 'Should return the attribute value after setting it.',
+            ],
+            'stringable' => [
+                $stringable,
+                [],
+                $stringable,
+                ' size="12"',
+                'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
