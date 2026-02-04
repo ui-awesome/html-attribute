@@ -12,10 +12,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `srcset` attribute on HTML elements.
  *
- * Intended for use in tags elements that require manipulation of the `srcset` attribute.
+ * Intended for use in tag elements that require manipulation of the `srcset` attribute.
  *
  * Key features.
- * - Designed for use in tags elements (`<img>`, `<picture>`, `<source>`).
+ * - Designed for use in tag elements (`<img>`, `<picture>`, `<source>`).
  * - Handles the HTML `srcset` attribute.
  * - Immutable method for setting or overriding the `srcset` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible source set assignment.

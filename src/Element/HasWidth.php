@@ -13,10 +13,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `width` attribute on HTML elements.
  *
- * Intended for use in tags elements that require manipulation of the `width` attribute.
+ * Intended for use in tag elements that require manipulation of the `width` attribute.
  *
  * Key features.
- * - Designed for use in tags elements (`<img>`, `<svg>`).
+ * - Designed for use in tag elements (`<img>`, `<svg>`).
  * - Handles the HTML `width` attribute.
  * - Immutable method for setting or overriding the `width` attribute.
  * - Supports `int`, `string`, `Stringable`, `UnitEnum`, and `null` for flexible width assignment.

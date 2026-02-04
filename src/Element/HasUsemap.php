@@ -13,10 +13,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `usemap` attribute on HTML elements.
  *
- * Intended for use in tags elements that require manipulation of the `usemap` attribute.
+ * Intended for use in tag elements that require manipulation of the `usemap` attribute.
  *
  * Key features.
- * - Designed for use in tags elements (`<img>`).
+ * - Designed for use in tag elements (`<img>`).
  * - Handles the HTML `usemap` attribute.
  * - Immutable method for setting or overriding the `usemap` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible image map reference assignment.

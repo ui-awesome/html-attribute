@@ -15,10 +15,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `decoding` attribute on HTML and SVG image elements.
  *
- * Intended for use in tags elements that require manipulation of the `decoding` attribute.
+ * Intended for use in tag elements that require manipulation of the `decoding` attribute.
  *
  * Key features.
- * - Designed for use in tags elements (`<img>` and `<svg>`).
+ * - Designed for use in tag elements (`<img>` and `<svg>`).
  * - Handles the HTML/SVG `decoding` attribute.
  * - Immutable method for setting or overriding the `decoding` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible decoding hint assignment.

@@ -13,10 +13,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `alt` attribute on HTML elements.
  *
- * Intended for use in tags elements that require manipulation of the `alt` attribute.
+ * Intended for use in tag elements that require manipulation of the `alt` attribute.
  *
  * Key features.
- * - Designed for use in tags elements (`<img>`).
+ * - Designed for use in tag elements (`<img>`).
  * - Handles the HTML `alt` attribute.
  * - Immutable method for setting or overriding the `alt` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible alternative text assignment.

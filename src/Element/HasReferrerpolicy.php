@@ -15,10 +15,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `referrerpolicy` attribute on HTML elements.
  *
- * Intended for use in tags elements that require manipulation of the `referrerpolicy` attribute.
+ * Intended for use in tag elements that require manipulation of the `referrerpolicy` attribute.
  *
  * Key features.
- * - Designed for use in tags elements (`<a>`, `<area>`, `<iframe>`, `<img>`, `<link>`, and `<script>`).
+ * - Designed for use in tag elements (`<a>`, `<area>`, `<iframe>`, `<img>`, `<link>`, and `<script>`).
  * - Handles the HTML `referrerpolicy` attribute.
  * - Immutable method for setting or overriding the `referrerpolicy` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible policy assignment.

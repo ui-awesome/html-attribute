@@ -13,10 +13,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `href` attribute on HTML and SVG elements.
  *
- * Intended for use in tags elements that require manipulation of the `href` attribute.
+ * Intended for use in tag elements that require manipulation of the `href` attribute.
  *
  * Key features.
- * - Designed for use in tags elements (`<a>` and `<svg>`).
+ * - Designed for use in tag elements (`<a>` and `<svg>`).
  * - Handles the HTML and SVG `href` attribute.
  * - Immutable method for setting or overriding the `href` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible URL assignment.
