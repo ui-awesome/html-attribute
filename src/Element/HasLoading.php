@@ -15,10 +15,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `loading` attribute on HTML elements.
  *
- * Intended for use in tags and components that require manipulation of the loading attribute and value validation.
+ * Intended for use in tags elements that require manipulation of the `loading` attribute.
  *
  * Key features.
- * - Designed for use in image elements (`<img>`, `<iframe>`) requiring loading strategy assignment.
+ * - Designed for use in tags elements (`<img>` and `<iframe>`).
  * - Handles the HTML `loading` attribute.
  * - Immutable method for setting or overriding the `loading` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible loading strategy assignment.
@@ -51,6 +51,8 @@ trait HasLoading
      * @throws InvalidArgumentException if the provided value is not valid.
      *
      * @return static New instance with the updated `loading` attribute.
+     *
+     * {@see Loading} for predefined enum values.
      *
      * Usage example:
      * ```php

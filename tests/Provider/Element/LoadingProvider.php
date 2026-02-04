@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
+namespace UIAwesome\Html\Attribute\Tests\Provider\Element;
 
+use PHPForge\Support\EnumDataProvider;
 use Stringable;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\{Backed, Unit};
+use UIAwesome\Html\Attribute\Values\{ElementAttribute, Loading};
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasWidthTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasLoadingTest} test cases.
  *
- * Provides representative input/output pairs for the `width` attribute.
+ * Provides representative input/output pairs for the `loading` attribute.
  *
- * @copyright Copyright (C) 2025 Terabytesoftw.
+ * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class WidthProvider
+final class LoadingProvider
 {
     /**
      * @phpstan-return array<
@@ -26,34 +27,22 @@ final class WidthProvider
      */
     public static function values(): array
     {
+        $enumCases = EnumDataProvider::attributeCases(Loading::class, ElementAttribute::LOADING);
+
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return '100px';
+                return 'lazy';
             }
         };
 
-        return [
+        $staticCases = [
             'empty string' => [
                 '',
                 [],
                 '',
                 '',
                 'Should return an empty string when setting an empty string.',
-            ],
-            'enum backed' => [
-                Backed::VALUE,
-                [],
-                Backed::VALUE,
-                ' width="value"',
-                'Should return the attribute value after setting it.',
-            ],
-            'enum unit' => [
-                Unit::value,
-                [],
-                Unit::value,
-                ' width="value"',
-                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -63,33 +52,35 @@ final class WidthProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '100px',
-                ['width' => '200px'],
-                '100px',
-                ' width="100px"',
-                "Should return new 'width' after replacing the existing 'width' attribute.",
+                'lazy',
+                ['loading' => 'eager'],
+                'lazy',
+                ' loading="lazy"',
+                "Should return new 'loading' after replacing the existing 'loading' attribute.",
             ],
             'string' => [
-                '100px',
+                'eager',
                 [],
-                '100px',
-                ' width="100px"',
+                'eager',
+                ' loading="eager"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
-                ' width="100px"',
+                ' loading="lazy"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['width' => '100px'],
+                ['loading' => 'lazy'],
                 '',
                 '',
-                "Should unset the 'width' attribute when 'null' is provided after a value.",
+                "Should unset the 'loading' attribute when 'null' is provided after a value.",
             ],
         ];
+
+        return [...$staticCases, ...$enumCases];
     }
 }

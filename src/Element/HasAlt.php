@@ -13,10 +13,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `alt` attribute on HTML elements.
  *
- * Intended for use in tags and components that require manipulation of the `alt` attribute.
+ * Intended for use in tags elements that require manipulation of the `alt` attribute.
  *
  * Key features.
- * - Designed for use in tags and components.
+ * - Designed for use in tags elements (`<img>`).
  * - Handles the HTML `alt` attribute.
  * - Immutable method for setting or overriding the `alt` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible alternative text assignment.
@@ -45,8 +45,6 @@ trait HasAlt
      * of the image's content or purpose. Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `alt` attribute.
-     *
-     * @link https://html.spec.whatwg.org/multipage/input.html#attr-input-alt
      *
      * Usage example:
      * ```php

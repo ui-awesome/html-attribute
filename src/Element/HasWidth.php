@@ -13,10 +13,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `width` attribute on HTML elements.
  *
- * Intended for use in tags and components that require manipulation of the `width` attribute.
+ * Intended for use in tags elements that require manipulation of the `width` attribute.
  *
  * Key features.
- * - Designed for use in tags and components.
+ * - Designed for use in tags elements (`<img>`, `<svg>`).
  * - Handles the HTML `width` attribute.
  * - Immutable method for setting or overriding the `width` attribute.
  * - Supports `int`, `string`, `Stringable`, `UnitEnum`, and `null` for flexible width assignment.
@@ -45,9 +45,6 @@ trait HasWidth
      * values or a string for CSS units (for example, `100%`, `auto`, `10em`). Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `width` attribute.
-     *
-     * @link https://drafts.csswg.org/css-sizing-3/#propdef-width
-     * @link https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-width
      *
      * Usage example:
      * ```php

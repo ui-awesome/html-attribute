@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
+namespace UIAwesome\Html\Attribute\Tests\Provider\Element;
 
+use PHPForge\Support\Stub\{BackedString, Unit};
 use Stringable;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\{Backed, Unit};
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasSrcsetTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasUsemapTest} test cases.
  *
- * Provides representative input/output pairs for the `srcset` attribute.
+ * Provides representative input/output pairs for the `usemap` attribute.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class SrcsetProvider
+final class UsemapProvider
 {
     /**
      * @phpstan-return array<
@@ -29,7 +29,7 @@ final class SrcsetProvider
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return 'small.jpg 480w, medium.jpg 800w, large.jpg 1200w';
+                return '#imagemap';
             }
         };
 
@@ -41,18 +41,18 @@ final class SrcsetProvider
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
-            'enum backed' => [
-                Backed::VALUE,
+            'enum backed string' => [
+                BackedString::VALUE,
                 [],
-                Backed::VALUE,
-                ' srcset="value"',
+                BackedString::VALUE,
+                ' usemap="value"',
                 'Should return the attribute value after setting it.',
             ],
             'enum unit' => [
                 Unit::value,
                 [],
                 Unit::value,
-                ' srcset="value"',
+                ' usemap="value"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -63,39 +63,32 @@ final class SrcsetProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                'small.jpg 480w, medium.jpg 800w',
-                ['srcset' => 'old-small.jpg 480w, old-medium.jpg 800w'],
-                'small.jpg 480w, medium.jpg 800w',
-                ' srcset="small.jpg 480w, medium.jpg 800w"',
-                "Should return new 'srcset' after replacing the existing 'srcset' attribute.",
+                '#new-map',
+                ['usemap' => '#old-map'],
+                '#new-map',
+                ' usemap="#new-map"',
+                "Should return new 'usemap' after replacing the existing 'usemap' attribute.",
             ],
             'string' => [
-                'small.jpg 480w, medium.jpg 800w, large.jpg 1200w',
+                '#imagemap',
                 [],
-                'small.jpg 480w, medium.jpg 800w, large.jpg 1200w',
-                ' srcset="small.jpg 480w, medium.jpg 800w, large.jpg 1200w"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string with pixel density descriptors' => [
-                'image-1x.jpg 1x, image-2x.jpg 2x',
-                [],
-                'image-1x.jpg 1x, image-2x.jpg 2x',
-                ' srcset="image-1x.jpg 1x, image-2x.jpg 2x"',
+                '#imagemap',
+                ' usemap="#imagemap"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
-                ' srcset="small.jpg 480w, medium.jpg 800w, large.jpg 1200w"',
+                ' usemap="#imagemap"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['srcset' => 'small.jpg 480w, medium.jpg 800w'],
+                ['usemap' => '#imagemap'],
                 '',
                 '',
-                "Should unset the 'srcset' attribute when 'null' is provided after a value.",
+                "Should unset the 'usemap' attribute when 'null' is provided after a value.",
             ],
         ];
     }

@@ -15,10 +15,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `referrerpolicy` attribute on HTML elements.
  *
- * Intended for use in tags and components that require manipulation of the referrer policy and value validation.
+ * Intended for use in tags elements that require manipulation of the `referrerpolicy` attribute.
  *
  * Key features.
- * - Designed for use in tags and components.
+ * - Designed for use in tags elements (`<a>`, `<area>`, `<iframe>`, `<img>`, `<link>`, and `<script>`).
  * - Handles the HTML `referrerpolicy` attribute.
  * - Immutable method for setting or overriding the `referrerpolicy` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible policy assignment.
@@ -57,7 +57,7 @@ trait HasReferrerpolicy
      *
      * @return static New instance with the updated `referrerpolicy` attribute.
      *
-     * @link https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-referrerpolicy
+     * {@see Referrerpolicy} for predefined enum values.
      *
      * Usage example:
      * ```php

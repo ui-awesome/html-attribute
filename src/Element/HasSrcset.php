@@ -12,10 +12,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `srcset` attribute on HTML elements.
  *
- * Intended for use in tags and components that require manipulation of the `srcset` attribute.
+ * Intended for use in tags elements that require manipulation of the `srcset` attribute.
  *
  * Key features.
- * - Designed for use in image elements (img) requiring responsive image source sets.
+ * - Designed for use in tags elements (`<img>`, `<picture>`, `<source>`).
  * - Handles the HTML `srcset` attribute.
  * - Immutable method for setting or overriding the `srcset` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible source set assignment.
@@ -39,9 +39,11 @@ trait HasSrcset
      * specification for responsive images.
      *
      * The `srcset` attribute defines a set of images for the browser to choose from, along with information about the
-     * sizes of each image. The browser selects the most appropriate image based on the current viewport size, pixel
-     * density, and other factors. Each image in the set is specified with a URL and either a width descriptor ('w') or
-     * pixel density descriptor ('x').
+     * sizes of each image.
+     * - The browser selects the most appropriate image based on the current viewport size, pixel density, and other
+     *   factors.
+     * - Each image in the set is specified with a URL and either a width descriptor ('w') or pixel density descriptor
+     *   ('x').
      *
      * @param string|Stringable|UnitEnum|null $value Source set descriptor to set for the element. Use comma-separated
      * image URLs with size descriptors (for example, "small.jpg 480w, medium.jpg 800w, large.jpg 1200w"). Can be `null`
