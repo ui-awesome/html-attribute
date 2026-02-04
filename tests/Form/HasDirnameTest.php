@@ -2,41 +2,41 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests;
+namespace UIAwesome\Html\Attribute\Tests\Form;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
-use UIAwesome\Html\Attribute\HasName;
-use UIAwesome\Html\Attribute\Tests\Provider\NameProvider;
+use UIAwesome\Html\Attribute\Form\HasDirname;
+use UIAwesome\Html\Attribute\Tests\Provider\Form\DirnameProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Unit tests for the {@see HasName} trait managing the `name` HTML attribute.
+ * Unit tests for the {@see HasDirname} trait managing the `dirname` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
+ * Verifies rendered output, immutability, and attribute override behavior.
  *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `name` attribute is not provided.
- * - Sets the `name` HTML attribute and renders the expected output.
+ * - Ensures no attributes are set when the `dirname` attribute is not provided.
+ * - Sets the `dirname` HTML attribute and renders the expected output.
  *
- * {@see NameProvider} for test case data providers.
+ * {@see DirnameProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
-final class HasNameTest extends TestCase
+final class HasDirnameTest extends TestCase
 {
-    public function testReturnEmptyWhenNameAttributeNotSet(): void
+    public function testReturnEmptyWhenDirnameAttributeNotSet(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasName;
+            use HasDirname;
         };
 
         self::assertEmpty(
@@ -45,16 +45,16 @@ final class HasNameTest extends TestCase
         );
     }
 
-    public function testReturnNewInstanceWhenSettingNameAttribute(): void
+    public function testReturnNewInstanceWhenSettingDirnameAttribute(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasName;
+            use HasDirname;
         };
 
         self::assertNotSame(
             $instance,
-            $instance->name(''),
+            $instance->dirname(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -62,9 +62,9 @@ final class HasNameTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(NameProvider::class, 'values')]
-    public function testSetNameAttributeValue(
-        string|UnitEnum|Stringable|null $name,
+    #[DataProviderExternal(DirnameProvider::class, 'values')]
+    public function testSetDirnameAttributeValue(
+        string|Stringable|UnitEnum|null $dirname,
         array $attributes,
         string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
@@ -72,14 +72,14 @@ final class HasNameTest extends TestCase
     ): void {
         $instance = new class {
             use HasAttributes;
-            use HasName;
+            use HasDirname;
         };
 
-        $instance = $instance->attributes($attributes)->name($name);
+        $instance = $instance->attributes($attributes)->dirname($dirname);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::NAME, ''),
+            $instance->getAttribute(Attribute::DIRNAME, ''),
             $message,
         );
         self::assertSame(
