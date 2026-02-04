@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
+namespace UIAwesome\Html\Attribute\Tests\Provider\Element;
 
+use PHPForge\Support\Stub\{BackedString, Unit};
 use Stringable;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\{Backed, Unit};
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasSrcTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasHeightTest} test cases.
  *
- * Provides representative input/output pairs for the `src` attribute.
+ * Provides representative input/output pairs for the `height` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class SrcProvider
+final class HeightProvider
 {
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum, string, string},
      * >
      */
     public static function values(): array
@@ -29,7 +29,7 @@ final class SrcProvider
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return 'http://example.com/image.png';
+                return '100px';
             }
         };
 
@@ -41,18 +41,18 @@ final class SrcProvider
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
-            'enum backed' => [
-                Backed::VALUE,
+            'enum backed string' => [
+                BackedString::VALUE,
                 [],
-                Backed::VALUE,
-                ' src="value"',
+                BackedString::VALUE,
+                ' height="value"',
                 'Should return the attribute value after setting it.',
             ],
             'enum unit' => [
                 Unit::value,
                 [],
                 Unit::value,
-                ' src="value"',
+                ' height="value"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -63,32 +63,32 @@ final class SrcProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                'http://example.com/image.png',
-                ['src' => 'http://example.com/old-image.png'],
-                'http://example.com/image.png',
-                ' src="http://example.com/image.png"',
-                "Should return new 'src' after replacing the existing 'src' attribute.",
+                '100px',
+                ['height' => '200px'],
+                '100px',
+                ' height="100px"',
+                "Should return new 'height' after replacing the existing 'height' attribute.",
             ],
             'string' => [
-                'http://example.com/image.png',
+                '100px',
                 [],
-                'http://example.com/image.png',
-                ' src="http://example.com/image.png"',
+                '100px',
+                ' height="100px"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
-                ' src="http://example.com/image.png"',
+                ' height="100px"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['src' => 'http://example.com/image.png'],
+                ['height' => '100px'],
                 '',
                 '',
-                "Should unset the 'src' attribute when 'null' is provided after a value.",
+                "Should unset the 'height' attribute when 'null' is provided after a value.",
             ],
         ];
     }

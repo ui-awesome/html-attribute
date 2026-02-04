@@ -13,10 +13,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `height` attribute on HTML elements.
  *
- * Intended for use in tags and components that require manipulation of the `height` attribute.
+ * Intended for use in tag elements that require manipulation of the `height` attribute.
  *
  * Key features.
- * - Designed for use in tags and components.
+ * - Designed for use in tag elements (`<img>` and `<svg>`).
  * - Handles the HTML `height` attribute.
  * - Immutable method for setting or overriding the `height` attribute.
  * - Supports `int`, `string`, `Stringable`, `UnitEnum`, and `null` for flexible height assignment.
@@ -45,9 +45,6 @@ trait HasHeight
      * values or a string for CSS units (for example, `100%`, `auto`, `10em`). Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `height` attribute.
-     *
-     * @link https://drafts.csswg.org/css-sizing-3/#propdef-height
-     * @link https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-height
      *
      * Usage example:
      * ```php

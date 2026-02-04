@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
+namespace UIAwesome\Html\Attribute\Tests\Provider\Element;
 
+use PHPForge\Support\EnumDataProvider;
 use Stringable;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\{Backed, Unit};
+use UIAwesome\Html\Attribute\Values\{ElementAttribute, Referrerpolicy};
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasUsemapTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasReferrerpolicyTest} test cases.
  *
- * Provides representative input/output pairs for the `usemap` attribute.
+ * Provides representative input/output pairs for the `referrerpolicy` attribute.
  *
- * @copyright Copyright (C) 2026 Terabytesoftw.
+ * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class UsemapProvider
+final class ReferrerpolicyProvider
 {
     /**
      * @phpstan-return array<
@@ -26,34 +27,22 @@ final class UsemapProvider
      */
     public static function values(): array
     {
+        $enumCases = EnumDataProvider::attributeCases(Referrerpolicy::class, ElementAttribute::REFERRERPOLICY);
+
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return '#imagemap';
+                return 'no-referrer';
             }
         };
 
-        return [
+        $staticCases = [
             'empty string' => [
                 '',
                 [],
                 '',
                 '',
                 'Should return an empty string when setting an empty string.',
-            ],
-            'enum backed' => [
-                Backed::VALUE,
-                [],
-                Backed::VALUE,
-                ' usemap="value"',
-                'Should return the attribute value after setting it.',
-            ],
-            'enum unit' => [
-                Unit::value,
-                [],
-                Unit::value,
-                ' usemap="value"',
-                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -63,33 +52,35 @@ final class UsemapProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '#new-map',
-                ['usemap' => '#old-map'],
-                '#new-map',
-                ' usemap="#new-map"',
-                "Should return new 'usemap' after replacing the existing 'usemap' attribute.",
+                'no-referrer',
+                ['referrerpolicy' => 'origin'],
+                'no-referrer',
+                ' referrerpolicy="no-referrer"',
+                "Should return new 'referrerpolicy' after replacing the existing 'referrerpolicy' attribute.",
             ],
             'string' => [
-                '#imagemap',
+                'no-referrer',
                 [],
-                '#imagemap',
-                ' usemap="#imagemap"',
+                'no-referrer',
+                ' referrerpolicy="no-referrer"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
-                ' usemap="#imagemap"',
+                ' referrerpolicy="no-referrer"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['usemap' => '#imagemap'],
+                ['referrerpolicy' => 'no-referrer'],
                 '',
                 '',
-                "Should unset the 'usemap' attribute when 'null' is provided after a value.",
+                "Should unset the 'referrerpolicy' attribute when 'null' is provided after a value.",
             ],
         ];
+
+        return [...$staticCases, ...$enumCases];
     }
 }

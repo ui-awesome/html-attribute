@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\Element\HasLoading;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\LoadingProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Element\LoadingProvider;
 use UIAwesome\Html\Attribute\Values\{ElementAttribute, Loading};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;

@@ -2,22 +2,21 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
+namespace UIAwesome\Html\Attribute\Tests\Provider\Element;
 
-use PHPForge\Support\EnumDataProvider;
+use PHPForge\Support\Stub\{BackedString, Unit};
 use Stringable;
-use UIAwesome\Html\Attribute\Values\{ElementAttribute, Referrerpolicy};
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasReferrerpolicyTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasAltTest} test cases.
  *
- * Provides representative input/output pairs for the `referrerpolicy` attribute.
+ * Provides representative input/output pairs for the `alt` attribute.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class ReferrerpolicyProvider
+final class AltProvider
 {
     /**
      * @phpstan-return array<
@@ -27,22 +26,34 @@ final class ReferrerpolicyProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataProvider::attributeCases(Referrerpolicy::class, ElementAttribute::REFERRERPOLICY);
-
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return 'no-referrer';
+                return 'A descriptive alt text.';
             }
         };
 
-        $staticCase = [
+        return [
             'empty string' => [
                 '',
                 [],
                 '',
                 '',
                 'Should return an empty string when setting an empty string.',
+            ],
+            'enum backed string' => [
+                BackedString::VALUE,
+                [],
+                BackedString::VALUE,
+                ' alt="value"',
+                'Should return the attribute value after setting it.',
+            ],
+            'enum unit' => [
+                Unit::value,
+                [],
+                Unit::value,
+                ' alt="value"',
+                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -52,35 +63,33 @@ final class ReferrerpolicyProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                'no-referrer',
-                ['referrerpolicy' => 'origin'],
-                'no-referrer',
-                ' referrerpolicy="no-referrer"',
-                "Should return new 'referrerpolicy' after replacing the existing 'referrerpolicy' attribute.",
+                'A descriptive alt text.',
+                ['alt' => 'A different alt text.'],
+                'A descriptive alt text.',
+                ' alt="A descriptive alt text."',
+                "Should return new 'alt' after replacing the existing 'alt' attribute.",
             ],
             'string' => [
-                'no-referrer',
+                'A descriptive alt text.',
                 [],
-                'no-referrer',
-                ' referrerpolicy="no-referrer"',
+                'A descriptive alt text.',
+                ' alt="A descriptive alt text."',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
-                ' referrerpolicy="no-referrer"',
+                ' alt="A descriptive alt text."',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['referrerpolicy' => 'no-referrer'],
+                ['alt' => 'A descriptive alt text.'],
                 '',
                 '',
-                "Should unset the 'referrerpolicy' attribute when 'null' is provided after a value.",
+                "Should unset the 'alt' attribute when 'null' is provided after a value.",
             ],
         ];
-
-        return [...$staticCase, ...$enumCases];
     }
 }

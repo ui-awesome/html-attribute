@@ -8,7 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\Element\HasHeight;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Element\HeightProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Element\HeightProvider;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;

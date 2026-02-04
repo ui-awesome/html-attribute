@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
+namespace UIAwesome\Html\Attribute\Tests\Provider\Element;
 
 use PHPForge\Support\EnumDataProvider;
 use Stringable;
@@ -36,7 +36,7 @@ final class DecodingProvider
             }
         };
 
-        $staticCase = [
+        $staticCases = [
             'empty string' => [
                 '',
                 [],
@@ -81,6 +81,6 @@ final class DecodingProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [...$staticCases, ...$enumCases];
     }
 }

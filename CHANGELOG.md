@@ -42,6 +42,7 @@
 - Enh #69: Add `HasList`, `HasMultiple` traits and `list()`, `multiple()` methods to manage `list` and `multiple` attributes for HTML elements (@terabytesoftw)
 - Enh #70: Add `HasPattern`, `HasPlaceholder`, `HasSize` traits and `pattern()`, `placeholder()`, `size()` methods to manage `pattern`, `placeholder`, and `size` attributes for HTML elements (@terabytesoftw)
 - Bug #71: Move HTML attribute traits to `Form` namespace and update related imports accordingly (@terabytesoftw)
+- Bug #72: Update documentation for HTML attribute elements in `Element` namespace (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

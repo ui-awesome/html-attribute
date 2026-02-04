@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Support\Provider\Element;
+namespace UIAwesome\Html\Attribute\Tests\Provider\Element;
 
+use PHPForge\Support\Stub\{BackedString, Unit};
 use Stringable;
-use UIAwesome\Html\Attribute\Tests\Support\Stub\Values\{Backed, Unit};
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasHrefTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasSrcsetTest} test cases.
  *
- * Provides representative input/output pairs for the `href` attribute.
+ * Provides representative input/output pairs for the `srcset` attribute.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class HrefProvider
+final class SrcsetProvider
 {
     /**
      * @phpstan-return array<
@@ -29,7 +29,7 @@ final class HrefProvider
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return 'https://example.com/page';
+                return 'small.jpg 480w, medium.jpg 800w, large.jpg 1200w';
             }
         };
 
@@ -41,18 +41,18 @@ final class HrefProvider
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
-            'enum backed' => [
-                Backed::VALUE,
+            'enum backed string' => [
+                BackedString::VALUE,
                 [],
-                Backed::VALUE,
-                ' href="value"',
+                BackedString::VALUE,
+                ' srcset="value"',
                 'Should return the attribute value after setting it.',
             ],
             'enum unit' => [
                 Unit::value,
                 [],
                 Unit::value,
-                ' href="value"',
+                ' srcset="value"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -63,46 +63,39 @@ final class HrefProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                'https://example.com/new',
-                ['href' => 'https://example.com/old'],
-                'https://example.com/new',
-                ' href="https://example.com/new"',
-                "Should return new 'href' after replacing the existing 'href' attribute.",
+                'small.jpg 480w, medium.jpg 800w',
+                ['srcset' => 'old-small.jpg 480w, old-medium.jpg 800w'],
+                'small.jpg 480w, medium.jpg 800w',
+                ' srcset="small.jpg 480w, medium.jpg 800w"',
+                "Should return new 'srcset' after replacing the existing 'srcset' attribute.",
             ],
             'string' => [
-                'https://example.com/page',
+                'small.jpg 480w, medium.jpg 800w, large.jpg 1200w',
                 [],
-                'https://example.com/page',
-                ' href="https://example.com/page"',
+                'small.jpg 480w, medium.jpg 800w, large.jpg 1200w',
+                ' srcset="small.jpg 480w, medium.jpg 800w, large.jpg 1200w"',
                 'Should return the attribute value after setting it.',
             ],
-            'string with fragment identifier' => [
-                '#section',
+            'string with pixel density descriptors' => [
+                'image-1x.jpg 1x, image-2x.jpg 2x',
                 [],
-                '#section',
-                ' href="#section"',
-                'Should return the attribute value after setting it.',
-            ],
-            'string with relative path' => [
-                '/about',
-                [],
-                '/about',
-                ' href="/about"',
+                'image-1x.jpg 1x, image-2x.jpg 2x',
+                ' srcset="image-1x.jpg 1x, image-2x.jpg 2x"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
-                ' href="https://example.com/page"',
+                ' srcset="small.jpg 480w, medium.jpg 800w, large.jpg 1200w"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['href' => 'https://example.com/old'],
+                ['srcset' => 'small.jpg 480w, medium.jpg 800w'],
                 '',
                 '',
-                "Should unset the 'href' attribute when 'null' is provided after a value.",
+                "Should unset the 'srcset' attribute when 'null' is provided after a value.",
             ],
         ];
     }

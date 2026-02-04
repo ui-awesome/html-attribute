@@ -13,10 +13,10 @@ use UnitEnum;
  *
  * Provides an immutable API for setting the `src` attribute on HTML elements.
  *
- * Intended for use in tags and components that require manipulation of the `src` attribute.
+ * Intended for use in tag elements that require manipulation of the `src` attribute.
  *
  * Key features.
- * - Designed for use in tags and components.
+ * - Designed for use in tag elements (`<img>`).
  * - Handles the HTML `src` attribute.
  * - Immutable method for setting or overriding the `src` attribute.
  * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible source assignment.
@@ -44,8 +44,6 @@ trait HasSrc
      * relative path as a string. Can be `null` to unset the attribute.
      *
      * @return static New instance with the updated `src` attribute.
-     *
-     * @link https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-src
      *
      * Usage example:
      * ```php
