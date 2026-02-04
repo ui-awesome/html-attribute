@@ -34,7 +34,7 @@ final class DirnameProvider
         };
 
         return [
-           'enum backed string' => [
+            'enum backed string' => [
                 BackedString::VALUE,
                 [],
                 BackedString::VALUE,
