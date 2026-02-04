@@ -22,7 +22,7 @@ use UnitEnum;
  * - Designed for use in form control elements (`<input>` and `<textarea>`).
  * - Handles the HTML `minlength` attribute for minimum character requirements.
  * - Immutable method for setting or overriding the `minlength` attribute.
- * - Supports int and `null` for flexible minlength assignment.
+ * - Supports `int`, `string`, `Stringable`, `UnitEnum`, and `null` for flexible minlength assignment.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.

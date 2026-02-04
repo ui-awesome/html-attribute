@@ -64,7 +64,7 @@ final class HasNameTest extends TestCase
      */
     #[DataProviderExternal(NameProvider::class, 'values')]
     public function testSetNameAttributeValue(
-        string|UnitEnum|Stringable|null $name,
+        string|Stringable|UnitEnum|null $name,
         array $attributes,
         string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
