@@ -65,6 +65,13 @@ enum Attribute: string
     case CHARSET = 'charset';
 
     /**
+     * `checked` — Indicates whether the command or control is checked.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/checked
+     */
+    case CHECKED = 'checked';
+
+    /**
      * `content` — A value associated with a meta element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/content
