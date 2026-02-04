@@ -171,6 +171,13 @@ enum Attribute: string
     case INTEGRITY = 'integrity';
 
     /**
+     * `list` — Identifies a `<datalist>` element that provides predefined options to suggest to the user.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#list
+     */
+    case LIST = 'list';
+
+    /**
      * `max` — Indicates the maximum value allowed.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/max
