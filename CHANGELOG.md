@@ -38,6 +38,7 @@
 - Enh #65: Add `HasRequired` trait and `required()` method to manage `required` attribute for HTML elements (@terabytesoftw)
 - Bug #66: Enhance HTML attribute element handling with Stringable and UnitEnum support (@terabytesoftw)
 - Enh #67: Add `HasAccept`, `HasAutocomplete` traits and `accept()`, `autocomplete()` methods to manage `accept` and `autocomplete` attributes for HTML elements (@terabytesoftw)
+- Enh #68: Add `HasChecked`, `HasDirname` traits and `checked()`, `dirname()` methods to manage `checked` and `dirname` attributes for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
