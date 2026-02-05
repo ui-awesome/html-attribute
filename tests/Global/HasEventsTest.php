@@ -20,14 +20,14 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasEvents} trait managing global `on*` HTML event handler attributes.
  *
- * Verifies rendered output, immutability, key normalization, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures invalid keys and values throw expected exceptions.
- * - Normalizes keys and values when setting `on*` event attributes.
+ * - Ensures no attributes are set when the `on*` attribute is not provided.
+ * - Normalizes keys when setting `on*` event attributes.
  * - Renders expected output when `on*` event attributes are set.
- * - Throws an exception when the `on*` event attribute value is invalid.
+ * - Sets `on*` event attributes and renders the expected output.
+ * - Verifies invalid keys throw an `InvalidArgumentException`.
+ * - Verifies invalid values throw an `InvalidArgumentException`.
  *
  * {@see EventProvider} for test case data providers.
  *

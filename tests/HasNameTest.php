@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasName} trait managing the `name` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `name` attribute is not provided.

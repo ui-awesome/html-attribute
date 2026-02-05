@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasAccesskey} trait managing the `accesskey` global HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `accesskey` attribute is not provided.

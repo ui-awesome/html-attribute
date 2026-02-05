@@ -15,8 +15,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 /**
  * Unit tests for the {@see HasMultiple} trait managing the `multiple` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `multiple` attribute is not provided.

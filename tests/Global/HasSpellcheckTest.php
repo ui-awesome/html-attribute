@@ -17,13 +17,11 @@ use UIAwesome\Html\Mixin\HasAttributes;
 /**
  * Unit tests for the {@see HasSpellcheck} trait managing the `spellcheck` global HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `spellcheck` attribute is not provided.
  * - Sets the `spellcheck` global HTML attribute and renders the expected output.
- * - Throws an exception when the `spellcheck` attribute value is invalid.
+ * - Verifies invalid `spellcheck` values throw an `InvalidArgumentException`.
  *
  * {@see SpellcheckProvider} for test case data providers.
  *

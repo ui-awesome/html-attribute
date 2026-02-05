@@ -45,6 +45,7 @@
 - Bug #72: Update documentation for HTML attribute elements in `Element` namespace (@terabytesoftw)
 - Bug #73: Standardize PHPDoc headers across src directory files (@terabytesoftw)
 - Bug #74: Remove directory `tests\Stub` and move `tests\Support\Provider` to `tests\Provider` in tests (@terabytesoftw)
+- Bug #75: Standardize PHPDoc headers for test classes (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

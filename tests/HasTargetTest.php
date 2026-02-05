@@ -18,13 +18,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasTarget} trait managing the `target` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `target` attribute is not provided.
  * - Sets the `target` HTML attribute and renders the expected output.
- * - Throws an exception when the `target` attribute value is invalid.
+ * - Verifies invalid `target` values throw an `InvalidArgumentException`.
  *
  * {@see TargetProvider} for test case data providers.
  *

@@ -20,14 +20,14 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasAria} trait managing global `aria-*` HTML attributes.
  *
- * Verifies rendered output, immutability, key normalization, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures invalid keys and values throw expected exceptions.
- * - Normalizes keys and values when setting `aria-*` attributes.
+ * - Ensures no attributes are set when the `aria-*` attribute is not provided.
+ * - Normalizes keys when setting `aria-*` attributes.
  * - Renders expected output when `aria-*` attributes are set.
- * - Throws an exception when the `aria-*` attribute value is invalid.
+ * - Sets `aria-*` attributes and renders the expected output.
+ * - Verifies invalid keys throw an `InvalidArgumentException`.
+ * - Verifies invalid values throw an `InvalidArgumentException`.
  *
  * {@see AriaProvider} for test case data providers.
  *

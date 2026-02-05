@@ -19,13 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasCharset} trait managing the `charset` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `charset` attribute is not provided.
  * - Sets the `charset` HTML attribute and renders the expected output.
- * - Throws an exception when the `charset` attribute value is invalid.
+ * - Verifies invalid `charset` values throw an `InvalidArgumentException`.
  *
  * {@see CharsetProvider} for test case data providers.
  *

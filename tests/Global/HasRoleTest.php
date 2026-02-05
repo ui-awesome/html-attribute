@@ -19,13 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasRole} trait managing the `role` global HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `role` attribute is not provided.
  * - Sets the `role` global HTML attribute and renders the expected output.
- * - Throws an exception when the `role` attribute value is invalid.
+ * - Verifies invalid `role` values throw an `InvalidArgumentException`.
  *
  * {@see RoleProvider} for test case data providers.
  *

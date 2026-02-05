@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasList} trait managing the `list` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `list` attribute is not provided.

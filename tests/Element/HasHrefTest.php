@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasHref} trait managing the `href` HTML and SVG attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `href` attribute is not provided.

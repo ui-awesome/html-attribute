@@ -19,13 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasAs} trait managing the `as` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `as` attribute is not provided.
  * - Sets the `as` HTML attribute and renders the expected output.
- * - Throws an exception when the `as` attribute value is invalid.
+ * - Verifies invalid `as` values throw an `InvalidArgumentException`.
  *
  * {@see AsProvider} for test case data providers.
  *

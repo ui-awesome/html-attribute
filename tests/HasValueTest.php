@@ -17,12 +17,10 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasValue} trait managing the `value` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior for the `value` attribute.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `value` attribute is not provided.
- * - Sets the `value` HTML attribute with string, int, and null values and renders the expected output.
+ * - Sets the `value` HTML attribute and renders the expected output.
  *
  * {@see ValueProvider} for test case data providers.
  *

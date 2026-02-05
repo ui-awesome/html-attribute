@@ -19,12 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasMaxlength} trait managing the `maxlength` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `maxlength` attribute is not provided.
  * - Sets the `maxlength` HTML attribute and renders the expected output.
+ * - Verifies invalid `maxlength` values throw an `InvalidArgumentException`.
  *
  * {@see MaxlengthProvider} for test case data providers.
  *

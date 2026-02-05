@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasAlt} trait managing the `alt` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `alt` attribute is not provided.

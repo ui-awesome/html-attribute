@@ -15,8 +15,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 /**
  * Unit tests for the {@see HasChecked} trait managing the `checked` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `checked` attribute is not provided.

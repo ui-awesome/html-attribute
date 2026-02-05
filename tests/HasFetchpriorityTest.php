@@ -18,13 +18,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasFetchpriority} trait managing the `fetchpriority` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `fetchpriority` attribute is not provided.
  * - Sets the `fetchpriority` HTML attribute and renders the expected output.
- * - Throws an exception when the `fetchpriority` attribute value is invalid.
+ * - Verifies invalid `fetchpriority` values throw an `InvalidArgumentException`.
  *
  * {@see FetchpriorityProvider} for test case data providers.
  *

@@ -18,13 +18,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasBlocking} trait managing the `blocking` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `blocking` attribute is not provided.
  * - Sets the `blocking` HTML attribute and renders the expected output.
- * - Throws an exception when the `blocking` attribute value is invalid.
+ * - Verifies invalid `blocking` values throw an `InvalidArgumentException`.
  *
  * {@see BlockingProvider} for test case data providers.
  *

@@ -20,14 +20,13 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasData} trait managing global `data-*` HTML attributes.
  *
- * Verifies rendered output, immutability, key normalization, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures invalid keys and values throw expected exceptions.
- * - Normalizes keys and values when setting `data-*` attributes.
+ * - Normalizes keys when setting `data-*` attributes.
  * - Renders expected output when `data-*` attributes are set.
- * - Throws an exception when the `data-*` attribute value is invalid.
+ * - Sets `data-*` attributes and renders the expected output.
+ * - Verifies invalid keys throw an `InvalidArgumentException`.
+ * - Verifies invalid values throw an `InvalidArgumentException`.
  *
  * {@see DataProvider} for test case data providers.
  *

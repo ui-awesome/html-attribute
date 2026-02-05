@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasDirname} trait managing the `dirname` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `dirname` attribute is not provided.

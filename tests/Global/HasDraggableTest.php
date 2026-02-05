@@ -18,13 +18,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasDraggable} trait managing the `draggable` global HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `draggable` attribute is not provided.
  * - Sets the `draggable` global HTML attribute and renders the expected output.
- * - Throws an exception when the `draggable` attribute value is invalid.
+ * - Verifies invalid `draggable` values throw an `InvalidArgumentException`.
  *
  * {@see DraggableProvider} for test case data providers.
  *

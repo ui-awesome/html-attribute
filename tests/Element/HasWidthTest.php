@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasWidth} trait managing the `width` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `width` attribute is not provided.

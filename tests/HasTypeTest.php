@@ -19,12 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasType} trait managing the `type` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `type` attribute is not provided.
  * - Sets the `type` HTML attribute and renders the expected output.
+ * - Verifies invalid `type` values throw an `InvalidArgumentException`.
  *
  * {@see TypeProvider} for test case data providers.
  *
