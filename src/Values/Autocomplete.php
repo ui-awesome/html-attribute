@@ -15,12 +15,12 @@ namespace UIAwesome\Html\Attribute\Values;
 enum Autocomplete: string
 {
     /**
-     * Permitted to automatically enter or select a value for this field by the browser.
+     * `off` - Browser is not permitted to automatically enter or select a value for this field.
      */
     case OFF = 'off';
 
     /**
-     * Allowed to automatically complete values for this field by the browser.
+     * `on` - Browser is permitted to automatically complete values for this field.
      */
     case ON = 'on';
 }
