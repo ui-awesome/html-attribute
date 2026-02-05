@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Form;
+namespace UIAwesome\Html\Attribute\Tests;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use UIAwesome\Html\Attribute\Form\HasDisabled;
-use UIAwesome\Html\Attribute\Tests\Provider\Form\DisabledProvider;
+use UIAwesome\Html\Attribute\HasDisabled;
+use UIAwesome\Html\Attribute\Tests\Provider\DisabledProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;

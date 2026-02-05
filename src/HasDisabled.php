@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Form;
+namespace UIAwesome\Html\Attribute;
 
 use UIAwesome\Html\Attribute\Values\Attribute;
 
