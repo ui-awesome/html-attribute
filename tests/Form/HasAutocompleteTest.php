@@ -21,6 +21,7 @@ use UnitEnum;
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `autocomplete` attribute is not provided.
  * - Sets the `autocomplete` HTML attribute and renders the expected output.
+ * - Verifies invalid `autocomplete` values throw an `InvalidArgumentException`.
  *
  * {@see AutocompleteProvider} for test case data providers.
  *

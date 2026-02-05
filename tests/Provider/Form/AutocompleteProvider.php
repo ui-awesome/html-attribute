@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Provider\Form;
 
-use PHPForge\Support\Stub\{BackedString, Unit};
+use PHPForge\Support\EnumDataProvider;
 use Stringable;
+use UIAwesome\Html\Attribute\Values\{Attribute, Autocomplete};
 use UnitEnum;
 
 /**
@@ -26,6 +27,8 @@ final class AutocompleteProvider
      */
     public static function values(): array
     {
+        $enumCases = EnumDataProvider::attributeCases(Autocomplete::class, Attribute::AUTOCOMPLETE);
+
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
@@ -33,27 +36,13 @@ final class AutocompleteProvider
             }
         };
 
-        return [
+        $staticCases = [
             'empty string' => [
                 '',
                 [],
                 '',
                 '',
                 'Should return an empty string when setting an empty string.',
-            ],
-            'enum backed string' => [
-                BackedString::VALUE,
-                [],
-                BackedString::VALUE,
-                ' autocomplete="value"',
-                'Should return the attribute value after setting it.',
-            ],
-            'enum unit' => [
-                Unit::value,
-                [],
-                Unit::value,
-                ' autocomplete="value"',
-                'Should return the attribute value after setting it.',
             ],
             'null' => [
                 null,
@@ -91,5 +80,7 @@ final class AutocompleteProvider
                 "Should unset the 'autocomplete' attribute when 'null' is provided after a value.",
             ],
         ];
+
+        return [...$enumCases, ...$staticCases];
     }
 }
