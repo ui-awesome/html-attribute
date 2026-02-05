@@ -7,17 +7,7 @@ namespace UIAwesome\Html\Attribute\Form;
 use UIAwesome\Html\Attribute\Values\Attribute;
 
 /**
- * Trait for managing the HTML `multiple` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `multiple` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `multiple` attribute.
- *
- * Key features.
- * - Designed for use in form control elements (`<input type="file">`, `<input type="email">`, and `<select>`).
- * - Handles the HTML `multiple` attribute for allowing multiple values.
- * - Immutable method for setting or overriding the `multiple` attribute.
- * - Supports `bool` and `null` for flexible multiple state assignment.
+ * Provides an immutable API for the `multiple` attribute.
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -30,20 +20,10 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 trait HasMultiple
 {
     /**
-     * Sets the HTML `multiple` attribute for the element.
+     * Sets the `multiple` attribute.
      *
-     * Creates a new instance with the specified multiple state.
-     *
-     * The `multiple` attribute is a boolean attribute that indicates whether the user can enter or select more than one
-     * value.
-     * - For `<input type="email">` inputs, when `multiple` is set, the user can enter comma-separated email addresses.
-     * - For `<input type="file">` inputs, the user can choose more than one file.
-     * - For `<select>` elements, multiple options can be selected.
-     * - When the `multiple` attribute is set on a `<input type="file">` input, the `accept` attribute can be used to
-     *   restrict the types of files that can be selected.
-     *
-     * @param bool|null $value Multiple state to set for the element. Use `true` to allow multiple values, `false` to
-     * disallow. Can be `null` to unset the attribute.
+     * @param bool|null $value Multiple state. Use `true` to allow multiple values, `false` to disallow, or `null` to
+     * remove the attribute.
      *
      * @return static New instance with the updated `multiple` attribute.
      *

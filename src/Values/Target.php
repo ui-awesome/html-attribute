@@ -5,14 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents values for the HTML `target` attribute on `<a>`, `<area>`, `<base>`, and `<form>` elements.
- *
- * Defines supported browsing context tokens as enum cases for use with elements that navigate or open linked resources.
- *
- * Key features.
- * - Designed for use in anchor, area, base, form, and link elements that support the `target` attribute.
- * - Enum values map to browsing context names as `string` values.
- * - Suitable for rendering HTML attributes in view helpers and components.
+ * Represents values for the HTML `target` attribute.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#target
  *

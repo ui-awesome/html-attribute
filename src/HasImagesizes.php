@@ -9,17 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `imagesizes` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `imagesizes` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `imagesizes` attribute.
- *
- * Key features.
- * - Designed for use in link elements with `rel="preload"` and `as="image"`.
- * - Handles the HTML `imagesizes` attribute.
- * - Immutable method for setting or overriding the `imagesizes` attribute.
- * - Supports string, Stringable, UnitEnum, and `null` for flexible assignment.
+ * Provides an immutable API for the `imagesizes` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -32,16 +22,11 @@ use UnitEnum;
 trait HasImagesizes
 {
     /**
-     * Sets the HTML `imagesizes` attribute for the element.
+     * Sets the `imagesizes` attribute.
      *
-     * Creates a new instance with the specified image sizes value.
+     * Defines the image sizes descriptor list for preload links.
      *
-     * For `rel="preload"` and `as="image"` only, the `imagesizes` attribute has similar syntax and semantics as the
-     * `sizes` attribute that indicates to preload the appropriate resource used by an `img` element with corresponding
-     * values for its `srcset` and `sizes` attributes.
-     *
-     * @param string|Stringable|UnitEnum|null $value Image sizes value to set for the element. Use valid sizes syntax
-     * (for example, `100vw`, `(max-width: 600px) 100vw, 50vw`). Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Image sizes descriptor list, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `imagesizes` attribute.
      *

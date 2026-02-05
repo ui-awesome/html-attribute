@@ -9,17 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `autocomplete` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `autocomplete` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `autocomplete` attribute.
- *
- * Key features.
- * - Designed for use in form control elements (`<form>`, `<input>`, `<textarea>`, and `<select>`).
- * - Handles the HTML `autocomplete` attribute for autofill functionality.
- * - Immutable method for setting or overriding the `autocomplete` attribute.
- * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible autocomplete assignment.
+ * Provides an immutable API for the `autocomplete` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -32,21 +22,9 @@ use UnitEnum;
 trait HasAutocomplete
 {
     /**
-     * Sets the HTML `autocomplete` attribute for the element.
+     * Sets the `autocomplete` attribute.
      *
-     * Creates a new instance with the specified autocomplete value.
-     *
-     * The `autocomplete` attribute provides a hint to browsers for autofill functionality.
-     * - It has no effect on `<input type="checkbox">`, `<input type="file">`, `<input type="radio">`, or button types.
-     *
-     * Common values include:
-     * - `on` or `off` to enable/disable autocomplete
-     * - `name`, `email`, `tel`, `address-line1` for contact information
-     * - `username`, `new-password`, `current-password` for credentials
-     * - `organization`, `street-address`, `postal-code` for addresses
-     *
-     * @param string|Stringable|UnitEnum|null $value Autocomplete value to set for the element. Can be `null` to unset
-     * the attribute.
+     * @param string|Stringable|UnitEnum|null $value Autocomplete value, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `autocomplete` attribute.
      *

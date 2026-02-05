@@ -7,14 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents language codes for the HTML `lang` global attribute.
  *
- * Defines a curated set of language identifiers as enum cases.
- *
- * Key features.
- * - Designed for use in tags, components, and helpers requiring language code assignment.
- * - Enum values map to language codes as `string` tokens.
- * - Includes common language and region variants.
- * - Integration-ready for tag rendering and element generation APIs.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
  * @link https://tools.ietf.org/html/bcp47
  *

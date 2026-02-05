@@ -8,17 +8,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `download` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `download` attribute on `<a>` elements.
- *
- * Intended for use in tags and components that require manipulation of the download attribute.
- *
- * Key features.
- * - Designed for use in anchor elements.
- * - Handles the HTML `download` attribute.
- * - Immutable method for setting or overriding the `download` attribute.
- * - Supports bool, string, UnitEnum, and `null` for flexible download assignment.
+ * Provides an immutable API for the `download` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -31,16 +21,12 @@ use UnitEnum;
 trait HasDownload
 {
     /**
-     * Sets the HTML `download` attribute for the element.
+     * Sets the `download` attribute.
      *
-     * Creates a new instance with the specified download value.
+     * Controls whether the linked resource is treated as a download.
      *
-     * Causes the browser to treat the linked URL as a download. Can be used with or without a filename value:
-     * - When `true`, the browser will suggest a filename/extension generated from various sources.
-     * - When a string is provided, it suggests that value as the filename.
-     *
-     * @param bool|string|UnitEnum|null $value Download value to set for the element. Use `true` to enable download
-     * without a specific filename, a string to suggest a filename, or `null` to unset the attribute.
+     * @param bool|string|UnitEnum|null $value Download flag or suggested filename; use `true` to enable downloads
+     * without a filename, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `download` attribute.
      *

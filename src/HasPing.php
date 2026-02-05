@@ -8,17 +8,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `ping` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `ping` attribute on `<a>` elements.
- *
- * Intended for use in tags and components that require manipulation of the ping attribute.
- *
- * Key features.
- * - Designed for use in anchor elements.
- * - Handles the HTML `ping` attribute.
- * - Immutable method for setting or overriding the `ping` attribute.
- * - Supports string, UnitEnum, and `null` for flexible ping assignment.
+ * Provides an immutable API for the `ping` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -31,19 +21,13 @@ use UnitEnum;
 trait HasPing
 {
     /**
-     * Sets the HTML `ping` attribute for the element.
+     * Sets the `ping` attribute.
      *
-     * Creates a new instance with the specified ping value.
+     * Defines the space-separated URL list for ping tracking.
      *
-     * A space-separated list of URLs. When the link is followed, the browser will send POST requests with the body
-     * `PING` to the URLs. Typically used for tracking.
-     *
-     * @param string|UnitEnum|null $value Ping value to set for the element. Use a space-separated list of URLs as a
-     * `string`. Can be `null` to unset the attribute.
+     * @param string|UnitEnum|null $value Ping URL list, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `ping` attribute.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#ping
      *
      * Usage example:
      * ```php

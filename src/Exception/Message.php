@@ -7,24 +7,9 @@ namespace UIAwesome\Html\Attribute\Exception;
 use function sprintf;
 
 /**
- * Represents error message templates.
+ * Represents error message templates for attribute exceptions.
  *
- * This enum defines formatted error messages for various error conditions that may occur during operations such as
- * attribute handling.
- *
- * It provides message templates that can be formatted at call sites.
- *
- * Each case represents a specific type of error, with a message template that can be populated with dynamic values
- * using the {@see Message::getMessage()} method.
- *
- * Each message template can be formatted with arguments.
- *
- * Key features.
- * - Can be used by exception call sites that need formatted messages.
- * - Defines message templates as enum cases.
- * - Formats templates with `sprintf()` via {@see Message::getMessage()}.
- * - Supports message formatting with dynamic parameters.
- * - Uses the enum case `value` as the template string.
+ * Use {@see Message::getMessage()} to format the template with `sprintf()` arguments.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -39,7 +24,7 @@ enum Message: string
     case ATTRIBUTE_INVALID_VALUE = "Invalid value '%s' for attribute '%s'. Expected: '%s'.";
 
     /**
-     * Error when a attribute value is not a `scalar` or `Closure`.
+     * Error when an attribute value is not a `scalar` or `Closure`.
      *
      * Format: "Attribute value must be of type 'scalar' or 'Closure', '%s' given."
      */

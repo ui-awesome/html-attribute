@@ -9,17 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `hreflang` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `hreflang` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `hreflang` attribute.
- *
- * Key features.
- * - Designed for use in link and anchor elements.
- * - Handles the HTML `hreflang` attribute.
- * - Immutable method for setting or overriding the `hreflang` attribute.
- * - Supports string, Stringable, UnitEnum, and `null` for flexible assignment.
+ * Provides an immutable API for the `hreflang` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -32,15 +22,11 @@ use UnitEnum;
 trait HasHreflang
 {
     /**
-     * Sets the HTML `hreflang` attribute for the element.
+     * Sets the `hreflang` attribute.
      *
-     * Creates a new instance with the specified language code value.
+     * Declares the language of the linked resource.
      *
-     * Indicates the language of the linked resource. It is purely advisory. Values should be valid BCP 47 language
-     * tags. Use this attribute only if the `href` attribute is present.
-     *
-     * @param string|Stringable|UnitEnum|null $value Language code value to set for the element. Use valid BCP 47
-     * language tags (for example, `en`, `es`, `fr`). Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value BCP 47 language tag, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `hreflang` attribute.
      *

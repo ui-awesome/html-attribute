@@ -7,13 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML `http-equiv` attribute on `<meta>` elements.
  *
- * Defines the supported `http-equiv` tokens as enum cases. The `http-equiv` attribute defines a pragma directive, which
- * are instructions for the browser for processing the document.
- *
- * Key features.
- * - Enum values map to pragma directive tokens as `string` values.
- * - Used with meta elements to simulate HTTP headers.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

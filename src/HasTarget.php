@@ -10,18 +10,7 @@ use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `target` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `target` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the browsing context target attribute and value
- * validation.
- *
- * Key features.
- * - Designed for use in anchor, area, base, form, and link elements.
- * - Handles the HTML `target` attribute.
- * - Immutable method for setting or overriding the `target` attribute.
- * - Supports string, UnitEnum, and `null` for flexible target assignment.
+ * Provides an immutable API for the `target` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -34,24 +23,17 @@ use UnitEnum;
 trait HasTarget
 {
     /**
-     * Sets the HTML `target` attribute for the element.
+     * Sets the `target` attribute.
      *
-     * Creates a new instance with the specified browsing context target value.
+     * Defines the browsing context that receives the link or form submission.
      *
-     * Controls where to display the linked resource or where to submit the form.
-     * - Use `_self` to open in the same browsing context (default behavior).
-     * - Use `_blank` to open in a new tab or window. Always pair with `rel="noopener noreferrer"` for security.
-     * - Use `_parent` to open in the parent frame or window.
-     * - Use `_top` to open in the full, original window, breaking out of any frames.
+     * @param string|UnitEnum|null $value Browsing context name, or `null` to remove the attribute.
      *
-     * @param string|UnitEnum|null $value Target browsing context value to set for the element. Use `_self`, `_blank`,
-     * `_parent`, `_top`, or other valid browsing context names. Can be `null` to unset the attribute.
-     *
-     * @throws InvalidArgumentException if the provided value is not valid.
+     * @throws InvalidArgumentException If the value is not valid.
      *
      * @return static New instance with the updated `target` attribute.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/target
+     * {@see Target} for predefined enum values.
      *
      * Usage example:
      * ```php

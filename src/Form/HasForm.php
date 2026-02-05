@@ -9,18 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `form` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `form` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `form` attribute.
- *
- * Key features.
- * - Designed for use in form control elements (`<button>`, `<fieldset>`, `<input>`, `<object>`, `<output>`, `<select>`,
- *   and `<textarea>`).
- * - Handles the HTML `form` attribute for associating controls with forms.
- * - Immutable method for setting or overriding the `form` attribute.
- * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible form association.
+ * Provides an immutable API for the `form` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -33,18 +22,9 @@ use UnitEnum;
 trait HasForm
 {
     /**
-     * Sets the HTML `form` attribute for the element.
+     * Sets the `form` attribute.
      *
-     * Creates a new instance with the specified form value.
-     *
-     * The `form` attribute associates the control with a form element by referencing the form's `id`. This allows form
-     * controls to be placed anywhere in the document while still being submitted with the specified form.
-     * - If this attribute is not specified, the control is associated with the nearest containing form, if any.
-     * - The value must match the `id` of a `<form>` element in the same document. An input can only be associated with
-     *   one form.
-     *
-     * @param string|Stringable|UnitEnum|null $value Form ID to associate with the element. Can be `null` to unset the
-     * attribute.
+     * @param string|Stringable|UnitEnum|null $value Form ID, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `form` attribute.
      *

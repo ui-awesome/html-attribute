@@ -9,18 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `name` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `name` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `name` attribute.
- *
- * Key features.
- * - Designed for elements that support `name` (`<button>`, `<fieldset>`, `<form>`, `<iframe>`, `<input>`, `<map>`,
- *   `<meta>`, `<object>`, `<output>`, `<param>`, `<select>`, `<textarea>`).
- * - Handles the HTML `name` attribute.
- * - Immutable method for setting or overriding the `name` attribute.
- * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible name assignment.
+ * Provides an immutable API for the `name` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -33,12 +22,11 @@ use UnitEnum;
 trait HasName
 {
     /**
-     * Sets the HTML `name` attribute for the element.
+     * Sets the `name` attribute.
      *
-     * Creates a new instance with the specified `name` value.
+     * Defines the metadata name or form control name.
      *
-     * @param string|Stringable|UnitEnum|null $value Name value to set for the element. Can be `null` to unset the
-     * attribute.
+     * @param string|Stringable|UnitEnum|null $value Name value, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `name` attribute.
      *

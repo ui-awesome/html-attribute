@@ -5,15 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents values for the HTML/SVG `decoding` attribute on `<img>` elements.
- *
- * Defines the supported decoding hint tokens as enum cases.
- *
- * Key features.
- * - Designed for use in image elements (img, SVG image) requiring decoding hint assignment.
- * - Enum values are represented as `string` tokens.
- * - Enum values map to `async`, `sync`, and `auto`.
- * - Integration-ready for tag rendering and element generation APIs.
+ * Represents values for the HTML/SVG `decoding` attribute.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
  *

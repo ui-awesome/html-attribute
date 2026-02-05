@@ -15,17 +15,7 @@ use UnitEnum;
 use function gettype;
 
 /**
- * Trait for managing the global HTML `data-*` attributes in tag rendering.
- *
- * Provides an immutable API for setting custom data attributes on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of `data-*` attributes.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML `data-*` global attributes.
- * - Immutable method for setting or overriding `data-*` attributes.
- * - Supports scalar, Closure and UnitEnum for advanced dynamic data scenarios.
+ * Provides an immutable API for `data-*` attributes.
  *
  * @phpstan-type Key string|UnitEnum
  * @phpstan-type Value scalar|Stringable|UnitEnum|null|Closure(): mixed
@@ -40,13 +30,10 @@ use function gettype;
 trait HasData
 {
     /**
-     * Sets a single HTML `data-*` attribute for the element.
+     * Sets a `data-*` attribute.
      *
-     * Creates a new instance with the specified custom data attribute, supporting scalar, Closure and UnitEnum values
-     * as required by the HTML specification for global attributes.
-     *
-     * @param string|UnitEnum $key Data attribute key (without the `data-` prefix).
-     * @param bool|Closure|float|int|string|Stringable|UnitEnum|null $value Data attribute value. Can be `null` to unset
+     * @param string|UnitEnum $key Data attribute key without the `data-` prefix.
+     * @param bool|Closure|float|int|string|Stringable|UnitEnum|null $value Data attribute value, or `null` to remove
      * the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
@@ -76,19 +63,14 @@ trait HasData
     }
 
     /**
-     * Sets one or more HTML `data-*` attributes for the element.
+     * Sets multiple `data-*` attributes.
      *
-     * Creates a new instance with the specified custom data value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
-     *
-     * @param array $values Associative array of data attribute keys and values. Keys must be string; values must be
-     * scalar, Closure, Stringable, UnitEnum or `null`.
+     * @param array $values Associative array of data keys and values. Values may be scalar, `Stringable`, `UnitEnum`,
+     * `Closure`, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `data-*` attributes.
-     *
-     * @link https://html.spec.whatwg.org/multipage/dom.html#attr-data-*
      *
      * @phpstan-param mixed[] $values
      *
@@ -127,11 +109,9 @@ trait HasData
     }
 
     /**
-     * Removes a single HTML `data-*` attribute from the element.
+     * Removes a `data-*` attribute.
      *
-     * Creates a new instance with the specified custom data attribute removed.
-     *
-     * @param string|UnitEnum $key Data attribute key (without the `data-` prefix).
+     * @param string|UnitEnum $key Data attribute key without the `data-` prefix.
      *
      * @return static New instance with the specified `data-*` attribute removed.
      *

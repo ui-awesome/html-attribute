@@ -9,17 +9,7 @@ use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UnitEnum;
 
 /**
- * Trait for managing the global HTML `style` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `style` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of inline CSS styles.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML `style` global attributes.
- * - Immutable method for setting or overriding the `style` attribute.
- * - Supports array, string, Stringable, UnitEnum, and `null` for flexible style assignment.
+ * Provides an immutable API for the `style` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -32,26 +22,12 @@ use UnitEnum;
 trait HasStyle
 {
     /**
-     * Sets the HTML `style` attribute for the element.
+     * Sets the `style` attribute.
      *
-     * Creates a new instance with the specified style value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
-     *
-     * @param array|string|Stringable|UnitEnum|null $value Style to set for the element. Can be `null` to unset the
-     * attribute.
-     *
-     * Expected array structure and processing.
-     * - When an `array` is provided it MUST be an associative array of CSS property => value pairs, for example,
-     *   `['color' => 'red', 'font-size' => '16px']`.
-     * - Values SHOULD be strings or objects implementing `\Stringable`/`UnitEnum` that yield a valid CSS value.
-     * - Array values are converted to single CSS string during rendering (for example, `color: red; font-size: 16px;`).
-     * - No automatic deep validation is performed here; validation/escaping and the actual array to string conversion
-     *   happen in the rendering/attribute handling layer (see `src/Html.php` or the class that serializes attributes
-     *   for output).
+     * @param array|string|Stringable|UnitEnum|null $value Style value as a CSS `string`, an associative array of CSS
+     * property-value pairs, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `style` attribute.
-     *
-     * @link https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute
      *
      * @phpstan-param mixed[]|string|Stringable|UnitEnum|null $value
      *
@@ -66,7 +42,6 @@ trait HasStyle
      * );
      * $element->style(StyleEnum::RED_TEXT);
      *
-     * // set the `style` attribute with a Stringable
      * $element->style(
      *     new class implements Stringable {
      *         public function __toString(): string {

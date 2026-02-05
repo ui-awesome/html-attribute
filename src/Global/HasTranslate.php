@@ -12,17 +12,7 @@ use UnitEnum;
 use function is_bool;
 
 /**
- * Trait for managing the global HTML `translate` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `translate` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of element translate behavior and value validation.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML `translate` global attribute.
- * - Immutable method for setting or overriding the `translate` attribute.
- * - Supports bool, string, UnitEnum, and `null` for flexible translate assignment.
+ * Provides an immutable API for the `translate` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -35,24 +25,15 @@ use function is_bool;
 trait HasTranslate
 {
     /**
-     * Sets the HTML `translate` attribute for the element.
+     * Sets the `translate` attribute.
      *
-     * Creates a new instance with the specified translate value.
+     * @param bool|string|UnitEnum|null $value Translation behavior. Use `yes`, `no`, `true`, `false`, or `null` to
+     * remove the attribute.
      *
-     * Controls whether the element's content should be translated when the page is localized.
-     * - Use `yes` (or `true`) to indicate the content should be translated.
-     * - Use `no` (or `false`) to indicate the content should not be translated, which is useful for brand names,
-     *   technical terms, code samples, or proper names that should remain in their original language across all
-     *   localized versions of the page.
-     *
-     * @param bool|string|UnitEnum|null $value Translation behavior to set for the element. Use `yes` or `true` to
-     * allow translation, `no` or `false` to prevent translation.
-     *
-     * @throws InvalidArgumentException if the provided value is not valid.
+     * @throws InvalidArgumentException If the value is not valid.
      *
      * @return static New instance with the updated `translate` attribute.
      *
-     * @link https://html.spec.whatwg.org/multipage/interaction.html#attr-translate
      * {@see Translate} for predefined enum values.
      *
      * Usage example:

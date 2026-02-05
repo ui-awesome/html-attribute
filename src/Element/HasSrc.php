@@ -9,21 +9,9 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `src` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `src` attribute on HTML elements.
- *
- * Intended for use in tag elements that require manipulation of the `src` attribute.
- *
- * Key features.
- * - Designed for use in tag elements (`<img>`).
- * - Handles the HTML `src` attribute.
- * - Immutable method for setting or overriding the `src` attribute.
- * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible source assignment.
+ * Provides an immutable API for the `src` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#src
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
@@ -32,16 +20,9 @@ use UnitEnum;
 trait HasSrc
 {
     /**
-     * Sets the HTML `src` attribute for the element.
+     * Sets the `src` attribute.
      *
-     * Creates a new instance with the specified source value, supporting explicit assignment according to the HTML
-     * specification for image source attributes.
-     *
-     * The `src` attribute defines the URL of the image to display in the element. Accepts a string representing a valid
-     * URL or path to the image resource.
-     *
-     * @param string|Stringable|UnitEnum|null $value Image source URL or path to set for the element. Use a valid URL or
-     * relative path as a string. Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Image source URL or path, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `src` attribute.
      *

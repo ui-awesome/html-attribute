@@ -7,13 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML `crossorigin` attribute.
  *
- * Defines the supported `crossorigin` tokens as enum cases.
- *
- * Key features.
- * - Designed for use in media elements (img, video, audio), script, link, and SVG elements.
- * - Enum values map to the attribute tokens used in markup.
- * - Suitable for rendering HTML attributes in view helpers and components.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

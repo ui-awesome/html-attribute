@@ -7,13 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents standard metadata names for the HTML `name` attribute on `<meta>` elements.
  *
- * Defines the standard metadata names as enum cases based on the HTML specification.
- *
- * Key features.
- * - Based on the HTML Living Standard specification.
- * - Enum values map to standard metadata name tokens as `string` values.
- * - Includes all standard metadata names defined by the specification.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

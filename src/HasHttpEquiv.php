@@ -10,17 +10,7 @@ use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `http-equiv` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `http-equiv` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `http-equiv` attribute and value validation.
- *
- * Key features.
- * - Designed for use in meta elements.
- * - Handles the HTML `http-equiv` attribute.
- * - Immutable method for setting or overriding the `http-equiv` attribute.
- * - Supports string, UnitEnum, and `null` for flexible pragma directive assignment.
+ * Provides an immutable API for the `http-equiv` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -33,20 +23,17 @@ use UnitEnum;
 trait HasHttpEquiv
 {
     /**
-     * Sets the HTML `http-equiv` attribute for the element.
+     * Sets the `http-equiv` attribute.
      *
-     * Creates a new instance with the specified pragma directive value.
+     * Declares the pragma directive for the metadata entry.
      *
-     * Defines a pragma directive, which are instructions for the browser for processing the document. The attribute's
-     * name is short for `http-equivalent` because the allowed values are names of equivalent HTTP headers.
+     * @param string|UnitEnum|null $value Pragma directive token, or `null` to remove the attribute.
      *
-     * @param string|UnitEnum|null $value Pragma directive value to set for the element. Use valid tokens like
-     * `content-type`, `default-style`, `refresh`, `x-ua-compatible`, `content-security-policy`. Can be `null` to unset
-     * the attribute.
-     *
-     * @throws InvalidArgumentException if the provided value is not valid.
+     * @throws InvalidArgumentException If the value is not valid.
      *
      * @return static New instance with the updated `http-equiv` attribute.
+     *
+     * {@see HttpEquiv} for predefined enum values.
      *
      * Usage example:
      * ```php

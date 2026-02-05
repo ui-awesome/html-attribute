@@ -9,17 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `integrity` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `integrity` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the Subresource Integrity attribute.
- *
- * Key features.
- * - Designed for use in script and link elements.
- * - Handles the HTML `integrity` attribute for Subresource Integrity (SRI).
- * - Immutable method for setting or overriding the `integrity` attribute.
- * - Supports string, Stringable, UnitEnum, and `null` for flexible integrity assignment.
+ * Provides an immutable API for the `integrity` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -33,23 +23,13 @@ use UnitEnum;
 trait HasIntegrity
 {
     /**
-     * Sets the HTML `integrity` attribute for the element.
+     * Sets the `integrity` attribute.
      *
-     * Creates a new instance with the specified integrity metadata value.
+     * Provides the Subresource Integrity hash for the resource.
      *
-     * Enables Subresource Integrity (SRI) to verify that the fetched resource has been delivered without unexpected
-     * manipulation. The browser computes the hash of the fetched resource and compares it with the provided value; if
-     * they do not match, the resource is not executed.
-     *
-     * The value must contain a hash algorithm (for example, `sha384`, `sha512`) followed by a hyphen and the
-     * base64-encoded hash of the resource.
-     *
-     * @param string|Stringable|UnitEnum|null $value Integrity metadata value to set for the element. Must be in the
-     * format `algorithm-base64hash` (for example, `sha384-abc123...`). Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Integrity metadata, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `integrity` attribute.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
      *
      * Usage example:
      * ```php

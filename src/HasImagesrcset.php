@@ -9,17 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `imagesrcset` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `imagesrcset` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `imagesrcset` attribute.
- *
- * Key features.
- * - Designed for use in link elements with `rel="preload"` and `as="image"`.
- * - Handles the HTML `imagesrcset` attribute.
- * - Immutable method for setting or overriding the `imagesrcset` attribute.
- * - Supports string, Stringable, UnitEnum, and `null` for flexible assignment.
+ * Provides an immutable API for the `imagesrcset` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -32,16 +22,12 @@ use UnitEnum;
 trait HasImagesrcset
 {
     /**
-     * Sets the HTML `imagesrcset` attribute for the element.
+     * Sets the `imagesrcset` attribute.
      *
-     * Creates a new instance with the specified image srcset value.
+     * Defines the image srcset descriptor list for preload links.
      *
-     * For `rel="preload"` and `as="image"` only, the `imagesrcset` attribute has similar syntax and semantics as the
-     * `srcset` attribute that indicates to preload the appropriate resource used by an `img` element with corresponding
-     * values for its `srcset` and `sizes` attributes.
-     *
-     * @param string|Stringable|UnitEnum|null $value Image srcset value to set for the element. Use valid srcset syntax
-     * (for example, `image-400.jpg 400w, image-800.jpg 800w`). Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Image srcset descriptor list, or `null` to remove the
+     * attribute.
      *
      * @return static New instance with the updated `imagesrcset` attribute.
      *

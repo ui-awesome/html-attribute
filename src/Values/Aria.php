@@ -5,14 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents ARIA attribute names (without the `aria-` prefix).
- *
- * Defines a curated set of ARIA attribute identifiers as enum cases for use in attribute assignment and rendering.
- *
- * Key features.
- * - Designed for use in tags, components, and helpers requiring `aria-` attribute assignment.
- * - Enum values provide the attribute token without the `aria-` prefix.
- * - Integration-ready for tag rendering and element generation APIs.
+ * Represents ARIA attribute names without the `aria-` prefix.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes
  *

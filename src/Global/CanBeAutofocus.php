@@ -5,22 +5,11 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Global;
 
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
-use UnitEnum;
 
 /**
- * Trait for managing the global HTML `autofocus` attribute in tag rendering.
+ * Provides an immutable API for the `autofocus` attribute.
  *
- * Provides an immutable API for setting the `autofocus` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of element focus behavior.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML `autofocus` global attribute.
- * - Immutable method for setting or overriding the `autofocus` attribute.
- * - Supports bool for explicit focus control.
- *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus
@@ -31,23 +20,11 @@ use UnitEnum;
 trait CanBeAutofocus
 {
     /**
-     * Sets the HTML `autofocus` attribute for the element.
+     * Sets the `autofocus` attribute.
      *
-     * Creates a new instance with the specified focus value.
-     *
-     * When `true`, the element will automatically receive focus when the page loads, allowing users to start
-     * interacting with it immediately without clicking.
-     *
-     * This is particularly useful for search boxes, login forms, or modal dialogs where immediate user input is
-     * expected.
-     *
-     * Only one element per page should have autofocus for optimal user experience.
-     *
-     * @param bool $value Whether the element should automatically receive focus when the page loads.
+     * @param bool $value Whether to enable autofocus. Use `true` to enable and `false` to disable.
      *
      * @return static New instance with the updated `autofocus` attribute.
-     *
-     * @link https://html.spec.whatwg.org/multipage/semantics.html#attr-autofocus
      *
      * Usage example:
      * ```php

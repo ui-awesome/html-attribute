@@ -7,14 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML `contenteditable` global attribute.
  *
- * Defines the supported `contenteditable` tokens as enum cases.
- *
- * Key features.
- * - Defines the `contenteditable` token set as enum values.
- * - Designed for use in tags, components, and helpers requiring contenteditable assignment.
- * - Enum values map to `true`, `false`, and `plaintext-only`.
- * - Integration-ready for tag rendering and element generation APIs.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
