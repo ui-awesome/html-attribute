@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasDownload;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\DownloadProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\DownloadProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasDownload} trait managing the `download` HTML attribute.
@@ -62,9 +64,9 @@ final class HasDownloadTest extends TestCase
      */
     #[DataProviderExternal(DownloadProvider::class, 'values')]
     public function testSetDownloadAttributeValue(
-        bool|string|null $download,
+        bool|string|Stringable|UnitEnum|null $download,
         array $attributes,
-        bool|string $expectedValue,
+        bool|string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

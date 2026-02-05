@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasFetchpriority;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\FetchpriorityProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\FetchpriorityProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Fetchpriority};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;

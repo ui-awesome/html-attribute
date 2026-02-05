@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasPing;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\PingProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\PingProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasPing} trait managing the `ping` HTML attribute.
@@ -62,9 +64,9 @@ final class HasPingTest extends TestCase
      */
     #[DataProviderExternal(PingProvider::class, 'values')]
     public function testSetPingAttributeValue(
-        string|null $ping,
+        string|Stringable|UnitEnum|null $ping,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

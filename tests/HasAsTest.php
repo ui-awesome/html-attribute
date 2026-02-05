@@ -7,8 +7,9 @@ namespace UIAwesome\Html\Attribute\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasAs;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\AsProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\AsProvider;
 use UIAwesome\Html\Attribute\Values\{AsValue, Attribute};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
@@ -66,9 +67,9 @@ final class HasAsTest extends TestCase
      */
     #[DataProviderExternal(AsProvider::class, 'values')]
     public function testSetAsAttributeValue(
-        string|UnitEnum|null $as,
+        string|Stringable|UnitEnum|null $as,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

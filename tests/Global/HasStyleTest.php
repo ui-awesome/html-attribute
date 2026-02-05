@@ -8,7 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\Global\HasStyle;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\StyleProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\StyleProvider;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;

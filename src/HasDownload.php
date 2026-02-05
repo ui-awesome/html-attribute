@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
@@ -25,8 +26,8 @@ trait HasDownload
      *
      * Controls whether the linked resource is treated as a download.
      *
-     * @param bool|string|UnitEnum|null $value Download flag or suggested filename; use `true` to enable downloads
-     * without a filename, or `null` to remove the attribute.
+     * @param bool|string|Stringable|UnitEnum|null $value Download flag or suggested filename; use `true` to enable
+     * downloads without a filename, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `download` attribute.
      *
@@ -39,7 +40,7 @@ trait HasDownload
      * $element->download(null);
      * ```
      */
-    public function download(bool|string|UnitEnum|null $value): static
+    public function download(bool|string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(Attribute::DOWNLOAD, $value);
     }

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Global;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
+use UnitEnum;
 
 /**
  * Provides an immutable API for microdata attributes.
@@ -20,7 +22,7 @@ trait HasMicroData
     /**
      * Sets the `itemid` attribute.
      *
-     * @param string|null $value Microdata item ID, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Microdata item ID, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemid` attribute.
      *
@@ -32,7 +34,7 @@ trait HasMicroData
      * $element = $element->itemId(null);
      * ```
      */
-    public function itemId(string|null $value): static
+    public function itemId(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(GlobalAttribute::ITEMID, $value);
     }
@@ -40,7 +42,7 @@ trait HasMicroData
     /**
      * Sets the `itemprop` attribute.
      *
-     * @param string|null $value Microdata item property, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Microdata item property, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemprop` attribute.
      *
@@ -52,7 +54,7 @@ trait HasMicroData
      * $element = $element->itemProp(null);
      * ```
      */
-    public function itemProp(string|null $value): static
+    public function itemProp(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(GlobalAttribute::ITEMPROP, $value);
     }
@@ -60,7 +62,7 @@ trait HasMicroData
     /**
      * Sets the `itemref` attribute.
      *
-     * @param string|null $value Microdata item reference, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Microdata item reference, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemref` attribute.
      *
@@ -72,7 +74,7 @@ trait HasMicroData
      * $element = $element->itemRef(null);
      * ```
      */
-    public function itemRef(string|null $value): static
+    public function itemRef(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(GlobalAttribute::ITEMREF, $value);
     }
@@ -100,7 +102,7 @@ trait HasMicroData
     /**
      * Sets the `itemtype` attribute.
      *
-     * @param string|null $value Microdata item type, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Microdata item type, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemtype` attribute.
      *
@@ -112,7 +114,7 @@ trait HasMicroData
      * $element = $element->itemType(null);
      * ```
      */
-    public function itemType(string|null $value): static
+    public function itemType(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(GlobalAttribute::ITEMTYPE, $value);
     }

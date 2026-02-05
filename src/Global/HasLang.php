@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Global;
 
 use InvalidArgumentException;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Language};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
@@ -25,7 +26,7 @@ trait HasLang
     /**
      * Sets the `lang` attribute.
      *
-     * @param string|UnitEnum|null $value Language tag, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Language tag, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
      *
@@ -40,7 +41,7 @@ trait HasLang
      * $element->lang(Language::ENGLISH_US);
      * ```
      */
-    public function lang(string|UnitEnum|null $value): static
+    public function lang(string|Stringable|UnitEnum|null $value): static
     {
         Validator::oneOf($value, Language::cases(), GlobalAttribute::LANG);
 

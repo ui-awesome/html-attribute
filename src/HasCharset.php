@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use InvalidArgumentException;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{Attribute, Charset};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
@@ -27,7 +28,7 @@ trait HasCharset
      *
      * Declares the document character encoding.
      *
-     * @param string|UnitEnum|null $value Character encoding token, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Character encoding token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
      *
@@ -42,7 +43,7 @@ trait HasCharset
      * $element->charset(null);
      * ```
      */
-    public function charset(string|UnitEnum|null $value): static
+    public function charset(string|Stringable|UnitEnum|null $value): static
     {
         Validator::oneOf($value, Charset::cases(), Attribute::CHARSET);
 

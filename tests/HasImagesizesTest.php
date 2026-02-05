@@ -8,7 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasImagesizes;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\ImagesizesProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\ImagesizesProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;

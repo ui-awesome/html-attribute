@@ -7,8 +7,9 @@ namespace UIAwesome\Html\Attribute\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasReferrerpolicy;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\ReferrerpolicyProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\ReferrerpolicyProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Referrerpolicy};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
@@ -66,9 +67,9 @@ final class HasReferrerpolicyTest extends TestCase
      */
     #[DataProviderExternal(ReferrerpolicyProvider::class, 'values')]
     public function testSetReferrerpolicyAttributeValue(
-        string|UnitEnum|null $referrerpolicy,
+        string|Stringable|UnitEnum|null $referrerpolicy,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

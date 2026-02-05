@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use InvalidArgumentException;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{Attribute, Referrerpolicy};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
@@ -27,7 +28,7 @@ trait HasReferrerpolicy
      *
      * Controls how much referrer information is sent with requests.
      *
-     * @param string|UnitEnum|null $value Referrer policy token, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Referrer policy token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
      *
@@ -42,7 +43,7 @@ trait HasReferrerpolicy
      * $element->referrerpolicy(null);
      * ```
      */
-    public function referrerpolicy(string|UnitEnum|null $value): static
+    public function referrerpolicy(string|Stringable|UnitEnum|null $value): static
     {
         Validator::oneOf($value, Referrerpolicy::cases(), Attribute::REFERRERPOLICY);
 

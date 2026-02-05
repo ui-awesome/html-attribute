@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use InvalidArgumentException;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{Attribute, HttpEquiv};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
@@ -27,7 +28,7 @@ trait HasHttpEquiv
      *
      * Declares the pragma directive for the metadata entry.
      *
-     * @param string|UnitEnum|null $value Pragma directive token, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Pragma directive token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
      *
@@ -42,7 +43,7 @@ trait HasHttpEquiv
      * $element->httpEquiv(null);
      * ```
      */
-    public function httpEquiv(string|UnitEnum|null $value): static
+    public function httpEquiv(string|Stringable|UnitEnum|null $value): static
     {
         Validator::oneOf($value, HttpEquiv::cases(), Attribute::HTTP_EQUIV);
 

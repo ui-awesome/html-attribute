@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests\Global;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Global\HasAccesskey;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\AccesskeyProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\AccesskeyProvider;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasAccesskey} trait managing the `accesskey` global HTML attribute.
@@ -62,9 +64,9 @@ final class HasAccesskeyTest extends TestCase
      */
     #[DataProviderExternal(AccesskeyProvider::class, 'values')]
     public function testSetAccesskeyAttributeValue(
-        string|null $accesskey,
+        string|Stringable|UnitEnum|null $accesskey,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

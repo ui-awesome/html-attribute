@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasContentEditable;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\ContentEditableProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\ContentEditableProvider;
 use UIAwesome\Html\Attribute\Values\{ContentEditable, GlobalAttribute};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;

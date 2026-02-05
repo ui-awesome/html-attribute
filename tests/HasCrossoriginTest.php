@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasCrossorigin;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\CrossoriginProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\CrossoriginProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Crossorigin};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;

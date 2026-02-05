@@ -44,6 +44,7 @@
 - Bug #71: Move HTML attribute traits to `Form` namespace and update related imports accordingly (@terabytesoftw)
 - Bug #72: Update documentation for HTML attribute elements in `Element` namespace (@terabytesoftw)
 - Bug #73: Standardize PHPDoc headers across src directory files (@terabytesoftw)
+- Bug #74: Remove directory `tests\Stub` and move `tests\Support\Provider` to `tests\Provider` in tests (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

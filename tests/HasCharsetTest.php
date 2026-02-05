@@ -7,8 +7,9 @@ namespace UIAwesome\Html\Attribute\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasCharset;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\CharsetProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\CharsetProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Charset};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
@@ -66,9 +67,9 @@ final class HasCharsetTest extends TestCase
      */
     #[DataProviderExternal(CharsetProvider::class, 'values')]
     public function testSetCharsetAttributeValue(
-        string|UnitEnum|null $charset,
+        string|Stringable|UnitEnum|null $charset,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {
