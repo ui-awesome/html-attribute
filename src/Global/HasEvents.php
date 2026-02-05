@@ -39,7 +39,7 @@ trait HasEvents
      *
      * @return static New instance with the updated `on*` event attribute.
      *
-     * @phpstan-param string|Stringable|Closure(): mixed|null $handler
+     * @phpstan-param Closure(): mixed|string|Stringable|UnitEnum|null $handler
      *
      * Usage example:
      * ```php
