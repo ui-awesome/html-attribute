@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Provider\Form;
+namespace UIAwesome\Html\Attribute\Tests\Provider;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Form\HasDisabledTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasDisabledTest} test cases.
  *
  * Provides representative input/output pairs for the `disabled` attribute.
  *
