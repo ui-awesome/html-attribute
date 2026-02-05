@@ -88,7 +88,6 @@ trait HasEvents
         foreach ($values as $key => $value) {
             try {
                 $new->setAttribute($key, $value, 'on', true);
-                // @phpstan-ignore catch.neverThrown
             } catch (TypeError) {
                 throw new InvalidArgumentException(
                     Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE->getMessage(gettype($value)),
