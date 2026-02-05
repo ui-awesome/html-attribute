@@ -15,8 +15,6 @@ use UIAwesome\Html\Mixin\HasAttributes;
 /**
  * Unit tests for the {@see HasReadonly} trait managing the `readonly` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `readonly` attribute is not provided.

@@ -19,13 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasReferrerpolicy} trait managing the `referrerpolicy` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `referrerpolicy` attribute is not provided.
  * - Sets the `referrerpolicy` HTML attribute and renders the expected output.
- * - Throws an exception when the `referrerpolicy` attribute value is invalid.
+ * - Verifies invalid `referrerpolicy` values throw an `InvalidArgumentException`.
  *
  * {@see ReferrerpolicyProvider} for test case data providers.
  *

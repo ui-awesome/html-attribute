@@ -19,13 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasDecoding} trait managing the `decoding` HTML/SVG attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `decoding` attribute is not provided.
  * - Sets the `decoding` HTML/SVG attribute and renders the expected output.
- * - Throws an exception when the `decoding` attribute value is invalid.
+ * - Verifies invalid `decoding` values throw an `InvalidArgumentException`.
  *
  * {@see DecodingProvider} for test case data providers.
  *

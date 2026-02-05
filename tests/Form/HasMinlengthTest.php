@@ -19,12 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasMinlength} trait managing the `minlength` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `minlength` attribute is not provided.
  * - Sets the `minlength` HTML attribute and renders the expected output.
+ * - Verifies invalid `minlength` values throw an `InvalidArgumentException`.
  *
  * {@see MinlengthProvider} for test case data providers.
  *

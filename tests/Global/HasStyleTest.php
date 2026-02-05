@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasStyle} trait managing the `style` global HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `style` attribute is not provided.

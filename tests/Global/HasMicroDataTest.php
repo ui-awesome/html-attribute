@@ -23,15 +23,13 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasMicroData} trait managing global microdata HTML attributes.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when microdata attributes are not provided.
  * - Sets microdata HTML attributes and renders the expected output.
  *
- * {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemIdProvider}, {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemPropProvider}, {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemRefProvider}, {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemScopeProvider},
- * {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemTypeProvider} for test case data providers.
+ * {@see ItemIdProvider}, {@see ItemPropProvider}, {@see ItemRefProvider},
+ * {@see ItemScopeProvider}, {@see ItemTypeProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.

@@ -18,13 +18,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasDir} trait managing the `dir` global HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `dir` attribute is not provided.
  * - Sets the `dir` global HTML attribute and renders the expected output.
- * - Throws an exception when the `dir` attribute value is invalid.
+ * - Verifies invalid `dir` values throw an `InvalidArgumentException`.
  *
  * {@see DirProvider} for test case data providers.
  *

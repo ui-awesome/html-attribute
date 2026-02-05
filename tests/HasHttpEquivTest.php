@@ -19,13 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasHttpEquiv} trait managing the `http-equiv` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `http-equiv` attribute is not provided.
  * - Sets the `http-equiv` HTML attribute and renders the expected output.
- * - Throws an exception when the `http-equiv` attribute value is invalid.
+ * - Verifies invalid `http-equiv` values throw an `InvalidArgumentException`.
  *
  * {@see HttpEquivProvider} for test case data providers.
  *

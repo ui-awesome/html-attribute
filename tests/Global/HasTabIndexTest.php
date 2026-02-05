@@ -17,13 +17,11 @@ use UIAwesome\Html\Mixin\HasAttributes;
 /**
  * Unit tests for the {@see HasTabindex} trait managing the `tabindex` global HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `tabindex` attribute is not provided.
  * - Sets the `tabindex` global HTML attribute and renders the expected output.
- * - Throws an exception when the `tabindex` attribute value is invalid.
+ * - Verifies invalid `tabindex` values throw an `InvalidArgumentException`.
  *
  * {@see TabIndexProvider} for test case data providers.
  *

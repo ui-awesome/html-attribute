@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasPing} trait managing the `ping` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `ping` attribute is not provided.

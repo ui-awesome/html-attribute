@@ -18,13 +18,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasTranslate} trait managing the `translate` global HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `translate` attribute is not provided.
  * - Sets the `translate` global HTML attribute and renders the expected output.
- * - Throws an exception when the `translate` attribute value is invalid.
+ * - Verifies invalid `translate` values throw an `InvalidArgumentException`.
  *
  * {@see TranslateProvider} for test case data providers.
  *

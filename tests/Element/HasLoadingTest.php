@@ -19,13 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasLoading} trait managing the `loading` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `loading` attribute is not provided.
  * - Sets the `loading` HTML attribute and renders the expected output.
- * - Throws an exception when the `loading` attribute value is invalid.
+ * - Verifies invalid `loading` values throw an `InvalidArgumentException`.
  *
  * {@see LoadingProvider} for test case data providers.
  *

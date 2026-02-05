@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasSizes} trait managing the `sizes` HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `sizes` attribute is not provided.

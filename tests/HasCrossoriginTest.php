@@ -18,13 +18,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasCrossorigin} trait managing the `crossorigin` HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `crossorigin` attribute is not provided.
  * - Sets the `crossorigin` HTML attribute and renders the expected output.
- * - Throws an exception when the `crossorigin` attribute value is invalid.
+ * - Verifies invalid `crossorigin` values throw an `InvalidArgumentException`.
  *
  * {@see CrossoriginProvider} for test case data providers.
  *

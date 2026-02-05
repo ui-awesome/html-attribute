@@ -19,13 +19,11 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasLang} trait managing the `lang` global HTML attribute.
  *
- * Verifies rendered output, immutability, attribute override, and validation behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `lang` attribute is not provided.
  * - Sets the `lang` global HTML attribute and renders the expected output.
- * - Throws an exception when the `lang` attribute value is invalid.
+ * - Verifies invalid `lang` values throw an `InvalidArgumentException`.
  *
  * {@see LangProvider} for test case data providers.
  *

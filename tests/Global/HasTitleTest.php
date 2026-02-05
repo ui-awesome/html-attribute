@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasTitle} trait managing the `title` global HTML attribute.
  *
- * Verifies rendered output, immutability, and attribute override behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `title` attribute is not provided.

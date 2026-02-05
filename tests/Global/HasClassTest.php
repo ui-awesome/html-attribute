@@ -17,8 +17,6 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasClass} trait managing the `class` global HTML attribute.
  *
- * Verifies rendered output, immutability, and class composition behavior.
- *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
  * - Ensures no attributes are set when the `class` attribute is not provided.
