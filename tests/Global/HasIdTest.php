@@ -6,11 +6,13 @@ namespace UIAwesome\Html\Attribute\Tests\Global;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Global\HasId;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\IdProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\IdProvider;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasId} trait managing the `id` global HTML attribute.
@@ -62,9 +64,9 @@ final class HasIdTest extends TestCase
      */
     #[DataProviderExternal(IdProvider::class, 'values')]
     public function testSetIdAttributeValue(
-        string|null $id,
+        string|Stringable|UnitEnum|null $id,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

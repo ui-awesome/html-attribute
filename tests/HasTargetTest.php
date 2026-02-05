@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasTarget;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\TargetProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\TargetProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Target};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;

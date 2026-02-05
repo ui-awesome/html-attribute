@@ -6,8 +6,9 @@ namespace UIAwesome\Html\Attribute\Tests;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasValue;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\ValueProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\ValueProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
@@ -63,9 +64,9 @@ final class HasValueTest extends TestCase
      */
     #[DataProviderExternal(ValueProvider::class, 'values')]
     public function testSetValueAttributeValue(
-        float|int|string|UnitEnum|null $value,
+        float|int|string|Stringable|UnitEnum|null $value,
         array $attributes,
-        float|int|string $expectedValue,
+        float|int|string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

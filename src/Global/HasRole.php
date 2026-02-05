@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Global;
 
 use InvalidArgumentException;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Role};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
@@ -25,7 +26,7 @@ trait HasRole
     /**
      * Sets the `role` attribute.
      *
-     * @param string|UnitEnum|null $value ARIA role, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value ARIA role, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
      *
@@ -40,7 +41,7 @@ trait HasRole
      * $element->role(Role::ALERT);
      * ```
      */
-    public function role(string|UnitEnum|null $value): static
+    public function role(string|Stringable|UnitEnum|null $value): static
     {
         Validator::oneOf($value, Role::cases(), GlobalAttribute::ROLE);
 

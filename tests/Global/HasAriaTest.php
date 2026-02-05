@@ -12,7 +12,7 @@ use stdClass;
 use Stringable;
 use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Attribute\Global\HasAria;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\AriaProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\AriaProvider;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;

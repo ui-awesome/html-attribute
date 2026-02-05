@@ -6,8 +6,9 @@ namespace UIAwesome\Html\Attribute\Tests\Global;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Global\HasMicroData;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\{
+use UIAwesome\Html\Attribute\Tests\Provider\Global\{
     ItemIdProvider,
     ItemPropProvider,
     ItemRefProvider,
@@ -17,6 +18,7 @@ use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\{
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
+use UnitEnum;
 
 /**
  * Unit tests for the {@see HasMicroData} trait managing global microdata HTML attributes.
@@ -28,8 +30,8 @@ use UIAwesome\Html\Mixin\HasAttributes;
  * - Ensures no attributes are set when microdata attributes are not provided.
  * - Sets microdata HTML attributes and renders the expected output.
  *
- * {@see ItemIdProvider}, {@see ItemPropProvider}, {@see ItemRefProvider}, {@see ItemScopeProvider},
- * {@see ItemTypeProvider} for test case data providers.
+ * {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemIdProvider}, {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemPropProvider}, {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemRefProvider}, {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemScopeProvider},
+ * {@see \UIAwesome\Html\Attribute\Tests\Provider\Global\ItemTypeProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -125,9 +127,9 @@ final class HasMicroDataTest extends TestCase
      */
     #[DataProviderExternal(ItemIdProvider::class, 'values')]
     public function testSetItemIdAttributeValue(
-        string|null $itemId,
+        string|Stringable|UnitEnum|null $itemId,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {
@@ -155,9 +157,9 @@ final class HasMicroDataTest extends TestCase
      */
     #[DataProviderExternal(ItemPropProvider::class, 'values')]
     public function testSetItemPropAttributeValue(
-        string|null $itemProp,
+        string|Stringable|UnitEnum|null $itemProp,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {
@@ -185,9 +187,9 @@ final class HasMicroDataTest extends TestCase
      */
     #[DataProviderExternal(ItemRefProvider::class, 'values')]
     public function testSetItemRefAttributeValue(
-        string|null $itemRef,
+        string|Stringable|UnitEnum|null $itemRef,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {
@@ -245,9 +247,9 @@ final class HasMicroDataTest extends TestCase
      */
     #[DataProviderExternal(ItemTypeProvider::class, 'values')]
     public function testSetItemTypeAttributeValue(
-        string|null $itemType,
+        string|Stringable|UnitEnum|null $itemType,
         array $attributes,
-        string $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

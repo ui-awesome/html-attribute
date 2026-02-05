@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
@@ -25,7 +26,7 @@ trait HasPing
      *
      * Defines the space-separated URL list for ping tracking.
      *
-     * @param string|UnitEnum|null $value Ping URL list, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Ping URL list, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `ping` attribute.
      *
@@ -36,7 +37,7 @@ trait HasPing
      * $element->ping(null);
      * ```
      */
-    public function ping(string|UnitEnum|null $value): static
+    public function ping(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(Attribute::PING, $value);
     }

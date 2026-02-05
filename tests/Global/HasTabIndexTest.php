@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Attribute\Global\HasTabindex;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\TabIndexProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\TabIndexProvider;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;

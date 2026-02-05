@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Global;
 
+use Stringable;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
+use UnitEnum;
 
 /**
  * Provides an immutable API for the `id` attribute.
@@ -22,7 +24,7 @@ trait HasId
     /**
      * Sets the `id` attribute.
      *
-     * @param string|null $value Element identifier, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Element identifier, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `id` attribute.
      *
@@ -32,7 +34,7 @@ trait HasId
      * $element->id('user-profile-form');
      * ```
      */
-    public function id(string|null $value): static
+    public function id(string|Stringable|UnitEnum|null $value): static
     {
         return $this->addAttribute(GlobalAttribute::ID, $value);
     }

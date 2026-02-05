@@ -7,8 +7,9 @@ namespace UIAwesome\Html\Attribute\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasRel;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\RelProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\RelProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Rel};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
@@ -66,9 +67,9 @@ final class HasRelTest extends TestCase
      */
     #[DataProviderExternal(RelProvider::class, 'values')]
     public function testSetRelAttributeValue(
-        string|UnitEnum|null $rel,
+        string|Stringable|UnitEnum|null $rel,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

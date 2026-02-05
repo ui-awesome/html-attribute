@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasTranslate;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\TranslateProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\TranslateProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Translate};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;

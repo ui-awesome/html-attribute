@@ -7,8 +7,9 @@ namespace UIAwesome\Html\Attribute\Tests;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasHttpEquiv;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\HttpEquivProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\HttpEquivProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, HttpEquiv};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
@@ -66,9 +67,9 @@ final class HasHttpEquivTest extends TestCase
      */
     #[DataProviderExternal(HttpEquivProvider::class, 'values')]
     public function testSetHttpEquivAttributeValue(
-        string|UnitEnum|null $httpEquiv,
+        string|Stringable|UnitEnum|null $httpEquiv,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -12,7 +12,7 @@ use stdClass;
 use Stringable;
 use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Attribute\Global\HasEvents;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\EventProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\EventProvider;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;

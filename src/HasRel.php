@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use InvalidArgumentException;
+use Stringable;
 use UIAwesome\Html\Attribute\Values\{Attribute, Rel};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
@@ -27,7 +28,7 @@ trait HasRel
      *
      * Defines the relationship between the current document and the linked resource.
      *
-     * @param string|UnitEnum|null $value Link type token, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Link type token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
      *
@@ -42,7 +43,7 @@ trait HasRel
      * $element->rel(null);
      * ```
      */
-    public function rel(string|UnitEnum|null $value): static
+    public function rel(string|Stringable|UnitEnum|null $value): static
     {
         Validator::oneOf($value, Rel::cases(), Attribute::REL);
 

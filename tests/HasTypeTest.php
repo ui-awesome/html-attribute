@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasType;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\TypeProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\TypeProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Type};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;

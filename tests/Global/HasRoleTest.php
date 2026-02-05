@@ -7,8 +7,9 @@ namespace UIAwesome\Html\Attribute\Tests\Global;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Global\HasRole;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\RoleProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\RoleProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Role};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
@@ -66,9 +67,9 @@ final class HasRoleTest extends TestCase
      */
     #[DataProviderExternal(RoleProvider::class, 'values')]
     public function testSetRoleAttributeValue(
-        string|UnitEnum|null $role,
+        string|Stringable|UnitEnum|null $role,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

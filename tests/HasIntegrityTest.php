@@ -6,8 +6,9 @@ namespace UIAwesome\Html\Attribute\Tests;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\HasIntegrity;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\IntegrityProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\IntegrityProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
@@ -63,9 +64,9 @@ final class HasIntegrityTest extends TestCase
      */
     #[DataProviderExternal(IntegrityProvider::class, 'values')]
     public function testSetIntegrityAttributeValue(
-        string|UnitEnum|null $integrity,
+        string|Stringable|UnitEnum|null $integrity,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

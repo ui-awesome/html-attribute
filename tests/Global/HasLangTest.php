@@ -7,8 +7,9 @@ namespace UIAwesome\Html\Attribute\Tests\Global;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
+use Stringable;
 use UIAwesome\Html\Attribute\Global\HasLang;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\Global\LangProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\LangProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Language};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
@@ -66,9 +67,9 @@ final class HasLangTest extends TestCase
      */
     #[DataProviderExternal(LangProvider::class, 'values')]
     public function testSetLangAttributeValue(
-        string|UnitEnum|null $lang,
+        string|Stringable|UnitEnum|null $lang,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasBlocking;
-use UIAwesome\Html\Attribute\Tests\Support\Provider\BlockingProvider;
+use UIAwesome\Html\Attribute\Tests\Provider\BlockingProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Blocking};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
