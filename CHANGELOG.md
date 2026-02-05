@@ -47,7 +47,7 @@
 - Bug #74: Remove directory `tests\Stub` and move `tests\Support\Provider` to `tests\Provider` in tests (@terabytesoftw)
 - Bug #75: Standardize PHPDoc headers for test classes (@terabytesoftw)
 - Bug #76: Move `HasDisabled` trait to `UIAwesome\Html\Attribute` namespace and update related imports accordingly (@terabytesoftw)
-- Enh #77: Add `Autocomplete` enum and update `AutocompleteProvider` for add test data (@terabytesoftw)
+- Enh #77: Add `Autocomplete` enum and update `AutocompleteProvider` to add test data (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
