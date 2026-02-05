@@ -7,13 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML/SVG `fetchpriority` attribute.
  *
- * Defines the supported fetch priority hint tokens as enum cases.
- *
- * Key features.
- * - Designed for use in img, link, and script elements.
- * - Enum values map to `auto`, `high`, and `low`.
- * - Suitable for rendering HTML attributes in view helpers and components.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

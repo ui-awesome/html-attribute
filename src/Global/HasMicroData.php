@@ -5,30 +5,12 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Global;
 
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
-use UnitEnum;
 
 /**
- * Trait for managing the global HTML microdata attributes in tag rendering.
+ * Provides an immutable API for microdata attributes.
  *
- * Provides an immutable API for setting microdata attributes (`itemid`, `itemprop`, `itemref`, `itemscope`, `itemtype`)
- * on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of microdata.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML microdata global attributes.
- * - Immutable methods for setting or overriding microdata attributes.
- * - Supports bool, string and `null` for flexible microdata assignment.
- *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemid
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemprop
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemref
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemscope
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemtype
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -36,12 +18,9 @@ use UnitEnum;
 trait HasMicroData
 {
     /**
-     * Sets the HTML `itemid` attribute for the element.
+     * Sets the `itemid` attribute.
      *
-     * Creates a new instance with the specified microdata item ID value, supporting explicit assignment according to
-     * the HTML specification for global attributes.
-     *
-     * @param string|null $value Microdata item ID to set for the element. Can be `null` to unset the attribute.
+     * @param string|null $value Microdata item ID, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemid` attribute.
      *
@@ -59,12 +38,9 @@ trait HasMicroData
     }
 
     /**
-     * Sets the HTML `itemprop` attribute for the element.
+     * Sets the `itemprop` attribute.
      *
-     * Creates a new instance with the specified microdata item property value, supporting explicit assignment according
-     * to the HTML specification for global attributes.
-     *
-     * @param string|null $value Microdata item property to set for the element. Can be `null` to unset the attribute.
+     * @param string|null $value Microdata item property, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemprop` attribute.
      *
@@ -82,12 +58,9 @@ trait HasMicroData
     }
 
     /**
-     * Sets the HTML `itemref` attribute for the element.
+     * Sets the `itemref` attribute.
      *
-     * Creates a new instance with the specified microdata item reference value, supporting explicit assignment
-     * according to the HTML specification for global attributes.
-     *
-     * @param string|null $value Microdata item reference to set for the element. Can be `null` to unset the attribute.
+     * @param string|null $value Microdata item reference, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemref` attribute.
      *
@@ -105,12 +78,9 @@ trait HasMicroData
     }
 
     /**
-     * Sets the HTML `itemscope` attribute for the element.
+     * Sets the `itemscope` attribute.
      *
-     * Creates a new instance with the specified microdata item scope value, supporting explicit assignment according to
-     * the HTML specification for global attributes.
-     *
-     * @param bool|null $value Microdata item scope to set for the element. Can be `null` to unset the attribute.
+     * @param bool|null $value Whether to enable itemscope, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemscope` attribute.
      *
@@ -128,12 +98,9 @@ trait HasMicroData
     }
 
     /**
-     * Sets the HTML `itemtype` attribute for the element.
+     * Sets the `itemtype` attribute.
      *
-     * Creates a new instance with the specified microdata item type value, supporting explicit assignment according to
-     * the HTML specification for global attributes.
-     *
-     * @param string|null $value Microdata item type to set for the element. Can be `null` to unset the attribute.
+     * @param string|null $value Microdata item type, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemtype` attribute.
      *

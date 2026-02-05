@@ -15,17 +15,7 @@ use UnitEnum;
 use function gettype;
 
 /**
- * Trait for managing the global HTML event handler attributes (the `on*` attributes).
- *
- * Provides an immutable API for setting event handler attributes on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of event handler attributes.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML `on*` global event handler attributes.
- * - Immutable method for setting or overriding the event handler attributes.
- * - Supports scalar, Closure and UnitEnum for advanced dynamic event scenarios.
+ * Provides an immutable API for `on*` event attributes.
  *
  * @phpstan-type Key string|UnitEnum
  * @phpstan-type Value scalar|Stringable|UnitEnum|null|Closure(): mixed
@@ -40,23 +30,16 @@ use function gettype;
 trait HasEvents
 {
     /**
-     * Sets a single global `on*` event attribute for the element.
+     * Sets an `on*` event attribute.
      *
-     * Creates a new instance with the specified event handler value, supporting explicit assignment according to the
-     * HTML specification for global attributes.
-     *
-     * The event key can be provided as a raw string (for example, `'onclick'` or `'click'`) or as a `UnitEnum` (for
-     * example, `Event::CLICK`).
-     *
-     * @param string|UnitEnum $event Event attribute key (with or without the leading `on` prefix) or enum case.
-     * @param Closure|string|Stringable|UnitEnum|null $handler JavaScript handler code. Can be `null` to unset the
-     * attribute.
+     * @param string|UnitEnum $event Event attribute key with or without the leading `on` prefix.
+     * @param Closure|string|Stringable|UnitEnum|null $handler JavaScript handler code, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
-     * @return static New instance with the updated event attribute.
+     * @return static New instance with the updated `on*` event attribute.
      *
-     * @phpstan-param string|Stringable|Closure(): mixed|null $handler
+     * @phpstan-param Closure(): mixed|string|Stringable|UnitEnum|null $handler
      *
      * Usage example:
      * ```php
@@ -76,23 +59,19 @@ trait HasEvents
     }
 
     /**
-     * Sets one or more global `on*` event attributes at once.
+     * Sets multiple `on*` event attributes.
      *
-     * Creates a new instance with the specified event attributes, supporting both string and Closure, and throws an
-     * exception for invalid input.
-     *
-     * @param array $values Associative array where keys are event names or enum cases and values are handler strings,
-     * Closure, Stringable or `null`.
+     * @param array $values Associative array of event keys and handlers. Values may be `Stringable`, `Closure`,
+     * `string`, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
-     * @return static New instance with the updated event attributes.
+     * @return static New instance with the updated `on*` event attributes.
      *
      * @phpstan-param mixed[] $values
      *
      * Usage example:
      * ```php
-     * // sets multiple event attributes at once
      * $element->events(
      *     [
      *         'click' => "alert('Clicked!')",
@@ -109,7 +88,6 @@ trait HasEvents
         foreach ($values as $key => $value) {
             try {
                 $new->setAttribute($key, $value, 'on', true);
-                // @phpstan-ignore catch.neverThrown
             } catch (TypeError) {
                 throw new InvalidArgumentException(
                     Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE->getMessage(gettype($value)),
@@ -121,22 +99,17 @@ trait HasEvents
     }
 
     /**
-     * Removes a single global `on*` event attribute from the element.
-     *
-     * Creates a new instance with the specified event attribute removed.
+     * Removes an `on*` event attribute.
      *
      * @param string|UnitEnum $event Event name or enum case to remove.
      *
      * @throws InvalidArgumentException if the event key is invalid.
      *
-     * @return static New instance with the specified event attribute removed.
+     * @return static New instance with the specified `on*` event attribute removed.
      *
      * Usage example:
      * ```php
-     * // removes `onclick` attribute
      * $element->removeEvent('click');
-     *
-     * // removes `onsubmit` attribute with an enum key
      * $element->removeEvent(Event::SUBMIT);
      * ```
      */

@@ -7,14 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents character encoding values for the HTML `charset` attribute.
  *
- * Defines commonly used character encoding tokens as enum cases. While HTML5 only officially supports UTF-8, this enum
- * includes other common encodings for legacy and specialized use cases.
- *
- * Key features.
- * - Based on IANA registered character sets.
- * - Enum values map to character encoding names as `string` values.
- * - Includes UTF-8 (the HTML5 standard) and other common encodings.
- *
  * @link https://www.iana.org/assignments/character-sets/character-sets.xhtml
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta#charset
  *

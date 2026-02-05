@@ -10,18 +10,7 @@ use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `fetchpriority` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `fetchpriority` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the fetch priority attribute and value
- * validation.
- *
- * Key features.
- * - Designed for use in img, link, svg, and script elements.
- * - Handles the HTML `fetchpriority` attribute.
- * - Immutable method for setting or overriding the `fetchpriority` attribute.
- * - Supports string, UnitEnum, and `null` for flexible priority assignment.
+ * Provides an immutable API for the `fetchpriority` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -34,24 +23,17 @@ use UnitEnum;
 trait HasFetchpriority
 {
     /**
-     * Sets the HTML `fetchpriority` attribute for the element.
+     * Sets the `fetchpriority` attribute.
      *
-     * Creates a new instance with the specified fetch priority value.
+     * Hints the browser about the fetch priority for the resource.
      *
-     * Provides a hint to the browser about the relative priority for fetching the external resource.
-     * - Use `high` for resources that significantly contribute to user experience metrics such as Largest Contentful
-     *   Paint (LCP).
-     * - Use `low` for resources that are not immediately necessary for the initial page load and can be deferred.
-     * - Use `auto` for browser-determined priority.
+     * @param string|UnitEnum|null $value Fetch priority token, or `null` to remove the attribute.
      *
-     * @param string|UnitEnum|null $value Fetch priority value to set for the element. Use `high` for critical resources,
-     * `low` for deferred resources, or `auto` for browser-determined priority. Can be `null` to unset the attribute.
-     *
-     * @throws InvalidArgumentException if the provided value is not valid.
+     * @throws InvalidArgumentException If the value is not valid.
      *
      * @return static New instance with the updated `fetchpriority` attribute.
      *
-     * @link https://html.spec.whatwg.org/multipage/urls-and-fetching.html#fetch-priority-attributes
+     * {@see Fetchpriority} for predefined enum values.
      *
      * Usage example:
      * ```php

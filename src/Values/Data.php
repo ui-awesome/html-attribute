@@ -5,15 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents property names for the HTML `data-*` attributes.
- *
- * Defines a curated set of data property identifiers as enum cases for use in `data-*` attribute assignment.
- *
- * Key features.
- * - Designed for use in tags, components, and helpers requiring `data-*` attribute assignment.
- * - Enum values are represented as `string` tokens.
- * - Enum values define the property token without the `data-` prefix.
- * - Integration-ready for tag rendering and element generation APIs.
+ * Represents `data-*` attribute property names without the `data-` prefix.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*
  *

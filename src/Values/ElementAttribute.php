@@ -5,15 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents HTML element attribute names.
- *
- * Defines a curated set of element attribute identifiers as enum cases. The enum values match the attribute names as
- * used in HTML source.
- *
- * Key features.
- * - Designed for use in tags, components, and helpers requiring element attribute assignment.
- * - Enum values map to attribute names as `string` tokens.
- * - Integration-ready for tag rendering and element generation APIs.
+ * Represents element-specific attribute names.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element
  *

@@ -10,17 +10,7 @@ use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
 /**
- * Trait for managing the global HTML `lang` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `lang` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of language identifiers and value validation.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML `lang` global attribute.
- * - Immutable method for setting or overriding the `lang` attribute.
- * - Supports string, UnitEnum, and `null` for flexible language assignment.
+ * Provides an immutable API for the `lang` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -33,26 +23,14 @@ use UnitEnum;
 trait HasLang
 {
     /**
-     * Sets the HTML `lang` attribute for the element.
+     * Sets the `lang` attribute.
      *
-     * Creates a new instance with the specified language value.
+     * @param string|UnitEnum|null $value Language tag, or `null` to remove the attribute.
      *
-     * Defines the primary language of the element's content, which is essential for accessibility (screen readers use
-     * it for proper pronunciation), search engine optimization, and browser features like hyphenation and
-     * spell-checking.
-     *
-     * Use standard language codes like 'en' for English, 'es' for Spanish, or 'en-US' for US English.
-     *
-     * This helps assistive technologies provide the correct voice and pronunciation for the content.
-     *
-     * @param string|UnitEnum|null $value Language code to set for the element. Use standard language codes (for example,
-     * 'en', 'es', 'fr', 'en-US').
-     *
-     * @throws InvalidArgumentException if the provided value is not valid.
+     * @throws InvalidArgumentException If the value is not valid.
      *
      * @return static New instance with the updated `lang` attribute.
      *
-     * @link https://html.spec.whatwg.org/multipage/dom.html#attr-lang
      * {@see Language} for predefined enum values.
      *
      * Usage example:

@@ -9,17 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `media` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `media` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `media` attribute.
- *
- * Key features.
- * - Designed for use in link, style, and source elements.
- * - Handles the HTML `media` attribute.
- * - Immutable method for setting or overriding the `media` attribute.
- * - Supports string, Stringable, UnitEnum, and `null` for flexible media query assignment.
+ * Provides an immutable API for the `media` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -32,18 +22,11 @@ use UnitEnum;
 trait HasMedia
 {
     /**
-     * Sets the HTML `media` attribute for the element.
+     * Sets the `media` attribute.
      *
-     * Creates a new instance with the specified media query value.
+     * Specifies the media query for the linked resource.
      *
-     * Specifies the media or media query for which the linked resource or style is designed. The browser will only
-     * apply the resource if the media query matches the current environment. Common values include `screen`, `print`,
-     * `all`, or complex queries like `screen and (min-width: 768px)`.
-     *
-     * This enables responsive design by loading different resources based on device characteristics.
-     *
-     * @param string|Stringable|UnitEnum|null $value Media query value to set for the element. Use standard media types
-     * (for example, `screen`, `print`) or media queries. Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Media query, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `media` attribute.
      *

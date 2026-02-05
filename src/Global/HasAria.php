@@ -15,17 +15,7 @@ use UnitEnum;
 use function gettype;
 
 /**
- * Trait for managing the global HTML `aria-*` attributes in tag rendering.
- *
- * Provides an immutable API for setting custom aria attributes on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of `aria-*` attributes.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML `aria-*` global attributes.
- * - Immutable method for setting or overriding `aria-*` attributes.
- * - Supports scalar, Closure and UnitEnum for advanced dynamic aria scenarios.
+ * Provides an immutable API for `aria-*` attributes.
  *
  * @phpstan-type Key string|UnitEnum
  * @phpstan-type Value scalar|Stringable|UnitEnum|null|Closure(): mixed
@@ -42,13 +32,10 @@ use function gettype;
 trait HasAria
 {
     /**
-     * Sets a single HTML `aria-*` attribute for the element.
+     * Sets an `aria-*` attribute.
      *
-     * Creates a new instance with the specified custom aria value, supporting explicit assignment according to the HTML
-     * specification for global attributes.
-     *
-     * @param string|UnitEnum $key Aria attribute key (without the `aria-` prefix).
-     * @param bool|Closure|float|int|string|Stringable|UnitEnum|null $value Aria attribute value. Can be `null` to unset
+     * @param string|UnitEnum $key Aria attribute key without the `aria-` prefix.
+     * @param bool|Closure|float|int|string|Stringable|UnitEnum|null $value Aria attribute value, or `null` to remove
      * the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
@@ -80,19 +67,14 @@ trait HasAria
     }
 
     /**
-     * Sets one or more HTML `aria-*` attributes for the element.
+     * Sets multiple `aria-*` attributes.
      *
-     * Creates a new instance with the specified custom aria attributes, supporting both string and Closure as required
-     * by the ARIA and HTML specifications, and throws an exception for invalid input.
-     *
-     * @param array $values Associative array of aria attribute keys and values. Keys must be string; values must be
-     * scalar, Closure, Stringable, UnitEnum or `null`.
+     * @param array $values Associative array of aria keys and values. Values may be scalar, `Stringable`, `UnitEnum`,
+     * `Closure`, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `aria-*` attributes.
-     *
-     * @link https://html.spec.whatwg.org/#attr-aria-*
      *
      * @phpstan-param mixed[] $values
      *
@@ -132,11 +114,9 @@ trait HasAria
     }
 
     /**
-     * Removes a single HTML `aria-*` attribute from the element.
+     * Removes an `aria-*` attribute.
      *
-     * Creates a new instance with the specified custom aria attribute removed.
-     *
-     * @param string|UnitEnum $key Aria attribute key (without the `aria-` prefix).
+     * @param string|UnitEnum $key Aria attribute key without the `aria-` prefix.
      *
      * @return static New instance with the specified `aria-*` attribute removed.
      *

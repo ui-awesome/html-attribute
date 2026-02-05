@@ -7,14 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML `loading` attribute on `<img>` and `<iframe>` elements.
  *
- * Defines the supported loading strategy tokens as enum cases.
- *
- * Key features.
- * - Designed for use in image elements requiring loading strategy assignment.
- * - Enum values are represented as `string` tokens.
- * - Enum values map to `eager` and `lazy`.
- * - Integration-ready for tag rendering and element generation APIs.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
  *

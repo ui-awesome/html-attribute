@@ -7,14 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents HTML global attribute names.
  *
- * Defines a curated set of global attribute identifiers as enum cases. The enum values match the attribute names as
- * used in HTML source.
- *
- * Key features.
- * - Designed for use in tags, components, and helpers requiring global attribute assignment.
- * - Enum values map to attribute names as `string` tokens.
- * - Integration-ready for tag rendering and element generation APIs.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -138,7 +130,6 @@ enum GlobalAttribute: string
      * `is` — Specifies that a standard HTML element should behave like a defined custom element.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/is
-     * @link https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is
      */
     case IS = 'is';
 

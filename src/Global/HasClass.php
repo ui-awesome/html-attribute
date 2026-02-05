@@ -10,17 +10,7 @@ use UIAwesome\Html\Helper\CSSClass;
 use UnitEnum;
 
 /**
- * Trait for managing the global HTML `class` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `class` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of CSS classes.
- *
- * Key features.
- * - Designed for use in tags and components.
- * - Handles the HTML `class` global attribute.
- * - Immutable method for setting or overriding the `class` attribute.
- * - Integration with CSS class management utilities for safe and predictable value updates.
+ * Provides an immutable API for the `class` attribute.
  *
  * @property array $attributes HTML attributes array used by the implementing class.
  * @phpstan-property mixed[] $attributes
@@ -34,20 +24,12 @@ use UnitEnum;
 trait HasClass
 {
     /**
-     * Sets the HTML `class` attribute for the element.
+     * Sets the `class` attribute.
      *
-     * Creates a new instance with the specified CSS class value, optionally overriding any existing class, supporting
-     * explicit assignment according to the HTML specification for global attributes.
-     *
-     * Supports both additive and override semantics for the `class` attribute.
-     *
-     * @param string|Stringable|UnitEnum|null $value CSS class to set for the element. Can be `null` to unset the
-     * attribute.
-     * @param bool $override Whether to override the existing class (`true`) or merge (`false`).
+     * @param string|Stringable|UnitEnum|null $value CSS class value, or `null` to remove the attribute.
+     * @param bool $override Whether to override existing classes (`true`) or merge (`false`).
      *
      * @return static New instance with the updated `class` attribute.
-     *
-     * @link https://html.spec.whatwg.org/#classes
      *
      * Usage example:
      * ```php

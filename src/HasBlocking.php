@@ -10,17 +10,7 @@ use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `blocking` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `blocking` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `blocking` attribute and value validation.
- *
- * Key features.
- * - Designed for use in link, script, and style elements.
- * - Handles the HTML `blocking` attribute.
- * - Immutable method for setting or overriding the `blocking` attribute.
- * - Supports string, UnitEnum, and `null` for flexible token assignment.
+ * Provides an immutable API for the `blocking` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -33,21 +23,17 @@ use UnitEnum;
 trait HasBlocking
 {
     /**
-     * Sets the HTML `blocking` attribute for the element.
+     * Sets the `blocking` attribute.
      *
-     * Creates a new instance with the specified blocking token value.
+     * Controls whether rendering waits for the external resource.
      *
-     * When set to `render`, the rendering of content on the screen is blocked until the external resource (`script`,
-     * `style`, or `link`) has been fetched and executed.
+     * @param string|UnitEnum|null $value Blocking token, or `null` to remove the attribute.
      *
-     * This ensures critical resources are available before the page is displayed to the user.
-     *
-     * @param string|UnitEnum|null $value Blocking token value to set for the element. Use `render` to block rendering
-     * until the resource is ready. Can be `null` to unset the attribute.
-     *
-     * @throws InvalidArgumentException if the provided value is not valid.
+     * @throws InvalidArgumentException If the value is not valid.
      *
      * @return static New instance with the updated `blocking` attribute.
+     *
+     * {@see Blocking} for predefined enum values.
      *
      * Usage example:
      * ```php

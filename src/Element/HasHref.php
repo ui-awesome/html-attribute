@@ -9,21 +9,9 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML and SVG `href` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `href` attribute on HTML and SVG elements.
- *
- * Intended for use in tag elements that require manipulation of the `href` attribute.
- *
- * Key features.
- * - Designed for use in tag elements (`<a>` and `<svg>`).
- * - Handles the HTML and SVG `href` attribute.
- * - Immutable method for setting or overriding the `href` attribute.
- * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible URL assignment.
+ * Provides an immutable API for the HTML and SVG `href` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#href
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href
  *
@@ -33,16 +21,9 @@ use UnitEnum;
 trait HasHref
 {
     /**
-     * Sets the HTML or SVG `href` attribute for the element.
+     * Sets the `href` attribute.
      *
-     * Creates a new instance with the specified URL or resource reference, supporting explicit assignment according to
-     * the HTML and SVG specifications for hyperlink and resource attributes.
-     *
-     * The `href` attribute defines the target URL or resource reference for the element. Accepts a string representing
-     * a valid URL, path, or fragment.
-     *
-     * @param string|Stringable|UnitEnum|null $value URL or resource reference to set for the element. Use a valid URL,
-     * path, or fragment as a string. Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value URL, path, or fragment, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `href` attribute.
      *

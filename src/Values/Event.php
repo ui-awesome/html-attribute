@@ -5,15 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents HTML global event handler attributes (the `on*` attributes).
- *
- * Defines a curated set of event handler attribute identifiers as enum cases. The enum values match the attribute names
- * as used in HTML source (for example, `onclick`).
- *
- * Key features.
- * - Designed for use in tags, components, and helpers requiring event attribute assignment.
- * - Enum values map to event handler attribute names as `string` tokens.
- * - Integration-ready for attribute rendering APIs.
+ * Represents global `on*` event handler attribute names.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes#list_of_global_event_handler_attributes
  *

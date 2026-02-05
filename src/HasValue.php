@@ -9,18 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `value` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `value` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `value` attribute.
- *
- * Key features.
- * - Designed for use in elements that require a `value` attribute (for example, `<li>`, `<input>`, `<option>`,
- *   `<progress>`, `<meter>`).
- * - Handles the HTML `value` attribute for setting element values.
- * - Immutable method for setting or overriding the `value` attribute.
- * - Supports float, int, string, Stringable, UnitEnum, and `null` for flexible value assignment.
+ * Provides an immutable API for the `value` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -33,18 +22,12 @@ use UnitEnum;
 trait HasValue
 {
     /**
-     * Sets the HTML `value` attribute for the element.
+     * Sets the `value` attribute.
      *
-     * Creates a new instance with the specified value.
+     * Defines the current value for the element.
      *
-     * The `value` attribute contains the current value of the element. Its meaning depends on the context:
-     * - For `<li>`: the ordinal value in an ordered list.
-     * - For `<input>`: the current value of the form control.
-     * - For `<option>`: the value to be submitted with the form.
-     * - For `<progress>` and `<meter>`: the current value of the range.
-     *
-     * @param float|int|string|Stringable|UnitEnum|null $value The value to set for the element. Can be `null` to unset the
-     * attribute.
+     * @param float|int|string|Stringable|UnitEnum|null $value Element value as `int`, `float`, or `string`, or `null`
+     * to remove the attribute.
      *
      * @return static New instance with the updated `value` attribute.
      *

@@ -10,17 +10,7 @@ use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `crossorigin` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `crossorigin` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the CORS attribute and value validation.
- *
- * Key features.
- * - Designed for use in media elements (img, video, audio), script, link, and SVG elements.
- * - Handles the HTML `crossorigin` attribute.
- * - Immutable method for setting or overriding the `crossorigin` attribute.
- * - Supports string, UnitEnum, and `null` for flexible CORS assignment.
+ * Provides an immutable API for the `crossorigin` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -33,26 +23,17 @@ use UnitEnum;
 trait HasCrossorigin
 {
     /**
-     * Sets the HTML `crossorigin` attribute for the element.
+     * Sets the `crossorigin` attribute.
      *
-     * Creates a new instance with the specified CORS setting value.
+     * Controls credentialed requests for cross-origin resources.
      *
-     * Controls how the browser handles cross-origin requests for the element.
-     * - When set to `anonymous`, CORS requests are sent without credentials (cookies, authorization headers, or TLS
-     *   client certificates).
-     * - When set to `use-credentials`, credentials are included in CORS requests.
+     * @param string|UnitEnum|null $value CORS mode token, or `null` to remove the attribute.
      *
-     * This is essential for resources that require authentication or when error logging is needed for cross-origin
-     * resources.
-     *
-     * @param string|UnitEnum|null $value CORS setting value to set for the element. Use `anonymous` for requests
-     * without credentials, or `use-credentials` to include credentials. Can be `null` to unset the attribute.
-     *
-     * @throws InvalidArgumentException if the provided value is not valid.
+     * @throws InvalidArgumentException If the value is not valid.
      *
      * @return static New instance with the updated `crossorigin` attribute.
      *
-     * @link https://html.spec.whatwg.org/multipage/urls-and-fetching.html#cors-settings-attributes
+     * {@see Crossorigin} for predefined enum values.
      *
      * Usage example:
      * ```php

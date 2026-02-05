@@ -7,17 +7,7 @@ namespace UIAwesome\Html\Attribute\Form;
 use UIAwesome\Html\Attribute\Values\Attribute;
 
 /**
- * Trait for managing the HTML `readonly` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `readonly` attribute on HTML elements.
- *
- * Intended for use in tags and components that require manipulation of the `readonly` attribute.
- *
- * Key features.
- * - Designed for use in form control elements (`<input>` and `<textarea>`).
- * - Handles the HTML `readonly` attribute for preventing user editing.
- * - Immutable method for setting or overriding the `readonly` attribute.
- * - Supports `bool` and `null` for flexible readonly state assignment.
+ * Provides an immutable API for the `readonly` attribute.
  *
  * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
@@ -30,20 +20,10 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 trait HasReadonly
 {
     /**
-     * Sets the HTML `readonly` attribute for the element.
+     * Sets the `readonly` attribute.
      *
-     * Creates a new instance with the specified readonly state.
-     *
-     * The `readonly` attribute is a boolean attribute that indicates the user should not be able to edit the value of
-     * the input.
-     * - Unlike `disabled`, a readonly input is still focusable, can be tabbed to, and its value is submitted with the
-     *   form.
-     * - It is not applicable to `<button>`, `<input type="checkbox">`, `<input type="color">`, `<input type="hidden">`,
-     *   `<input type="radio">`, and `<input type="range">`,
-     * - The user can still select and copy text from a readonly field, but cannot modify it.
-     *
-     * @param bool|null $value Readonly state to set for the element. Use `true` to make readonly, `false` to make
-     * editable. Can be `null` to unset the attribute.
+     * @param bool|null $value Readonly state. Use `true` to make readonly, `false` to make editable, or `null` to
+     * remove the attribute.
      *
      * @return static New instance with the updated `readonly` attribute.
      *

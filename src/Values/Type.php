@@ -7,15 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML `type` attribute.
  *
- * Defines a curated set of `type` tokens as enum cases for use with elements that support a finite set of values (for
- * example, input, button, script, and ol). Some elements interpret `type` as a MIME type (for example, link, embed,
- * object, and source), which is not an exhaustive token set.
- *
- * Key features.
- * - Designed for use in tags, components, and helpers requiring `type` attribute assignment.
- * - Enum values map to `type` tokens as `string` values.
- * - Suitable for rendering HTML attributes in view helpers and components.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/type
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.

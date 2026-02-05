@@ -9,21 +9,9 @@ use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
 /**
- * Trait for managing the HTML `alt` attribute in tag rendering.
- *
- * Provides an immutable API for setting the `alt` attribute on HTML elements.
- *
- * Intended for use in tag elements that require manipulation of the `alt` attribute.
- *
- * Key features.
- * - Designed for use in tag elements (`<img>`).
- * - Handles the HTML `alt` attribute.
- * - Immutable method for setting or overriding the `alt` attribute.
- * - Supports `string`, `Stringable`, `UnitEnum`, and `null` for flexible alternative text assignment.
+ * Provides an immutable API for the `alt` attribute.
  *
  * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#alt
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
@@ -32,17 +20,10 @@ use UnitEnum;
 trait HasAlt
 {
     /**
-     * Sets the HTML `alt` attribute for the element.
+     * Sets the `alt` attribute.
      *
-     * Creates a new instance with the specified alternative text value, supporting explicit assignment according to the
-     * HTML specification for image alternative text.
-     *
-     * The `alt` attribute provides a textual replacement for the image, which is essential for accessibility and is
-     * displayed if the image cannot be loaded. Setting `alt` to an empty string (`''`) indicates the image is
-     * decorative.
-     *
-     * @param string|Stringable|UnitEnum|null $value Alternative text to set for the element. Use a concise description
-     * of the image's content or purpose. Can be `null` to unset the attribute.
+     * @param string|Stringable|UnitEnum|null $value Alternative text for the element, or `null` to remove the
+     * attribute.
      *
      * @return static New instance with the updated `alt` attribute.
      *
