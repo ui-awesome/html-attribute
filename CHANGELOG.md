@@ -49,6 +49,7 @@
 - Bug #76: Move `HasDisabled` trait to `UIAwesome\Html\Attribute` namespace and update related imports accordingly (@terabytesoftw)
 - Enh #77: Add `Autocomplete` enum and update `AutocompleteProvider` to add test data (@terabytesoftw)
 - Enh #78: Add `HasPopover`, `HasPopoverTarget`, `HasPopoverTargetAction` traits and `popover()`, `popoverTarget()`, `popoverTargetAction()` methods to manage popover attributes for HTML elements (@terabytesoftw)
+- Enh #79: Add `HasInputmode` trait and `inputmode()` method to manage `inputmode` attribute for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
