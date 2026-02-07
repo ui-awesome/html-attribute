@@ -31,8 +31,7 @@ trait HasPopover
      * $element->popover(Popover::AUTO);
      * ```
      *
-     * @param string|UnitEnum|null $value Popover state. Use `auto` for auto behavior, `manual` to remove,
-     * `auto`/`manual` or `null` to remove the attribute.
+     * @param string|UnitEnum|null $value Popover state (`auto`, `hint`, `manual`), or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the provided value is not valid.
      *

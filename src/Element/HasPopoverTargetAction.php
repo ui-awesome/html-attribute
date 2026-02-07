@@ -32,7 +32,8 @@ trait HasPopoverTargetAction
      * $element->popoverTargetAction(null);
      * ```
      *
-     * @param string|Stringable|UnitEnum|null $value Popover target action, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Popover target action (`hide`, `show`, `toggle`), or `null` to
+     * remove the attribute.
      *
      * @return static New instance with the updated `popovertargetaction` attribute.
      */
