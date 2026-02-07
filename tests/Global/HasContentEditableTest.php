@@ -89,7 +89,7 @@ final class HasContentEditableTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidContentEditableValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingContentEditableValue(): void
     {
         $instance = new class {
             use HasAttributes;

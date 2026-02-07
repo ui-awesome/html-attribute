@@ -89,7 +89,7 @@ final class HasDirTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidDirValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingDirValue(): void
     {
         $instance = new class {
             use HasAttributes;

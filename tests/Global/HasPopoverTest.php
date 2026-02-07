@@ -7,36 +7,36 @@ namespace UIAwesome\Html\Attribute\Tests\Global;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use UIAwesome\Html\Attribute\Global\HasTranslate;
-use UIAwesome\Html\Attribute\Tests\Provider\Global\TranslateProvider;
-use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Translate};
+use UIAwesome\Html\Attribute\Global\HasPopover;
+use UIAwesome\Html\Attribute\Tests\Provider\Global\PopoverProvider;
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Popover};
 use UIAwesome\Html\Helper\{Attributes, Enum};
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Unit tests for the {@see HasTranslate} trait managing the `translate` global HTML attribute.
+ * Unit tests for the {@see HasPopover} trait managing the `popover` global HTML attribute.
  *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `translate` attribute is not provided.
- * - Sets the `translate` global HTML attribute and renders the expected output.
- * - Verifies invalid `translate` values throw an `InvalidArgumentException`.
+ * - Ensures no attributes are set when the `popover` attribute is not provided.
+ * - Sets the `popover` global HTML attribute and renders the expected output.
+ * - Verifies invalid `popover` values throw an `InvalidArgumentException`.
  *
- * {@see TranslateProvider} for test case data providers.
+ * {@see PopoverProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('global')]
-final class HasTranslateTest extends TestCase
+final class HasPopoverTest extends TestCase
 {
-    public function testReturnEmptyWhenTranslateAttributeNotSet(): void
+    public function testReturnEmptyWhenPopoverAttributeNotSet(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasTranslate;
+            use HasPopover;
         };
 
         self::assertEmpty(
@@ -45,16 +45,16 @@ final class HasTranslateTest extends TestCase
         );
     }
 
-    public function testReturnNewInstanceWhenSettingTranslateAttribute(): void
+    public function testReturnNewInstanceWhenSettingPopoverAttribute(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasTranslate;
+            use HasPopover;
         };
 
         self::assertNotSame(
             $instance,
-            $instance->translate(''),
+            $instance->popover(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -62,24 +62,24 @@ final class HasTranslateTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(TranslateProvider::class, 'values')]
-    public function testSetTranslateAttributeValue(
-        bool|string|UnitEnum|null $translate,
+    #[DataProviderExternal(PopoverProvider::class, 'values')]
+    public function testSetPopoverAttributeValue(
+        string|UnitEnum|null $popover,
         array $attributes,
-        bool|string|UnitEnum $expectedValue,
+        string|UnitEnum $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {
         $instance = new class {
             use HasAttributes;
-            use HasTranslate;
+            use HasPopover;
         };
 
-        $instance = $instance->attributes($attributes)->translate($translate);
+        $instance = $instance->attributes($attributes)->popover($popover);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::TRANSLATE, ''),
+            $instance->getAttribute(GlobalAttribute::POPOVER, ''),
             $message,
         );
         self::assertSame(
@@ -89,22 +89,22 @@ final class HasTranslateTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingTranslateValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingPopoverValue(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasTranslate;
+            use HasPopover;
         };
 
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                GlobalAttribute::TRANSLATE->value,
-                implode('\', \'', Enum::normalizeArray(Translate::cases())),
+                GlobalAttribute::POPOVER->value,
+                implode('\', \'', Enum::normalizeArray(Popover::cases())),
             ),
         );
 
-        $instance->translate('invalid-value');
+        $instance->popover('invalid-value');
     }
 }
