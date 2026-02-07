@@ -25,7 +25,7 @@ final class PopoverProvider
     {
         $enumCases = EnumDataProvider::attributeCases(Popover::class, GlobalAttribute::POPOVER);
 
-        $staticCase = [
+        $staticCases = [
             'empty string' => [
                 '',
                 [],
@@ -70,6 +70,6 @@ final class PopoverProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [...$enumCases, ...$staticCases];
     }
 }

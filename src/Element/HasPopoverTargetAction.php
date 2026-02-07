@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Element;
 
+use InvalidArgumentException;
 use Stringable;
 use UIAwesome\Html\Attribute\Values\{ElementAttribute, PopoverTargetAction};
 use UIAwesome\Html\Helper\Validator;
@@ -34,6 +35,8 @@ trait HasPopoverTargetAction
      *
      * @param string|Stringable|UnitEnum|null $value Popover target action (`hide`, `show`, `toggle`), or `null` to
      * remove the attribute.
+     *
+     * @throws InvalidArgumentException If the provided value is not valid.
      *
      * @return static New instance with the updated `popovertargetaction` attribute.
      */

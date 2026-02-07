@@ -30,7 +30,10 @@ enum Popover: string
      * Popover can be "light dismissed" (for example, by clicking outside the popover area), and multiple such popovers
      * can be open at a time.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover#hint
+     * Note: Limited browser support. Currently supported in Chromium-based browsers only (Chrome 133+, Edge 133+,
+     * Opera 118+). Not supported in Firefox or Safari.
+     *
+     * `@link` https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover#hint
      */
     case HINT = 'hint';
 
