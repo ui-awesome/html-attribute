@@ -89,7 +89,7 @@ final class HasDraggableTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidDraggableValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingDraggableValue(): void
     {
         $instance = new class {
             use HasAttributes;

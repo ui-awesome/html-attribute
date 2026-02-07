@@ -88,7 +88,7 @@ final class HasSpellcheckTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidSpellcheckValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingSpellcheckValue(): void
     {
         $instance = new class {
             use HasAttributes;

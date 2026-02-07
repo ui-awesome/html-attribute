@@ -90,7 +90,7 @@ final class HasRoleTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidRoleValue(): void
+    public function testThrowInvalidArgumentExceptionForSettingRoleValue(): void
     {
         $instance = new class {
             use HasAttributes;

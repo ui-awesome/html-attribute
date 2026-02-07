@@ -53,6 +53,20 @@ enum ElementAttribute: string
     case LOADING = 'loading';
 
     /**
+     * `popovertarget` — Identifies the popover element that is associated with the current element.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget
+     */
+    case POPOVERTARGET = 'popovertarget';
+
+    /**
+     * `popovertargetaction` — Defines the action to be performed on the popover element when the current element is activated.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction
+     */
+    case POPOVERTARGETACTION = 'popovertargetaction';
+
+    /**
      * `referrerpolicy` — Referrer information to send when fetching the resource.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#referrerpolicy
