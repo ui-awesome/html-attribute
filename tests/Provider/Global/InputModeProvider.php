@@ -5,25 +5,25 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Provider\Global;
 
 use PHPForge\Support\EnumDataProvider;
-use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Popover};
+use UIAwesome\Html\Attribute\Values\{GlobalAttribute, InputMode};
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasPopoverTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasInputModeTest} test cases.
  *
- * Provides representative input/output pairs for the `popover` attribute.
+ * Provides representative input/output pairs for the `inputmode` attribute.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class PopoverProvider
+final class InputModeProvider
 {
     /**
      * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
      */
     public static function values(): array
     {
-        $enumCases = EnumDataProvider::attributeCases(Popover::class, GlobalAttribute::POPOVER);
+        $enumCases = EnumDataProvider::attributeCases(InputMode::class, GlobalAttribute::INPUTMODE);
 
         $staticCases = [
             'empty string' => [
@@ -41,25 +41,25 @@ final class PopoverProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                'manual',
-                ['popover' => 'auto'],
-                'manual',
-                ' popover="manual"',
-                "Should return new 'popover' after replacing the existing 'popover' attribute.",
+                'decimal',
+                ['inputmode' => 'numeric'],
+                'decimal',
+                ' inputmode="decimal"',
+                "Should return new 'inputmode' after replacing the existing 'inputmode' attribute.",
             ],
             'string' => [
-                'auto',
+                'text',
                 [],
-                'auto',
-                ' popover="auto"',
+                'text',
+                ' inputmode="text"',
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
                 null,
-                ['popover' => 'auto'],
+                ['inputmode' => 'text'],
                 '',
                 '',
-                "Should unset the 'popover' attribute when 'null' is provided after a value.",
+                "Should unset the 'inputmode' attribute when 'null' is provided after a value.",
             ],
         ];
 
