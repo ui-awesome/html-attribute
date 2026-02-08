@@ -21,7 +21,13 @@ final class ValueProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{float|int|string|Stringable|UnitEnum|null, mixed[], float|int|string|Stringable|UnitEnum, string, string}
+     *   array{
+     *     bool|float|int|string|Stringable|UnitEnum|null,
+     *     mixed[],
+     *     bool|float|int|string|Stringable|UnitEnum,
+     *     string,
+     *     string,
+     *   },
      * >
      */
     public static function values(): array
@@ -34,6 +40,20 @@ final class ValueProvider
         };
 
         return [
+            'boolean false' => [
+                false,
+                [],
+                false,
+                '',
+                'Should return the attribute value after setting it.',
+            ],
+            'boolean true' => [
+                true,
+                [],
+                true,
+                ' value',
+                'Should return the attribute value after setting it.',
+            ],
             'empty string' => [
                 '',
                 [],

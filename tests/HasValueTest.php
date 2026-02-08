@@ -62,9 +62,9 @@ final class HasValueTest extends TestCase
      */
     #[DataProviderExternal(ValueProvider::class, 'values')]
     public function testSetValueAttributeValue(
-        float|int|string|Stringable|UnitEnum|null $value,
+        bool|float|int|string|Stringable|UnitEnum|null $value,
         array $attributes,
-        float|int|string|Stringable|UnitEnum $expectedValue,
+        bool|float|int|string|Stringable|UnitEnum $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {
