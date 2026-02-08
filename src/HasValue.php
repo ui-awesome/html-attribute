@@ -26,11 +26,6 @@ trait HasValue
      *
      * Defines the current value for the element.
      *
-     * @param bool|float|int|string|Stringable|UnitEnum|null $value Element value as `bool`, `int`, `float`, `string`,
-     * or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `value` attribute.
-     *
      * Usage example:
      * ```php
      * $element->value(3);
@@ -40,6 +35,11 @@ trait HasValue
      * $element->value(true);
      * $element->value(null);
      * ```
+     *
+     * @param bool|float|int|string|Stringable|UnitEnum|null $value Element value as `bool`, `int`, `float`, `string`,
+     * `Stringable`, `UnitEnum`, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `value` attribute.
      */
     public function value(bool|float|int|string|Stringable|UnitEnum|null $value): static
     {
