@@ -12,9 +12,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `crossorigin` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -27,6 +25,13 @@ trait HasCrossorigin
      *
      * Controls credentialed requests for cross-origin resources.
      *
+     * Usage example:
+     * ```php
+     * $element->crossorigin('anonymous');
+     * $element->crossorigin(Crossorigin::ANONYMOUS);
+     * $element->crossorigin(null);
+     * ```
+     *
      * @param string|UnitEnum|null $value CORS mode token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -34,13 +39,6 @@ trait HasCrossorigin
      * @return static New instance with the updated `crossorigin` attribute.
      *
      * {@see Crossorigin} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->crossorigin('anonymous');
-     * $element->crossorigin(Crossorigin::ANONYMOUS);
-     * $element->crossorigin(null);
-     * ```
      */
     public function crossorigin(string|UnitEnum|null $value): static
     {

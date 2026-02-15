@@ -12,9 +12,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `target` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/target
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -27,6 +25,13 @@ trait HasTarget
      *
      * Defines the browsing context that receives the link or form submission.
      *
+     * Usage example:
+     * ```php
+     * $element->target('_blank');
+     * $element->target(Target::BLANK);
+     * $element->target(null);
+     * ```
+     *
      * @param string|UnitEnum|null $value Browsing context name, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -34,13 +39,6 @@ trait HasTarget
      * @return static New instance with the updated `target` attribute.
      *
      * {@see Target} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->target('_blank');
-     * $element->target(Target::BLANK);
-     * $element->target(null);
-     * ```
      */
     public function target(string|UnitEnum|null $value): static
     {

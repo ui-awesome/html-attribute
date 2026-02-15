@@ -54,6 +54,7 @@
 - Bug #81: Migrate mixin attribute setters and tests to the simplified API (@terabytesoftw)
 - Bug #82: Update `ui-awesome/html-helper` requirement to use stable version constraint `^0.7` in `composer.json` (@terabytesoftw)
 - Enh #83: Enhance `HasAria`, `HasData`, and `HasEvents` traits to support prefix attributes `aria-`, `data-`, and `on` (@terabytesoftw)
+- Bug #84: Refactor attribute documentation in traits (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

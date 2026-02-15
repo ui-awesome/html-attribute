@@ -12,9 +12,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `dir` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -25,6 +23,13 @@ trait HasDir
     /**
      * Sets the `dir` attribute.
      *
+     * Usage example:
+     * ```php
+     * $element->dir('ltr');
+     * $element->dir('rtl');
+     * $element->dir(Direction::AUTO);
+     * ```
+     *
      * @param string|UnitEnum|null $value Directionality value. Use `ltr`, `rtl`, or `auto`, or `null` to remove the
      * attribute.
      *
@@ -33,13 +38,6 @@ trait HasDir
      * @return static New instance with the updated `dir` attribute.
      *
      * {@see Direction} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->dir('ltr');
-     * $element->dir('rtl');
-     * $element->dir(Direction::AUTO);
-     * ```
      */
     public function dir(string|UnitEnum|null $value): static
     {

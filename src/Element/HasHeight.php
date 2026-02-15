@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `height` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#height
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/height
  *
@@ -23,17 +23,17 @@ trait HasHeight
     /**
      * Sets the `height` attribute.
      *
-     * @param int|string|Stringable|UnitEnum|null $value Height value in pixels or CSS units, or `null` to remove the
-     * attribute.
-     *
-     * @return static New instance with the updated `height` attribute.
-     *
      * Usage example:
      * ```php
      * $element->height(200);
      * $element->height('50%');
      * $element->height('auto');
      * ```
+     *
+     * @param int|string|Stringable|UnitEnum|null $value Height value in pixels or CSS units, or `null` to remove the
+     * attribute.
+     *
+     * @return static New instance with the updated `height` attribute.
      */
     public function height(int|string|Stringable|UnitEnum|null $value): static
     {

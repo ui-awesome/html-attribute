@@ -7,16 +7,13 @@ namespace UIAwesome\Html\Attribute\Global;
 use InvalidArgumentException;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Validator;
-use UnitEnum;
 
 use function is_bool;
 
 /**
  * Provides an immutable API for the `spellcheck` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -27,17 +24,17 @@ trait HasSpellcheck
     /**
      * Sets the `spellcheck` attribute.
      *
-     * @param bool|string|null $value Spellcheck state. Use `true` or `false`, or `null` to remove the attribute.
-     *
-     * @throws InvalidArgumentException If the value is not valid.
-     *
-     * @return static New instance with the updated `spellcheck` attribute.
-     *
      * Usage example:
      * ```php
      * $element->spellcheck(true);
      * $element->spellcheck(false);
      * ```
+     *
+     * @param bool|string|null $value Spellcheck state. Use `true` or `false`, or `null` to remove the attribute.
+     *
+     * @throws InvalidArgumentException If the value is not valid.
+     *
+     * @return static New instance with the updated `spellcheck` attribute.
      */
     public function spellcheck(bool|string|null $value): static
     {

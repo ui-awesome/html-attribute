@@ -14,9 +14,7 @@ use function is_bool;
 /**
  * Provides an immutable API for the `translate` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/translate
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -27,6 +25,12 @@ trait HasTranslate
     /**
      * Sets the `translate` attribute.
      *
+     * Usage example:
+     * ```php
+     * $element->translate(true);
+     * $element->translate(Translate::NO);
+     * ```
+     *
      * @param bool|string|UnitEnum|null $value Translation behavior. Use `yes`, `no`, `true`, `false`, or `null` to
      * remove the attribute.
      *
@@ -35,13 +39,6 @@ trait HasTranslate
      * @return static New instance with the updated `translate` attribute.
      *
      * {@see Translate} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->translate(true);
-     * $element->translate(false);
-     * $element->translate(Translate::NO);
-     * ```
      */
     public function translate(bool|string|UnitEnum|null $value): static
     {

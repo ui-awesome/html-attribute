@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `nonce` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/nonce
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,15 +22,15 @@ trait HasNonce
     /**
      * Sets the `nonce` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value Cryptographic nonce value, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `nonce` attribute.
-     *
      * Usage example:
      * ```php
      * $element->nonce('abc123xyz');
      * $element->nonce($cspNonce);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Cryptographic nonce value, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `nonce` attribute.
      */
     public function nonce(string|Stringable|UnitEnum|null $value): static
     {

@@ -10,7 +10,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `srcset` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#srcset
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture#the_srcset_attribute
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/source#srcset
@@ -23,17 +23,17 @@ trait HasSrcset
     /**
      * Sets the `srcset` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value Comma-separated image URLs with size descriptors, or `null` to
-     * remove the attribute.
-     *
-     * @return static New instance with the updated `srcset` attribute.
-     *
      * Usage example:
      * ```php
      * $element->srcset('small.jpg 480w, medium.jpg 800w, large.jpg 1200w');
      * $element->srcset('image-1x.jpg 1x, image-2x.jpg 2x');
      * $element->srcset(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Comma-separated image URLs with size descriptors, or `null` to
+     * remove the attribute.
+     *
+     * @return static New instance with the updated `srcset` attribute.
      */
     public function srcset(string|Stringable|UnitEnum|null $value): static
     {

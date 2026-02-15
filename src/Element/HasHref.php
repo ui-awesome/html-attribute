@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the HTML and SVG `href` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#href
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href
  *
@@ -23,10 +23,6 @@ trait HasHref
     /**
      * Sets the `href` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value URL, path, or fragment, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `href` attribute.
-     *
      * Usage example:
      * ```php
      * $element->href('https://example.com/page');
@@ -34,6 +30,10 @@ trait HasHref
      * $element->href('#section');
      * $element->href(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value URL, path, or fragment, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `href` attribute.
      */
     public function href(string|Stringable|UnitEnum|null $value): static
     {

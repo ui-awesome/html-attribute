@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `width` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#width
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/width
  *
@@ -23,11 +23,6 @@ trait HasWidth
     /**
      * Sets the `width` attribute.
      *
-     * @param int|string|Stringable|UnitEnum|null $value Width value in pixels or CSS units, or `null` to remove the
-     * attribute.
-     *
-     * @return static New instance with the updated `width` attribute.
-     *
      * Usage example:
      * ```php
      * $element->width(400);
@@ -35,6 +30,11 @@ trait HasWidth
      * $element->width('auto');
      * $element->width(null);
      * ```
+     *
+     * @param int|string|Stringable|UnitEnum|null $value Width value in pixels or CSS units, or `null` to remove the
+     * attribute.
+     *
+     * @return static New instance with the updated `width` attribute.
      */
     public function width(int|string|Stringable|UnitEnum|null $value): static
     {

@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `content` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/content
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -26,16 +24,16 @@ trait HasContent
      *
      * Defines the metadata value for the current `name` or `http-equiv` entry.
      *
-     * @param string|Stringable|UnitEnum|null $value Metadata content value, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `content` attribute.
-     *
      * Usage example:
      * ```php
      * $element->content('width=device-width, initial-scale=1');
      * $element->content('The HTML reference describes all elements...');
      * $element->content(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Metadata content value, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `content` attribute.
      */
     public function content(string|Stringable|UnitEnum|null $value): static
     {

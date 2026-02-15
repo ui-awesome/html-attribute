@@ -13,9 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `lang` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -26,6 +24,13 @@ trait HasLang
     /**
      * Sets the `lang` attribute.
      *
+     * Usage example:
+     * ```php
+     * $element->lang('en');
+     * $element->lang('es');
+     * $element->lang(Language::ENGLISH_US);
+     * ```
+     *
      * @param string|Stringable|UnitEnum|null $value Language tag, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -33,13 +38,6 @@ trait HasLang
      * @return static New instance with the updated `lang` attribute.
      *
      * {@see Language} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->lang('en');
-     * $element->lang('es');
-     * $element->lang(Language::ENGLISH_US);
-     * ```
      */
     public function lang(string|Stringable|UnitEnum|null $value): static
     {

@@ -14,9 +14,7 @@ use function is_bool;
 /**
  * Provides an immutable API for the `draggable` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -27,6 +25,12 @@ trait HasDraggable
     /**
      * Sets the `draggable` attribute.
      *
+     * Usage example:
+     * ```php
+     * $element->draggable(true);
+     * $element->draggable(Draggable::TRUE);
+     * ```
+     *
      * @param bool|string|UnitEnum|null $value Draggable state. Use `true` or `false`, or `null` to remove the
      * attribute.
      *
@@ -35,13 +39,6 @@ trait HasDraggable
      * @return static New instance with the updated `draggable` attribute.
      *
      * {@see Draggable} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->draggable(true);
-     * $element->draggable(false);
-     * $element->draggable(Draggable::TRUE);
-     * ```
      */
     public function draggable(bool|string|UnitEnum|null $value): static
     {

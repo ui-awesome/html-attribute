@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `dirname` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/dirname
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,16 +22,16 @@ trait HasDirname
     /**
      * Sets the `dirname` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value Dirname value, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `dirname` attribute.
-     *
      * Usage example:
      * ```php
      * $element->dirname('comment-dir');
      * $element->dirname('text-direction');
      * $element->dirname(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Dirname value, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `dirname` attribute.
      */
     public function dirname(string|Stringable|UnitEnum|null $value): static
     {

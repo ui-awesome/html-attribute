@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `max` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/max
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,10 +22,6 @@ trait HasMax
     /**
      * Sets the `max` attribute.
      *
-     * @param float|int|string|Stringable|UnitEnum|null $value Maximum value, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `max` attribute.
-     *
      * Usage example:
      * ```php
      * $element->max(100);
@@ -35,6 +29,10 @@ trait HasMax
      * $element->max('23:59');
      * $element->max(null);
      * ```
+     *
+     * @param float|int|string|Stringable|UnitEnum|null $value Maximum value, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `max` attribute.
      */
     public function max(float|int|string|Stringable|UnitEnum|null $value): static
     {

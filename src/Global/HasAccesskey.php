@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `accesskey` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,15 +22,15 @@ trait HasAccesskey
     /**
      * Sets the `accesskey` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value Access key character, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `accesskey` attribute.
-     *
      * Usage example:
      * ```php
      * $element->accesskey('s');
      * $element->accesskey('1');
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Access key character, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `accesskey` attribute.
      */
     public function accesskey(string|Stringable|UnitEnum|null $value): static
     {

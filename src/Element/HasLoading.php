@@ -13,7 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `loading` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
  *
@@ -25,6 +25,13 @@ trait HasLoading
     /**
      * Sets the `loading` attribute.
      *
+     * Usage example:
+     * ```php
+     * $element->loading('lazy');
+     * $element->loading(Loading::LAZY);
+     * $element->loading(null);
+     * ```
+     *
      * @param string|Stringable|UnitEnum|null $value Loading strategy (`eager` or `lazy`), or `null` to remove the
      * attribute.
      *
@@ -33,13 +40,6 @@ trait HasLoading
      * @return static New instance with the updated `loading` attribute.
      *
      * {@see Loading} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->loading('lazy');
-     * $element->loading(Loading::LAZY);
-     * $element->loading(null);
-     * ```
      */
     public function loading(string|Stringable|UnitEnum|null $value): static
     {

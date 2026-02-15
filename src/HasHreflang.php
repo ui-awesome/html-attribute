@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `hreflang` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#hreflang
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -26,16 +24,16 @@ trait HasHreflang
      *
      * Declares the language of the linked resource.
      *
-     * @param string|Stringable|UnitEnum|null $value BCP 47 language tag, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `hreflang` attribute.
-     *
      * Usage example:
      * ```php
      * $element->hreflang('en');
      * $element->hreflang('es');
      * $element->hreflang(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value BCP 47 language tag, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `hreflang` attribute.
      */
     public function hreflang(string|Stringable|UnitEnum|null $value): static
     {

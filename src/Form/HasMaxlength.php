@@ -14,9 +14,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `maxlength` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/maxlength
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -27,19 +25,19 @@ trait HasMaxlength
     /**
      * Sets the `maxlength` attribute.
      *
-     * @param int|string|Stringable|UnitEnum|null $value Maximum length. Must be `>= 0`, or `null` to remove the
-     * attribute.
-     *
-     * @throws InvalidArgumentException if the value is not an integer-like value `>= 0`.
-     *
-     * @return static New instance with the updated `maxlength` attribute.
-     *
      * Usage example:
      * ```php
      * $element->maxlength(50);
      * $element->maxlength(255);
      * $element->maxlength(null);
      * ```
+     *
+     * @param int|string|Stringable|UnitEnum|null $value Maximum length. Must be `>= 0`, or `null` to remove the
+     * attribute.
+     *
+     * @throws InvalidArgumentException if the value is not an integer-like value `>= 0`.
+     *
+     * @return static New instance with the updated `maxlength` attribute.
      */
     public function maxlength(int|string|Stringable|UnitEnum|null $value): static
     {
