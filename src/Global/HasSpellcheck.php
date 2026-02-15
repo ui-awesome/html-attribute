@@ -7,7 +7,6 @@ namespace UIAwesome\Html\Attribute\Global;
 use InvalidArgumentException;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Validator;
-use UnitEnum;
 
 use function is_bool;
 
