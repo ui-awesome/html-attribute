@@ -13,7 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `role` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
@@ -45,6 +45,6 @@ trait HasRole
     {
         Validator::oneOf($value, Role::cases(), GlobalAttribute::ROLE);
 
-        return $this->addAttribute(GlobalAttribute::ROLE, $value);
+        return $this->setAttribute(GlobalAttribute::ROLE, $value);
     }
 }

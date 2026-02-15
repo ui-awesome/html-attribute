@@ -65,7 +65,7 @@ final class HasSpellcheckTest extends TestCase
     public function testSetSpellcheckAttributeValue(
         bool|string|null $spellcheck,
         array $attributes,
-        bool|string $expectedValue,
+        bool|string|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

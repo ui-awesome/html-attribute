@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `alt` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#alt
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
@@ -36,6 +36,6 @@ trait HasAlt
      */
     public function alt(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(ElementAttribute::ALT, $value);
+        return $this->setAttribute(ElementAttribute::ALT, $value);
     }
 }

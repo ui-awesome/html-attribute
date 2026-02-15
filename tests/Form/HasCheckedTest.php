@@ -62,7 +62,7 @@ final class HasCheckedTest extends TestCase
     public function testSetCheckedAttributeValue(
         bool|null $checked,
         array $attributes,
-        bool|string $expectedValue,
+        bool|string|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

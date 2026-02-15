@@ -21,7 +21,7 @@ final class MaxProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{float|int|string|Stringable|UnitEnum|null, mixed[], float|int|string|Stringable|UnitEnum, string, string},
+     *   array{float|int|string|Stringable|UnitEnum|null, mixed[], float|int|string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -72,7 +72,7 @@ final class MaxProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -100,7 +100,7 @@ final class MaxProvider
             'unset with null' => [
                 null,
                 ['max' => 10],
-                '',
+                null,
                 '',
                 "Should unset the 'max' attribute when 'null' is provided after a value.",
             ],

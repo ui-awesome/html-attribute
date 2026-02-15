@@ -19,7 +19,7 @@ use UnitEnum;
 final class DraggableProvider
 {
     /**
-     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
+     * @phpstan-return array<string, array{bool|string|UnitEnum|null, mixed[], string|UnitEnum|null, string, string}>
      */
     public static function values(): array
     {
@@ -50,7 +50,7 @@ final class DraggableProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -78,7 +78,7 @@ final class DraggableProvider
             'unset with null' => [
                 null,
                 ['draggable' => 'true'],
-                '',
+                null,
                 '',
                 "Should unset the 'draggable' attribute when 'null' is provided after a value.",
             ],

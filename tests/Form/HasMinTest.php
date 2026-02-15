@@ -64,7 +64,7 @@ final class HasMinTest extends TestCase
     public function testSetMinAttributeValue(
         float|int|string|Stringable|UnitEnum|null $min,
         array $attributes,
-        float|int|string|Stringable|UnitEnum $expectedValue,
+        float|int|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

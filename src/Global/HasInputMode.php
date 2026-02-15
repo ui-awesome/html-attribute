@@ -12,7 +12,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `inputmode` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode
@@ -42,6 +42,6 @@ trait HasInputMode
     {
         Validator::oneOf($value, InputMode::cases(), GlobalAttribute::INPUTMODE);
 
-        return $this->addAttribute(GlobalAttribute::INPUTMODE, $value);
+        return $this->setAttribute(GlobalAttribute::INPUTMODE, $value);
     }
 }

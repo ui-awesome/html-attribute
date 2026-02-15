@@ -67,7 +67,7 @@ final class HasReferrerpolicyTest extends TestCase
     public function testSetReferrerpolicyAttributeValue(
         string|Stringable|UnitEnum|null $referrerpolicy,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

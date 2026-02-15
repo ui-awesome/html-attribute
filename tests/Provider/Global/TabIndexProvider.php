@@ -36,7 +36,7 @@ final class TabIndexProvider
     }
 
     /**
-     * @phpstan-return array<string, array{int|string|null, mixed[], int|string, string, string}>
+     * @phpstan-return array<string, array{int|string|null, mixed[], int|string|null, string, string}>
      */
     public static function values(): array
     {
@@ -65,7 +65,7 @@ final class TabIndexProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty 'array' when the attribute is set to 'null'.",
             ],
@@ -100,7 +100,7 @@ final class TabIndexProvider
             'unset with null' => [
                 null,
                 ['tabindex' => 1],
-                '',
+                null,
                 '',
                 "Should unset the 'tabindex' attribute when 'null' is provided after a value.",
             ],

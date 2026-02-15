@@ -64,7 +64,7 @@ final class HasAutocompleteTest extends TestCase
     public function testSetAutocompleteAttributeValue(
         string|Stringable|UnitEnum|null $autocomplete,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

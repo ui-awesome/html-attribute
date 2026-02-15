@@ -66,7 +66,7 @@ final class HasBlockingTest extends TestCase
     public function testSetBlockingAttributeValue(
         string|UnitEnum|null $blocking,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

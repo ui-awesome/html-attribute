@@ -13,7 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `as` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#as
@@ -47,6 +47,6 @@ trait HasAs
     {
         Validator::oneOf($value, AsValue::cases(), Attribute::AS);
 
-        return $this->addAttribute(Attribute::AS, $value);
+        return $this->setAttribute(Attribute::AS, $value);
     }
 }

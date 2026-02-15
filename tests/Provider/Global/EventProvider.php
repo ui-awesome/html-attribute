@@ -25,12 +25,6 @@ final class EventProvider
     public static function invalidKey(): array
     {
         return [
-            'boolean false' => [
-                [false => 'value'],
-            ],
-            'boolean true' => [
-                [true => 'value'],
-            ],
             'empty string' => [
                 ['' => 'value'],
             ],
@@ -163,12 +157,6 @@ final class EventProvider
                 '',
                 "Should unset the 'onclick' attribute when 'null' is provided after a value.",
             ],
-            'without on prefix' => [
-                ['click' => "alert('test')"],
-                [],
-                ' onclick="alert(&apos;test&apos;)"',
-                'Should normalize key without on prefix when setting the attribute.',
-            ],
         ];
     }
 
@@ -233,7 +221,7 @@ final class EventProvider
             'closure with null' => [
                 'onclick',
                 static fn() => null,
-                [],
+                ['onclick' => null],
                 'Should unset the attribute when closure returns null.',
             ],
             'closure with string' => [
@@ -275,14 +263,8 @@ final class EventProvider
             'unset with null' => [
                 'onclick',
                 null,
-                [],
+                ['onclick' => null],
                 'Should unset the attribute when null is provided.',
-            ],
-            'without on prefix' => [
-                'click',
-                "alert('test')",
-                ['onclick' => "alert('test')"],
-                'Should normalize key without on prefix when setting the attribute.',
             ],
         ];
     }
@@ -318,7 +300,7 @@ final class EventProvider
             ],
             'closure with null' => [
                 ['onclick' => static fn() => null],
-                [],
+                ['onclick' => null],
                 'Should unset the attribute when closure returns null.',
             ],
             'closure with string' => [
@@ -361,13 +343,8 @@ final class EventProvider
             ],
             'unset with null' => [
                 ['onclick' => null],
-                [],
+                ['onclick' => null],
                 'Should unset the attribute when null is provided.',
-            ],
-            'without on prefix' => [
-                ['click' => "alert('test')"],
-                ['onclick' => "alert('test')"],
-                'Should normalize key without on prefix when setting the attribute.',
             ],
         ];
 

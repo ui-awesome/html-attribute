@@ -64,7 +64,7 @@ final class HasDirnameTest extends TestCase
     public function testSetDirnameAttributeValue(
         string|Stringable|UnitEnum|null $dirname,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

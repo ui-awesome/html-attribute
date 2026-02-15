@@ -64,7 +64,7 @@ final class HasDownloadTest extends TestCase
     public function testSetDownloadAttributeValue(
         bool|string|Stringable|UnitEnum|null $download,
         array $attributes,
-        bool|string|Stringable|UnitEnum $expectedValue,
+        bool|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -13,7 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `referrerpolicy` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#referrerpolicy
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/area#href
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#referrerpolicy
@@ -48,6 +48,6 @@ trait HasReferrerpolicy
     {
         Validator::oneOf($value, Referrerpolicy::cases(), ElementAttribute::REFERRERPOLICY);
 
-        return $this->addAttribute(ElementAttribute::REFERRERPOLICY, $value);
+        return $this->setAttribute(ElementAttribute::REFERRERPOLICY, $value);
     }
 }

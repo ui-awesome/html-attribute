@@ -64,7 +64,7 @@ final class HasListTest extends TestCase
     public function testSetListAttributeValue(
         string|Stringable|UnitEnum|null $list,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

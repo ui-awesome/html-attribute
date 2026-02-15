@@ -8,7 +8,6 @@ use Closure;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use stdClass;
 use Stringable;
 use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Attribute\Global\HasData;
@@ -148,21 +147,6 @@ final class HasDataTest extends TestCase
         );
 
         $instance->dataAttributes($attributes);
-    }
-
-    public function testThrowInvalidArgumentExceptionForDataAttributeValueIsInvalid(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasData;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE->getMessage('object'),
-        );
-
-        $instance->dataAttributes(['key' => new stdClass()]);
     }
 
     #[DataProviderExternal(DataProvider::class, 'invalidSingleKey')]

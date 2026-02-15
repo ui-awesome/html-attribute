@@ -12,7 +12,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `blocking` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style#blocking
@@ -46,6 +46,6 @@ trait HasBlocking
     {
         Validator::oneOf($value, Blocking::cases(), Attribute::BLOCKING);
 
-        return $this->addAttribute(Attribute::BLOCKING, $value);
+        return $this->setAttribute(Attribute::BLOCKING, $value);
     }
 }

@@ -66,7 +66,7 @@ final class HasCrossoriginTest extends TestCase
     public function testSetCrossoriginAttributeValue(
         string|UnitEnum|null $crossorigin,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

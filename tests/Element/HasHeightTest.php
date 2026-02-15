@@ -64,7 +64,7 @@ final class HasHeightTest extends TestCase
     public function testSetHeightAttributeValue(
         string|Stringable|UnitEnum|null $height,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

@@ -67,7 +67,7 @@ final class HasMaxlengthTest extends TestCase
     public function testSetMaxlengthAttributeValue(
         int|string|Stringable|UnitEnum|null $maxlength,
         array $attributes,
-        int|string|Stringable|UnitEnum $expectedValue,
+        int|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -62,7 +62,7 @@ final class HasMultipleTest extends TestCase
     public function testSetMultipleAttributeValue(
         bool|null $multiple,
         array $attributes,
-        bool|string $expectedValue,
+        bool|string|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -62,7 +62,7 @@ final class CanBeAutofocusTest extends TestCase
     public function testSetAutofocusAttributeValue(
         bool $value,
         array $attributes,
-        bool|string $expectedValue,
+        bool|string|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

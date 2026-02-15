@@ -64,7 +64,7 @@ final class HasWidthTest extends TestCase
     public function testSetWidthAttributeValue(
         string|Stringable|UnitEnum|null $width,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

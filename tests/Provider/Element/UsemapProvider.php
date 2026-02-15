@@ -21,7 +21,7 @@ final class UsemapProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class UsemapProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -86,7 +86,7 @@ final class UsemapProvider
             'unset with null' => [
                 null,
                 ['usemap' => '#imagemap'],
-                '',
+                null,
                 '',
                 "Should unset the 'usemap' attribute when 'null' is provided after a value.",
             ],

@@ -64,7 +64,7 @@ final class HasNonceTest extends TestCase
     public function testSetNonceAttributeValue(
         string|Stringable|UnitEnum|null $nonce,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

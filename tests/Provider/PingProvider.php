@@ -21,7 +21,7 @@ final class PingProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string}
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string}
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class PingProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -93,7 +93,7 @@ final class PingProvider
             'unset with null' => [
                 null,
                 ['ping' => 'https://example.com/track'],
-                '',
+                null,
                 '',
                 "Should unset the 'ping' attribute when 'null' is provided after a value.",
             ],

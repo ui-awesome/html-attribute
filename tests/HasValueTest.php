@@ -64,7 +64,7 @@ final class HasValueTest extends TestCase
     public function testSetValueAttributeValue(
         bool|float|int|string|Stringable|UnitEnum|null $value,
         array $attributes,
-        bool|float|int|string|Stringable|UnitEnum $expectedValue,
+        bool|float|int|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -62,7 +62,7 @@ final class HasDisabledTest extends TestCase
     public function testSetDisabledAttributeValue(
         bool|null $disabled,
         array $attributes,
-        bool|string $expectedValue,
+        bool|string|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

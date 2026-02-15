@@ -66,7 +66,7 @@ final class HasTabIndexTest extends TestCase
     public function testSetTabIndexAttributeValue(
         int|string|null $tabIndex,
         array $attributes,
-        int|string $expectedValue,
+        int|string|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

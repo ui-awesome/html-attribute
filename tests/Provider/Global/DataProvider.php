@@ -25,12 +25,6 @@ final class DataProvider
     public static function invalidKey(): array
     {
         return [
-            'boolean false' => [
-                [false => 'value'],
-            ],
-            'boolean true' => [
-                [true => 'value'],
-            ],
             'empty string' => [
                 ['' => 'value'],
             ],
@@ -66,13 +60,13 @@ final class DataProvider
             'boolean false' => [
                 ['data-value' => static fn(): bool => false],
                 [],
-                '',
+                ' data-value="false"',
                 'Should return the attribute value after setting it.',
             ],
             'boolean true' => [
                 ['data-value' => static fn(): bool => true],
                 [],
-                ' data-value',
+                ' data-value="true"',
                 'Should return the attribute value after setting it.',
             ],
             'closure with array' => [
@@ -84,13 +78,13 @@ final class DataProvider
             'closure with boolean (false)' => [
                 ['data-value' => static fn(): bool => false],
                 [],
-                '',
+                ' data-value="false"',
                 'Should return the attribute value after setting it.',
             ],
             'closure with boolean (true)' => [
                 ['data-value' => static fn(): bool => true],
                 [],
-                ' data-value',
+                ' data-value="true"',
                 'Should return the attribute value after setting it.',
             ],
             'closure with empty string' => [
@@ -193,12 +187,6 @@ final class DataProvider
                 '',
                 "Should unset the 'data-value' attribute when 'null' is provided after a value.",
             ],
-            'without data prefix' => [
-                ['value' => 'test'],
-                [],
-                ' data-value="test"',
-                "Should normalize the key by adding 'data-' prefix if missing.",
-            ],
         ];
     }
 
@@ -221,13 +209,13 @@ final class DataProvider
             'boolean false' => [
                 'data-value',
                 false,
-                ['data-value' => false],
+                ['data-value' => 'false'],
                 'Should return the attribute value after setting it.',
             ],
             'boolean true' => [
                 'data-value',
                 true,
-                ['data-value' => true],
+                ['data-value' => 'true'],
                 'Should return the attribute value after setting it.',
             ],
             'closure with array' => [
@@ -239,13 +227,13 @@ final class DataProvider
             'closure with boolean false' => [
                 'data-value',
                 static fn(): bool => false,
-                ['data-value' => false],
+                ['data-value' => 'false'],
                 'Should return the attribute value after setting it.',
             ],
             'closure with boolean true' => [
                 'data-value',
                 static fn(): bool => true,
-                ['data-value' => true],
+                ['data-value' => 'true'],
                 'Should return the attribute value after setting it.',
             ],
             'closure with empty string' => [
@@ -275,7 +263,7 @@ final class DataProvider
             'closure with null' => [
                 'data-value',
                 static fn(): string|null => null,
-                [],
+                ['data-value' => null],
                 'Should return the attribute value after setting it.',
             ],
             'closure with string' => [
@@ -333,16 +321,10 @@ final class DataProvider
                 'Should return the attribute value after setting it.',
             ],
             'unset with null' => [
-                'value',
+                'data-value',
                 null,
-                [],
+                ['data-value' => null],
                 "Should unset the 'data-value' attribute when 'null' is provided after a value.",
-            ],
-            'without data prefix' => [
-                'value',
-                'test',
-                ['data-value' => 'test'],
-                "Should normalize the key by adding 'data-' prefix if missing.",
             ],
         ];
     }
@@ -364,7 +346,7 @@ final class DataProvider
         foreach (Data::cases() as $case) {
             $enumCases[$case->value] = [
                 [$case->value => 'value'],
-                ["data-{$case->value}" => 'value'],
+                ["{$case->value}" => 'value'],
                 'Should return the attribute value after setting it.',
             ];
         }
@@ -372,12 +354,12 @@ final class DataProvider
         $staticCases = [
             'boolean false' => [
                 ['data-value' => false],
-                ['data-value' => false],
+                ['data-value' => 'false'],
                 'Should return the attribute value after setting it.',
             ],
             'boolean true' => [
                 ['data-value' => true],
-                ['data-value' => true],
+                ['data-value' => 'true'],
                 'Should return the attribute value after setting it.',
             ],
             'closure with array' => [
@@ -387,12 +369,12 @@ final class DataProvider
             ],
             'closure with boolean false' => [
                 ['data-value' => static fn(): bool => false],
-                ['data-value' => false],
+                ['data-value' => 'false'],
                 'Should return the attribute value after setting it.',
             ],
             'closure with boolean true' => [
                 ['data-value' => static fn(): bool => true],
-                ['data-value' => true],
+                ['data-value' => 'true'],
                 'Should return the attribute value after setting it.',
             ],
             'closure with empty string' => [
@@ -417,7 +399,7 @@ final class DataProvider
             ],
             'closure with null' => [
                 ['data-value' => static fn(): string|null => null],
-                [],
+                ['data-value' => null],
                 'Should return the attribute value after setting it.',
             ],
             'closure with string' => [
@@ -473,13 +455,8 @@ final class DataProvider
             ],
             'unset with null' => [
                 ['data-value' => null],
-                [],
+                ['data-value' => null],
                 "Should unset the 'data-value' attribute when 'null' is provided after a value.",
-            ],
-            'without data prefix' => [
-                ['value' => 'test'],
-                ['data-value' => 'test'],
-                "Should normalize the key by adding 'data-' prefix if missing.",
             ],
         ];
 

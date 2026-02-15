@@ -21,7 +21,7 @@ final class HreflangProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string}
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string}
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class HreflangProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -86,7 +86,7 @@ final class HreflangProvider
             'unset with null' => [
                 null,
                 ['hreflang' => 'en'],
-                '',
+                null,
                 '',
                 "Should unset the 'hreflang' attribute when 'null' is provided after a value.",
             ],

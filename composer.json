@@ -12,8 +12,8 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": "^8.1",
-        "ui-awesome/html-helper": "^0.6",
-        "ui-awesome/html-mixin": "^0.3"
+        "ui-awesome/html-helper": "dev-main as 0.7.0",
+        "ui-awesome/html-mixin": "^0.4"
     },
     "require-dev": {
         "infection/infection": "^0.27|^0.32",

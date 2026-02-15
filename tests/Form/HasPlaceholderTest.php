@@ -64,7 +64,7 @@ final class HasPlaceholderTest extends TestCase
     public function testSetPlaceholderAttributeValue(
         string|Stringable|UnitEnum|null $placeholder,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -7,20 +7,18 @@ namespace UIAwesome\Html\Attribute\Global;
 use Closure;
 use InvalidArgumentException;
 use Stringable;
-use TypeError;
-use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Helper\Attributes;
 use UnitEnum;
-
-use function gettype;
 
 /**
  * Provides an immutable API for `on*` event attributes.
  *
  * @phpstan-type Key string|UnitEnum
  * @phpstan-type Value scalar|Stringable|UnitEnum|null|Closure(): mixed
- * @method void setAttribute(Key $key, Value $value, string $prefix = '', bool $boolToString = false) Sets a single
- * attribute with prefix handling. Available via {@see \UIAwesome\Html\Mixin\HasAttributes} trait composition.
+ * @method static attributes(mixed[] $values) Sets multiple attributes and returns a new instance.
+ * @method static removeAttribute(string $key) Removes an attribute and returns a new instance.
+ * @method static setAttribute(Key $key, Value $value) Sets a single attribute amd returns a new instance.
+ * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#event_handler_attributes
  *
@@ -32,14 +30,14 @@ trait HasEvents
     /**
      * Sets an `on*` event attribute.
      *
-     * @param string|UnitEnum $event Event attribute key with or without the leading `on` prefix.
-     * @param Closure|string|Stringable|UnitEnum|null $handler JavaScript handler code, or `null` to remove the attribute.
+     * @param string|UnitEnum $key Event attribute key with or without the leading `on` prefix.
+     * @param Closure|string|Stringable|UnitEnum|null $value JavaScript handler code, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `on*` event attribute.
      *
-     * @phpstan-param Closure(): mixed|string|Stringable|UnitEnum|null $handler
+     * @phpstan-param Closure(): mixed|string|Stringable|UnitEnum|null $value
      *
      * Usage example:
      * ```php
@@ -49,13 +47,9 @@ trait HasEvents
      * $element->addEvent(Event::CLICK, null);
      * ```
      */
-    public function addEvent(string|UnitEnum $event, string|Closure|Stringable|UnitEnum|null $handler): static
+    public function addEvent(string|UnitEnum $key, string|Closure|Stringable|UnitEnum|null $value): static
     {
-        $new = clone $this;
-
-        $new->setAttribute($event, $handler, 'on', true);
-
-        return $new;
+        return $this->setAttribute($key, $value);
     }
 
     /**
@@ -82,20 +76,7 @@ trait HasEvents
      */
     public function events(array $values): static
     {
-        $new = clone $this;
-
-        /** @phpstan-var array<string, string|Closure|Stringable|null> $values */
-        foreach ($values as $key => $value) {
-            try {
-                $new->setAttribute($key, $value, 'on', true);
-            } catch (TypeError) {
-                throw new InvalidArgumentException(
-                    Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE->getMessage(gettype($value)),
-                );
-            }
-        }
-
-        return $new;
+        return $this->attributes($values);
     }
 
     /**

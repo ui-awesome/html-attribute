@@ -19,7 +19,7 @@ use UnitEnum;
 final class FetchpriorityProvider
 {
     /**
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum|null, string, string}>
      */
     public static function values(): array
     {
@@ -36,7 +36,7 @@ final class FetchpriorityProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -57,7 +57,7 @@ final class FetchpriorityProvider
             'unset with null' => [
                 null,
                 ['fetchpriority' => 'high'],
-                '',
+                null,
                 '',
                 "Should unset the 'fetchpriority' attribute when 'null' is provided after a value.",
             ],

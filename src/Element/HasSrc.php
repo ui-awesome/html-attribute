@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `src` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#src
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
@@ -35,6 +35,6 @@ trait HasSrc
      */
     public function src(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(ElementAttribute::SRC, $value);
+        return $this->setAttribute(ElementAttribute::SRC, $value);
     }
 }

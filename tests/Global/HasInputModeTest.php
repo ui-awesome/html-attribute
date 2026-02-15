@@ -66,7 +66,7 @@ final class HasInputModeTest extends TestCase
     public function testSetInputModeAttributeValue(
         string|UnitEnum|null $inputMode,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

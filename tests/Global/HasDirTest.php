@@ -66,7 +66,7 @@ final class HasDirTest extends TestCase
     public function testSetDirAttributeValue(
         string|UnitEnum|null $dir,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

@@ -21,7 +21,7 @@ final class StyleProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{mixed[]|string|Stringable|UnitEnum|null, mixed[], mixed[]|string|Stringable|UnitEnum, string, string},
+     *   array{mixed[]|string|Stringable|UnitEnum|null, mixed[], mixed[]|string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -65,7 +65,7 @@ final class StyleProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -93,7 +93,7 @@ final class StyleProvider
             'unset with null' => [
                 null,
                 ['style' => 'color: red;'],
-                '',
+                null,
                 '',
                 "Should unset the 'style' attribute when 'null' is provided after a value.",
             ],

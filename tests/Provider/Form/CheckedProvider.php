@@ -15,7 +15,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider\Form;
 final class CheckedProvider
 {
     /**
-     * @phpstan-return array<string, array{bool|null, mixed[], bool|string, string, string}>
+     * @phpstan-return array<string, array{bool|null, mixed[], bool|string|null, string, string}>
      */
     public static function values(): array
     {
@@ -37,7 +37,7 @@ final class CheckedProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -51,7 +51,7 @@ final class CheckedProvider
             'unset with null' => [
                 null,
                 ['checked' => true],
-                '',
+                null,
                 '',
                 "Should unset the 'checked' attribute when 'null' is provided after a value.",
             ],

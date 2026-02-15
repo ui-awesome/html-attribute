@@ -64,7 +64,7 @@ final class HasFormTest extends TestCase
     public function testSetFormAttributeValue(
         string|Stringable|UnitEnum|null $form,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

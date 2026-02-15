@@ -66,7 +66,7 @@ final class HasPopoverTest extends TestCase
     public function testSetPopoverAttributeValue(
         string|UnitEnum|null $popover,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

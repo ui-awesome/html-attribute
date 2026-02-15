@@ -67,7 +67,7 @@ final class HasAsTest extends TestCase
     public function testSetAsAttributeValue(
         string|Stringable|UnitEnum|null $as,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

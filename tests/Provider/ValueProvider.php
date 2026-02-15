@@ -24,7 +24,7 @@ final class ValueProvider
      *   array{
      *     bool|float|int|string|Stringable|UnitEnum|null,
      *     mixed[],
-     *     bool|float|int|string|Stringable|UnitEnum,
+     *     bool|float|int|string|Stringable|UnitEnum|null,
      *     string,
      *     string,
      *   },
@@ -92,7 +92,7 @@ final class ValueProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -127,7 +127,7 @@ final class ValueProvider
             'unset with null' => [
                 null,
                 ['value' => 10],
-                '',
+                null,
                 '',
                 "Should unset the 'value' attribute when 'null' is provided after a value.",
             ],

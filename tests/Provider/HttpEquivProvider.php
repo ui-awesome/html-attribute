@@ -22,7 +22,7 @@ final class HttpEquivProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string}
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string}
      * >
      */
     public static function values(): array
@@ -47,7 +47,7 @@ final class HttpEquivProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -75,7 +75,7 @@ final class HttpEquivProvider
             'unset with null' => [
                 null,
                 ['http-equiv' => 'refresh'],
-                '',
+                null,
                 '',
                 "Should unset the 'http-equiv' attribute when 'null' is provided after a value.",
             ],

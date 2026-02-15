@@ -67,7 +67,7 @@ final class HasHttpEquivTest extends TestCase
     public function testSetHttpEquivAttributeValue(
         string|Stringable|UnitEnum|null $httpEquiv,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -64,7 +64,7 @@ final class HasAcceptTest extends TestCase
     public function testSetAcceptAttributeValue(
         string|Stringable|UnitEnum|null $accept,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

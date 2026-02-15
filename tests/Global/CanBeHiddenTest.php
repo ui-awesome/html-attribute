@@ -62,7 +62,7 @@ final class CanBeHiddenTest extends TestCase
     public function testSetHiddenAttributeValue(
         bool $value,
         array $attributes,
-        bool|string $expectedValue,
+        bool|string|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

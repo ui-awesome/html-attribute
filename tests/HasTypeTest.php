@@ -67,7 +67,7 @@ final class HasTypeTest extends TestCase
     public function testSetTypeAttributeValue(
         string|Stringable|UnitEnum|null $type,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

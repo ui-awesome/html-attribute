@@ -8,7 +8,6 @@ use Closure;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use stdClass;
 use Stringable;
 use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Attribute\Global\HasEvents;
@@ -163,21 +162,6 @@ final class HasEventsTest extends TestCase
         );
 
         $instance->events($attributes);
-    }
-
-    public function testThrowInvalidArgumentExceptionForEventAttributeValueIsInvalid(): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasEvents;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE->getMessage('object'),
-        );
-
-        $instance->events(['onclick' => new stdClass()]);
     }
 
     #[DataProviderExternal(EventProvider::class, 'invalidSingleKey')]

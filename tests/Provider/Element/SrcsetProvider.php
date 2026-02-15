@@ -21,7 +21,7 @@ final class SrcsetProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class SrcsetProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -93,7 +93,7 @@ final class SrcsetProvider
             'unset with null' => [
                 null,
                 ['srcset' => 'small.jpg 480w, medium.jpg 800w'],
-                '',
+                null,
                 '',
                 "Should unset the 'srcset' attribute when 'null' is provided after a value.",
             ],

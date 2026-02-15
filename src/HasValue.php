@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `value` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/value
@@ -43,6 +43,6 @@ trait HasValue
      */
     public function value(bool|float|int|string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(Attribute::VALUE, $value);
+        return $this->setAttribute(Attribute::VALUE, $value);
     }
 }

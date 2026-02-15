@@ -64,7 +64,7 @@ final class HasMaxTest extends TestCase
     public function testSetMaxAttributeValue(
         float|int|string|Stringable|UnitEnum|null $max,
         array $attributes,
-        float|int|string|Stringable|UnitEnum $expectedValue,
+        float|int|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

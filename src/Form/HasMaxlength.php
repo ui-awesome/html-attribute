@@ -14,7 +14,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `maxlength` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/maxlength
@@ -57,6 +57,6 @@ trait HasMaxlength
             );
         }
 
-        return $this->addAttribute(Attribute::MAXLENGTH, $value);
+        return $this->setAttribute(Attribute::MAXLENGTH, $value);
     }
 }

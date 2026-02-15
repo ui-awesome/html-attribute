@@ -67,7 +67,7 @@ final class HasMinlengthTest extends TestCase
     public function testSetMinlengthAttributeValue(
         int|string|Stringable|UnitEnum|null $minlength,
         array $attributes,
-        int|string|Stringable|UnitEnum $expectedValue,
+        int|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

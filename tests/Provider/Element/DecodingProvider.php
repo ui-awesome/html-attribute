@@ -22,7 +22,7 @@ final class DecodingProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -47,7 +47,7 @@ final class DecodingProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -75,7 +75,7 @@ final class DecodingProvider
             'unset with null' => [
                 null,
                 ['decoding' => 'async'],
-                '',
+                null,
                 '',
                 "Should unset the 'decoding' attribute when 'null' is provided after a value.",
             ],

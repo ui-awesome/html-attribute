@@ -58,7 +58,7 @@ final class PlaceholderProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -86,7 +86,7 @@ final class PlaceholderProvider
             'unset with null' => [
                 null,
                 ['placeholder' => 'Enter text'],
-                '',
+                null,
                 '',
                 "Should unset the 'placeholder' attribute when 'null' is provided after a value.",
             ],

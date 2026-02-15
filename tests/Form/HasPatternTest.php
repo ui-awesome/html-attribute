@@ -64,7 +64,7 @@ final class HasPatternTest extends TestCase
     public function testSetPatternAttributeValue(
         string|Stringable|UnitEnum|null $pattern,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

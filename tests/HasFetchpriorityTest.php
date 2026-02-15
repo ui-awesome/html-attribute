@@ -66,7 +66,7 @@ final class HasFetchpriorityTest extends TestCase
     public function testSetFetchpriorityAttributeValue(
         string|UnitEnum|null $fetchpriority,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

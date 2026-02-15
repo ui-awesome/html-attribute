@@ -64,7 +64,7 @@ final class HasAccesskeyTest extends TestCase
     public function testSetAccesskeyAttributeValue(
         string|Stringable|UnitEnum|null $accesskey,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

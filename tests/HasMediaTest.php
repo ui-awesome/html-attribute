@@ -64,7 +64,7 @@ final class HasMediaTest extends TestCase
     public function testSetMediaAttributeValue(
         string|Stringable|UnitEnum|null $media,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

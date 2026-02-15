@@ -66,7 +66,7 @@ final class HasContentEditableTest extends TestCase
     public function testSetContentEditableAttributeValue(
         bool|string|UnitEnum|null $contenteditable,
         array $attributes,
-        bool|string|UnitEnum $expectedValue,
+        bool|string|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

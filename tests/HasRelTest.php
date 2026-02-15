@@ -67,7 +67,7 @@ final class HasRelTest extends TestCase
     public function testSetRelAttributeValue(
         string|Stringable|UnitEnum|null $rel,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

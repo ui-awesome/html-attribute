@@ -21,7 +21,7 @@ final class DownloadProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{bool|string|Stringable|UnitEnum|null, mixed[], bool|string|Stringable|UnitEnum, string, string}
+     *   array{bool|string|Stringable|UnitEnum|null, mixed[], bool|string|Stringable|UnitEnum|null, string, string}
      * >
      */
     public static function values(): array
@@ -72,7 +72,7 @@ final class DownloadProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -100,7 +100,7 @@ final class DownloadProvider
             'unset with null' => [
                 null,
                 ['download' => 'file.pdf'],
-                '',
+                null,
                 '',
                 "Should unset the 'download' attribute when 'null' is provided after a value.",
             ],

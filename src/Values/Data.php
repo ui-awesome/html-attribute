@@ -19,103 +19,103 @@ enum Data: string
      *
      * Specifies an action to be performed, often used in JavaScript event delegation.
      */
-    case ACTION = 'action';
+    case ACTION = 'data-action';
 
     /**
      * Confirm data property (`confirm`).
      *
      * Used to trigger confirmation dialogs before an action is executed.
      */
-    case CONFIRM = 'confirm';
+    case CONFIRM = 'data-confirm';
 
     /**
      * Content data property (`content`).
      *
      * Stores arbitrary content or templates associated with the element.
      */
-    case CONTENT = 'content';
+    case CONTENT = 'data-content';
 
     /**
      * Dismiss data property (`dismiss`).
      *
      * Indicates that the element dismisses or closes a parent component (for example, modals, alerts).
      */
-    case DISMISS = 'dismiss';
+    case DISMISS = 'data-dismiss';
 
     /**
      * Id data property (`id`).
      *
      * Used to identify a specific record or entity ID associated with the element.
      */
-    case ID = 'id';
+    case ID = 'data-id';
 
     /**
      * Key data property (`key`).
      *
      * Defines an input key or identifier, often used in dynamic lists.
      */
-    case KEY = 'key';
+    case KEY = 'data-key';
 
     /**
      * Method data property (`method`).
      *
      * Specifies the HTTP method to be used for a request (for example, simulating DELETE/PUT links).
      */
-    case METHOD = 'method';
+    case METHOD = 'data-method';
 
     /**
      * Name data property (`name`).
      *
      * Defines the name of a field or property associated with the element.
      */
-    case NAME = 'name';
+    case NAME = 'data-name';
 
     /**
      * Parent data property (`parent`).
      *
      * References a parent element ID or selector.
      */
-    case PARENT = 'parent';
+    case PARENT = 'data-parent';
 
     /**
      * Placement data property (`placement`).
      *
      * Specifies the placement or position of a UI element (for example, tooltips, popovers).
      */
-    case PLACEMENT = 'placement';
+    case PLACEMENT = 'data-placement';
 
     /**
      * Target data property (`target`).
      *
      * Defines a target element selector for an action (for example, collapse target, modal target).
      */
-    case TARGET = 'target';
+    case TARGET = 'data-target';
 
     /**
      * Toggle data property (`toggle`).
      *
      * Indicates a UI state toggle, widely used for dropdowns, modals, and tabs.
      */
-    case TOGGLE = 'toggle';
+    case TOGGLE = 'data-toggle';
 
     /**
      * Trigger data property (`trigger`).
      *
      * Defines the type of event or trigger mechanism (for example, hover, click, focus).
      */
-    case TRIGGER = 'trigger';
+    case TRIGGER = 'data-trigger';
 
     /**
      * Url data property (`url`).
      *
      * Defines a URL or endpoint associated with the element, often for AJAX requests.
      */
-    case URL = 'url';
+    case URL = 'data-url';
 
     /**
      * Value data property (`value`).
      *
      * Stores a raw value or payload associated with the element.
      */
-    case VALUE = 'value';
+    case VALUE = 'data-value';
 }

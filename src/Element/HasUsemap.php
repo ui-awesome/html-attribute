@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `usemap` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#usemap
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -35,6 +35,6 @@ trait HasUsemap
      */
     public function usemap(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(ElementAttribute::USEMAP, $value);
+        return $this->setAttribute(ElementAttribute::USEMAP, $value);
     }
 }

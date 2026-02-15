@@ -13,7 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `loading` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
  *
@@ -45,6 +45,6 @@ trait HasLoading
     {
         Validator::oneOf($value, Loading::cases(), ElementAttribute::LOADING);
 
-        return $this->addAttribute(ElementAttribute::LOADING, $value);
+        return $this->setAttribute(ElementAttribute::LOADING, $value);
     }
 }
