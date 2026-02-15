@@ -187,6 +187,12 @@ final class AriaProvider
                 '',
                 "Should unset the 'aria-label' attribute when 'null' is provided after a value.",
             ],
+            'without prefix' => [
+                ['label' => 'Close'],
+                [],
+                ' aria-label="Close"',
+                "Should add the 'aria-' prefix to keys when setting attributes.",
+            ],
         ];
     }
 
@@ -332,6 +338,12 @@ final class AriaProvider
                 ['aria-label' => null],
                 "Should unset the 'aria-label' attribute when 'null' is provided after a value.",
             ],
+            'without prefix' => [
+                'label',
+                'Close',
+                ['aria-label' => 'Close'],
+                "Should add the 'aria-' prefix to keys when setting attributes.",
+            ],
         ];
     }
 
@@ -463,6 +475,11 @@ final class AriaProvider
                 ['aria-label' => null],
                 ['aria-label' => null],
                 "Should unset the 'aria-label' attribute when 'null' is provided after a value.",
+            ],
+            'without prefix' => [
+                ['label' => 'Close'],
+                ['aria-label' => 'Close'],
+                "Should add the 'aria-' prefix to keys when setting attributes.",
             ],
         ];
 
