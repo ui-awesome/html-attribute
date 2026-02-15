@@ -28,7 +28,6 @@ trait HasDraggable
      * Usage example:
      * ```php
      * $element->draggable(true);
-     * $element->draggable(false);
      * $element->draggable(Draggable::TRUE);
      * ```
      *

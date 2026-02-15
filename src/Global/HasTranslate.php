@@ -28,7 +28,6 @@ trait HasTranslate
      * Usage example:
      * ```php
      * $element->translate(true);
-     * $element->translate(false);
      * $element->translate(Translate::NO);
      * ```
      *
