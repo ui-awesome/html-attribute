@@ -12,15 +12,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for `data-*` attributes.
  *
- * @phpstan-type Key string|UnitEnum
- * @phpstan-type Value scalar|Stringable|UnitEnum|null|Closure(): mixed
- * @method static attributes(mixed[] $values, string $prefix = '') Sets multiple attributes and returns a new instance.
- * @method static remove(mixed[] &$attributes, string|UnitEnum $key, string $prefix = '') Removes an attribute and
- * returns a new instance.
- * @method static set(mixed[] &$attributes, string|UnitEnum $key, mixed $value, string $prefix = '') Sets a single
- * attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
