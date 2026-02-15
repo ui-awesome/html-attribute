@@ -56,6 +56,7 @@ final class HasAriaTest extends TestCase
             $message,
         );
     }
+
     /**
      * @param mixed[] $data
      * @phpstan-param mixed[] $attributes
