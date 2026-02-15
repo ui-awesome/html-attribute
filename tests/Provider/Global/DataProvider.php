@@ -187,6 +187,12 @@ final class DataProvider
                 '',
                 "Should unset the 'data-value' attribute when 'null' is provided after a value.",
             ],
+            'without prefix' => [
+                ['label' => 'Close'],
+                [],
+                ' data-label="Close"',
+                "Should add the 'data-' prefix to keys when setting attributes.",
+            ],
         ];
     }
 
@@ -326,6 +332,12 @@ final class DataProvider
                 ['data-value' => null],
                 "Should unset the 'data-value' attribute when 'null' is provided after a value.",
             ],
+            'without prefix' => [
+                'label',
+                'Close',
+                ['data-label' => 'Close'],
+                "Should add the 'data-' prefix to keys when setting attributes.",
+            ],
         ];
     }
 
@@ -457,6 +469,11 @@ final class DataProvider
                 ['data-value' => null],
                 ['data-value' => null],
                 "Should unset the 'data-value' attribute when 'null' is provided after a value.",
+            ],
+            'without prefix' => [
+                ['label' => 'Close'],
+                ['data-label' => 'Close'],
+                "Should add the 'data-' prefix to keys when setting attributes.",
             ],
         ];
 

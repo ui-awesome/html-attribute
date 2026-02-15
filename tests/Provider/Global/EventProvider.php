@@ -157,6 +157,12 @@ final class EventProvider
                 '',
                 "Should unset the 'onclick' attribute when 'null' is provided after a value.",
             ],
+            'without prefix' => [
+                ['click' => "alert('test')"],
+                [],
+                ' onclick="alert(&apos;test&apos;)"',
+                "Should add the 'on' prefix to keys when setting attributes.",
+            ],
         ];
     }
 
@@ -266,6 +272,12 @@ final class EventProvider
                 ['onclick' => null],
                 'Should unset the attribute when null is provided.',
             ],
+            'without prefix' => [
+                'click',
+                "alert('test')",
+                ['onclick' => "alert('test')"],
+                "Should add the 'on' prefix to keys when setting attributes.",
+            ],
         ];
     }
 
@@ -345,6 +357,11 @@ final class EventProvider
                 ['onclick' => null],
                 ['onclick' => null],
                 'Should unset the attribute when null is provided.',
+            ],
+            'without prefix' => [
+                ['click' => "alert('test')"],
+                ['onclick' => "alert('test')"],
+                "Should add the 'on' prefix to keys when setting attributes.",
             ],
         ];
 

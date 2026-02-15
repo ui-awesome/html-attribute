@@ -53,6 +53,7 @@
 - Bug #80: Update `value()` method in `HasValue` trait to accept boolean values and adjust related tests and data provider (@terabytesoftw)
 - Bug #81: Migrate mixin attribute setters and tests to the simplified API (@terabytesoftw)
 - Bug #82: Update `ui-awesome/html-helper` requirement to use stable version constraint `^0.7` in `composer.json` (@terabytesoftw)
+- Enh #83: Enhance `HasAria`, `HasData`, and `HasEvents` traits to support prefix attributes `aria-`, `data-`, and `on` (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
