@@ -18,7 +18,7 @@ use UnitEnum;
  * @method static remove(mixed[] &$attributes, string|UnitEnum $key, string $prefix = '') Removes an attribute and
  * returns a new instance.
  * @method static set(mixed[] &$attributes, string|UnitEnum $key, mixed $value, string $prefix = '') Sets a single
- * attribute amd returns a new instance.
+ * attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#event_handler_attributes
