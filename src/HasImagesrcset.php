@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `imagesrcset` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -26,16 +24,16 @@ trait HasImagesrcset
      *
      * Defines the image srcset descriptor list for preload links.
      *
-     * @param string|Stringable|UnitEnum|null $value Image srcset descriptor list, or `null` to remove the
-     * attribute.
-     *
-     * @return static New instance with the updated `imagesrcset` attribute.
-     *
      * Usage example:
      * ```php
      * $element->imagesrcset('image-400.jpg 400w, image-800.jpg 800w');
      * $element->imagesrcset(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Image srcset descriptor list, or `null` to remove the
+     * attribute.
+     *
+     * @return static New instance with the updated `imagesrcset` attribute.
      */
     public function imagesrcset(string|Stringable|UnitEnum|null $value): static
     {

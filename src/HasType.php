@@ -13,9 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `type` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/type
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -28,6 +26,13 @@ trait HasType
      *
      * Defines the element type or resource MIME type.
      *
+     * Usage example:
+     * ```php
+     * $element->type('text/css');
+     * $element->type('module');
+     * $element->type(null);
+     * ```
+     *
      * @param string|Stringable|UnitEnum|null $value Type token or MIME type, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -35,13 +40,6 @@ trait HasType
      * @return static New instance with the updated `type` attribute.
      *
      * {@see Type} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->type('text/css');
-     * $element->type('module');
-     * $element->type(null);
-     * ```
      */
     public function type(string|Stringable|UnitEnum|null $value): static
     {

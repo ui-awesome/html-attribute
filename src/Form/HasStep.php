@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `step` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/step
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,11 +22,6 @@ trait HasStep
     /**
      * Sets the `step` attribute.
      *
-     * @param float|int|string|Stringable|UnitEnum|null $value Step value. Use `any` for no stepping restriction, or
-     * `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `step` attribute.
-     *
      * Usage example:
      * ```php
      * $element->step(1);
@@ -36,6 +29,11 @@ trait HasStep
      * $element->step('any');
      * $element->step(null);
      * ```
+     *
+     * @param float|int|string|Stringable|UnitEnum|null $value Step value. Use `any` for no stepping restriction, or
+     * `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `step` attribute.
      */
     public function step(float|int|string|Stringable|UnitEnum|null $value): static
     {

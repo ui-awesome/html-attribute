@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `id` attribute.
  *
- * @method static setAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,15 +22,15 @@ trait HasId
     /**
      * Sets the `id` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value Element identifier, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `id` attribute.
-     *
      * Usage example:
      * ```php
      * $element->id('main-navigation');
      * $element->id('user-profile-form');
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Element identifier, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `id` attribute.
      */
     public function id(string|Stringable|UnitEnum|null $value): static
     {

@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `accept` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/accept
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,10 +22,6 @@ trait HasAccept
     /**
      * Sets the `accept` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value Accept value, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `accept` attribute.
-     *
      * Usage example:
      * ```php
      * $element->accept('image/*');
@@ -35,6 +29,10 @@ trait HasAccept
      * $element->accept('image/jpeg,application/pdf');
      * $element->accept(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Accept value, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `accept` attribute.
      */
     public function accept(string|Stringable|UnitEnum|null $value): static
     {

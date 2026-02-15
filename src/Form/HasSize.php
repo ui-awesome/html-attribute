@@ -14,9 +14,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `size` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/size
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -27,18 +25,18 @@ trait HasSize
     /**
      * Sets the `size` attribute.
      *
-     * @param int|string|Stringable|UnitEnum|null $value Size value. Must be `>= 0`, or `null` to remove the attribute.
-     *
-     * @throws InvalidArgumentException if the value is not an integer-like value `>= 0`.
-     *
-     * @return static New instance with the updated `size` attribute.
-     *
      * Usage example:
      * ```php
      * $element->size(10);
      * $element->size(50);
      * $element->size(null);
      * ```
+     *
+     * @param int|string|Stringable|UnitEnum|null $value Size value. Must be `>= 0`, or `null` to remove the attribute.
+     *
+     * @throws InvalidArgumentException if the value is not an integer-like value `>= 0`.
+     *
+     * @return static New instance with the updated `size` attribute.
      */
     public function size(int|string|Stringable|UnitEnum|null $value): static
     {

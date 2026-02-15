@@ -13,9 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `charset` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta#charset
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -28,6 +26,13 @@ trait HasCharset
      *
      * Declares the document character encoding.
      *
+     * Usage example:
+     * ```php
+     * $element->charset('utf-8');
+     * $element->charset(Charset::UTF_8);
+     * $element->charset(null);
+     * ```
+     *
      * @param string|Stringable|UnitEnum|null $value Character encoding token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -35,13 +40,6 @@ trait HasCharset
      * @return static New instance with the updated `charset` attribute.
      *
      * {@see Charset} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->charset('utf-8');
-     * $element->charset(Charset::UTF_8);
-     * $element->charset(null);
-     * ```
      */
     public function charset(string|Stringable|UnitEnum|null $value): static
     {

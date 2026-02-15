@@ -14,9 +14,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `minlength` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/minlength
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -27,19 +25,19 @@ trait HasMinlength
     /**
      * Sets the `minlength` attribute.
      *
-     * @param int|string|Stringable|UnitEnum|null $value Minimum length. Must be `>= 0`, or `null` to remove the
-     * attribute.
-     *
-     * @throws InvalidArgumentException if the value is not an integer-like value `>= 0`.
-     *
-     * @return static New instance with the updated `minlength` attribute.
-     *
      * Usage example:
      * ```php
      * $element->minlength(3);
      * $element->minlength(8);
      * $element->minlength(null);
      * ```
+     *
+     * @param int|string|Stringable|UnitEnum|null $value Minimum length. Must be `>= 0`, or `null` to remove the
+     * attribute.
+     *
+     * @throws InvalidArgumentException if the value is not an integer-like value `>= 0`.
+     *
+     * @return static New instance with the updated `minlength` attribute.
      */
     public function minlength(int|string|Stringable|UnitEnum|null $value): static
     {

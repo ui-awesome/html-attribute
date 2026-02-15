@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `title` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,15 +22,15 @@ trait HasTitle
     /**
      * Sets the `title` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value Advisory title text, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `title` attribute.
-     *
      * Usage example:
      * ```php
      * $element->title('Click to save changes');
      * $element->title('Enter your full name');
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Advisory title text, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `title` attribute.
      */
     public function title(string|Stringable|UnitEnum|null $value): static
     {

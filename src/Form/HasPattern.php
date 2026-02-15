@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `pattern` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/pattern
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,16 +22,16 @@ trait HasPattern
     /**
      * Sets the `pattern` attribute.
      *
-     * @param string|Stringable|UnitEnum|null $value Pattern value, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `pattern` attribute.
-     *
      * Usage example:
      * ```php
      * $element->pattern('[0-9]{3}-[0-9]{2}-[0-9]{4}');
      * $element->pattern('[a-z]+');
      * $element->pattern(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Pattern value, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `pattern` attribute.
      */
     public function pattern(string|Stringable|UnitEnum|null $value): static
     {

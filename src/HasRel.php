@@ -13,9 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `rel` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
@@ -28,6 +26,13 @@ trait HasRel
      *
      * Defines the relationship between the current document and the linked resource.
      *
+     * Usage example:
+     * ```php
+     * $element->rel('noopener');
+     * $element->rel(Rel::NOOPENER);
+     * $element->rel(null);
+     * ```
+     *
      * @param string|Stringable|UnitEnum|null $value Link type token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -35,13 +40,6 @@ trait HasRel
      * @return static New instance with the updated `rel` attribute.
      *
      * {@see Rel} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->rel('noopener');
-     * $element->rel(Rel::NOOPENER);
-     * $element->rel(null);
-     * ```
      */
     public function rel(string|Stringable|UnitEnum|null $value): static
     {

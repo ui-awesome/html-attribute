@@ -9,9 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 /**
  * Provides an immutable API for the `required` attribute.
  *
- * @method static setAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/required
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -22,17 +20,17 @@ trait HasRequired
     /**
      * Sets the `required` attribute.
      *
-     * @param bool|null $value Required state. Use `true` to require a value, `false` to make it optional, or `null` to
-     * remove the attribute.
-     *
-     * @return static New instance with the updated `required` attribute.
-     *
      * Usage example:
      * ```php
      * $element->required(true);
      * $element->required(false);
      * $element->required(null);
      * ```
+     *
+     * @param bool|null $value Required state. Use `true` to require a value, `false` to make it optional, or `null` to
+     * remove the attribute.
+     *
+     * @return static New instance with the updated `required` attribute.
      */
     public function required(bool|null $value): static
     {

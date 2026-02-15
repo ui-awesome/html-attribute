@@ -13,9 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `http-equiv` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -28,6 +26,13 @@ trait HasHttpEquiv
      *
      * Declares the pragma directive for the metadata entry.
      *
+     * Usage example:
+     * ```php
+     * $element->httpEquiv('refresh');
+     * $element->httpEquiv(HttpEquiv::REFRESH);
+     * $element->httpEquiv(null);
+     * ```
+     *
      * @param string|Stringable|UnitEnum|null $value Pragma directive token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -35,13 +40,6 @@ trait HasHttpEquiv
      * @return static New instance with the updated `http-equiv` attribute.
      *
      * {@see HttpEquiv} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->httpEquiv('refresh');
-     * $element->httpEquiv(HttpEquiv::REFRESH);
-     * $element->httpEquiv(null);
-     * ```
      */
     public function httpEquiv(string|Stringable|UnitEnum|null $value): static
     {

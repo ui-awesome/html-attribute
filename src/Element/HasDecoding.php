@@ -13,7 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the HTML and SVG `decoding` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#decoding
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
  *
@@ -25,6 +25,13 @@ trait HasDecoding
     /**
      * Sets the `decoding` attribute.
      *
+     * Usage example:
+     * ```php
+     * $element->decoding('async');
+     * $element->decoding(Decoding::ASYNC);
+     * $element->decoding(null);
+     * ```
+     *
      * @param string|Stringable|UnitEnum|null $value Decoding hint value. Use `async`, `sync`, or `auto`, or `null` to
      * remove the attribute.
      *
@@ -33,13 +40,6 @@ trait HasDecoding
      * @return static New instance with the updated `decoding` attribute.
      *
      * {@see Decoding} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->decoding('async');
-     * $element->decoding(Decoding::ASYNC);
-     * $element->decoding(null);
-     * ```
      */
     public function decoding(string|Stringable|UnitEnum|null $value): static
     {

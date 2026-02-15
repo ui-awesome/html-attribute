@@ -9,9 +9,7 @@ use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 /**
  * Provides an immutable API for the `autofocus` attribute.
  *
- * @method static setAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -22,15 +20,15 @@ trait CanBeAutofocus
     /**
      * Sets the `autofocus` attribute.
      *
-     * @param bool $value Whether to enable autofocus. Use `true` to enable and `false` to disable.
-     *
-     * @return static New instance with the updated `autofocus` attribute.
-     *
      * Usage example:
      * ```php
      * $element->autofocus(true);
      * $element->autofocus(false);
      * ```
+     *
+     * @param bool $value Whether to enable autofocus. Use `true` to enable and `false` to disable.
+     *
+     * @return static New instance with the updated `autofocus` attribute.
      */
     public function autofocus(bool $value): static
     {

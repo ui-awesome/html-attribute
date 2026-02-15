@@ -9,9 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 /**
  * Provides an immutable API for the `readonly` attribute.
  *
- * @method static setAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/readonly
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -22,17 +20,17 @@ trait HasReadonly
     /**
      * Sets the `readonly` attribute.
      *
-     * @param bool|null $value Readonly state. Use `true` to make readonly, `false` to make editable, or `null` to
-     * remove the attribute.
-     *
-     * @return static New instance with the updated `readonly` attribute.
-     *
      * Usage example:
      * ```php
      * $element->readonly(true);
      * $element->readonly(false);
      * $element->readonly(null);
      * ```
+     *
+     * @param bool|null $value Readonly state. Use `true` to make readonly, `false` to make editable, or `null` to
+     * remove the attribute.
+     *
+     * @return static New instance with the updated `readonly` attribute.
      */
     public function readonly(bool|null $value): static
     {

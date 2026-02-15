@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `sizes` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#sizes
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -26,16 +24,16 @@ trait HasSizes
      *
      * Defines the icon size descriptors for the linked resource.
      *
-     * @param string|Stringable|UnitEnum|null $value Icon size list or `any` token, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `sizes` attribute.
-     *
      * Usage example:
      * ```php
      * $element->sizes('any');
      * $element->sizes('16x16 32x32');
      * $element->sizes(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Icon size list or `any` token, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `sizes` attribute.
      */
     public function sizes(string|Stringable|UnitEnum|null $value): static
     {

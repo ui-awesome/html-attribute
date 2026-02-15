@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `min` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/min
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -24,17 +22,17 @@ trait HasMin
     /**
      * Sets the `min` attribute.
      *
-     * @param float|int|string|Stringable|UnitEnum|null $value Minimum value, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `min` attribute.
-     *
-     * Usage example:
+    * Usage example:
      * ```php
      * $element->min(0);
      * $element->min('2024-01-01');
      * $element->min('08:00');
      * $element->min(null);
      * ```
+     *
+     * @param float|int|string|Stringable|UnitEnum|null $value Minimum value, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `min` attribute.
      */
     public function min(float|int|string|Stringable|UnitEnum|null $value): static
     {

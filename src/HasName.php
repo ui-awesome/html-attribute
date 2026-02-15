@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `name` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/name
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -26,18 +24,18 @@ trait HasName
      *
      * Defines the metadata name or form control name.
      *
-     * @param string|Stringable|UnitEnum|null $value Name value, or `null` to remove the attribute.
-     *
-     * @return static New instance with the updated `name` attribute.
-     *
-     * {@see \UIAwesome\Html\Attribute\Values\MetaName} for predefined enum values.
-     *
      * Usage example:
      * ```php
      * $element->name('viewport');
      * $element->name(MetaName::VIEWPORT);
      * $element->name(null);
      * ```
+     *
+     * @param string|Stringable|UnitEnum|null $value Name value, or `null` to remove the attribute.
+     *
+     * @return static New instance with the updated `name` attribute.
+     *
+     * {@see \UIAwesome\Html\Attribute\Values\MetaName} for predefined enum values.
      */
     public function name(string|Stringable|UnitEnum|null $value): static
     {

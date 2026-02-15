@@ -13,9 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `role` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -26,6 +24,13 @@ trait HasRole
     /**
      * Sets the `role` attribute.
      *
+     * Usage example:
+     * ```php
+     * $element->role('button');
+     * $element->role('navigation');
+     * $element->role(Role::ALERT);
+     * ```
+     *
      * @param string|Stringable|UnitEnum|null $value ARIA role, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -33,13 +38,6 @@ trait HasRole
      * @return static New instance with the updated `role` attribute.
      *
      * {@see Role} for predefined enum values.
-     *
-     * Usage example:
-     * ```php
-     * $element->role('button');
-     * $element->role('navigation');
-     * $element->role(Role::ALERT);
-     * ```
      */
     public function role(string|Stringable|UnitEnum|null $value): static
     {

@@ -11,9 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `popovertarget` attribute.
  *
- * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
- * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
- *
+ * @mixin \UIAwesome\Html\Mixin\HasAttributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/popovertarget
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
