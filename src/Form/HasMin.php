@@ -22,7 +22,7 @@ trait HasMin
     /**
      * Sets the `min` attribute.
      *
-    * Usage example:
+     * Usage example:
      * ```php
      * $element->min(0);
      * $element->min('2024-01-01');
