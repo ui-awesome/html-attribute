@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `popovertarget` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/popovertarget
@@ -37,6 +37,6 @@ trait HasPopoverTarget
      */
     public function popoverTarget(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(ElementAttribute::POPOVERTARGET, $value);
+        return $this->setAttribute(ElementAttribute::POPOVERTARGET, $value);
     }
 }

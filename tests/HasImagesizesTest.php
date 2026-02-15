@@ -64,7 +64,7 @@ final class HasImagesizesTest extends TestCase
     public function testSetImagesizesAttributeValue(
         string|Stringable|UnitEnum|null $imagesizes,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

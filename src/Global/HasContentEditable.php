@@ -14,7 +14,7 @@ use function is_bool;
 /**
  * Provides an immutable API for the `contenteditable` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable
@@ -51,6 +51,6 @@ trait HasContentEditable
 
         Validator::oneOf($value, ContentEditable::cases(), GlobalAttribute::CONTENTEDITABLE);
 
-        return $this->addAttribute(GlobalAttribute::CONTENTEDITABLE, $value);
+        return $this->setAttribute(GlobalAttribute::CONTENTEDITABLE, $value);
     }
 }

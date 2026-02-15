@@ -13,7 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the HTML and SVG `decoding` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#decoding
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
  *
@@ -45,6 +45,6 @@ trait HasDecoding
     {
         Validator::oneOf($value, Decoding::cases(), ElementAttribute::DECODING);
 
-        return $this->addAttribute(ElementAttribute::DECODING, $value);
+        return $this->setAttribute(ElementAttribute::DECODING, $value);
     }
 }

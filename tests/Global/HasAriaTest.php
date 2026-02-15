@@ -8,7 +8,6 @@ use Closure;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use stdClass;
 use Stringable;
 use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Attribute\Global\HasAria;
@@ -37,6 +36,27 @@ use UnitEnum;
 #[Group('global')]
 final class HasAriaTest extends TestCase
 {
+    /**
+     * @param mixed[] $data
+     * @param mixed[] $expected
+     */
+    #[DataProviderExternal(AriaProvider::class, 'values')]
+    public function testAriaAttributeValue(array $data, array $expected, string $message): void
+    {
+        $instance = new class {
+            use HasAria;
+            use HasAttributes;
+        };
+
+        $instance = $instance->ariaAttributes($data);
+
+        self::assertSame(
+            $expected,
+            $instance->getAttributes(),
+            $message,
+        );
+    }
+
     /**
      * @param mixed[] $data
      * @phpstan-param mixed[] $attributes
@@ -100,32 +120,11 @@ final class HasAriaTest extends TestCase
     }
 
     /**
-     * @param mixed[] $data
-     * @param mixed[] $expected
-     */
-    #[DataProviderExternal(AriaProvider::class, 'values')]
-    public function testSetAriaAttributeValue(array $data, array $expected, string $message): void
-    {
-        $instance = new class {
-            use HasAria;
-            use HasAttributes;
-        };
-
-        $instance = $instance->ariaAttributes($data);
-
-        self::assertSame(
-            $expected,
-            $instance->getAttributes(),
-            $message,
-        );
-    }
-
-    /**
      * @phpstan-param scalar|Stringable|UnitEnum|null|Closure(): mixed $value
      * @phpstan-param mixed[] $expected
      */
     #[DataProviderExternal(AriaProvider::class, 'value')]
-    public function testSetSingleAriaAttributeValue(
+    public function testSetAriaAttributeValue(
         string|UnitEnum $key,
         bool|float|int|string|Closure|Stringable|UnitEnum|null $value,
         array $expected,
@@ -162,21 +161,6 @@ final class HasAriaTest extends TestCase
         );
 
         $instance->ariaAttributes($attributes);
-    }
-
-    public function testThrowInvalidArgumentExceptionForAriaAttributeValueIsInvalid(): void
-    {
-        $instance = new class {
-            use HasAria;
-            use HasAttributes;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE->getMessage('object'),
-        );
-
-        $instance->ariaAttributes(['key' => new stdClass()]);
     }
 
     #[DataProviderExternal(AriaProvider::class, 'invalidSingleKey')]

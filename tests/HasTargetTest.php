@@ -66,7 +66,7 @@ final class HasTargetTest extends TestCase
     public function testSetTargetAttributeValue(
         string|UnitEnum|null $target,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -1,6 +1,6 @@
 # ChangeLog
 
-## 0.5.3 Under development
+## 0.6.0 Under development
 
 - Enh #32: Add `HasBlocking` trait and `blocking()` method to manage `blocking` attribute for HTML elements (@terabytesoftw)
 - Enh #33: Add `HasMedia` trait and `media()` method to manage `media` attribute for HTML elements (@terabytesoftw)
@@ -51,6 +51,7 @@
 - Enh #78: Add `HasPopover`, `HasPopoverTarget`, `HasPopoverTargetAction` traits and `popover()`, `popoverTarget()`, `popoverTargetAction()` methods to manage popover attributes for HTML elements (@terabytesoftw)
 - Enh #79: Add `HasInputmode` trait and `inputmode()` method to manage `inputmode` attribute for HTML elements (@terabytesoftw)
 - Bug #80: Update `value()` method in `HasValue` trait to accept boolean values and adjust related tests and data provider (@terabytesoftw)
+- Bug #81: Migrate mixin attribute setters and tests to the simplified API (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

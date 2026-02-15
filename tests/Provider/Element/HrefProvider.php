@@ -21,7 +21,7 @@ final class HrefProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class HrefProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -100,7 +100,7 @@ final class HrefProvider
             'unset with null' => [
                 null,
                 ['href' => 'https://example.com/old'],
-                '',
+                null,
                 '',
                 "Should unset the 'href' attribute when 'null' is provided after a value.",
             ],

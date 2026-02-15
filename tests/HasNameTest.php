@@ -64,7 +64,7 @@ final class HasNameTest extends TestCase
     public function testSetNameAttributeValue(
         string|Stringable|UnitEnum|null $name,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

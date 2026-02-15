@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the HTML and SVG `href` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#href
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href
  *
@@ -37,6 +37,6 @@ trait HasHref
      */
     public function href(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(ElementAttribute::HREF, $value);
+        return $this->setAttribute(ElementAttribute::HREF, $value);
     }
 }

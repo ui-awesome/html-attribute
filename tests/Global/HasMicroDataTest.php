@@ -127,7 +127,7 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemIdAttributeValue(
         string|Stringable|UnitEnum|null $itemId,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {
@@ -157,7 +157,7 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemPropAttributeValue(
         string|Stringable|UnitEnum|null $itemProp,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {
@@ -187,7 +187,7 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemRefAttributeValue(
         string|Stringable|UnitEnum|null $itemRef,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {
@@ -217,7 +217,7 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemScopeAttributeValue(
         bool|null $itemScope,
         array $attributes,
-        bool|string $expectedValue,
+        bool|string|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {
@@ -247,7 +247,7 @@ final class HasMicroDataTest extends TestCase
     public function testSetItemTypeAttributeValue(
         string|Stringable|UnitEnum|null $itemType,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

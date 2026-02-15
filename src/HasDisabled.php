@@ -9,7 +9,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
 /**
  * Provides an immutable API for the `disabled` attribute.
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/disabled
@@ -36,6 +36,6 @@ trait HasDisabled
      */
     public function disabled(bool|null $value): static
     {
-        return $this->addAttribute(Attribute::DISABLED, $value);
+        return $this->setAttribute(Attribute::DISABLED, $value);
     }
 }

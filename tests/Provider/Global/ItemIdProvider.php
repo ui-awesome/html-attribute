@@ -21,7 +21,7 @@ final class ItemIdProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class ItemIdProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -86,7 +86,7 @@ final class ItemIdProvider
             'unset with null' => [
                 null,
                 ['itemid' => 'id-two'],
-                '',
+                null,
                 '',
                 "Should unset the 'itemid' attribute when 'null' is provided after a value.",
             ],

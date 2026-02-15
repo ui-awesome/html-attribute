@@ -67,7 +67,7 @@ final class HasDecodingTest extends TestCase
     public function testSetDecodingAttributeValue(
         string|Stringable|UnitEnum|null $decoding,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

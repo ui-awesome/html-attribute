@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `height` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#height
  * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/height
  *
@@ -37,6 +37,6 @@ trait HasHeight
      */
     public function height(int|string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(ElementAttribute::HEIGHT, $value);
+        return $this->setAttribute(ElementAttribute::HEIGHT, $value);
     }
 }

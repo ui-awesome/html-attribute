@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `style` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style
@@ -54,6 +54,6 @@ trait HasStyle
      */
     public function style(array|string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(GlobalAttribute::STYLE, $value);
+        return $this->setAttribute(GlobalAttribute::STYLE, $value);
     }
 }

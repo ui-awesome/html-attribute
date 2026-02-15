@@ -15,7 +15,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider\Global;
 final class SpellcheckProvider
 {
     /**
-     * @phpstan-return array<string, array{bool|string|null, mixed[], string, string, string}>
+     * @phpstan-return array<string, array{bool|string|null, mixed[], string|null, string, string}>
      */
     public static function values(): array
     {
@@ -44,7 +44,7 @@ final class SpellcheckProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -72,7 +72,7 @@ final class SpellcheckProvider
             'unset with null' => [
                 null,
                 ['spellcheck' => 'true'],
-                '',
+                null,
                 '',
                 "Should unset the 'spellcheck' attribute when 'null' is provided after a value.",
             ],

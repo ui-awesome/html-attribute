@@ -10,7 +10,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `srcset` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#srcset
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture#the_srcset_attribute
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/source#srcset
@@ -37,6 +37,6 @@ trait HasSrcset
      */
     public function srcset(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute('srcset', $value);
+        return $this->setAttribute('srcset', $value);
     }
 }

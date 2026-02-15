@@ -25,12 +25,6 @@ final class AriaProvider
     public static function invalidKey(): array
     {
         return [
-            'boolean false' => [
-                [false => 'value'],
-            ],
-            'boolean true' => [
-                [true => 'value'],
-            ],
             'empty string' => [
                 ['' => 'value'],
             ],
@@ -193,12 +187,6 @@ final class AriaProvider
                 '',
                 "Should unset the 'aria-label' attribute when 'null' is provided after a value.",
             ],
-            'without aria prefix' => [
-                ['pressed' => true],
-                [],
-                ' aria-pressed="true"',
-                'Should normalize key without aria prefix when setting the attribute.',
-            ],
         ];
     }
 
@@ -275,7 +263,7 @@ final class AriaProvider
             'closure with null' => [
                 'aria-label',
                 static fn(): string|null => null,
-                [],
+                ['aria-label' => null],
                 'Should return the attribute value after setting it.',
             ],
             'closure with string' => [
@@ -341,14 +329,8 @@ final class AriaProvider
             'unset with null' => [
                 'aria-label',
                 null,
-                [],
+                ['aria-label' => null],
                 "Should unset the 'aria-label' attribute when 'null' is provided after a value.",
-            ],
-            'without aria prefix' => [
-                'pressed',
-                true,
-                ['aria-pressed' => 'true'],
-                'Should normalize key without aria prefix when setting the attribute.',
             ],
         ];
     }
@@ -370,7 +352,7 @@ final class AriaProvider
         foreach (Aria::cases() as $case) {
             $enumCases[$case->value] = [
                 [$case->value => 'value'],
-                ["aria-{$case->value}" => 'value'],
+                ["{$case->value}" => 'value'],
                 'Should return the attribute value after setting it.',
             ];
         }
@@ -423,7 +405,7 @@ final class AriaProvider
             ],
             'closure with null' => [
                 ['aria-label' => static fn(): string|null => null],
-                [],
+                ['aria-label' => null],
                 'Should return the attribute value after setting it.',
             ],
             'closure with string' => [
@@ -479,13 +461,8 @@ final class AriaProvider
             ],
             'unset with null' => [
                 ['aria-label' => null],
-                [],
+                ['aria-label' => null],
                 "Should unset the 'aria-label' attribute when 'null' is provided after a value.",
-            ],
-            'without aria prefix' => [
-                ['pressed' => true],
-                ['aria-pressed' => 'true'],
-                'Should normalize key without aria prefix when setting the attribute.',
             ],
         ];
 

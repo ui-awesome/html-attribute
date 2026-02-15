@@ -7,20 +7,18 @@ namespace UIAwesome\Html\Attribute\Global;
 use Closure;
 use InvalidArgumentException;
 use Stringable;
-use TypeError;
-use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Helper\Attributes;
 use UnitEnum;
-
-use function gettype;
 
 /**
  * Provides an immutable API for `data-*` attributes.
  *
  * @phpstan-type Key string|UnitEnum
  * @phpstan-type Value scalar|Stringable|UnitEnum|null|Closure(): mixed
- * @method void setAttribute(Key $key, Value $value, string $prefix = '', bool $boolToString = false) Sets a single
- * attribute with prefix handling. Available via {@see \UIAwesome\Html\Mixin\HasAttributes} trait composition.
+ * @method static attributes(mixed[] $values) Sets multiple attributes and returns a new instance.
+ * @method static removeAttribute(string $key) Removes an attribute and returns a new instance.
+ * @method static setAttribute(Key $key, Value $value) Sets a single attribute amd returns a new instance.
+ * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*
  *
@@ -55,11 +53,7 @@ trait HasData
         string|UnitEnum $key,
         bool|float|int|string|Closure|Stringable|UnitEnum|null $value,
     ): static {
-        $new = clone $this;
-
-        $new->setAttribute($key, $value, 'data-');
-
-        return $new;
+        return $this->setAttribute($key, $value);
     }
 
     /**
@@ -91,21 +85,7 @@ trait HasData
      */
     public function dataAttributes(array $values): static
     {
-        $new = clone $this;
-
-        /** @phpstan-var array<string, scalar|Stringable|UnitEnum|Closure(): mixed|null> $values */
-        foreach ($values as $key => $value) {
-            try {
-                $new->setAttribute($key, $value, 'data-');
-                // @phpstan-ignore catch.neverThrown
-            } catch (TypeError) {
-                throw new InvalidArgumentException(
-                    Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE->getMessage(gettype($value)),
-                );
-            }
-        }
-
-        return $new;
+        return $this->attributes($values);
     }
 
     /**

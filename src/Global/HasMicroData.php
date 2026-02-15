@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for microdata attributes.
  *
- * @method static addAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|\UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
@@ -36,7 +36,7 @@ trait HasMicroData
      */
     public function itemId(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(GlobalAttribute::ITEMID, $value);
+        return $this->setAttribute(GlobalAttribute::ITEMID, $value);
     }
 
     /**
@@ -56,7 +56,7 @@ trait HasMicroData
      */
     public function itemProp(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(GlobalAttribute::ITEMPROP, $value);
+        return $this->setAttribute(GlobalAttribute::ITEMPROP, $value);
     }
 
     /**
@@ -76,7 +76,7 @@ trait HasMicroData
      */
     public function itemRef(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(GlobalAttribute::ITEMREF, $value);
+        return $this->setAttribute(GlobalAttribute::ITEMREF, $value);
     }
 
     /**
@@ -96,7 +96,7 @@ trait HasMicroData
      */
     public function itemScope(bool|null $value): static
     {
-        return $this->addAttribute(GlobalAttribute::ITEMSCOPE, $value);
+        return $this->setAttribute(GlobalAttribute::ITEMSCOPE, $value);
     }
 
     /**
@@ -116,6 +116,6 @@ trait HasMicroData
      */
     public function itemType(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(GlobalAttribute::ITEMTYPE, $value);
+        return $this->setAttribute(GlobalAttribute::ITEMTYPE, $value);
     }
 }

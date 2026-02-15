@@ -67,7 +67,7 @@ final class HasCharsetTest extends TestCase
     public function testSetCharsetAttributeValue(
         string|Stringable|UnitEnum|null $charset,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -21,7 +21,7 @@ final class AltProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class AltProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -86,7 +86,7 @@ final class AltProvider
             'unset with null' => [
                 null,
                 ['alt' => 'A descriptive alt text.'],
-                '',
+                null,
                 '',
                 "Should unset the 'alt' attribute when 'null' is provided after a value.",
             ],

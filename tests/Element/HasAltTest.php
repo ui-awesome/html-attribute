@@ -64,7 +64,7 @@ final class HasAltTest extends TestCase
     public function testSetAltAttributeValue(
         string|Stringable|UnitEnum|null $alt,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

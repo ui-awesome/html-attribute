@@ -64,7 +64,7 @@ final class HasIdTest extends TestCase
     public function testSetIdAttributeValue(
         string|Stringable|UnitEnum|null $id,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

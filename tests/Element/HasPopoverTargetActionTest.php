@@ -67,7 +67,7 @@ final class HasPopoverTargetActionTest extends TestCase
     public function testSetPopoverTargetActionAttributeValue(
         string|Stringable|UnitEnum|null $popoverTargetAction,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

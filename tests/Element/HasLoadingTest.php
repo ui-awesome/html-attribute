@@ -67,7 +67,7 @@ final class HasLoadingTest extends TestCase
     public function testSetLoadingAttributeValue(
         string|Stringable|UnitEnum|null $loading,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

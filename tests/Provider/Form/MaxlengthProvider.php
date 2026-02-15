@@ -53,7 +53,7 @@ final class MaxlengthProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum, string, string},
+     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -90,7 +90,7 @@ final class MaxlengthProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -125,7 +125,7 @@ final class MaxlengthProvider
             'unset with null' => [
                 null,
                 ['maxlength' => 50],
-                '',
+                null,
                 '',
                 "Should unset the 'maxlength' attribute when 'null' is provided after a value.",
             ],

@@ -37,7 +37,7 @@ final class ReadonlyProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -51,7 +51,7 @@ final class ReadonlyProvider
             'unset with null' => [
                 null,
                 ['readonly' => true],
-                '',
+                null,
                 '',
                 "Should unset the 'readonly' attribute when 'null' is provided after a value.",
             ],

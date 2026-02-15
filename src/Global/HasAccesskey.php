@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `accesskey` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
@@ -36,6 +36,6 @@ trait HasAccesskey
      */
     public function accesskey(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(GlobalAttribute::ACCESSKEY, $value);
+        return $this->setAttribute(GlobalAttribute::ACCESSKEY, $value);
     }
 }

@@ -21,7 +21,7 @@ final class ItemPropProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class ItemPropProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -86,7 +86,7 @@ final class ItemPropProvider
             'unset with null' => [
                 null,
                 ['itemprop' => 'name'],
-                '',
+                null,
                 '',
                 "Should unset the 'itemprop' attribute when 'null' is provided after a value.",
             ],

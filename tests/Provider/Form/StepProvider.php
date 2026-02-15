@@ -21,7 +21,7 @@ final class StepProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{float|int|string|Stringable|UnitEnum|null, mixed[], float|int|string|Stringable|UnitEnum, string, string},
+     *   array{float|int|string|Stringable|UnitEnum|null, mixed[], float|int|string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -79,7 +79,7 @@ final class StepProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -107,7 +107,7 @@ final class StepProvider
             'unset with null' => [
                 null,
                 ['step' => 1],
-                '',
+                null,
                 '',
                 "Should unset the 'step' attribute when 'null' is provided after a value.",
             ],

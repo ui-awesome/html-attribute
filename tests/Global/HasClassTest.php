@@ -63,7 +63,7 @@ final class HasClassTest extends TestCase
     #[DataProviderExternal(ClassProvider::class, 'values')]
     public function testSetClassAttributeValue(
         array $operations,
-        string $expectedValue,
+        string|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

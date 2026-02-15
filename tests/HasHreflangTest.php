@@ -64,7 +64,7 @@ final class HasHreflangTest extends TestCase
     public function testSetHreflangAttributeValue(
         string|Stringable|UnitEnum|null $hreflang,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

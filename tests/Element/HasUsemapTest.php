@@ -64,7 +64,7 @@ final class HasUsemapTest extends TestCase
     public function testSetUsemapAttributeValue(
         string|Stringable|UnitEnum|null $usemap,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

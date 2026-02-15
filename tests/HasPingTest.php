@@ -64,7 +64,7 @@ final class HasPingTest extends TestCase
     public function testSetPingAttributeValue(
         string|Stringable|UnitEnum|null $ping,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

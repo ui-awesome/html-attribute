@@ -14,7 +14,7 @@ use function is_bool;
 /**
  * Provides an immutable API for the `translate` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/translate
@@ -57,6 +57,6 @@ trait HasTranslate
 
         Validator::oneOf($value, Translate::cases(), GlobalAttribute::TRANSLATE);
 
-        return $this->addAttribute(GlobalAttribute::TRANSLATE, $value);
+        return $this->setAttribute(GlobalAttribute::TRANSLATE, $value);
     }
 }

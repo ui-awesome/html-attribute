@@ -66,7 +66,7 @@ final class HasTranslateTest extends TestCase
     public function testSetTranslateAttributeValue(
         bool|string|UnitEnum|null $translate,
         array $attributes,
-        bool|string|UnitEnum $expectedValue,
+        bool|string|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

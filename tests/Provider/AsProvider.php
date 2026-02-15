@@ -22,7 +22,7 @@ final class AsProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string}
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string}
      * >
      */
     public static function values(): array
@@ -47,7 +47,7 @@ final class AsProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -75,7 +75,7 @@ final class AsProvider
             'unset with null' => [
                 null,
                 ['as' => 'style'],
-                '',
+                null,
                 '',
                 "Should unset the 'as' attribute when 'null' is provided after a value.",
             ],

@@ -66,7 +66,7 @@ final class HasDraggableTest extends TestCase
     public function testSetDraggableAttributeValue(
         bool|string|UnitEnum|null $draggable,
         array $attributes,
-        string|UnitEnum $expectedValue,
+        string|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

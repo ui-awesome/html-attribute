@@ -7,21 +7,17 @@ namespace UIAwesome\Html\Attribute\Global;
 use Closure;
 use InvalidArgumentException;
 use Stringable;
-use TypeError;
-use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Helper\Attributes;
 use UnitEnum;
-
-use function gettype;
 
 /**
  * Provides an immutable API for `aria-*` attributes.
  *
  * @phpstan-type Key string|UnitEnum
  * @phpstan-type Value scalar|Stringable|UnitEnum|null|Closure(): mixed
+ * @method static attributes(mixed[] $values) Sets multiple attributes and returns a new instance.
  * @method static removeAttribute(string $key) Removes an attribute and returns a new instance.
- * @method void setAttribute(Key $key, Value $value, string $prefix = '', bool $boolToString = false) Sets a single
- * attribute with prefix handling.
+ * @method static setAttribute(Key $key, Value $value) Sets a single attribute amd returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes
@@ -59,11 +55,7 @@ trait HasAria
         string|UnitEnum $key,
         bool|float|int|string|Closure|Stringable|UnitEnum|null $value,
     ): static {
-        $new = clone $this;
-
-        $new->setAttribute($key, $value, 'aria-', true);
-
-        return $new;
+        return $this->setAttribute($key, $value);
     }
 
     /**
@@ -96,21 +88,7 @@ trait HasAria
      */
     public function ariaAttributes(array $values): static
     {
-        $new = clone $this;
-
-        /** @phpstan-var array<string, scalar|Stringable|UnitEnum|Closure(): mixed|null> $values */
-        foreach ($values as $key => $value) {
-            try {
-                $new->setAttribute($key, $value, 'aria-', true);
-                // @phpstan-ignore catch.neverThrown
-            } catch (TypeError) {
-                throw new InvalidArgumentException(
-                    Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE->getMessage(gettype($value)),
-                );
-            }
-        }
-
-        return $new;
+        return $this->attributes($values);
     }
 
     /**

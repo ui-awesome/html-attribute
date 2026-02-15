@@ -64,7 +64,7 @@ final class HasHrefTest extends TestCase
     public function testSetHrefAttributeValue(
         string|Stringable|UnitEnum|null $href,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

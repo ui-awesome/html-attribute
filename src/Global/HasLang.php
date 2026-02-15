@@ -13,7 +13,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `lang` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
@@ -45,6 +45,6 @@ trait HasLang
     {
         Validator::oneOf($value, Language::cases(), GlobalAttribute::LANG);
 
-        return $this->addAttribute(GlobalAttribute::LANG, $value);
+        return $this->setAttribute(GlobalAttribute::LANG, $value);
     }
 }

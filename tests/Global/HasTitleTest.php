@@ -64,7 +64,7 @@ final class HasTitleTest extends TestCase
     public function testSetTitleAttributeValue(
         string|Stringable|UnitEnum|null $title,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

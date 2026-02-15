@@ -53,7 +53,7 @@ final class MinlengthProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum, string, string},
+     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -90,7 +90,7 @@ final class MinlengthProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -125,7 +125,7 @@ final class MinlengthProvider
             'unset with null' => [
                 null,
                 ['minlength' => 8],
-                '',
+                null,
                 '',
                 "Should unset the 'minlength' attribute when 'null' is provided after a value.",
             ],

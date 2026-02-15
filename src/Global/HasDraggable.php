@@ -14,7 +14,7 @@ use function is_bool;
 /**
  * Provides an immutable API for the `draggable` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable
@@ -51,6 +51,6 @@ trait HasDraggable
 
         Validator::oneOf($value, Draggable::cases(), GlobalAttribute::DRAGGABLE);
 
-        return $this->addAttribute(GlobalAttribute::DRAGGABLE, $value);
+        return $this->setAttribute(GlobalAttribute::DRAGGABLE, $value);
     }
 }

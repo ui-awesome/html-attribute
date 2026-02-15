@@ -21,7 +21,7 @@ final class SizeProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum, string, string},
+     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -51,7 +51,7 @@ final class SizeProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -79,7 +79,7 @@ final class SizeProvider
             'unset with null' => [
                 null,
                 ['size' => 10],
-                '',
+                null,
                 '',
                 "Should unset the 'size' attribute when 'null' is provided after a value.",
             ],

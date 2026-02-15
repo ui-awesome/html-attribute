@@ -21,7 +21,7 @@ final class HeightProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum, string, string},
+     *   array{int|string|Stringable|UnitEnum|null, mixed[], int|string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -58,7 +58,7 @@ final class HeightProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -86,7 +86,7 @@ final class HeightProvider
             'unset with null' => [
                 null,
                 ['height' => '100px'],
-                '',
+                null,
                 '',
                 "Should unset the 'height' attribute when 'null' is provided after a value.",
             ],

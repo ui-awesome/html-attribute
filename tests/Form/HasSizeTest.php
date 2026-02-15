@@ -64,7 +64,7 @@ final class HasSizeTest extends TestCase
     public function testSetSizeAttributeValue(
         int|string|Stringable|UnitEnum|null $size,
         array $attributes,
-        int|string|Stringable|UnitEnum $expectedValue,
+        int|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

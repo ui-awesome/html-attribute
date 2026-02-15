@@ -64,7 +64,7 @@ final class HasStepTest extends TestCase
     public function testSetStepAttributeValue(
         float|int|string|Stringable|UnitEnum|null $step,
         array $attributes,
-        float|int|string|Stringable|UnitEnum $expectedValue,
+        float|int|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

@@ -11,7 +11,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `imagesizes` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#imagesizes
@@ -39,6 +39,6 @@ trait HasImagesizes
      */
     public function imagesizes(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->addAttribute(Attribute::IMAGESIZES, $value);
+        return $this->setAttribute(Attribute::IMAGESIZES, $value);
     }
 }

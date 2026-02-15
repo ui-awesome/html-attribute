@@ -12,7 +12,7 @@ use UnitEnum;
 /**
  * Provides an immutable API for the `dir` attribute.
  *
- * @method static addAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
+ * @method static setAttribute(string|UnitEnum $key, mixed $value) Adds an attribute and returns a new instance.
  * {@see \UIAwesome\Html\Mixin\HasAttributes} for managing the underlying attributes array.
  *
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir
@@ -45,6 +45,6 @@ trait HasDir
     {
         Validator::oneOf($value, Direction::cases(), GlobalAttribute::DIR);
 
-        return $this->addAttribute(GlobalAttribute::DIR, $value);
+        return $this->setAttribute(GlobalAttribute::DIR, $value);
     }
 }

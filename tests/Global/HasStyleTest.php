@@ -66,7 +66,7 @@ final class HasStyleTest extends TestCase
     public function testSetStyleAttributeValue(
         array|string|Stringable|UnitEnum|null $style,
         array $attributes,
-        array|string|Stringable|UnitEnum $expectedValue,
+        array|string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

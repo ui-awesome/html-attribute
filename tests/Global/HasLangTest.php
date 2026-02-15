@@ -67,7 +67,7 @@ final class HasLangTest extends TestCase
     public function testSetLangAttributeValue(
         string|Stringable|UnitEnum|null $lang,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

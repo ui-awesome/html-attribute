@@ -64,7 +64,7 @@ final class HasContentTest extends TestCase
     public function testSetContentAttributeValue(
         string|Stringable|UnitEnum|null $content,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {

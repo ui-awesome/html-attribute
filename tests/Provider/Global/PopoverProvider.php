@@ -19,7 +19,7 @@ use UnitEnum;
 final class PopoverProvider
 {
     /**
-     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum, string, string}>
+     * @phpstan-return array<string, array{string|UnitEnum|null, mixed[], string|UnitEnum|null, string, string}>
      */
     public static function values(): array
     {
@@ -36,7 +36,7 @@ final class PopoverProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -57,7 +57,7 @@ final class PopoverProvider
             'unset with null' => [
                 null,
                 ['popover' => 'auto'],
-                '',
+                null,
                 '',
                 "Should unset the 'popover' attribute when 'null' is provided after a value.",
             ],

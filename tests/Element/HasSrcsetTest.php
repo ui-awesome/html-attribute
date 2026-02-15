@@ -64,7 +64,7 @@ final class HasSrcsetTest extends TestCase
     public function testSetSrcsetAttributeValue(
         string|Stringable|UnitEnum|null $srcset,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

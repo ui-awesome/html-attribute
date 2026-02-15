@@ -67,7 +67,7 @@ final class HasRoleTest extends TestCase
     public function testSetRoleAttributeValue(
         string|Stringable|UnitEnum|null $role,
         array $attributes,
-        string|Stringable|UnitEnum $expectedValue,
+        string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

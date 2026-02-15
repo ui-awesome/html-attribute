@@ -22,7 +22,7 @@ final class PopoverTargetActionProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
      * >
      */
     public static function values(): array
@@ -50,7 +50,7 @@ final class PopoverTargetActionProvider
             'null' => [
                 null,
                 [],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -78,7 +78,7 @@ final class PopoverTargetActionProvider
             'unset with null' => [
                 null,
                 ['popovertargetaction' => 'toggle'],
-                '',
+                null,
                 '',
                 "Should unset the 'popovertargetaction' attribute when 'null' is provided after a value.",
             ],
