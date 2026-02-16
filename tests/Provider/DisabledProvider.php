@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Provider;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasDisabledTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\CanBeDisabledTest} test cases.
  *
  * Provides representative input/output pairs for the `disabled` attribute.
  *
@@ -15,7 +15,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider;
 final class DisabledProvider
 {
     /**
-     * @phpstan-return array<string, array{bool|null, mixed[], bool|string|null, string, string}>
+     * @phpstan-return array<string, array{bool|null, mixed[], bool|null, string, string}>
      */
     public static function values(): array
     {

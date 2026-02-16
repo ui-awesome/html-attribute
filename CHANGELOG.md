@@ -55,6 +55,7 @@
 - Bug #82: Update `ui-awesome/html-helper` requirement to use stable version constraint `^0.7` in `composer.json` (@terabytesoftw)
 - Enh #83: Enhance `HasAria`, `HasData`, and `HasEvents` traits to support prefix attributes `aria-`, `data-`, and `on` (@terabytesoftw)
 - Bug #84: Refactor attribute documentation in traits (@terabytesoftw)
+- Bug #85: Better naming prefix `CanBe` for boolean attributes (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

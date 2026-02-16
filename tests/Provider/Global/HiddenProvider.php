@@ -15,7 +15,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider\Global;
 final class HiddenProvider
 {
     /**
-     * @phpstan-return array<string, array{bool, mixed[], bool|string, string, string}>
+     * @phpstan-return array<string, array{bool|null, mixed[], bool|null, string, string}>
      */
     public static function values(): array
     {
@@ -34,6 +34,13 @@ final class HiddenProvider
                 ' hidden',
                 'Should return the attribute value after setting it.',
             ],
+            'null' => [
+                null,
+                [],
+                null,
+                '',
+                "Should return an empty string when the attribute is set to 'null'.",
+            ],
             'replace existing false' => [
                 false,
                 ['hidden' => true],
@@ -47,6 +54,13 @@ final class HiddenProvider
                 true,
                 ' hidden',
                 "Should return 'true' when replacing existing 'hidden' attribute with 'true'.",
+            ],
+            'unset with null' => [
+                null,
+                ['hidden' => true],
+                null,
+                '',
+                "Should unset the 'hidden' attribute when 'null' is provided after a value.",
             ],
         ];
     }

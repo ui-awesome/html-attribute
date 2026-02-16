@@ -26,11 +26,12 @@ trait CanBeHidden
      * $element->hidden(false);
      * ```
      *
-     * @param bool $value Whether to hide the element. Use `true` to hide and `false` to show.
+     * @param bool|null $value Whether to hide the element. Use `true` to hide, `false` to show, or `null` to remove the
+     * attribute.
      *
      * @return static New instance with the updated `hidden` attribute.
      */
-    public function hidden(bool $value): static
+    public function hidden(bool|null $value): static
     {
         return $this->setAttribute(GlobalAttribute::HIDDEN, $value);
     }

@@ -15,7 +15,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-trait HasChecked
+trait CanBeChecked
 {
     /**
      * Sets the `checked` attribute.
@@ -23,7 +23,6 @@ trait HasChecked
      * Usage example:
      * ```php
      * $element->checked(true);
-     * $element->checked(false);
      * $element->checked(null);
      * ```
      *

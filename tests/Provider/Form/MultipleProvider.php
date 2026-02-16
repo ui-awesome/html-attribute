@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Provider\Form;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Form\HasMultipleTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Form\CanBeMultipleTest} test cases.
  *
  * Provides representative input/output pairs for the `multiple` attribute.
  *
@@ -15,7 +15,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider\Form;
 final class MultipleProvider
 {
     /**
-     * @phpstan-return array<string, array{bool|null, mixed[], bool|string|null, string, string}>
+     * @phpstan-return array<string, array{bool|null, mixed[], bool|null, string, string}>
      */
     public static function values(): array
     {

@@ -6,33 +6,33 @@ namespace UIAwesome\Html\Attribute\Tests\Form;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use UIAwesome\Html\Attribute\Form\HasReadonly;
-use UIAwesome\Html\Attribute\Tests\Provider\Form\ReadonlyProvider;
+use UIAwesome\Html\Attribute\Form\CanBeRequired;
+use UIAwesome\Html\Attribute\Tests\Provider\Form\RequiredProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Unit tests for the {@see HasReadonly} trait managing the `readonly` HTML attribute.
+ * Unit tests for the {@see CanBeRequired} trait managing the `required` HTML attribute.
  *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `readonly` attribute is not provided.
- * - Sets the `readonly` HTML attribute and renders the expected output.
+ * - Ensures no attributes are set when the `required` attribute is not provided.
+ * - Sets the `required` HTML attribute and renders the expected output.
  *
- * {@see ReadonlyProvider} for test case data providers.
+ * {@see RequiredProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
-final class HasReadonlyTest extends TestCase
+final class CanBeRequiredTest extends TestCase
 {
-    public function testReturnEmptyWhenReadonlyAttributeNotSet(): void
+    public function testReturnEmptyWhenRequiredAttributeNotSet(): void
     {
         $instance = new class {
+            use CanBeRequired;
             use HasAttributes;
-            use HasReadonly;
         };
 
         self::assertEmpty(
@@ -41,16 +41,16 @@ final class HasReadonlyTest extends TestCase
         );
     }
 
-    public function testReturnNewInstanceWhenSettingReadonlyAttribute(): void
+    public function testReturnNewInstanceWhenSettingRequiredAttribute(): void
     {
         $instance = new class {
+            use CanBeRequired;
             use HasAttributes;
-            use HasReadonly;
         };
 
         self::assertNotSame(
             $instance,
-            $instance->readonly(null),
+            $instance->required(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -58,24 +58,24 @@ final class HasReadonlyTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(ReadonlyProvider::class, 'values')]
-    public function testSetReadonlyAttributeValue(
-        bool|null $readonly,
+    #[DataProviderExternal(RequiredProvider::class, 'values')]
+    public function testSetRequiredAttributeValue(
+        bool|null $required,
         array $attributes,
-        bool|string|null $expectedValue,
+        bool|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {
         $instance = new class {
+            use CanBeRequired;
             use HasAttributes;
-            use HasReadonly;
         };
 
-        $instance = $instance->attributes($attributes)->readonly($readonly);
+        $instance = $instance->attributes($attributes)->required($required);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::READONLY, ''),
+            $instance->getAttribute(Attribute::REQUIRED, null),
             $message,
         );
         self::assertSame(
