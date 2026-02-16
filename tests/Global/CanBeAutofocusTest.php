@@ -60,9 +60,9 @@ final class CanBeAutofocusTest extends TestCase
      */
     #[DataProviderExternal(AutofocusProvider::class, 'values')]
     public function testSetAutofocusAttributeValue(
-        bool $value,
+        bool|null $value,
         array $attributes,
-        bool|string|null $expectedValue,
+        bool|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

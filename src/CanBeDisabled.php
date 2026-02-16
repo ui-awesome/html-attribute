@@ -15,7 +15,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-trait HasDisabled
+trait CanBeDisabled
 {
     /**
      * Sets the `disabled` attribute.
@@ -23,7 +23,6 @@ trait HasDisabled
      * Usage example:
      * ```php
      * $element->disabled(true);
-     * $element->disabled(false);
      * $element->disabled(null);
      * ```
      *

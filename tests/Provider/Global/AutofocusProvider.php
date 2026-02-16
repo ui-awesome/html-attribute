@@ -15,7 +15,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider\Global;
 final class AutofocusProvider
 {
     /**
-     * @phpstan-return array<string, array{bool, mixed[], bool|string, string, string}>
+     * @phpstan-return array<string, array{bool|null, mixed[], bool|null, string, string}>
      */
     public static function values(): array
     {
@@ -34,6 +34,13 @@ final class AutofocusProvider
                 ' autofocus',
                 'Should return the attribute value after setting it.',
             ],
+            'null' => [
+                null,
+                [],
+                null,
+                '',
+                "Should return an empty string when the attribute is set to 'null'.",
+            ],
             'replace existing false' => [
                 false,
                 ['autofocus' => true],
@@ -47,6 +54,13 @@ final class AutofocusProvider
                 true,
                 ' autofocus',
                 "Should return 'true' when replacing existing 'autofocus' attribute with 'true'.",
+            ],
+            'unset with null' => [
+                null,
+                ['autofocus' => true],
+                null,
+                '',
+                "Should unset the 'autofocus' attribute when 'null' is provided after a value.",
             ],
         ];
     }

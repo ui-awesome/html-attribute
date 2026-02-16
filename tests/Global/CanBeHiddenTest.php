@@ -60,9 +60,9 @@ final class CanBeHiddenTest extends TestCase
      */
     #[DataProviderExternal(HiddenProvider::class, 'values')]
     public function testSetHiddenAttributeValue(
-        bool $value,
+        bool|null $value,
         array $attributes,
-        bool|string|null $expectedValue,
+        bool|null $expectedValue,
         string $expectedRenderAttribute,
         string $message,
     ): void {

@@ -15,7 +15,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-trait HasMultiple
+trait CanBeMultiple
 {
     /**
      * Sets the `multiple` attribute.
@@ -23,7 +23,6 @@ trait HasMultiple
      * Usage example:
      * ```php
      * $element->multiple(true);
-     * $element->multiple(false);
      * $element->multiple(null);
      * ```
      *

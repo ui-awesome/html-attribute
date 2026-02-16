@@ -15,7 +15,7 @@ use UIAwesome\Html\Attribute\Values\Attribute;
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-trait HasRequired
+trait CanBeRequired
 {
     /**
      * Sets the `required` attribute.
@@ -23,7 +23,6 @@ trait HasRequired
      * Usage example:
      * ```php
      * $element->required(true);
-     * $element->required(false);
      * $element->required(null);
      * ```
      *

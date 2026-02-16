@@ -2,37 +2,37 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests;
+namespace UIAwesome\Html\Attribute\Tests\Form;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use UIAwesome\Html\Attribute\HasDisabled;
-use UIAwesome\Html\Attribute\Tests\Provider\DisabledProvider;
+use UIAwesome\Html\Attribute\Form\CanBeChecked;
+use UIAwesome\Html\Attribute\Tests\Provider\Form\CheckedProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Unit tests for the {@see HasDisabled} trait managing the `disabled` HTML attribute.
+ * Unit tests for the {@see CanBeChecked} trait managing the `checked` HTML attribute.
  *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `disabled` attribute is not provided.
- * - Sets the `disabled` HTML attribute and renders the expected output.
+ * - Ensures no attributes are set when the `checked` attribute is not provided.
+ * - Sets the `checked` HTML attribute and renders the expected output.
  *
- * {@see DisabledProvider} for test case data providers.
+ * {@see CheckedProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
-final class HasDisabledTest extends TestCase
+final class CanBeCheckedTest extends TestCase
 {
-    public function testReturnEmptyWhenDisabledAttributeNotSet(): void
+    public function testReturnEmptyWhenCheckedAttributeNotSet(): void
     {
         $instance = new class {
+            use CanBeChecked;
             use HasAttributes;
-            use HasDisabled;
         };
 
         self::assertEmpty(
@@ -41,16 +41,16 @@ final class HasDisabledTest extends TestCase
         );
     }
 
-    public function testReturnNewInstanceWhenSettingDisabledAttribute(): void
+    public function testReturnNewInstanceWhenSettingCheckedAttribute(): void
     {
         $instance = new class {
+            use CanBeChecked;
             use HasAttributes;
-            use HasDisabled;
         };
 
         self::assertNotSame(
             $instance,
-            $instance->disabled(null),
+            $instance->checked(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -58,24 +58,24 @@ final class HasDisabledTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(DisabledProvider::class, 'values')]
-    public function testSetDisabledAttributeValue(
-        bool|null $disabled,
+    #[DataProviderExternal(CheckedProvider::class, 'values')]
+    public function testSetCheckedAttributeValue(
+        bool|null $checked,
         array $attributes,
-        bool|string|null $expectedValue,
+        bool|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {
         $instance = new class {
+            use CanBeChecked;
             use HasAttributes;
-            use HasDisabled;
         };
 
-        $instance = $instance->attributes($attributes)->disabled($disabled);
+        $instance = $instance->attributes($attributes)->checked($checked);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::DISABLED, ''),
+            $instance->getAttribute(Attribute::CHECKED, ''),
             $message,
         );
         self::assertSame(

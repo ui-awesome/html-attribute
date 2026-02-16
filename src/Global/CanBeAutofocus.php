@@ -25,11 +25,12 @@ trait CanBeAutofocus
      * $element->autofocus(true);
      * ```
      *
-     * @param bool $value Whether to enable autofocus. Use `true` to enable and `false` to disable.
+     * @param bool|null $value Whether to enable autofocus. Use `true` to enable, `false` to disable, or `null` to
+     * remove the attribute.
      *
      * @return static New instance with the updated `autofocus` attribute.
      */
-    public function autofocus(bool $value): static
+    public function autofocus(bool|null $value): static
     {
         return $this->setAttribute(GlobalAttribute::AUTOFOCUS, $value);
     }

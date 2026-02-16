@@ -6,33 +6,33 @@ namespace UIAwesome\Html\Attribute\Tests\Form;
 
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
-use UIAwesome\Html\Attribute\Form\HasRequired;
-use UIAwesome\Html\Attribute\Tests\Provider\Form\RequiredProvider;
+use UIAwesome\Html\Attribute\Form\CanBeMultiple;
+use UIAwesome\Html\Attribute\Tests\Provider\Form\MultipleProvider;
 use UIAwesome\Html\Attribute\Values\Attribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
- * Unit tests for the {@see HasRequired} trait managing the `required` HTML attribute.
+ * Unit tests for the {@see CanBeMultiple} trait managing the `multiple` HTML attribute.
  *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `required` attribute is not provided.
- * - Sets the `required` HTML attribute and renders the expected output.
+ * - Ensures no attributes are set when the `multiple` attribute is not provided.
+ * - Sets the `multiple` HTML attribute and renders the expected output.
  *
- * {@see RequiredProvider} for test case data providers.
+ * {@see MultipleProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
-final class HasRequiredTest extends TestCase
+final class CanBeMultipleTest extends TestCase
 {
-    public function testReturnEmptyWhenRequiredAttributeNotSet(): void
+    public function testReturnEmptyWhenMultipleAttributeNotSet(): void
     {
         $instance = new class {
+            use CanBeMultiple;
             use HasAttributes;
-            use HasRequired;
         };
 
         self::assertEmpty(
@@ -41,16 +41,16 @@ final class HasRequiredTest extends TestCase
         );
     }
 
-    public function testReturnNewInstanceWhenSettingRequiredAttribute(): void
+    public function testReturnNewInstanceWhenSettingMultipleAttribute(): void
     {
         $instance = new class {
+            use CanBeMultiple;
             use HasAttributes;
-            use HasRequired;
         };
 
         self::assertNotSame(
             $instance,
-            $instance->required(null),
+            $instance->multiple(null),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -58,24 +58,24 @@ final class HasRequiredTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(RequiredProvider::class, 'values')]
-    public function testSetRequiredAttributeValue(
-        bool|null $required,
+    #[DataProviderExternal(MultipleProvider::class, 'values')]
+    public function testSetMultipleAttributeValue(
+        bool|null $multiple,
         array $attributes,
         bool|null $expectedValue,
         string $expectedRenderAttributes,
         string $message,
     ): void {
         $instance = new class {
+            use CanBeMultiple;
             use HasAttributes;
-            use HasRequired;
         };
 
-        $instance = $instance->attributes($attributes)->required($required);
+        $instance = $instance->attributes($attributes)->multiple($multiple);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::REQUIRED, null),
+            $instance->getAttribute(Attribute::MULTIPLE, ''),
             $message,
         );
         self::assertSame(

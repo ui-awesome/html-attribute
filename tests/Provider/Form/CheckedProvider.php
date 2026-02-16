@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Provider\Form;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Form\HasCheckedTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Form\CanBeCheckedTest} test cases.
  *
  * Provides representative input/output pairs for the `checked` attribute.
  *
@@ -15,7 +15,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider\Form;
 final class CheckedProvider
 {
     /**
-     * @phpstan-return array<string, array{bool|null, mixed[], bool|string|null, string, string}>
+     * @phpstan-return array<string, array{bool|null, mixed[], bool|null, string, string}>
      */
     public static function values(): array
     {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Provider\Form;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Form\HasRequiredTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Form\CanBeRequiredTest} test cases.
  *
  * Provides representative input/output pairs for the `required` attribute.
  *
