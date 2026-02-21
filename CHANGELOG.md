@@ -56,6 +56,7 @@
 - Enh #83: Enhance `HasAria`, `HasData`, and `HasEvents` traits to support prefix attributes `aria-`, `data-`, and `on` (@terabytesoftw)
 - Bug #84: Refactor attribute documentation in traits (@terabytesoftw)
 - Bug #85: Bug `#85`: Rename boolean attribute traits from `Has*` prefix to improve naming clarity (@terabytesoftw)
+- Enh #86: Add `HasAutocapitalize` and `HasAutocorrect` traits and `autocapitalize()`, `autocorrect()` methods to manage `autocapitalize` and `autocorrect` attributes for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
