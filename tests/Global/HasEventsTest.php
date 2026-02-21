@@ -148,6 +148,7 @@ final class HasEventsTest extends TestCase
     #[DataProviderExternal(EventProvider::class, 'invalidSingleKey')]
     public function testThrowInvalidArgumentExceptionWhenRemoveEvent(
         string|UnitEnum $key,
+        string $handler,
     ): void {
         $instance = new class {
             use HasAttributes;
