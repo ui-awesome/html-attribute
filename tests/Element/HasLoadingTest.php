@@ -90,7 +90,7 @@ final class HasLoadingTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionWhenSettingLoadingValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingLoading(): void
     {
         $instance = new class {
             use HasAttributes;

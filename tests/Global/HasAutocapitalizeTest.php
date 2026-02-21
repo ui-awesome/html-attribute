@@ -89,7 +89,7 @@ final class HasAutocapitalizeTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingAutocapitalizeValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingAutocapitalize(): void
     {
         $instance = new class {
             use HasAttributes;

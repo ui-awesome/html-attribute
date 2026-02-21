@@ -90,7 +90,7 @@ final class HasReferrerpolicyTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionWhenSettingReferrerpolicyValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingReferrerpolicy(): void
     {
         $instance = new class {
             use HasAttributes;

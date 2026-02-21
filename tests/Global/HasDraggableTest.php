@@ -89,7 +89,7 @@ final class HasDraggableTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingDraggableValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingDraggable(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -101,7 +101,7 @@ final class HasDraggableTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::DRAGGABLE->value,
-                implode('\', \'', Enum::normalizeArray(Draggable::cases())),
+                implode("', '", Enum::normalizeArray(Draggable::cases())),
             ),
         );
 

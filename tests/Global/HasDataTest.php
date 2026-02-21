@@ -130,27 +130,8 @@ final class HasDataTest extends TestCase
         );
     }
 
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(DataProvider::class, 'invalidKey')]
-    public function testThrowInvalidArgumentExceptionForDataAttributeKeyIsInvalid(array $attributes): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasData;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage(),
-        );
-
-        $instance->dataAttributes($attributes);
-    }
-
     #[DataProviderExternal(DataProvider::class, 'invalidSingleKey')]
-    public function testThrowInvalidArgumentExceptionForSingleDataAttributeKeyIsInvalid(
+    public function testThrowInvalidArgumentExceptionWhenSettingAddDataAttribute(
         string|UnitEnum $key,
         string $value,
     ): void {
@@ -165,5 +146,24 @@ final class HasDataTest extends TestCase
         );
 
         $instance->addDataAttribute($key, $value);
+    }
+
+    /**
+     * @phpstan-param mixed[] $attributes
+     */
+    #[DataProviderExternal(DataProvider::class, 'invalidKey')]
+    public function testThrowInvalidArgumentExceptionWhenSettingDataAttributes(array $attributes): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasData;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage(),
+        );
+
+        $instance->dataAttributes($attributes);
     }
 }

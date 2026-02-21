@@ -90,7 +90,7 @@ final class HasRoleTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingRoleValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingRole(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -102,7 +102,7 @@ final class HasRoleTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::ROLE->value,
-                implode('\', \'', Enum::normalizeArray(Role::cases())),
+                implode("', '", Enum::normalizeArray(Role::cases())),
             ),
         );
 

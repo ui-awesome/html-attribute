@@ -89,7 +89,7 @@ final class HasFetchpriorityTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionWhenSettingFetchpriorityValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingFetchpriority(): void
     {
         $instance = new class {
             use HasAttributes;

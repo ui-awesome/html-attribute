@@ -89,7 +89,7 @@ final class HasContentEditableTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingContentEditableValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingContentEditable(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -101,7 +101,7 @@ final class HasContentEditableTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::CONTENTEDITABLE->value,
-                implode('\', \'', Enum::normalizeArray(ContentEditable::cases())),
+                implode("', '", Enum::normalizeArray(ContentEditable::cases())),
             ),
         );
 

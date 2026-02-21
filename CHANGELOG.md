@@ -57,13 +57,14 @@
 - Bug #84: Refactor attribute documentation in traits (@terabytesoftw)
 - Bug #85: Bug `#85`: Rename boolean attribute traits from `Has*` prefix to improve naming clarity (@terabytesoftw)
 - Enh #86: Add `HasAutocapitalize` and `HasAutocorrect` traits and `autocapitalize()`, `autocorrect()` methods to manage `autocapitalize` and `autocorrect` attributes for HTML elements (@terabytesoftw)
+- Bug #87: Update test method names for clarity by removing redundant `Value` suffix (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 
 - Enh #28: Add `php-forge/coding-standard` to development dependencies for code quality checks (@terabytesoftw)
 - Bug #29: Add section for automated refactoring using `Rector` in testing documentation (@terabytesoftw)
 - Bug #30: Update examples in `testing.md` for running Composer script with arguments and update `.styleci.yml` accordingly (@terabytesoftw)
-- Bug #31: Remove redundant ignore rule in `actionlint.yml` configuration and update Rector command in `composer.json` to remove unnecessary 'src' argument (@terabytesoftw)
+- Bug #31: Remove redundant ignore rule in `actionlint.yml` configuration and update Rector command in `composer.json` to remove unnecessary `src` argument (@terabytesoftw)
 
 ## 0.5.1 January 20, 2026
 

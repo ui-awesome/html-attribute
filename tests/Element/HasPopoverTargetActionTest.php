@@ -90,7 +90,7 @@ final class HasPopoverTargetActionTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingPopoverTargetActionValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingPopoverTargetAction(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -102,7 +102,7 @@ final class HasPopoverTargetActionTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 ElementAttribute::POPOVERTARGETACTION->value,
-                implode('\', \'', Enum::normalizeArray(PopoverTargetAction::cases())),
+                implode("', '", Enum::normalizeArray(PopoverTargetAction::cases())),
             ),
         );
 

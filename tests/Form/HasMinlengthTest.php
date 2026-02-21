@@ -91,7 +91,7 @@ final class HasMinlengthTest extends TestCase
     }
 
     #[DataProviderExternal(MinlengthProvider::class, 'invalidValues')]
-    public function testThrowInvalidArgumentExceptionForSettingMinlengthAttribute(
+    public function testThrowInvalidArgumentExceptionWhenSettingMinlength(
         int|string|Stringable|UnitEnum $minlength,
     ): void {
         $instance = new class {

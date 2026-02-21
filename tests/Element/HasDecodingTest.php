@@ -90,7 +90,7 @@ final class HasDecodingTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionWhenSettingDecodingValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingDecoding(): void
     {
         $instance = new class {
             use HasAttributes;

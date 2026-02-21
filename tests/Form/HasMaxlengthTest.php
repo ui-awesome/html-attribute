@@ -91,7 +91,7 @@ final class HasMaxlengthTest extends TestCase
     }
 
     #[DataProviderExternal(MaxlengthProvider::class, 'invalidValues')]
-    public function testThrowInvalidArgumentExceptionForSettingMaxlengthAttribute(
+    public function testThrowInvalidArgumentExceptionWhenSettingMaxlength(
         int|string|Stringable|UnitEnum $maxlength,
     ): void {
         $instance = new class {
