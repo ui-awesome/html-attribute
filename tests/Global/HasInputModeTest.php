@@ -89,7 +89,7 @@ final class HasInputModeTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInputModeValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingInputMode(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -101,7 +101,7 @@ final class HasInputModeTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::INPUTMODE->value,
-                implode('\', \'', Enum::normalizeArray(InputMode::cases())),
+                implode("', '", Enum::normalizeArray(InputMode::cases())),
             ),
         );
 

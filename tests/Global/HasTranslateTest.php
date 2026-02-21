@@ -89,7 +89,7 @@ final class HasTranslateTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingTranslateValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingTranslate(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -101,7 +101,7 @@ final class HasTranslateTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::TRANSLATE->value,
-                implode('\', \'', Enum::normalizeArray(Translate::cases())),
+                implode("', '", Enum::normalizeArray(Translate::cases())),
             ),
         );
 

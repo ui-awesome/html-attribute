@@ -89,7 +89,7 @@ final class HasTargetTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionWhenSettingTargetValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingTarget(): void
     {
         $instance = new class {
             use HasAttributes;

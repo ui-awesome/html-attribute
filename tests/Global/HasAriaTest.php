@@ -144,27 +144,8 @@ final class HasAriaTest extends TestCase
         );
     }
 
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(AriaProvider::class, 'invalidKey')]
-    public function testThrowInvalidArgumentExceptionForAriaAttributeKeyIsInvalid(array $attributes): void
-    {
-        $instance = new class {
-            use HasAria;
-            use HasAttributes;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage(),
-        );
-
-        $instance->ariaAttributes($attributes);
-    }
-
     #[DataProviderExternal(AriaProvider::class, 'invalidSingleKey')]
-    public function testThrowInvalidArgumentExceptionForSingleAriaAttributeKeyIsInvalid(
+    public function testThrowInvalidArgumentExceptionWhenSettingAddAriaAttribute(
         string|UnitEnum $key,
         string $value,
     ): void {
@@ -179,5 +160,24 @@ final class HasAriaTest extends TestCase
         );
 
         $instance->addAriaAttribute($key, $value);
+    }
+
+    /**
+     * @phpstan-param mixed[] $attributes
+     */
+    #[DataProviderExternal(AriaProvider::class, 'invalidKey')]
+    public function testThrowInvalidArgumentExceptionWhenSettingAriaAttributes(array $attributes): void
+    {
+        $instance = new class {
+            use HasAria;
+            use HasAttributes;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage(),
+        );
+
+        $instance->ariaAttributes($attributes);
     }
 }

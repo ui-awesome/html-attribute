@@ -90,7 +90,7 @@ final class HasTypeTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionWhenSettingTypeValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingType(): void
     {
         $instance = new class {
             use HasAttributes;

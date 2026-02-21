@@ -89,7 +89,7 @@ final class HasDirTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingDirValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingDir(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -101,7 +101,7 @@ final class HasDirTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::DIR->value,
-                implode('\', \'', Enum::normalizeArray(Direction::cases())),
+                implode("', '", Enum::normalizeArray(Direction::cases())),
             ),
         );
 

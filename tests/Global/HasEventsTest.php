@@ -145,27 +145,8 @@ final class HasEventsTest extends TestCase
         );
     }
 
-    /**
-     * @phpstan-param mixed[] $attributes
-     */
-    #[DataProviderExternal(EventProvider::class, 'invalidKey')]
-    public function testThrowInvalidArgumentExceptionForEventAttributeKeyIsInvalid(array $attributes): void
-    {
-        $instance = new class {
-            use HasAttributes;
-            use HasEvents;
-        };
-
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage(
-            Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage(),
-        );
-
-        $instance->events($attributes);
-    }
-
     #[DataProviderExternal(EventProvider::class, 'invalidSingleKey')]
-    public function testThrowInvalidArgumentExceptionForRemoveEventAttributeKeyIsInvalid(
+    public function testThrowInvalidArgumentExceptionWhenRemoveEvent(
         string|UnitEnum $key,
     ): void {
         $instance = new class {
@@ -182,7 +163,7 @@ final class HasEventsTest extends TestCase
     }
 
     #[DataProviderExternal(EventProvider::class, 'invalidSingleKey')]
-    public function testThrowInvalidArgumentExceptionForSingleEventAttributeKeyIsInvalid(
+    public function testThrowInvalidArgumentExceptionWhenSettingAddEvent(
         string|UnitEnum $key,
         string $handler,
     ): void {
@@ -197,5 +178,24 @@ final class HasEventsTest extends TestCase
         );
 
         $instance->addEvent($key, $handler);
+    }
+
+    /**
+     * @phpstan-param mixed[] $attributes
+     */
+    #[DataProviderExternal(EventProvider::class, 'invalidKey')]
+    public function testThrowInvalidArgumentExceptionWhenSettingEvent(array $attributes): void
+    {
+        $instance = new class {
+            use HasAttributes;
+            use HasEvents;
+        };
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(
+            Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage(),
+        );
+
+        $instance->events($attributes);
     }
 }

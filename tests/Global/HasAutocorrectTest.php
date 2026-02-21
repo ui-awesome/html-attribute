@@ -89,7 +89,7 @@ final class HasAutocorrectTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingAutocorrectValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingAutocorrect(): void
     {
         $instance = new class {
             use HasAttributes;

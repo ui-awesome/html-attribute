@@ -90,7 +90,7 @@ final class HasRelTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionWhenSettingRelValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingRel(): void
     {
         $instance = new class {
             use HasAttributes;

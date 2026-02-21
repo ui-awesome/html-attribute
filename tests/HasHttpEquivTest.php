@@ -90,7 +90,7 @@ final class HasHttpEquivTest extends TestCase
         );
     }
 
-    public function testThrowExceptionWhenSettingInvalidHttpEquivValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingHttpEquiv(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -102,7 +102,7 @@ final class HasHttpEquivTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::HTTP_EQUIV->value,
-                implode('\', \'', Enum::normalizeArray(HttpEquiv::cases())),
+                implode("', '", Enum::normalizeArray(HttpEquiv::cases())),
             ),
         );
 

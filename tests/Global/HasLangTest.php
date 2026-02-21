@@ -90,7 +90,7 @@ final class HasLangTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingInvalidLangValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingLang(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -102,7 +102,7 @@ final class HasLangTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 'lang',
-                implode('\', \'', Enum::normalizeArray(Language::cases())),
+                implode("', '", Enum::normalizeArray(Language::cases())),
             ),
         );
 

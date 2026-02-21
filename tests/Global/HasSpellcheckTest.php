@@ -88,7 +88,7 @@ final class HasSpellcheckTest extends TestCase
         );
     }
 
-    public function testThrowInvalidArgumentExceptionForSettingSpellcheckValue(): void
+    public function testThrowInvalidArgumentExceptionWhenSettingSpellcheck(): void
     {
         $instance = new class {
             use HasAttributes;
@@ -100,7 +100,7 @@ final class HasSpellcheckTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::SPELLCHECK->value,
-                implode('\', \'', ['false', 'true']),
+                implode("', '", ['false', 'true']),
             ),
         );
 
