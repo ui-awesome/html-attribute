@@ -58,6 +58,7 @@
 - Bug #85: Bug `#85`: Rename boolean attribute traits from `Has*` prefix to improve naming clarity (@terabytesoftw)
 - Enh #86: Add `HasAutocapitalize` and `HasAutocorrect` traits and `autocapitalize()`, `autocorrect()` methods to manage `autocapitalize` and `autocorrect` attributes for HTML elements (@terabytesoftw)
 - Bug #87: Update test method names for clarity by removing redundant `Value` suffix (@terabytesoftw)
+- Enh #88: Add `CanBeSelected`, `HasLabel` traits and `selected()`, `label()` methods to manage `selected` and `label` attributes for HTML elements (@terabytesoftw)
 
 ## 0.5.2 January 29, 2026
 

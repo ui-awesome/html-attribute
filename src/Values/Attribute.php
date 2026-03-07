@@ -163,6 +163,13 @@ enum Attribute: string
     case INTEGRITY = 'integrity';
 
     /**
+     * `label` — Text used as a label for an option or option group.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option#label
+     */
+    case LABEL = 'label';
+
+    /**
      * `list` — Identifies a `<datalist>` element that provides predefined options to suggest to the user.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#list
@@ -266,6 +273,13 @@ enum Attribute: string
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/required
      */
     case REQUIRED = 'required';
+
+    /**
+     * `selected` — Indicates whether an option is initially selected.
+     *
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option#selected
+     */
+    case SELECTED = 'selected';
 
     /**
      * `size` — Defines the width of the element (in pixels).
