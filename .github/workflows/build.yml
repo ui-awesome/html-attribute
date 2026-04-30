@@ -22,4 +22,3 @@ jobs:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     with:
       php-version: '["8.3","8.4","8.5"]'
-
