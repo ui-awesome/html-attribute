@@ -77,7 +77,7 @@ final class HasForTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::FOR, ''),
+            $instance->getAttribute(Attribute::FOR),
             $message,
         );
         self::assertSame(

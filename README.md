@@ -1,11 +1,9 @@
 <!-- markdownlint-disable MD041 -->
 <p align="center">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome_dark.png">
-        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome_light.png">
-        <img src="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome_dark.png" alt="UI Awesome" width="150px">
+        <img src="https://raw.githubusercontent.com/ui-awesome/.github/refs/heads/main/logo/ui_awesome.png" alt="UI Awesome" width="25%">
     </picture>
-    <h1 align="center">Html attribute</h1>
+    <h1 align="center">Html Attribute</h1>
     <br>
 </p>
 <!-- markdownlint-enable MD041 -->
@@ -37,12 +35,12 @@
 ### Installation
 
 ```bash
-composer require ui-awesome/html-attribute:^0.3
+composer require ui-awesome/html-attribute:^0.6
 ```
 
 ### Quick start
 
-Below are concise examples showing common attribute tasks.
+Compose reusable attribute APIs by combining the package traits with the immutable attribute mixin.
 
 ```php
 <?php
@@ -51,13 +49,34 @@ declare(strict_types=1);
 
 namespace App;
 
-use UIAwesome\Html\Attribute\Media\{HasAlt, HasSrc};
+use UIAwesome\Html\Attribute\Global\{HasClass, HasData, HasId};
+use UIAwesome\Html\Attribute\HasRel;
+use UIAwesome\Html\Attribute\Values\Rel;
+use UIAwesome\Html\Helper\Attributes;
+use UIAwesome\Html\Mixin\HasAttributes;
 
-final class ImageComponent
+final class LinkAttributes
 {
-    use HasAlt;
-    use HasSrc;
+    use HasAttributes;
+    use HasClass;
+    use HasData;
+    use HasId;
+    use HasRel;
+
+    public function render(): string
+    {
+        return Attributes::render($this->getAttributes());
+    }
 }
+
+$attributes = (new LinkAttributes())
+    ->id('documentation')
+    ->class('nav-link')
+    ->class('is-active')
+    ->rel(Rel::NOOPENER)
+    ->addDataAttribute('tracking', 'docs');
+
+echo '<a' . $attributes->render() . ' href="/docs">Documentation</a>';
 ```
 
 ### Documentation
@@ -65,11 +84,10 @@ final class ImageComponent
 For detailed configuration options and advanced usage see:
 
 - 🧪 [Testing Guide](docs/testing.md)
-- 🛠️ [Development Guide](docs/development.md)
 
 ## Package information
 
-[![PHP](https://img.shields.io/badge/%3E%3D8.1-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.1/en.php)
+[![PHP](https://img.shields.io/badge/%3E%3D8.3-777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/releases/8.3/en.php)
 [![Latest Stable Version](https://img.shields.io/packagist/v/ui-awesome/html-attribute.svg?style=for-the-badge&logo=packagist&logoColor=white&label=Stable)](https://packagist.org/packages/ui-awesome/html-attribute)
 [![Total Downloads](https://img.shields.io/packagist/dt/ui-awesome/html-attribute.svg?style=for-the-badge&logo=composer&logoColor=white&label=Downloads)](https://packagist.org/packages/ui-awesome/html-attribute)
 

@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider;
 
 use PHPForge\Support\EnumDataProvider;
 use Stringable;
-use UIAwesome\Html\Attribute\Values\{Attribute, Charset};
+use UIAwesome\Html\Attribute\Values\{Charset, ElementAttribute};
 use UnitEnum;
 
 /**
@@ -27,7 +27,7 @@ final class CharsetProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataProvider::attributeCases(Charset::class, Attribute::CHARSET);
+        $enumCases = EnumDataProvider::attributeCases(Charset::class, ElementAttribute::CHARSET);
 
         $stringable = new class implements Stringable {
             public function __toString(): string

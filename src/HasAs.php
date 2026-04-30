@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Attribute;
 
 use InvalidArgumentException;
 use Stringable;
-use UIAwesome\Html\Attribute\Values\{AsValue, Attribute};
+use UIAwesome\Html\Attribute\Values\{AsValue, ElementAttribute};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
@@ -43,8 +43,8 @@ trait HasAs
      */
     public function as(string|Stringable|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, AsValue::cases(), Attribute::AS);
+        Validator::oneOf($value, AsValue::cases(), ElementAttribute::AS);
 
-        return $this->setAttribute(Attribute::AS, $value);
+        return $this->addAttribute(ElementAttribute::AS, $value);
     }
 }

@@ -9,8 +9,8 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasBlocking;
 use UIAwesome\Html\Attribute\Tests\Provider\BlockingProvider;
-use UIAwesome\Html\Attribute\Values\{Attribute, Blocking};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Attribute\Values\{Blocking, ElementAttribute};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasBlockingTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::BLOCKING, ''),
+            $instance->getAttribute(ElementAttribute::BLOCKING),
             $message,
         );
         self::assertSame(
@@ -100,8 +100,8 @@ final class HasBlockingTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                Attribute::BLOCKING->value,
-                implode("', '", Enum::normalizeArray(Blocking::cases())),
+                ElementAttribute::BLOCKING->value,
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Blocking::cases())),
             ),
         );
 

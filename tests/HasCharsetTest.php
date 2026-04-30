@@ -10,8 +10,8 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasCharset;
 use UIAwesome\Html\Attribute\Tests\Provider\CharsetProvider;
-use UIAwesome\Html\Attribute\Values\{Attribute, Charset};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Attribute\Values\{Charset, ElementAttribute};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -80,7 +80,7 @@ final class HasCharsetTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::CHARSET, ''),
+            $instance->getAttribute(ElementAttribute::CHARSET),
             $message,
         );
         self::assertSame(
@@ -101,8 +101,8 @@ final class HasCharsetTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                Attribute::CHARSET->value,
-                implode("', '", Enum::normalizeArray(Charset::cases())),
+                ElementAttribute::CHARSET->value,
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Charset::cases())),
             ),
         );
 

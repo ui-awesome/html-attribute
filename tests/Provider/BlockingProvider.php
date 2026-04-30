@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Tests\Provider;
 
 use PHPForge\Support\EnumDataProvider;
-use UIAwesome\Html\Attribute\Values\{Attribute, Blocking};
+use UIAwesome\Html\Attribute\Values\{Blocking, ElementAttribute};
 use UnitEnum;
 
 /**
@@ -23,7 +23,7 @@ final class BlockingProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataProvider::attributeCases(Blocking::class, Attribute::BLOCKING);
+        $enumCases = EnumDataProvider::attributeCases(Blocking::class, ElementAttribute::BLOCKING);
 
         $staticCase = [
             'empty string' => [

@@ -29,7 +29,7 @@ trait HasAutocorrect
      * $element->autocorrect(\UIAwesome\Html\Attribute\Values\Autocorrect::ON)->render();
      * ```
      *
-     * @param string|UnitEnum|null $value Autocorrect behavior (`on` or `off`), or `null` to remove the attribute.
+     * @param string|UnitEnum|null $value Autocorrect behavior ('on' or 'off'), or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -41,6 +41,6 @@ trait HasAutocorrect
     {
         Validator::oneOf($value, Autocorrect::cases(), 'autocorrect');
 
-        return $this->setAttribute('autocorrect', $value);
+        return $this->addAttribute('autocorrect', $value);
     }
 }

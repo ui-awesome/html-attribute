@@ -75,7 +75,7 @@ final class CanBeDisabledTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::DISABLED, ''),
+            $instance->getAttribute(Attribute::DISABLED),
             $message,
         );
         self::assertSame(

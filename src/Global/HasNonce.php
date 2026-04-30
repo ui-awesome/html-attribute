@@ -34,6 +34,6 @@ trait HasNonce
      */
     public function nonce(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(GlobalAttribute::NONCE, $value);
+        return $this->addAttribute(GlobalAttribute::NONCE, $value);
     }
 }

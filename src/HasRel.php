@@ -45,6 +45,6 @@ trait HasRel
     {
         Validator::oneOf($value, Rel::cases(), Attribute::REL);
 
-        return $this->setAttribute(Attribute::REL, $value);
+        return $this->addAttribute(Attribute::REL, $value);
     }
 }

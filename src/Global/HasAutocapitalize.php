@@ -29,8 +29,8 @@ trait HasAutocapitalize
      * $element->autocapitalize(\UIAwesome\Html\Attribute\Values\Autocapitalize::SENTENCES)->render();
      * ```
      *
-     * @param string|UnitEnum|null $value Capitalization behavior (`none`, `off`, `sentences`, `on`, `words`,
-     * `characters`), or `null` to remove the attribute.
+     * @param string|UnitEnum|null $value Capitalization behavior ('none', 'off', 'sentences', 'on', 'words',
+     * 'characters'), or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
      *
@@ -42,6 +42,6 @@ trait HasAutocapitalize
     {
         Validator::oneOf($value, Autocapitalize::cases(), 'autocapitalize');
 
-        return $this->setAttribute('autocapitalize', $value);
+        return $this->addAttribute('autocapitalize', $value);
     }
 }

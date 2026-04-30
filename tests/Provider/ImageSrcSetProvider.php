@@ -9,14 +9,14 @@ use Stringable;
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasImagesizesTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasImageSrcSetTest} test cases.
  *
- * Provides representative input/output pairs for the `imagesizes` attribute.
+ * Provides representative input/output pairs for the `imagesrcset` attribute.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class ImagesizesProvider
+final class ImageSrcSetProvider
 {
     /**
      * @phpstan-return array<
@@ -29,7 +29,7 @@ final class ImagesizesProvider
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return '100vw';
+                return 'image-400.jpg 400w';
             }
         };
 
@@ -45,14 +45,14 @@ final class ImagesizesProvider
                 BackedString::VALUE,
                 [],
                 BackedString::VALUE,
-                ' imagesizes="value"',
+                ' imagesrcset="value"',
                 'Should return the attribute value after setting it.',
             ],
             'enum unit' => [
                 Unit::value,
                 [],
                 Unit::value,
-                ' imagesizes="value"',
+                ' imagesrcset="value"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -63,39 +63,39 @@ final class ImagesizesProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                '50vw',
-                ['imagesizes' => '100vw'],
-                '50vw',
-                ' imagesizes="50vw"',
-                "Should return new 'imagesizes' after replacing the existing 'imagesizes' attribute.",
+                'image-200.jpg 200w',
+                ['imagesrcset' => 'image-400.jpg 400w'],
+                'image-200.jpg 200w',
+                ' imagesrcset="image-200.jpg 200w"',
+                "Should return new 'imagesrcset' after replacing the existing 'imagesrcset' attribute.",
             ],
             'string' => [
-                '100vw',
+                'image-400.jpg 400w',
                 [],
-                '100vw',
-                ' imagesizes="100vw"',
+                'image-400.jpg 400w',
+                ' imagesrcset="image-400.jpg 400w"',
                 'Should return the attribute value after setting it.',
             ],
-            'string with media query' => [
-                '(max-width: 600px) 100vw, 50vw',
+            'string with multiple' => [
+                'image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w',
                 [],
-                '(max-width: 600px) 100vw, 50vw',
-                ' imagesizes="(max-width: 600px) 100vw, 50vw"',
+                'image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w',
+                ' imagesrcset="image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
-                ' imagesizes="100vw"',
+                ' imagesrcset="image-400.jpg 400w"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['imagesizes' => '100vw'],
+                ['imagesrcset' => 'image-400.jpg 400w'],
                 null,
                 '',
-                "Should unset the 'imagesizes' attribute when 'null' is provided after a value.",
+                "Should unset the 'imagesrcset' attribute when 'null' is provided after a value.",
             ],
         ];
     }

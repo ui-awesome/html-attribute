@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use Stringable;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
 /**
@@ -39,6 +39,6 @@ trait HasName
      */
     public function name(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::NAME, $value);
+        return $this->addAttribute(ElementAttribute::NAME, $value);
     }
 }

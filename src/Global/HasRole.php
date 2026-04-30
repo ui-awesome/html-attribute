@@ -43,6 +43,6 @@ trait HasRole
     {
         Validator::oneOf($value, Role::cases(), GlobalAttribute::ROLE);
 
-        return $this->setAttribute(GlobalAttribute::ROLE, $value);
+        return $this->addAttribute(GlobalAttribute::ROLE, $value);
     }
 }

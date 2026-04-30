@@ -29,8 +29,8 @@ trait HasInputMode
      * $element->inputMode('numeric');
      * ```
      *
-     * @param string|UnitEnum|null $value Input mode value (`decimal`, `email`, `none`, `numeric`, `search`, `tel`,
-     * `text`, `url`, or `null` to remove the attribute).
+     * @param string|UnitEnum|null $value Input mode value ('decimal', 'email', 'none', 'numeric', 'search', 'tel',
+     * 'text', 'url', or `null` to remove the attribute).
      *
      * @throws InvalidArgumentException If the provided value is not valid.
      *
@@ -40,6 +40,6 @@ trait HasInputMode
     {
         Validator::oneOf($value, InputMode::cases(), GlobalAttribute::INPUTMODE);
 
-        return $this->setAttribute(GlobalAttribute::INPUTMODE, $value);
+        return $this->addAttribute(GlobalAttribute::INPUTMODE, $value);
     }
 }

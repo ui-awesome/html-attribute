@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Attribute\Global;
 use Closure;
 use InvalidArgumentException;
 use Stringable;
+use UIAwesome\Html\Helper\AttributeBag;
 use UnitEnum;
 
 /**
@@ -32,17 +33,16 @@ trait HasEvents
      * ```
      *
      * @param string|UnitEnum $key Event attribute key with or without the leading `on` prefix.
-     * @param Closure|string|Stringable|UnitEnum|null $value JavaScript handler code, or `null` to remove the attribute.
+     * @param Closure(): mixed|string|Stringable|UnitEnum|null $value JavaScript handler code, or `null` to remove the
+     * attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `on*` event attribute.
-     *
-     * @phpstan-param Closure(): mixed|string|Stringable|UnitEnum|null $value
      */
     public function addEvent(string|UnitEnum $key, string|Closure|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute($key, $value, 'on');
+        return $this->addAttribute(AttributeBag::normalizeKey($key, 'on'), $value);
     }
 
     /**
@@ -58,18 +58,22 @@ trait HasEvents
      * );
      * ```
      *
-     * @param array $values Associative array of event keys and handlers. Values may be `Stringable`, `Closure`,
-     * `string`, or `null` to remove the attribute.
+     * @param mixed[] $values Associative array of event keys and handlers. Values may be Stringable, Closure, string,
+     * or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `on*` event attributes.
-     *
-     * @phpstan-param mixed[] $values
      */
     public function events(array $values): static
     {
-        return $this->attributes($values, 'on');
+        $new = $this;
+
+        foreach ($values as $key => $value) {
+            $new = $new->addAttribute(AttributeBag::normalizeKey($key, 'on'), $value);
+        }
+
+        return $new;
     }
 
     /**
@@ -89,6 +93,6 @@ trait HasEvents
      */
     public function removeEvent(string|UnitEnum $key): static
     {
-        return $this->removeAttribute($key, 'on');
+        return $this->addAttribute(AttributeBag::normalizeKey($key, 'on'), null);
     }
 }

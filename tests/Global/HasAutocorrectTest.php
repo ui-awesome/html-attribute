@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasAutocorrect;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\AutocorrectProvider;
 use UIAwesome\Html\Attribute\Values\{Autocorrect, GlobalAttribute};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasAutocorrectTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::AUTOCORRECT, ''),
+            $instance->getAttribute(GlobalAttribute::AUTOCORRECT),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasAutocorrectTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::AUTOCORRECT->value,
-                implode("', '", Enum::normalizeArray(Autocorrect::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Autocorrect::cases())),
             ),
         );
 

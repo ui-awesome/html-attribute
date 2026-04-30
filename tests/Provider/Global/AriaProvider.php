@@ -269,7 +269,7 @@ final class AriaProvider
             'closure with null' => [
                 'aria-label',
                 static fn(): string|null => null,
-                ['aria-label' => null],
+                [],
                 'Should return the attribute value after setting it.',
             ],
             'closure with string' => [
@@ -335,7 +335,7 @@ final class AriaProvider
             'unset with null' => [
                 'aria-label',
                 null,
-                ['aria-label' => null],
+                [],
                 "Should unset the 'aria-label' attribute when 'null' is provided after a value.",
             ],
             'without prefix' => [
@@ -417,7 +417,7 @@ final class AriaProvider
             ],
             'closure with null' => [
                 ['aria-label' => static fn(): string|null => null],
-                ['aria-label' => null],
+                [],
                 'Should return the attribute value after setting it.',
             ],
             'closure with string' => [
@@ -473,7 +473,7 @@ final class AriaProvider
             ],
             'unset with null' => [
                 ['aria-label' => null],
-                ['aria-label' => null],
+                [],
                 "Should unset the 'aria-label' attribute when 'null' is provided after a value.",
             ],
             'without prefix' => [

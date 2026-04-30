@@ -77,7 +77,7 @@ final class HasAccesskeyTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::ACCESSKEY, ''),
+            $instance->getAttribute(GlobalAttribute::ACCESSKEY),
             $message,
         );
         self::assertSame(

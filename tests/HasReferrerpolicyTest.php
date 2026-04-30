@@ -11,7 +11,7 @@ use Stringable;
 use UIAwesome\Html\Attribute\HasReferrerpolicy;
 use UIAwesome\Html\Attribute\Tests\Provider\ReferrerpolicyProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Referrerpolicy};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -80,7 +80,7 @@ final class HasReferrerpolicyTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::REFERRERPOLICY, ''),
+            $instance->getAttribute(Attribute::REFERRERPOLICY),
             $message,
         );
         self::assertSame(
@@ -102,7 +102,7 @@ final class HasReferrerpolicyTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::REFERRERPOLICY->value,
-                implode("', '", Enum::normalizeArray(Referrerpolicy::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Referrerpolicy::cases())),
             ),
         );
 

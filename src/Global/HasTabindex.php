@@ -30,11 +30,10 @@ trait HasTabindex
      * $element->tabIndex(1);
      * ```
      *
-     * @param int|string|null $value Tab order value as an `integer` or `string` of `-1` or greater, or `null` to remove
+     * @param int|string|null $value Tab order value as an integer or string of '-1' or greater, or `null` to remove
      * the attribute.
      *
-     * @throws InvalidArgumentException if the value is not a valid `integer` or `string` representation of `-1` or
-     * greater.
+     * @throws InvalidArgumentException if the value is not a valid integer or string representation of '-1' or greater.
      * @return static New instance with the updated `tabindex` attribute.
      */
     public function tabIndex(int|string|null $value): static
@@ -45,6 +44,6 @@ trait HasTabindex
             );
         }
 
-        return $this->setAttribute(GlobalAttribute::TABINDEX, $value);
+        return $this->addAttribute(GlobalAttribute::TABINDEX, $value);
     }
 }

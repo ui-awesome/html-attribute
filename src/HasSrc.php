@@ -37,6 +37,6 @@ trait HasSrc
      */
     public function src(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::SRC, $value);
+        return $this->addAttribute(Attribute::SRC, $value);
     }
 }

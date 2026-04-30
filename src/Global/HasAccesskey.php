@@ -34,6 +34,6 @@ trait HasAccesskey
      */
     public function accesskey(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(GlobalAttribute::ACCESSKEY, $value);
+        return $this->addAttribute(GlobalAttribute::ACCESSKEY, $value);
     }
 }

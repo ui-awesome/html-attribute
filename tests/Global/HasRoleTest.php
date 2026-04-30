@@ -11,7 +11,7 @@ use Stringable;
 use UIAwesome\Html\Attribute\Global\HasRole;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\RoleProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Role};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -80,7 +80,7 @@ final class HasRoleTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::ROLE, ''),
+            $instance->getAttribute(GlobalAttribute::ROLE),
             $message,
         );
         self::assertSame(
@@ -102,7 +102,7 @@ final class HasRoleTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::ROLE->value,
-                implode("', '", Enum::normalizeArray(Role::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Role::cases())),
             ),
         );
 

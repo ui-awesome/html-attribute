@@ -30,7 +30,7 @@ trait HasDir
      * $element->dir(Direction::AUTO);
      * ```
      *
-     * @param string|UnitEnum|null $value Directionality value. Use `ltr`, `rtl`, or `auto`, or `null` to remove the
+     * @param string|UnitEnum|null $value Directionality value. Use 'ltr', 'rtl', or 'auto', or `null` to remove the
      * attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -43,6 +43,6 @@ trait HasDir
     {
         Validator::oneOf($value, Direction::cases(), GlobalAttribute::DIR);
 
-        return $this->setAttribute(GlobalAttribute::DIR, $value);
+        return $this->addAttribute(GlobalAttribute::DIR, $value);
     }
 }

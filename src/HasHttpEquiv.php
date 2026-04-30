@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Attribute;
 
 use InvalidArgumentException;
 use Stringable;
-use UIAwesome\Html\Attribute\Values\{Attribute, HttpEquiv};
+use UIAwesome\Html\Attribute\Values\{ElementAttribute, HttpEquiv};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
@@ -43,8 +43,8 @@ trait HasHttpEquiv
      */
     public function httpEquiv(string|Stringable|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, HttpEquiv::cases(), Attribute::HTTP_EQUIV);
+        Validator::oneOf($value, HttpEquiv::cases(), ElementAttribute::HTTP_EQUIV);
 
-        return $this->setAttribute(Attribute::HTTP_EQUIV, $value);
+        return $this->addAttribute(ElementAttribute::HTTP_EQUIV, $value);
     }
 }

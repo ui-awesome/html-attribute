@@ -45,6 +45,6 @@ trait HasReferrerpolicy
     {
         Validator::oneOf($value, Referrerpolicy::cases(), Attribute::REFERRERPOLICY);
 
-        return $this->setAttribute(Attribute::REFERRERPOLICY, $value);
+        return $this->addAttribute(Attribute::REFERRERPOLICY, $value);
     }
 }

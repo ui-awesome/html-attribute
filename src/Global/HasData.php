@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Attribute\Global;
 use Closure;
 use InvalidArgumentException;
 use Stringable;
+use UIAwesome\Html\Helper\AttributeBag;
 use UnitEnum;
 
 /**
@@ -33,20 +34,18 @@ trait HasData
      * ```
      *
      * @param string|UnitEnum $key Data attribute key without the `data-` prefix.
-     * @param bool|Closure|float|int|string|Stringable|UnitEnum|null $value Data attribute value, or `null` to remove
-     * the attribute.
+     * @param bool|Closure(): mixed|float|int|string|Stringable|UnitEnum|null $value Data attribute value, or `null` to
+     * remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `data-*` attribute.
-     *
-     * @phpstan-param scalar|Stringable|UnitEnum|Closure(): mixed $value
      */
     public function addDataAttribute(
         string|UnitEnum $key,
         bool|float|int|string|Closure|Stringable|UnitEnum|null $value,
     ): static {
-        return $this->setAttribute($key, $value, 'data-');
+        return $this->addAttribute(AttributeBag::normalizeKey($key, 'data-'), $value);
     }
 
     /**
@@ -67,18 +66,22 @@ trait HasData
      * );
      * ```
      *
-     * @param array $values Associative array of data keys and values. Values may be scalar, `Stringable`, `UnitEnum`,
-     * `Closure`, or `null` to remove the attribute.
+     * @param mixed[] $values Associative array of data keys and values. Values may be scalar, Stringable, UnitEnum,
+     * Closure, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `data-*` attributes.
-     *
-     * @phpstan-param mixed[] $values
      */
     public function dataAttributes(array $values): static
     {
-        return $this->attributes($values, 'data-');
+        $new = $this;
+
+        foreach ($values as $key => $value) {
+            $new = $new->addAttribute(AttributeBag::normalizeKey($key, 'data-'), $value);
+        }
+
+        return $new;
     }
 
     /**
@@ -96,6 +99,6 @@ trait HasData
      */
     public function removeDataAttribute(string|UnitEnum $key): static
     {
-        return $this->removeAttribute($key, 'data-');
+        return $this->addAttribute(AttributeBag::normalizeKey($key, 'data-'), null);
     }
 }

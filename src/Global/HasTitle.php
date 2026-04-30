@@ -34,6 +34,6 @@ trait HasTitle
      */
     public function title(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(GlobalAttribute::TITLE, $value);
+        return $this->addAttribute(GlobalAttribute::TITLE, $value);
     }
 }

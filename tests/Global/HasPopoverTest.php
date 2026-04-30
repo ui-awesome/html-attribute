@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasPopover;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\PopoverProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Popover};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasPopoverTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::POPOVER, ''),
+            $instance->getAttribute(GlobalAttribute::POPOVER),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasPopoverTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::POPOVER->value,
-                implode("', '", Enum::normalizeArray(Popover::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Popover::cases())),
             ),
         );
 

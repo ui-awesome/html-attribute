@@ -77,7 +77,7 @@ final class HasContentTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::CONTENT, ''),
+            $instance->getAttribute(Attribute::CONTENT),
             $message,
         );
         self::assertSame(

@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasAutocapitalize;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\AutocapitalizeProvider;
 use UIAwesome\Html\Attribute\Values\{Autocapitalize, GlobalAttribute};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasAutocapitalizeTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::AUTOCAPITALIZE, ''),
+            $instance->getAttribute(GlobalAttribute::AUTOCAPITALIZE),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasAutocapitalizeTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::AUTOCAPITALIZE->value,
-                implode("', '", Enum::normalizeArray(Autocapitalize::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Autocapitalize::cases())),
             ),
         );
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use Stringable;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
 /**
@@ -37,6 +37,6 @@ trait HasHreflang
      */
     public function hreflang(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::HREFLANG, $value);
+        return $this->addAttribute(ElementAttribute::HREFLANG, $value);
     }
 }

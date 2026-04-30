@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasTarget;
 use UIAwesome\Html\Attribute\Tests\Provider\TargetProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Target};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasTargetTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::TARGET, ''),
+            $instance->getAttribute(Attribute::TARGET),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasTargetTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-target',
                 Attribute::TARGET->value,
-                implode("', '", Enum::normalizeArray(Target::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Target::cases())),
             ),
         );
 

@@ -140,7 +140,7 @@ final class HasMicroDataTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::ITEMID, ''),
+            $instance->getAttribute(GlobalAttribute::ITEMID),
             $message,
         );
         self::assertSame(
@@ -170,7 +170,7 @@ final class HasMicroDataTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::ITEMPROP, ''),
+            $instance->getAttribute(GlobalAttribute::ITEMPROP),
             $message,
         );
         self::assertSame(
@@ -200,7 +200,7 @@ final class HasMicroDataTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::ITEMREF, ''),
+            $instance->getAttribute(GlobalAttribute::ITEMREF),
             $message,
         );
         self::assertSame(
@@ -230,7 +230,7 @@ final class HasMicroDataTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::ITEMSCOPE, ''),
+            $instance->getAttribute(GlobalAttribute::ITEMSCOPE),
             $message,
         );
         self::assertSame(
@@ -260,7 +260,7 @@ final class HasMicroDataTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::ITEMTYPE, ''),
+            $instance->getAttribute(GlobalAttribute::ITEMTYPE),
             $message,
         );
         self::assertSame(

@@ -29,7 +29,7 @@ trait HasPopover
      * $element->popover(Popover::AUTO);
      * ```
      *
-     * @param string|UnitEnum|null $value Popover state (`auto`, `hint`, `manual`), or `null` to remove the attribute.
+     * @param string|UnitEnum|null $value Popover state ('auto', 'hint', 'manual'), or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the provided value is not valid.
      *
@@ -41,6 +41,6 @@ trait HasPopover
     {
         Validator::oneOf($value, Popover::cases(), GlobalAttribute::POPOVER);
 
-        return $this->setAttribute(GlobalAttribute::POPOVER, $value);
+        return $this->addAttribute(GlobalAttribute::POPOVER, $value);
     }
 }

@@ -77,7 +77,7 @@ final class HasNonceTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::NONCE, ''),
+            $instance->getAttribute(GlobalAttribute::NONCE),
             $message,
         );
         self::assertSame(

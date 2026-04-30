@@ -8,7 +8,7 @@ use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\CanBeSelected;
 use UIAwesome\Html\Attribute\Tests\Provider\SelectedProvider;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 
@@ -75,7 +75,7 @@ final class CanBeSelectedTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::SELECTED, ''),
+            $instance->getAttribute(ElementAttribute::SELECTED),
             $message,
         );
         self::assertSame(

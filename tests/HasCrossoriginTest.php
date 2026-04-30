@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasCrossorigin;
 use UIAwesome\Html\Attribute\Tests\Provider\CrossoriginProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Crossorigin};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasCrossoriginTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::CROSSORIGIN, ''),
+            $instance->getAttribute(Attribute::CROSSORIGIN),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasCrossoriginTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::CROSSORIGIN->value,
-                implode("', '", Enum::normalizeArray(Crossorigin::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Crossorigin::cases())),
             ),
         );
 
