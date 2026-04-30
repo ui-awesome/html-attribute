@@ -2,8 +2,6 @@
 
 ## 0.6.0
 
-### Breaking changes
-
 - Element-specific attribute traits were removed from `UIAwesome\Html\Attribute\Element`.
 - Form-specific attribute traits were removed from `UIAwesome\Html\Attribute\Form`.
 - Media and interactive element-specific traits were removed from `UIAwesome\Html\Attribute`.
