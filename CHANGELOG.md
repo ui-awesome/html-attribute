@@ -20,6 +20,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - test: standardize test PHPDoc, provider organization, exception names, and attribute assertions.
 - chore: update `ui-awesome/html-helper` to the stable `^0.7` constraint.
 - refactor: align attributes, docs, tests, and release tooling with the current package scope.
+- docs: update `UPGRADE.md` guide to reflect breaking changes and new attribute APIs.
 
 ## 0.5.2 January 29, 2026
 
