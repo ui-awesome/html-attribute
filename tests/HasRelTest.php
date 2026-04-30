@@ -11,7 +11,7 @@ use Stringable;
 use UIAwesome\Html\Attribute\HasRel;
 use UIAwesome\Html\Attribute\Tests\Provider\RelProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Rel};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -80,7 +80,7 @@ final class HasRelTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::REL, ''),
+            $instance->getAttribute(Attribute::REL),
             $message,
         );
         self::assertSame(
@@ -102,7 +102,7 @@ final class HasRelTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::REL->value,
-                implode("', '", Enum::normalizeArray(Rel::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Rel::cases())),
             ),
         );
 

@@ -44,6 +44,6 @@ trait HasFetchpriority
     {
         Validator::oneOf($value, Fetchpriority::cases(), Attribute::FETCHPRIORITY);
 
-        return $this->setAttribute(Attribute::FETCHPRIORITY, $value);
+        return $this->addAttribute(Attribute::FETCHPRIORITY, $value);
     }
 }

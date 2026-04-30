@@ -22,13 +22,6 @@ enum Attribute: string
     case ACCEPT = 'accept';
 
     /**
-     * `as` — Specifies the type of content being loaded by the link element.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#as
-     */
-    case AS = 'as';
-
-    /**
      * `autocomplete` — Indicates whether controls can have their values automatically completed.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete
@@ -36,25 +29,11 @@ enum Attribute: string
     case AUTOCOMPLETE = 'autocomplete';
 
     /**
-     * `blocking` — Indicates that certain operations should be blocked on the fetching of an external resource.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style#blocking
-     */
-    case BLOCKING = 'blocking';
-
-    /**
      * `capture` — Media capture hint for file inputs.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/capture
      */
     case CAPTURE = 'capture';
-
-    /**
-     * `charset` — Declares the document's character encoding.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta#charset
-     */
-    case CHARSET = 'charset';
 
     /**
      * `checked` — Indicates whether the command or control is checked.
@@ -92,13 +71,6 @@ enum Attribute: string
     case DISABLED = 'disabled';
 
     /**
-     * `download` — Indicates that the hyperlink is to be used for downloading a resource.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#download
-     */
-    case DOWNLOAD = 'download';
-
-    /**
      * `elementtiming` — Marks the element for observation by the `PerformanceElementTiming` API.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/elementtiming
@@ -127,54 +99,12 @@ enum Attribute: string
     case FORM = 'form';
 
     /**
-     * `hreflang` — Indicates the language of the linked resource.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#hreflang
-     */
-    case HREFLANG = 'hreflang';
-
-    /**
-     * `http-equiv` — Defines a pragma directive for processing the document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv
-     */
-    case HTTP_EQUIV = 'http-equiv';
-
-    /**
-     * `imagesizes` — Specifies the image sizes for preload.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#imagesizes
-     */
-    case IMAGESIZES = 'imagesizes';
-
-    /**
-     * `imagesrcset` — Specifies the image srcset for preload.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset
-     */
-    case IMAGESRCSET = 'imagesrcset';
-
-    /**
      * `integrity` — Contains inline metadata that a user agent can use to verify that a fetched resource has been
      * delivered without unexpected manipulation (Subresource Integrity).
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/integrity
      */
     case INTEGRITY = 'integrity';
-
-    /**
-     * `label` — Text used as a label for an option or option group.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option#label
-     */
-    case LABEL = 'label';
-
-    /**
-     * `list` — Identifies a `<datalist>` element that provides predefined options to suggest to the user.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#list
-     */
-    case LIST = 'list';
 
     /**
      * `max` — Indicates the maximum value allowed.
@@ -219,25 +149,11 @@ enum Attribute: string
     case MULTIPLE = 'multiple';
 
     /**
-     * `name` — Specifies the metadata name for the meta element.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name
-     */
-    case NAME = 'name';
-
-    /**
      * `pattern` — Defines a regular expression which the element's value will be validated against.
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/pattern
      */
     case PATTERN = 'pattern';
-
-    /**
-     * `ping` — A space-separated list of URLs to which the browser will send POST requests when the link is followed.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#ping
-     */
-    case PING = 'ping';
 
     /**
      * `placeholder` — Provides a hint to the user of what can be entered in the field.
@@ -275,25 +191,11 @@ enum Attribute: string
     case REQUIRED = 'required';
 
     /**
-     * `selected` — Indicates whether an option is initially selected.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option#selected
-     */
-    case SELECTED = 'selected';
-
-    /**
      * `size` — Defines the width of the element (in pixels).
      *
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/size
      */
     case SIZE = 'size';
-
-    /**
-     * `sizes` — Defines the sizes of icons for visual media.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#sizes
-     */
-    case SIZES = 'sizes';
 
     /**
      * `src` — Specifies the URL of the resource.
@@ -322,11 +224,4 @@ enum Attribute: string
      * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/type
      */
     case TYPE = 'type';
-
-    /**
-     * `value` — Indicates the current ordinal value of the list item.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/li#value
-     */
-    case VALUE = 'value';
 }

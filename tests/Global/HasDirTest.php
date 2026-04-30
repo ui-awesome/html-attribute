@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasDir;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\DirProvider;
 use UIAwesome\Html\Attribute\Values\{Direction, GlobalAttribute};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasDirTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::DIR, ''),
+            $instance->getAttribute(GlobalAttribute::DIR),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasDirTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::DIR->value,
-                implode("', '", Enum::normalizeArray(Direction::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Direction::cases())),
             ),
         );
 

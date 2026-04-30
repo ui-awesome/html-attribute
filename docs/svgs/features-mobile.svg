@@ -1,59 +1,52 @@
-<!-- Versión móvil - Una sola columna -->
-<svg fill="none" viewBox="0 0 600 190" width="100%" height="190" xmlns="http://www.w3.org/2000/svg">
-    <foreignObject width="100%" height="100%">
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <style>
-                .container {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    gap: 16px;
-                    padding: 16px;
-                }
-                .alert-box {
-                    border-left: 4px solid #1f883d;
-                    padding: 12px;
-                    margin-bottom: 12px;
-                    border-radius: 6px;
-                    background: rgba(31, 136, 61, 0.1);
-                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-                    width: 100%;
-                    box-sizing: border-box;
-                }
-                .alert-title {
-                    margin: 0 0 8px 0;
-                    font-weight: 600;
-                    font-size: 14px;
-                }
-                .alert-content {
-                    margin: 0;
-                    line-height: 1.4;
-                    font-size: 12px;
-                }
+<!-- Mobile version - Single column -->
+<svg viewBox="0 0 620 620" width="100%" height="580" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .box-bg { fill: #e6f4ea; stroke: #a7cdb3; stroke-width: 1; }
+        .title { font-weight: 700; font-size: 14px; fill: #1a202c; }
+        .content { font-size: 11px; fill: #4a5568; }
+    </style>
 
-                /* Light mode */
-                @media (prefers-color-scheme: light) {
-                    .alert-title { color: #000000; }
-                    .alert-content { color: #333333; }
-                    .alert-box { background: rgba(31, 136, 61, 0.1); }
-                }
-
-                /* Dark mode */
-                @media (prefers-color-scheme: dark) {
-                    .alert-title { color: #ffffff; }
-                    .alert-content { color: #ffffff; }
-                    .alert-box { background: rgba(31, 136, 61, 0.2); }
-                }
-            </style>
-            <div class="container">
-                <div class="alert-box">
-                    <p class="alert-title"><strong>MDN Standards Compliant</strong></p>
-                    <p class="alert-content">Organized by Element • Global • Values</p>
-                </div>
-                <div class="alert-box">
-                    <p class="alert-title"><strong>Specific &amp; Lightweight</strong></p>
-                    <p class="alert-content">Attributes • Clean Architecture • Focused Traits</p>
-                </div>
-            </div>
-        </div>
-    </foreignObject>
+    <g>
+        <rect class="box-bg" x="16" y="16" width="588" height="84" rx="6"/>
+        <rect x="16" y="16" width="4" height="84" fill="#1f883d"/>
+        <text class="title" x="32" y="42">Attribute APIs</text>
+        <text class="content" x="32" y="66">Focused traits for shared HTML attributes and immutable setters</text>
+        <text class="content" x="32" y="84">Built on addAttribute() with null removal semantics</text>
+    </g>
+    <g>
+        <rect class="box-bg" x="16" y="116" width="588" height="84" rx="6"/>
+        <rect x="16" y="116" width="4" height="84" fill="#1f883d"/>
+        <text class="title" x="32" y="142">ElementAttribute Enum</text>
+        <text class="content" x="32" y="166">Element-specific attribute names without element trait duplication</text>
+        <text class="content" x="32" y="184">Keeps ownership in ui-awesome/html while sharing constants</text>
+    </g>
+    <g>
+        <rect class="box-bg" x="16" y="216" width="588" height="84" rx="6"/>
+        <rect x="16" y="216" width="4" height="84" fill="#1f883d"/>
+        <text class="title" x="32" y="242">Global Attributes</text>
+        <text class="content" x="32" y="266">class, id, lang, role, style, tabindex and related global APIs</text>
+        <text class="content" x="32" y="284">Enum-backed values for consistent rendering and validation</text>
+    </g>
+    <g>
+        <rect class="box-bg" x="16" y="316" width="588" height="84" rx="6"/>
+        <rect x="16" y="316" width="4" height="84" fill="#1f883d"/>
+        <text class="title" x="32" y="342">Prefix Attributes</text>
+        <text class="content" x="32" y="366">aria-*, data-* and on* helpers with prefix normalization</text>
+        <text class="content" x="32" y="384">Safe removal and batch assignment through attribute bags</text>
+    </g>
+    <g>
+        <rect class="box-bg" x="16" y="416" width="588" height="84" rx="6"/>
+        <rect x="16" y="416" width="4" height="84" fill="#1f883d"/>
+        <text class="title" x="32" y="442">Typed Values</text>
+        <text class="content" x="32" y="466">Stringable, UnitEnum, scalar and null support across setters</text>
+        <text class="content" x="32" y="484">Dedicated enums for rel, target, crossorigin, direction and more</text>
+    </g>
+    <g>
+        <rect class="box-bg" x="16" y="516" width="588" height="84" rx="6"/>
+        <rect x="16" y="516" width="4" height="84" fill="#1f883d"/>
+        <text class="title" x="32" y="542">Validation</text>
+        <text class="content" x="32" y="566">oneOf() checks and numeric constraints for strict attribute values</text>
+        <text class="content" x="32" y="584">Deterministic exception messages for reliable test coverage</text>
+    </g>
 </svg>

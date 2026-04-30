@@ -11,7 +11,7 @@ use Stringable;
 use UIAwesome\Html\Attribute\Global\HasLang;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\LangProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Language};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -80,7 +80,7 @@ final class HasLangTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::LANG, ''),
+            $instance->getAttribute(GlobalAttribute::LANG),
             $message,
         );
         self::assertSame(
@@ -102,7 +102,7 @@ final class HasLangTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 'lang',
-                implode("', '", Enum::normalizeArray(Language::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Language::cases())),
             ),
         );
 

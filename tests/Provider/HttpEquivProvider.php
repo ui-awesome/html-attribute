@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider;
 
 use PHPForge\Support\EnumDataProvider;
 use Stringable;
-use UIAwesome\Html\Attribute\Values\{Attribute, HttpEquiv};
+use UIAwesome\Html\Attribute\Values\{ElementAttribute, HttpEquiv};
 use UnitEnum;
 
 /**
@@ -27,7 +27,7 @@ final class HttpEquivProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataProvider::attributeCases(HttpEquiv::class, Attribute::HTTP_EQUIV);
+        $enumCases = EnumDataProvider::attributeCases(HttpEquiv::class, ElementAttribute::HTTP_EQUIV);
 
         $stringable = new class implements Stringable {
             public function __toString(): string

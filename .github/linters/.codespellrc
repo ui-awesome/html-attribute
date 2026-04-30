@@ -1,0 +1,3 @@
+[codespell]
+ignore-words-list = CanBe
+skip = */tests/*,tests/**,*/composer.lock,*/composer.json

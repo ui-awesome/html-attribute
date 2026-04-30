@@ -11,7 +11,7 @@ use Stringable;
 use UIAwesome\Html\Attribute\HasType;
 use UIAwesome\Html\Attribute\Tests\Provider\TypeProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Type};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -80,7 +80,7 @@ final class HasTypeTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::TYPE, ''),
+            $instance->getAttribute(Attribute::TYPE),
             $message,
         );
         self::assertSame(
@@ -102,7 +102,7 @@ final class HasTypeTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::TYPE->value,
-                implode("', '", Enum::normalizeArray(Type::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Type::cases())),
             ),
         );
 

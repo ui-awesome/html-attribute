@@ -37,6 +37,6 @@ trait HasMedia
      */
     public function media(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::MEDIA, $value);
+        return $this->addAttribute(Attribute::MEDIA, $value);
     }
 }

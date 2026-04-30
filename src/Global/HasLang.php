@@ -43,6 +43,6 @@ trait HasLang
     {
         Validator::oneOf($value, Language::cases(), GlobalAttribute::LANG);
 
-        return $this->setAttribute(GlobalAttribute::LANG, $value);
+        return $this->addAttribute(GlobalAttribute::LANG, $value);
     }
 }

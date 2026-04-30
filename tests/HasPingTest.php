@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasPing;
 use UIAwesome\Html\Attribute\Tests\Provider\PingProvider;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\{Attribute, ElementAttribute};
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -77,7 +77,7 @@ final class HasPingTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::PING, ''),
+            $instance->getAttribute(ElementAttribute::PING),
             $message,
         );
         self::assertSame(

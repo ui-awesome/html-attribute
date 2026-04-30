@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use Stringable;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
 /**
@@ -17,7 +17,7 @@ use UnitEnum;
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-trait HasImagesizes
+trait HasImageSizes
 {
     /**
      * Sets the `imagesizes` attribute.
@@ -37,6 +37,6 @@ trait HasImagesizes
      */
     public function imagesizes(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::IMAGESIZES, $value);
+        return $this->addAttribute(ElementAttribute::IMAGESIZES, $value);
     }
 }

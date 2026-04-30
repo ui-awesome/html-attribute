@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use Stringable;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
 /**
@@ -31,12 +31,12 @@ trait HasSizes
      * $element->sizes(null);
      * ```
      *
-     * @param string|Stringable|UnitEnum|null $value Icon size list or `any` token, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Icon size list or 'any' token, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `sizes` attribute.
      */
     public function sizes(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::SIZES, $value);
+        return $this->addAttribute(ElementAttribute::SIZES, $value);
     }
 }

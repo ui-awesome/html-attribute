@@ -10,8 +10,8 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasHttpEquiv;
 use UIAwesome\Html\Attribute\Tests\Provider\HttpEquivProvider;
-use UIAwesome\Html\Attribute\Values\{Attribute, HttpEquiv};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Attribute\Values\{ElementAttribute, HttpEquiv};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -80,7 +80,7 @@ final class HasHttpEquivTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::HTTP_EQUIV, ''),
+            $instance->getAttribute(ElementAttribute::HTTP_EQUIV),
             $message,
         );
         self::assertSame(
@@ -101,8 +101,8 @@ final class HasHttpEquivTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                Attribute::HTTP_EQUIV->value,
-                implode("', '", Enum::normalizeArray(HttpEquiv::cases())),
+                ElementAttribute::HTTP_EQUIV->value,
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, HttpEquiv::cases())),
             ),
         );
 

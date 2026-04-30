@@ -43,15 +43,13 @@ trait HasStyle
      * $element->style(null);
      * ```
      *
-     * @param array|string|Stringable|UnitEnum|null $value Style value as a CSS `string`, an associative array of CSS
+     * @param mixed[]|string|Stringable|UnitEnum|null $value Style value as a CSS string, an associative array of CSS
      * property-value pairs, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `style` attribute.
-     *
-     * @phpstan-param mixed[]|string|Stringable|UnitEnum|null $value
      */
     public function style(array|string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(GlobalAttribute::STYLE, $value);
+        return $this->addAttribute(GlobalAttribute::STYLE, $value);
     }
 }

@@ -44,6 +44,6 @@ trait HasSpellcheck
 
         Validator::oneOf($value, ['false', 'true'], GlobalAttribute::SPELLCHECK);
 
-        return $this->setAttribute(GlobalAttribute::SPELLCHECK, $value);
+        return $this->addAttribute(GlobalAttribute::SPELLCHECK, $value);
     }
 }

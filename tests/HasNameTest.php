@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasName;
 use UIAwesome\Html\Attribute\Tests\Provider\NameProvider;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\{Attribute, ElementAttribute};
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -77,7 +77,7 @@ final class HasNameTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::NAME, ''),
+            $instance->getAttribute(ElementAttribute::NAME),
             $message,
         );
         self::assertSame(

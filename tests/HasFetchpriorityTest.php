@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\HasFetchpriority;
 use UIAwesome\Html\Attribute\Tests\Provider\FetchpriorityProvider;
 use UIAwesome\Html\Attribute\Values\{Attribute, Fetchpriority};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasFetchpriorityTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::FETCHPRIORITY, ''),
+            $instance->getAttribute(Attribute::FETCHPRIORITY),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasFetchpriorityTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::FETCHPRIORITY->value,
-                implode("', '", Enum::normalizeArray(Fetchpriority::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Fetchpriority::cases())),
             ),
         );
 

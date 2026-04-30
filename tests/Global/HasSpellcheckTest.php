@@ -78,7 +78,7 @@ final class HasSpellcheckTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::SPELLCHECK, ''),
+            $instance->getAttribute(GlobalAttribute::SPELLCHECK),
             $message,
         );
         self::assertSame(

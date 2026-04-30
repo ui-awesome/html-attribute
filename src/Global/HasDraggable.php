@@ -48,6 +48,6 @@ trait HasDraggable
 
         Validator::oneOf($value, Draggable::cases(), GlobalAttribute::DRAGGABLE);
 
-        return $this->setAttribute(GlobalAttribute::DRAGGABLE, $value);
+        return $this->addAttribute(GlobalAttribute::DRAGGABLE, $value);
     }
 }

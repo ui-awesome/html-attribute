@@ -77,7 +77,7 @@ final class HasTitleTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::TITLE, ''),
+            $instance->getAttribute(GlobalAttribute::TITLE),
             $message,
         );
         self::assertSame(

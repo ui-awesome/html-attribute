@@ -33,6 +33,6 @@ trait CanBeHidden
      */
     public function hidden(bool|null $value): static
     {
-        return $this->setAttribute(GlobalAttribute::HIDDEN, $value);
+        return $this->addAttribute(GlobalAttribute::HIDDEN, $value);
     }
 }

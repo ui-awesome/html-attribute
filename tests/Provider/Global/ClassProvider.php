@@ -21,7 +21,7 @@ final class ClassProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{array<array{value: string|Stringable|UnitEnum|null, override?: bool}>, string, string, string}
+     *   array{array<array{value: string|Stringable|UnitEnum|null, override?: bool}>, string|null, string, string}
      * >
      */
     public static function values(): array
@@ -38,7 +38,7 @@ final class ClassProvider
             ],
             'empty string' => [
                 [['value' => '']],
-                '',
+                null,
                 '',
                 'Should return an empty string when setting an empty string.',
             ],
@@ -63,7 +63,7 @@ final class ClassProvider
             ],
             'null' => [
                 [['value' => null]],
-                '',
+                null,
                 '',
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
@@ -105,7 +105,7 @@ final class ClassProvider
                     ['value' => 'class-one'],
                     ['value' => null],
                 ],
-                '',
+                null,
                 '',
                 "Should unset the 'class' attribute when 'null' is provided after a value.",
             ],

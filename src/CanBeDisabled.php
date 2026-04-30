@@ -33,6 +33,6 @@ trait CanBeDisabled
      */
     public function disabled(bool|null $value): static
     {
-        return $this->setAttribute(Attribute::DISABLED, $value);
+        return $this->addAttribute(Attribute::DISABLED, $value);
     }
 }

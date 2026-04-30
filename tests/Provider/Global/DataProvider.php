@@ -269,7 +269,7 @@ final class DataProvider
             'closure with null' => [
                 'data-value',
                 static fn(): string|null => null,
-                ['data-value' => null],
+                [],
                 'Should return the attribute value after setting it.',
             ],
             'closure with string' => [
@@ -329,7 +329,7 @@ final class DataProvider
             'unset with null' => [
                 'data-value',
                 null,
-                ['data-value' => null],
+                [],
                 "Should unset the 'data-value' attribute when 'null' is provided after a value.",
             ],
             'without prefix' => [
@@ -411,7 +411,7 @@ final class DataProvider
             ],
             'closure with null' => [
                 ['data-value' => static fn(): string|null => null],
-                ['data-value' => null],
+                [],
                 'Should return the attribute value after setting it.',
             ],
             'closure with string' => [
@@ -467,7 +467,7 @@ final class DataProvider
             ],
             'unset with null' => [
                 ['data-value' => null],
-                ['data-value' => null],
+                [],
                 "Should unset the 'data-value' attribute when 'null' is provided after a value.",
             ],
             'without prefix' => [

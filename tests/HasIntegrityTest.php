@@ -77,7 +77,7 @@ final class HasIntegrityTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::INTEGRITY, ''),
+            $instance->getAttribute(Attribute::INTEGRITY),
             $message,
         );
         self::assertSame(

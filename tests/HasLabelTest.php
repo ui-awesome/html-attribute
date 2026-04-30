@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasLabel;
 use UIAwesome\Html\Attribute\Tests\Provider\LabelProvider;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\{Attribute, ElementAttribute};
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -77,7 +77,7 @@ final class HasLabelTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::LABEL, ''),
+            $instance->getAttribute(ElementAttribute::LABEL),
             $message,
         );
         self::assertSame(

@@ -31,7 +31,7 @@ trait HasTranslate
      * $element->translate(Translate::NO);
      * ```
      *
-     * @param bool|string|UnitEnum|null $value Translation behavior. Use `yes`, `no`, `true`, `false`, or `null` to
+     * @param bool|string|UnitEnum|null $value Translation behavior. Use 'yes', 'no', `true`, `false`, or `null` to
      * remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -54,6 +54,6 @@ trait HasTranslate
 
         Validator::oneOf($value, Translate::cases(), GlobalAttribute::TRANSLATE);
 
-        return $this->setAttribute(GlobalAttribute::TRANSLATE, $value);
+        return $this->addAttribute(GlobalAttribute::TRANSLATE, $value);
     }
 }

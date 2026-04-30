@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasDraggable;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\DraggableProvider;
 use UIAwesome\Html\Attribute\Values\{Draggable, GlobalAttribute};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasDraggableTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::DRAGGABLE, ''),
+            $instance->getAttribute(GlobalAttribute::DRAGGABLE),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasDraggableTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::DRAGGABLE->value,
-                implode("', '", Enum::normalizeArray(Draggable::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Draggable::cases())),
             ),
         );
 

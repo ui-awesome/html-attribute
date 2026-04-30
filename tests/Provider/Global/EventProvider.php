@@ -227,7 +227,7 @@ final class EventProvider
             'closure with null' => [
                 'onclick',
                 static fn() => null,
-                ['onclick' => null],
+                [],
                 'Should unset the attribute when closure returns null.',
             ],
             'closure with string' => [
@@ -269,7 +269,7 @@ final class EventProvider
             'unset with null' => [
                 'onclick',
                 null,
-                ['onclick' => null],
+                [],
                 'Should unset the attribute when null is provided.',
             ],
             'without prefix' => [
@@ -312,7 +312,7 @@ final class EventProvider
             ],
             'closure with null' => [
                 ['onclick' => static fn() => null],
-                ['onclick' => null],
+                [],
                 'Should unset the attribute when closure returns null.',
             ],
             'closure with string' => [
@@ -355,7 +355,7 @@ final class EventProvider
             ],
             'unset with null' => [
                 ['onclick' => null],
-                ['onclick' => null],
+                [],
                 'Should unset the attribute when null is provided.',
             ],
             'without prefix' => [

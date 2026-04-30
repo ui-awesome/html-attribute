@@ -34,6 +34,6 @@ trait HasId
      */
     public function id(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(GlobalAttribute::ID, $value);
+        return $this->addAttribute(GlobalAttribute::ID, $value);
     }
 }

@@ -45,6 +45,6 @@ trait HasType
     {
         Validator::oneOf($value, Type::cases(), Attribute::TYPE);
 
-        return $this->setAttribute(Attribute::TYPE, $value);
+        return $this->addAttribute(Attribute::TYPE, $value);
     }
 }

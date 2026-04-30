@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute;
 
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 
 /**
  * Provides an immutable API for the `selected` attribute.
@@ -33,6 +33,6 @@ trait CanBeSelected
      */
     public function selected(bool|null $value): static
     {
-        return $this->setAttribute(Attribute::SELECTED, $value);
+        return $this->addAttribute(ElementAttribute::SELECTED, $value);
     }
 }

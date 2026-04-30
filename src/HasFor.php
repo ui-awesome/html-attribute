@@ -36,6 +36,6 @@ trait HasFor
      */
     public function for(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::FOR, $value);
+        return $this->addAttribute(Attribute::FOR, $value);
     }
 }

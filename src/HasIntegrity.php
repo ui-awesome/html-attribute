@@ -37,6 +37,6 @@ trait HasIntegrity
      */
     public function integrity(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::INTEGRITY, $value);
+        return $this->addAttribute(Attribute::INTEGRITY, $value);
     }
 }

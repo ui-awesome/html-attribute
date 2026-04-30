@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Attribute\Tests\Provider;
 
 use PHPForge\Support\EnumDataProvider;
 use Stringable;
-use UIAwesome\Html\Attribute\Values\{Attribute, MetaName};
+use UIAwesome\Html\Attribute\Values\{ElementAttribute, MetaName};
 use UnitEnum;
 
 /**
@@ -27,7 +27,7 @@ final class NameProvider
      */
     public static function values(): array
     {
-        $enumCases = EnumDataProvider::attributeCases(MetaName::class, Attribute::NAME);
+        $enumCases = EnumDataProvider::attributeCases(MetaName::class, ElementAttribute::NAME);
 
         $stringable = new class implements Stringable {
             public function __toString(): string

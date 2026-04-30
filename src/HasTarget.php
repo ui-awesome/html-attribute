@@ -44,6 +44,6 @@ trait HasTarget
     {
         Validator::oneOf($value, Target::cases(), Attribute::TARGET);
 
-        return $this->setAttribute(Attribute::TARGET, $value);
+        return $this->addAttribute(Attribute::TARGET, $value);
     }
 }

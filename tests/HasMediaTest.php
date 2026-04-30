@@ -77,7 +77,7 @@ final class HasMediaTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::MEDIA, ''),
+            $instance->getAttribute(Attribute::MEDIA),
             $message,
         );
         self::assertSame(

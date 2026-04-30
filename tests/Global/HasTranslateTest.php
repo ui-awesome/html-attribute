@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasTranslate;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\TranslateProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, Translate};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasTranslateTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::TRANSLATE, ''),
+            $instance->getAttribute(GlobalAttribute::TRANSLATE),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasTranslateTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::TRANSLATE->value,
-                implode("', '", Enum::normalizeArray(Translate::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Translate::cases())),
             ),
         );
 

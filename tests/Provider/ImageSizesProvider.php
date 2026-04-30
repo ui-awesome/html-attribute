@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace UIAwesome\Html\Attribute\Tests\Provider\Element;
+namespace UIAwesome\Html\Attribute\Tests\Provider;
 
 use PHPForge\Support\Stub\{BackedString, Unit};
 use Stringable;
 use UnitEnum;
 
 /**
- * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Element\HasPopoverTargetTest} test cases.
+ * Data provider for {@see \UIAwesome\Html\Attribute\Tests\HasImageSizesTest} test cases.
  *
- * Provides representative input/output pairs for the `popovertarget` attribute.
+ * Provides representative input/output pairs for the `imagesizes` attribute.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
-final class PopoverTargetProvider
+final class ImageSizesProvider
 {
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string},
+     *   array{string|Stringable|UnitEnum|null, mixed[], string|Stringable|UnitEnum|null, string, string}
      * >
      */
     public static function values(): array
@@ -29,7 +29,7 @@ final class PopoverTargetProvider
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return 'popover-id';
+                return '100vw';
             }
         };
 
@@ -45,14 +45,14 @@ final class PopoverTargetProvider
                 BackedString::VALUE,
                 [],
                 BackedString::VALUE,
-                ' popovertarget="value"',
+                ' imagesizes="value"',
                 'Should return the attribute value after setting it.',
             ],
             'enum unit' => [
                 Unit::value,
                 [],
                 Unit::value,
-                ' popovertarget="value"',
+                ' imagesizes="value"',
                 'Should return the attribute value after setting it.',
             ],
             'null' => [
@@ -63,32 +63,39 @@ final class PopoverTargetProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                'popover-id',
-                ['popovertarget' => 'old-popover-id'],
-                'popover-id',
-                ' popovertarget="popover-id"',
-                "Should return new 'popovertarget' after replacing the existing 'popovertarget' attribute.",
+                '50vw',
+                ['imagesizes' => '100vw'],
+                '50vw',
+                ' imagesizes="50vw"',
+                "Should return new 'imagesizes' after replacing the existing 'imagesizes' attribute.",
             ],
             'string' => [
-                'popover-id',
+                '100vw',
                 [],
-                'popover-id',
-                ' popovertarget="popover-id"',
+                '100vw',
+                ' imagesizes="100vw"',
+                'Should return the attribute value after setting it.',
+            ],
+            'string with media query' => [
+                '(max-width: 600px) 100vw, 50vw',
+                [],
+                '(max-width: 600px) 100vw, 50vw',
+                ' imagesizes="(max-width: 600px) 100vw, 50vw"',
                 'Should return the attribute value after setting it.',
             ],
             'stringable' => [
                 $stringable,
                 [],
                 $stringable,
-                ' popovertarget="popover-id"',
+                ' imagesizes="100vw"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['popovertarget' => 'popover-id'],
+                ['imagesizes' => '100vw'],
                 null,
                 '',
-                "Should unset the 'popovertarget' attribute when 'null' is provided after a value.",
+                "Should unset the 'imagesizes' attribute when 'null' is provided after a value.",
             ],
         ];
     }

@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 use UIAwesome\Html\Attribute\Global\HasInputMode;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\InputModeProvider;
 use UIAwesome\Html\Attribute\Values\{GlobalAttribute, InputMode};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -79,7 +79,7 @@ final class HasInputModeTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::INPUTMODE, ''),
+            $instance->getAttribute(GlobalAttribute::INPUTMODE),
             $message,
         );
         self::assertSame(
@@ -101,7 +101,7 @@ final class HasInputModeTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::INPUTMODE->value,
-                implode("', '", Enum::normalizeArray(InputMode::cases())),
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, InputMode::cases())),
             ),
         );
 

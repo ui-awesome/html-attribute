@@ -77,7 +77,7 @@ final class HasIdTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::ID, ''),
+            $instance->getAttribute(GlobalAttribute::ID),
             $message,
         );
         self::assertSame(

@@ -10,8 +10,8 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use UIAwesome\Html\Attribute\HasAs;
 use UIAwesome\Html\Attribute\Tests\Provider\AsProvider;
-use UIAwesome\Html\Attribute\Values\{AsValue, Attribute};
-use UIAwesome\Html\Helper\{Attributes, Enum};
+use UIAwesome\Html\Attribute\Values\{AsValue, ElementAttribute};
+use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
@@ -80,7 +80,7 @@ final class HasAsTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::AS, ''),
+            $instance->getAttribute(ElementAttribute::AS),
             $message,
         );
         self::assertSame(
@@ -101,8 +101,8 @@ final class HasAsTest extends TestCase
         $this->expectExceptionMessage(
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
-                Attribute::AS->value,
-                implode("', '", Enum::normalizeArray(AsValue::cases())),
+                ElementAttribute::AS->value,
+                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, AsValue::cases())),
             ),
         );
 

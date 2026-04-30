@@ -83,7 +83,7 @@ final class HasClassTest extends TestCase
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(GlobalAttribute::CLASS_CSS, ''),
+            $instance->getAttribute(GlobalAttribute::CLASS_CSS),
             $message,
         );
         self::assertSame(

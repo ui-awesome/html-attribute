@@ -6,7 +6,7 @@ namespace UIAwesome\Html\Attribute;
 
 use InvalidArgumentException;
 use Stringable;
-use UIAwesome\Html\Attribute\Values\{Attribute, Charset};
+use UIAwesome\Html\Attribute\Values\{Charset, ElementAttribute};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
@@ -43,8 +43,8 @@ trait HasCharset
      */
     public function charset(string|Stringable|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, Charset::cases(), Attribute::CHARSET);
+        Validator::oneOf($value, Charset::cases(), ElementAttribute::CHARSET);
 
-        return $this->setAttribute(Attribute::CHARSET, $value);
+        return $this->addAttribute(ElementAttribute::CHARSET, $value);
     }
 }

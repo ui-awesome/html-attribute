@@ -9,7 +9,7 @@ use function sprintf;
 /**
  * Represents error message templates for attribute exceptions.
  *
- * Use {@see Message::getMessage()} to format the template with `sprintf()` arguments.
+ * Use {@see Message::getMessage()} to format the template with {@see sprintf()} arguments.
  *
  * @copyright Copyright (C) 2025 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
@@ -24,7 +24,7 @@ enum Message: string
     case ATTRIBUTE_INVALID_VALUE = "Invalid value '%s' for attribute '%s'. Expected: '%s'.";
 
     /**
-     * Error when an attribute value is not a `scalar` or `Closure`.
+     * Error when an attribute value is not a scalar or Closure.
      *
      * Format: "Attribute value must be of type 'scalar' or 'Closure', '%s' given."
      */

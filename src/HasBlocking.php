@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use InvalidArgumentException;
-use UIAwesome\Html\Attribute\Values\{Attribute, Blocking};
+use UIAwesome\Html\Attribute\Values\{Blocking, ElementAttribute};
 use UIAwesome\Html\Helper\Validator;
 use UnitEnum;
 
@@ -42,8 +42,8 @@ trait HasBlocking
      */
     public function blocking(string|UnitEnum|null $value): static
     {
-        Validator::oneOf($value, Blocking::cases(), Attribute::BLOCKING);
+        Validator::oneOf($value, Blocking::cases(), ElementAttribute::BLOCKING);
 
-        return $this->setAttribute(Attribute::BLOCKING, $value);
+        return $this->addAttribute(ElementAttribute::BLOCKING, $value);
     }
 }

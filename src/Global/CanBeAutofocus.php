@@ -32,6 +32,6 @@ trait CanBeAutofocus
      */
     public function autofocus(bool|null $value): static
     {
-        return $this->setAttribute(GlobalAttribute::AUTOFOCUS, $value);
+        return $this->addAttribute(GlobalAttribute::AUTOFOCUS, $value);
     }
 }

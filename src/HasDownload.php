@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use Stringable;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UnitEnum;
 
 /**
@@ -40,6 +40,6 @@ trait HasDownload
      */
     public function download(bool|string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::DOWNLOAD, $value);
+        return $this->addAttribute(ElementAttribute::DOWNLOAD, $value);
     }
 }

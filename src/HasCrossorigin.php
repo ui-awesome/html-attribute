@@ -44,6 +44,6 @@ trait HasCrossorigin
     {
         Validator::oneOf($value, Crossorigin::cases(), Attribute::CROSSORIGIN);
 
-        return $this->setAttribute(Attribute::CROSSORIGIN, $value);
+        return $this->addAttribute(Attribute::CROSSORIGIN, $value);
     }
 }

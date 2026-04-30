@@ -7,6 +7,7 @@ namespace UIAwesome\Html\Attribute\Global;
 use Closure;
 use InvalidArgumentException;
 use Stringable;
+use UIAwesome\Html\Helper\AttributeBag;
 use UnitEnum;
 
 /**
@@ -35,20 +36,18 @@ trait HasAria
      * ```
      *
      * @param string|UnitEnum $key Aria attribute key without the `aria-` prefix.
-     * @param bool|Closure|float|int|string|Stringable|UnitEnum|null $value Aria attribute value, or `null` to remove
-     * the attribute.
+     * @param bool|Closure(): mixed|float|int|string|Stringable|UnitEnum|null $value Aria attribute value, or `null` to
+     * remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `aria-*` attribute.
-     *
-     * @phpstan-param scalar|Stringable|UnitEnum|Closure(): mixed $value
      */
     public function addAriaAttribute(
         string|UnitEnum $key,
         bool|float|int|string|Closure|Stringable|UnitEnum|null $value,
     ): static {
-        return $this->setAttribute($key, $value, 'aria-');
+        return $this->addAttribute(AttributeBag::normalizeKey($key, 'aria-'), $value);
     }
 
     /**
@@ -70,18 +69,22 @@ trait HasAria
      * );
      * ```
      *
-     * @param array $values Associative array of aria keys and values. Values may be scalar, `Stringable`, `UnitEnum`,
-     * `Closure`, or `null` to remove the attribute.
+     * @param mixed[] $values Associative array of aria keys and values. Values may be scalar, Stringable, UnitEnum,
+     * Closure, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if one or more arguments are invalid, of incorrect type or format.
      *
      * @return static New instance with the updated `aria-*` attributes.
-     *
-     * @phpstan-param mixed[] $values
      */
     public function ariaAttributes(array $values): static
     {
-        return $this->attributes($values, 'aria-');
+        $new = $this;
+
+        foreach ($values as $key => $value) {
+            $new = $new->addAttribute(AttributeBag::normalizeKey($key, 'aria-'), $value);
+        }
+
+        return $new;
     }
 
     /**
@@ -99,6 +102,6 @@ trait HasAria
      */
     public function removeAriaAttribute(string|UnitEnum $key): static
     {
-        return $this->removeAttribute($key, 'aria-');
+        return $this->addAttribute(AttributeBag::normalizeKey($key, 'aria-'), null);
     }
 }

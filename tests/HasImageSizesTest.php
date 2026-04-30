@@ -7,34 +7,34 @@ namespace UIAwesome\Html\Attribute\Tests;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
-use UIAwesome\Html\Attribute\HasImagesrcset;
-use UIAwesome\Html\Attribute\Tests\Provider\ImagesrcsetProvider;
-use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Attribute\HasImageSizes;
+use UIAwesome\Html\Attribute\Tests\Provider\ImageSizesProvider;
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
 use UIAwesome\Html\Helper\Attributes;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Unit tests for the {@see HasImagesrcset} trait managing the `imagesrcset` HTML attribute.
+ * Unit tests for the {@see HasImageSizes} trait managing the `imagesizes` HTML attribute.
  *
  * Test coverage.
  * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `imagesrcset` attribute is not provided.
- * - Sets the `imagesrcset` HTML attribute and renders the expected output.
+ * - Ensures no attributes are set when the `imagesizes` attribute is not provided.
+ * - Sets the `imagesizes` HTML attribute and renders the expected output.
  *
- * {@see ImagesrcsetProvider} for test case data providers.
+ * {@see ImagesizesProvider} for test case data providers.
  *
  * @copyright Copyright (C) 2026 Terabytesoftw.
  * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
-final class HasImagesrcsetTest extends TestCase
+final class HasImageSizesTest extends TestCase
 {
-    public function testReturnEmptyWhenImagesrcsetAttributeNotSet(): void
+    public function testReturnEmptyWhenImagesizesAttributeNotSet(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasImagesrcset;
+            use HasImageSizes;
         };
 
         self::assertEmpty(
@@ -43,16 +43,16 @@ final class HasImagesrcsetTest extends TestCase
         );
     }
 
-    public function testReturnNewInstanceWhenSettingImagesrcsetAttribute(): void
+    public function testReturnNewInstanceWhenSettingImagesizesAttribute(): void
     {
         $instance = new class {
             use HasAttributes;
-            use HasImagesrcset;
+            use HasImageSizes;
         };
 
         self::assertNotSame(
             $instance,
-            $instance->imagesrcset(''),
+            $instance->imagesizes(''),
             'Should return a new instance when setting the attribute, ensuring immutability.',
         );
     }
@@ -60,9 +60,9 @@ final class HasImagesrcsetTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(ImagesrcsetProvider::class, 'values')]
-    public function testSetImagesrcsetAttributeValue(
-        string|Stringable|UnitEnum|null $imagesrcset,
+    #[DataProviderExternal(ImagesizesProvider::class, 'values')]
+    public function testSetImagesizesAttributeValue(
+        string|Stringable|UnitEnum|null $imagesizes,
         array $attributes,
         string|Stringable|UnitEnum|null $expectedValue,
         string $expectedRenderAttributes,
@@ -70,14 +70,14 @@ final class HasImagesrcsetTest extends TestCase
     ): void {
         $instance = new class {
             use HasAttributes;
-            use HasImagesrcset;
+            use HasImageSizes;
         };
 
-        $instance = $instance->attributes($attributes)->imagesrcset($imagesrcset);
+        $instance = $instance->attributes($attributes)->imagesizes($imagesizes);
 
         self::assertSame(
             $expectedValue,
-            $instance->getAttribute(Attribute::IMAGESRCSET, ''),
+            $instance->getAttribute(ElementAttribute::IMAGESIZES),
             $message,
         );
         self::assertSame(

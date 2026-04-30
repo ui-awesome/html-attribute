@@ -37,6 +37,6 @@ trait HasContent
      */
     public function content(string|Stringable|UnitEnum|null $value): static
     {
-        return $this->setAttribute(Attribute::CONTENT, $value);
+        return $this->addAttribute(Attribute::CONTENT, $value);
     }
 }

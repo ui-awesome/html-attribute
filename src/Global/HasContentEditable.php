@@ -32,7 +32,7 @@ trait HasContentEditable
      * $element->contentEditable(ContentEditable::TRUE);
      * ```
      *
-     * @param bool|string|UnitEnum|null $value Content editability value. Use `true`, `false`, or `plaintext-only`, or
+     * @param bool|string|UnitEnum|null $value Content editability value. Use `true`, `false`, or 'plaintext-only', or
      * `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.
@@ -49,6 +49,6 @@ trait HasContentEditable
 
         Validator::oneOf($value, ContentEditable::cases(), GlobalAttribute::CONTENTEDITABLE);
 
-        return $this->setAttribute(GlobalAttribute::CONTENTEDITABLE, $value);
+        return $this->addAttribute(GlobalAttribute::CONTENTEDITABLE, $value);
     }
 }
