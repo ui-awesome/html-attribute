@@ -6,6 +6,8 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## 0.6.1 Under development
 
+- fix(deps): update `ui-awesome/html-mixin` requirement to `^0.6`.
+
 ## 0.6.0 April 30, 2026
 
 - feat: add common attribute traits for blocking, media, type, nonce, integrity, referrer policy, source, target, link preload, metadata, form, and selectable attributes.
