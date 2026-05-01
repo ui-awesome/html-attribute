@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
-## 0.6.1 Under development
+## 0.6.1 May 1, 2026
 
 - fix(deps): update `ui-awesome/html-mixin` requirement to `^0.6`.
 
