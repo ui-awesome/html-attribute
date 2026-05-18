@@ -1,3 +1,2 @@
 [codespell]
-ignore-words-list = CanBe
-skip = */tests/*,tests/**,*/composer.lock,*/composer.json
+skip = */tests/*,tests/**,*/composer.lock,*/composer.json,*/package-lock.json,*/dist/*,*/node_modules/*
