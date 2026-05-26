@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix: remove `phpunit.xml` from `.gitignore`.
 - docs: update changelog format to reference Conventional Commits.
 - chore: update dependencies and configuration files.
+- docs: Correct image source order in `README.md` for feature overview.
 
 ## 0.6.1 May 1, 2026
 
