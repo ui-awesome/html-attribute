@@ -293,16 +293,17 @@ final class EventProvider
             }
         };
 
-        $enumCases = [];
-
-        foreach (Event::cases() as $case) {
-            $eventName = $case->value;
-            $enumCases["enum: {$eventName}"] = [
-                [$case->value => "alert('test')"],
-                [$eventName => "alert('test')"],
-                "Should normalize enum case '{$case->name}' to attribute '{$eventName}'.",
-            ];
-        }
+        $enumCases = array_combine(
+            array_map(static fn(Event $case): string => "enum: {$case->value}", Event::cases()),
+            array_map(
+                static fn(Event $case): array => [
+                    [$case->value => "alert('test')"],
+                    [$case->value => "alert('test')"],
+                    "Should normalize enum case '{$case->name}' to attribute '{$case->value}'.",
+                ],
+                Event::cases(),
+            ),
+        );
 
         $staticCases = [
             'closure with empty string' => [
