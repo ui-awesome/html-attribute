@@ -7,10 +7,7 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents `data-*` attribute property names without the `data-` prefix.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*
  */
 enum Data: string
 {

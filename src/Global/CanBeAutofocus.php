@@ -5,15 +5,13 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Global;
 
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
+use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
  * Provides an immutable API for the `autofocus` attribute.
  *
- * @mixin \UIAwesome\Html\Mixin\HasAttributes
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @mixin HasAttributes
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus
  */
 trait CanBeAutofocus
 {

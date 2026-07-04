@@ -5,15 +5,13 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute;
 
 use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Mixin\HasAttributes;
 
 /**
  * Provides an immutable API for the `disabled` attribute.
  *
- * @mixin \UIAwesome\Html\Mixin\HasAttributes
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/disabled
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @mixin HasAttributes
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/disabled
  */
 trait CanBeDisabled
 {

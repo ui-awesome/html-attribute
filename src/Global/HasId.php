@@ -6,16 +6,14 @@ namespace UIAwesome\Html\Attribute\Global;
 
 use Stringable;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
+use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
  * Provides an immutable API for the `id` attribute.
  *
- * @mixin \UIAwesome\Html\Mixin\HasAttributes
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @mixin HasAttributes
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id
  */
 trait HasId
 {

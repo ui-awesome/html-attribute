@@ -17,15 +17,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasTitle} trait managing the `title` global HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `title` attribute is not provided.
- * - Sets the `title` global HTML attribute and renders the expected output.
- *
  * {@see TitleProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('global')]
 final class HasTitleTest extends TestCase

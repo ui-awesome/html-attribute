@@ -11,11 +11,6 @@ use UnitEnum;
 
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasEventsTest} test cases.
- *
- * Provides representative input/output pairs for `on*` event handler attributes.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class EventProvider
 {
@@ -100,7 +95,7 @@ final class EventProvider
                 'Should return the attribute value after setting it.',
             ],
             'closure with null' => [
-                ['onclick' => static fn() => null],
+                ['onclick' => static fn(): null => null],
                 [],
                 '',
                 'Should return the attribute value after setting it.',
@@ -226,7 +221,7 @@ final class EventProvider
             ],
             'closure with null' => [
                 'onclick',
-                static fn() => null,
+                static fn(): null => null,
                 [],
                 'Should unset the attribute when closure returns null.',
             ],
@@ -312,7 +307,7 @@ final class EventProvider
                 'Should return the attribute value after setting it.',
             ],
             'closure with null' => [
-                ['onclick' => static fn() => null],
+                ['onclick' => static fn(): null => null],
                 [],
                 'Should unset the attribute when closure returns null.',
             ],

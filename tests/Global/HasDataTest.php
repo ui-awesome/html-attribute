@@ -19,18 +19,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasData} trait managing global `data-*` HTML attributes.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Normalizes keys when setting `data-*` attributes.
- * - Renders expected output when `data-*` attributes are set.
- * - Sets `data-*` attributes and renders the expected output.
- * - Verifies invalid keys throw an `InvalidArgumentException`.
- * - Verifies invalid values throw an `InvalidArgumentException`.
- *
  * {@see DataProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('global')]
 final class HasDataTest extends TestCase

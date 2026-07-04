@@ -7,17 +7,15 @@ namespace UIAwesome\Html\Attribute\Global;
 use InvalidArgumentException;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
 use UIAwesome\Html\Helper\Validator;
+use UIAwesome\Html\Mixin\HasAttributes;
 
 use function is_bool;
 
 /**
  * Provides an immutable API for the `spellcheck` attribute.
  *
- * @mixin \UIAwesome\Html\Mixin\HasAttributes
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @mixin HasAttributes
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck
  */
 trait HasSpellcheck
 {

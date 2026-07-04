@@ -10,11 +10,6 @@ use UnitEnum;
 
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasAutocapitalizeTest} test cases.
- *
- * Provides representative input/output pairs for the `autocapitalize` attribute.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class AutocapitalizeProvider
 {

@@ -17,15 +17,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasPing} trait managing the `ping` HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `ping` attribute is not provided.
- * - Sets the `ping` HTML attribute and renders the expected output.
- *
  * {@see PingProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
 final class HasPingTest extends TestCase

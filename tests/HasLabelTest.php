@@ -17,15 +17,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasLabel} trait managing the `label` HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `label` attribute is not provided.
- * - Sets the `label` HTML attribute and renders the expected output.
- *
  * {@see LabelProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
 final class HasLabelTest extends TestCase

@@ -6,11 +6,6 @@ namespace UIAwesome\Html\Attribute\Tests\Provider;
 
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\CanBeDisabledTest} test cases.
- *
- * Provides representative input/output pairs for the `disabled` attribute.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class DisabledProvider
 {

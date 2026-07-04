@@ -7,16 +7,14 @@ namespace UIAwesome\Html\Attribute;
 use InvalidArgumentException;
 use UIAwesome\Html\Attribute\Values\{Attribute, Target};
 use UIAwesome\Html\Helper\Validator;
+use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
  * Provides an immutable API for the `target` attribute.
  *
- * @mixin \UIAwesome\Html\Mixin\HasAttributes
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/target
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @mixin HasAttributes
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/target
  */
 trait HasTarget
 {

@@ -7,10 +7,7 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML `crossorigin` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
  */
 enum Crossorigin: string
 {
@@ -20,7 +17,7 @@ enum Crossorigin: string
      * This is the default value when the attribute is present without a value. When not specified, the resource is
      * fetched without a CORS request (i.e., without sending the Origin HTTP header).
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin#anonymous
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin#anonymous
      */
     case ANONYMOUS = 'anonymous';
 
@@ -30,7 +27,7 @@ enum Crossorigin: string
      * This value will include credentials (cookies, authorization headers, or TLS client certificates) in CORS
      * requests.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin#use-credentials
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin#use-credentials
      */
     case USE_CREDENTIALS = 'use-credentials';
 }

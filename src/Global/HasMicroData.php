@@ -6,15 +6,13 @@ namespace UIAwesome\Html\Attribute\Global;
 
 use Stringable;
 use UIAwesome\Html\Attribute\Values\GlobalAttribute;
+use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
  * Provides an immutable API for microdata attributes.
  *
- * @mixin \UIAwesome\Html\Mixin\HasAttributes
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @mixin HasAttributes
  */
 trait HasMicroData
 {
@@ -31,7 +29,7 @@ trait HasMicroData
      *
      * @return static New instance with the updated `itemid` attribute.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemid
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemid
      */
     public function itemId(string|Stringable|UnitEnum|null $value): static
     {
@@ -51,7 +49,7 @@ trait HasMicroData
      *
      * @return static New instance with the updated `itemprop` attribute.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemprop
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemprop
      */
     public function itemProp(string|Stringable|UnitEnum|null $value): static
     {
@@ -71,7 +69,7 @@ trait HasMicroData
      *
      * @return static New instance with the updated `itemref` attribute.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemref
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemref
      */
     public function itemRef(string|Stringable|UnitEnum|null $value): static
     {
@@ -91,7 +89,7 @@ trait HasMicroData
      *
      * @return static New instance with the updated `itemscope` attribute.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemscope
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemscope
      */
     public function itemScope(bool|null $value): static
     {
@@ -111,7 +109,7 @@ trait HasMicroData
      *
      * @return static New instance with the updated `itemtype` attribute.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemtype
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemtype
      */
     public function itemType(string|Stringable|UnitEnum|null $value): static
     {

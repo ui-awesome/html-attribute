@@ -7,11 +7,8 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents character encoding values for the HTML `charset` attribute.
  *
- * @link https://www.iana.org/assignments/character-sets/character-sets.xhtml
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta#charset
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @see https://www.iana.org/assignments/character-sets/character-sets.xhtml
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta#charset
  */
 enum Charset: string
 {
