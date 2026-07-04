@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - docs: Correct image source order in `README.md` for feature overview.
 - docs: add Facebook follow badge to `README.md`.
 - docs: update logo link in `README.md` to use an anchor tag.
+- ci: migrate GitHub workflows to pinned reusable quality and security checks.
 
 ## 0.6.1 May 1, 2026
 

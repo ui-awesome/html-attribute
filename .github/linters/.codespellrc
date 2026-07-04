@@ -1,2 +1,2 @@
 [codespell]
-skip = */tests/*,tests/**,*/composer.lock,*/composer.json,*/package-lock.json,*/dist/*,*/node_modules/*,*/CHANGELOG.md,*/UPGRADE.md
+skip = ./.git,.claude/*,.codex/*,.github/skills/*,.vscode/*,code_coverage/*,composer.lock,runtime/*,scaffold-lock.json,vendor/*,CHANGELOG.md,UPGRADE.md
