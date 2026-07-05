@@ -1,7 +1,5 @@
 {
     "Exclude": [
-        "\\.min\\.css$",
-        "\\.min\\.js$",
         "^\\.claude/",
         "^\\.codex/",
         "^\\.config/gh/",
