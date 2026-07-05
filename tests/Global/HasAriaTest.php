@@ -19,19 +19,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasAria} trait managing global `aria-*` HTML attributes.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `aria-*` attribute is not provided.
- * - Normalizes keys when setting `aria-*` attributes.
- * - Renders expected output when `aria-*` attributes are set.
- * - Sets `aria-*` attributes and renders the expected output.
- * - Verifies invalid keys throw an `InvalidArgumentException`.
- * - Verifies invalid values throw an `InvalidArgumentException`.
- *
  * {@see AriaProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('global')]
 final class HasAriaTest extends TestCase

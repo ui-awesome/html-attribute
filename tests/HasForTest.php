@@ -17,15 +17,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasFor} trait managing the `for` HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `for` attribute is not provided.
- * - Sets the `for` HTML attribute and renders the expected output.
- *
  * {@see ForProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
 final class HasForTest extends TestCase

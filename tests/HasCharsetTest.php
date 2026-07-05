@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests;
 
+use BackedEnum;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
@@ -19,16 +20,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasCharset} trait managing the `charset` HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `charset` attribute is not provided.
- * - Sets the `charset` HTML attribute and renders the expected output.
- * - Verifies invalid `charset` values throw an `InvalidArgumentException`.
- *
  * {@see CharsetProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
 final class HasCharsetTest extends TestCase
@@ -102,7 +94,7 @@ final class HasCharsetTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 ElementAttribute::CHARSET->value,
-                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Charset::cases())),
+                implode("', '", array_map(static fn(BackedEnum $case): string => $case->value, Charset::cases())),
             ),
         );
 

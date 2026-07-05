@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests;
 
+use BackedEnum;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
@@ -18,16 +19,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasFetchpriority} trait managing the `fetchpriority` HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `fetchpriority` attribute is not provided.
- * - Sets the `fetchpriority` HTML attribute and renders the expected output.
- * - Verifies invalid `fetchpriority` values throw an `InvalidArgumentException`.
- *
  * {@see FetchpriorityProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
 final class HasFetchpriorityTest extends TestCase
@@ -101,7 +93,7 @@ final class HasFetchpriorityTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 Attribute::FETCHPRIORITY->value,
-                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Fetchpriority::cases())),
+                implode("', '", array_map(static fn(BackedEnum $case): string => $case->value, Fetchpriority::cases())),
             ),
         );
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Global;
 
+use BackedEnum;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
@@ -18,16 +19,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasAutocapitalize} trait managing the `autocapitalize` global HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `autocapitalize` attribute is not provided.
- * - Sets the `autocapitalize` global HTML attribute and renders the expected output.
- * - Verifies invalid `autocapitalize` values throw an `InvalidArgumentException`.
- *
  * {@see AutocapitalizeProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('global')]
 final class HasAutocapitalizeTest extends TestCase
@@ -101,7 +93,7 @@ final class HasAutocapitalizeTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::AUTOCAPITALIZE->value,
-                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Autocapitalize::cases())),
+                implode("', '", array_map(static fn(BackedEnum $case): string => $case->value, Autocapitalize::cases())),
             ),
         );
 

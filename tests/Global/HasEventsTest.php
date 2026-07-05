@@ -19,19 +19,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasEvents} trait managing global `on*` HTML event handler attributes.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `on*` attribute is not provided.
- * - Normalizes keys when setting `on*` event attributes.
- * - Renders expected output when `on*` event attributes are set.
- * - Sets `on*` event attributes and renders the expected output.
- * - Verifies invalid keys throw an `InvalidArgumentException`.
- * - Verifies invalid values throw an `InvalidArgumentException`.
- *
  * {@see EventProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('global')]
 final class HasEventsTest extends TestCase

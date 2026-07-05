@@ -7,11 +7,8 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML `loading` attribute on `<img>` and `<iframe>` elements.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading
  */
 enum Loading: string
 {
@@ -21,8 +18,8 @@ enum Loading: string
      *
      * This is the default value.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#eager
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#eager
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#eager
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#eager
      */
     case EAGER = 'eager';
 
@@ -31,8 +28,8 @@ enum Loading: string
      *
      * The image will be loaded when it is needed, reducing initial page load time.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#lazy
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#lazy
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#lazy
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#lazy
      */
     case LAZY = 'lazy';
 }

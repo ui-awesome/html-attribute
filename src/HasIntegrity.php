@@ -6,17 +6,15 @@ namespace UIAwesome\Html\Attribute;
 
 use Stringable;
 use UIAwesome\Html\Attribute\Values\Attribute;
+use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
  * Provides an immutable API for the `integrity` attribute.
  *
- * @mixin \UIAwesome\Html\Mixin\HasAttributes
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/integrity
- * @link https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @mixin HasAttributes
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/integrity
+ * @see https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
  */
 trait HasIntegrity
 {

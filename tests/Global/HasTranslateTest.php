@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Global;
 
+use BackedEnum;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
@@ -18,16 +19,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasTranslate} trait managing the `translate` global HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `translate` attribute is not provided.
- * - Sets the `translate` global HTML attribute and renders the expected output.
- * - Verifies invalid `translate` values throw an `InvalidArgumentException`.
- *
  * {@see TranslateProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('global')]
 final class HasTranslateTest extends TestCase
@@ -101,7 +93,7 @@ final class HasTranslateTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 GlobalAttribute::TRANSLATE->value,
-                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, Translate::cases())),
+                implode("', '", array_map(static fn(BackedEnum $case): string => $case->value, Translate::cases())),
             ),
         );
 

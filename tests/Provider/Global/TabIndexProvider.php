@@ -6,11 +6,6 @@ namespace UIAwesome\Html\Attribute\Tests\Provider\Global;
 
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasTabIndexTest} test cases.
- *
- * Provides representative input/output pairs for the `tabindex` attribute.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class TabIndexProvider
 {

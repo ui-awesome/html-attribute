@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests;
 
+use BackedEnum;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
@@ -19,16 +20,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasHttpEquiv} trait managing the `http-equiv` HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `http-equiv` attribute is not provided.
- * - Sets the `http-equiv` HTML attribute and renders the expected output.
- * - Verifies invalid `http-equiv` values throw an `InvalidArgumentException`.
- *
  * {@see HttpEquivProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
 final class HasHttpEquivTest extends TestCase
@@ -102,7 +94,7 @@ final class HasHttpEquivTest extends TestCase
             Message::VALUE_NOT_IN_LIST->getMessage(
                 'invalid-value',
                 ElementAttribute::HTTP_EQUIV->value,
-                implode("', '", array_map(static fn(\BackedEnum $case): string => $case->value, HttpEquiv::cases())),
+                implode("', '", array_map(static fn(BackedEnum $case): string => $case->value, HttpEquiv::cases())),
             ),
         );
 

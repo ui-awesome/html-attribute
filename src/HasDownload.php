@@ -6,16 +6,14 @@ namespace UIAwesome\Html\Attribute;
 
 use Stringable;
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
+use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
  * Provides an immutable API for the `download` attribute.
  *
- * @mixin \UIAwesome\Html\Mixin\HasAttributes
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#download
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @mixin HasAttributes
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#download
  */
 trait HasDownload
 {
@@ -36,7 +34,7 @@ trait HasDownload
      *
      * @return static New instance with the updated `download` attribute.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#download
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#download
      */
     public function download(bool|string|Stringable|UnitEnum|null $value): static
     {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UIAwesome\Html\Attribute\Tests\Provider\Global;
 
+use Closure;
 use PHPForge\Support\Stub\BackedInteger;
 use Stringable;
 use UIAwesome\Html\Attribute\Values\Data;
@@ -11,11 +12,6 @@ use UnitEnum;
 
 /**
  * Data provider for {@see \UIAwesome\Html\Attribute\Tests\Global\HasDataTest} test cases.
- *
- * Provides representative input/output pairs for `data-*` attributes.
- *
- * @copyright Copyright (C) 2025 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 final class DataProvider
 {
@@ -199,7 +195,7 @@ final class DataProvider
     /**
      * @phpstan-return array<
      *   string,
-     *   array{string|UnitEnum, scalar|Stringable|UnitEnum|null|\Closure(): mixed, mixed[], string},
+     *   array{string|UnitEnum, scalar|Stringable|UnitEnum|null|Closure(): mixed, mixed[], string},
      * >
      */
     public static function value(): array

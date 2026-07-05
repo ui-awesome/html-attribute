@@ -17,15 +17,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasImageSizes} trait managing the `imagesizes` HTML attribute.
  *
- * Test coverage.
- * - Ensures fluent setters return new instances (immutability).
- * - Ensures no attributes are set when the `imagesizes` attribute is not provided.
- * - Sets the `imagesizes` HTML attribute and renders the expected output.
- *
  * {@see ImagesizesProvider} for test case data providers.
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
  */
 #[Group('attribute')]
 final class HasImageSizesTest extends TestCase

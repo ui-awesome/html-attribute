@@ -7,10 +7,7 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML/SVG `fetchpriority` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
  */
 enum Fetchpriority: string
 {
@@ -20,7 +17,7 @@ enum Fetchpriority: string
      * This is the default value when the attribute is not specified or when an invalid value is set. The browser
      * determines the priority based on its own heuristics.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority#auto
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority#auto
      */
     case AUTO = 'auto';
     /**
@@ -29,7 +26,7 @@ enum Fetchpriority: string
      * This value should be used sparingly for resources that significantly contribute to user experience metrics
      * such as the Largest Contentful Paint (LCP).
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority#high
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority#high
      */
     case HIGH = 'high';
 
@@ -39,7 +36,7 @@ enum Fetchpriority: string
      * This value is useful for resources that are not immediately necessary for the initial page load and can
      * be deferred.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority#low
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority#low
      */
     case LOW = 'low';
 }

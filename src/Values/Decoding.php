@@ -7,10 +7,7 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents values for the HTML/SVG `decoding` attribute.
  *
- * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
- *
- * @copyright Copyright (C) 2026 Terabytesoftw.
- * @license https://opensource.org/license/bsd-3-clause BSD 3-Clause License.
+ * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding
  */
 enum Decoding: string
 {
@@ -19,7 +16,7 @@ enum Decoding: string
      *
      * The browser will render and present other content first, then decode the image and present it later.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding#async
+     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding#async
      */
     case ASYNC = 'async';
 
@@ -28,7 +25,7 @@ enum Decoding: string
      *
      * The browser decides what is best for the user. This is the default value.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding#auto
+     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding#auto
      */
     case AUTO = 'auto';
 
@@ -37,7 +34,7 @@ enum Decoding: string
      *
      * The browser will decode the image along with rendering other content and present everything together.
      *
-     * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding#sync
+     * @see https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/decoding#sync
      */
     case SYNC = 'sync';
 }
