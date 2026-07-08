@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - docs: add Facebook follow badge to `README.md`.
 - docs: update logo link in `README.md` to use an anchor tag.
 - ci: migrate GitHub workflows to pinned reusable quality and security checks.
+- chore: update codespell configuration and bump baseline version to `0.1.7`.
 
 ## 0.6.1 May 1, 2026
 
