@@ -225,13 +225,6 @@ enum ElementAttribute: string
     case PRELOAD = 'preload';
 
     /**
-     * `referrerpolicy` — Referrer information to send when fetching the resource.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#referrerpolicy
-     */
-    case REFERRERPOLICY = 'referrerpolicy';
-
-    /**
      * `selected` — Indicates whether an option is initially selected.
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option#selected
@@ -244,13 +237,6 @@ enum ElementAttribute: string
      * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link#sizes
      */
     case SIZES = 'sizes';
-
-    /**
-     * `src` — URL of embeddable content.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#src
-     */
-    case SRC = 'src';
 
     /**
      * `srclang` — Language of text track data.

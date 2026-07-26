@@ -9,10 +9,10 @@ use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\{DataProviderExternal, Group};
 use PHPUnit\Framework\TestCase;
 use Stringable;
-use UIAwesome\Html\Attribute\Exception\Message;
 use UIAwesome\Html\Attribute\Global\HasData;
 use UIAwesome\Html\Attribute\Tests\Provider\Global\DataProvider;
 use UIAwesome\Html\Helper\Attributes;
+use UIAwesome\Html\Helper\Exception\Message;
 use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
