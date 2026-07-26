@@ -1,5 +1,59 @@
 # Upgrade Guide
 
+## 0.7.0
+
+- The `ElementAttribute::REFERRERPOLICY` and `ElementAttribute::SRC` cases were removed.
+- The `Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE` and `Message::KEY_MUST_BE_NON_EMPTY_STRING` cases were
+  removed.
+
+### `referrerpolicy` and `src` are owned by the `Attribute` enum
+
+`ElementAttribute` duplicated two cases already provided by `Attribute` with identical backed values. Downstream
+consumers reading either name through `ElementAttribute` must switch to the `Attribute` enum; the backed values
+(`referrerpolicy` and `src`) are unchanged, so rendered markup stays the same.
+
+Before:
+
+```php
+use UIAwesome\Html\Attribute\Values\ElementAttribute;
+
+$this->addAttribute(ElementAttribute::REFERRERPOLICY, $value);
+$this->addAttribute(ElementAttribute::SRC, $value);
+```
+
+After:
+
+```php
+use UIAwesome\Html\Attribute\Values\Attribute;
+
+$this->addAttribute(Attribute::REFERRERPOLICY, $value);
+$this->addAttribute(Attribute::SRC, $value);
+```
+
+### Non-empty key message consolidated on `ui-awesome/html-helper`
+
+`UIAwesome\Html\Attribute\Exception\Message` no longer declares `KEY_MUST_BE_NON_EMPTY_STRING`. The exception is raised
+by `ui-awesome/html-helper`, so assert against that package's enum instead. The message string is unchanged.
+
+`ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE` was never raised by this package and has no replacement here.
+`ATTRIBUTE_INVALID_VALUE` is unaffected.
+
+Before:
+
+```php
+use UIAwesome\Html\Attribute\Exception\Message;
+
+$this->expectExceptionMessage(Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage());
+```
+
+After:
+
+```php
+use UIAwesome\Html\Helper\Exception\Message;
+
+$this->expectExceptionMessage(Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage());
+```
+
 ## 0.6.0
 
 - Element-specific attribute traits were removed from `UIAwesome\Html\Attribute\Element`.

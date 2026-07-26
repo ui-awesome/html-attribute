@@ -21,21 +21,6 @@ enum Message: string
     case ATTRIBUTE_INVALID_VALUE = "Invalid value '%s' for attribute '%s'. Expected: '%s'.";
 
     /**
-     * Error when an attribute value is not a scalar or Closure.
-     *
-     * Format: "Attribute value must be of type 'scalar' or 'Closure', '%s' given."
-     */
-    case ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE = "Attribute value must be of type 'scalar' or 'Closure', "
-        . "'%s' given.";
-
-    /**
-     * Error when a key is not a non-empty string.
-     *
-     * Format: "Key must be a non-empty string."
-     */
-    case KEY_MUST_BE_NON_EMPTY_STRING = 'Key must be a non-empty string.';
-
-    /**
      * Returns the formatted message string for the error case.
      *
      * @param int|string ...$argument Values to insert into the message template.
