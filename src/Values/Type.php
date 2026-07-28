@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace UIAwesome\Html\Attribute\Values;
 
 /**
- * Represents values for the HTML `type` attribute.
+ * Represents the control types of the HTML `<input>` element, shared with `<button>` for the form-submission types.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/type
+ * Elements that read `type` as an open MIME hint, such as `<a>`, `<link>`, `<script>`, `<source>`, and `<style>`, take
+ * a plain `string` instead.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#input_types
  */
 enum Type: string
 {
@@ -47,13 +50,6 @@ enum Type: string
     case DATETIME_LOCAL = 'datetime-local';
 
     /**
-     * `1` — Decimal numbering for `<ol>` elements.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ol#type
-     */
-    case DECIMAL = '1';
-
-    /**
      * `email` — Email address input control (`<input>`).
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/email
@@ -80,34 +76,6 @@ enum Type: string
      * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/image
      */
     case IMAGE = 'image';
-
-    /**
-     * `importmap` — Indicates that the script body contains an import map (`<script>`).
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap
-     */
-    case IMPORTMAP = 'importmap';
-
-    /**
-     * `a` — Lowercase letter numbering for `<ol>` elements.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ol#type
-     */
-    case LOWER_ALPHA = 'a';
-
-    /**
-     * `i` — Lowercase Roman numeral numbering for `<ol>` elements.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ol#type
-     */
-    case LOWER_ROMAN = 'i';
-
-    /**
-     * `module` — Treats the script as a JavaScript module (`<script>`).
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type
-     */
-    case MODULE = 'module';
 
     /**
      * `month` — Month and year input control (`<input>`).
@@ -159,13 +127,6 @@ enum Type: string
     case SEARCH = 'search';
 
     /**
-     * `speculationrules` — Indicates that the script body contains speculation rules (`<script>`).
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/speculationrules
-     */
-    case SPECULATIONRULES = 'speculationrules';
-
-    /**
      * `submit` — Submits the form (`<input>` and `<button>`).
      *
      * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#type
@@ -182,31 +143,9 @@ enum Type: string
     /**
      * `text` — Single-line text input control (`<input>`).
      *
-     * @see @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/text
      */
     case TEXT = 'text';
-
-    /**
-     * `text/css` — CSS MIME type used by `<style>` and other elements that interpret `type` as a MIME type.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
-     */
-    case TEXT_CSS = 'text/css';
-
-    /**
-     * `text/html` — HTML MIME type used by elements that interpret `type` as a MIME type.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
-     */
-    case TEXT_HTML = 'text/html';
-
-    /**
-     * `text/javascript` — JavaScript MIME type used by `<script>` and other elements that interpret `type` as a MIME
-     * type.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types#text
-     */
-    case TEXT_JAVASCRIPT = 'text/javascript';
 
     /**
      * `time` — Time input control without a time zone (`<input>`).
@@ -214,20 +153,6 @@ enum Type: string
      * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/time
      */
     case TIME = 'time';
-
-    /**
-     * `A` — Uppercase letter numbering for `<ol>` elements.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ol#type
-     */
-    case UPPER_ALPHA = 'A';
-
-    /**
-     * `I` — Uppercase Roman numeral numbering for `<ol>` elements.
-     *
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ol#type
-     */
-    case UPPER_ROMAN = 'I';
 
     /**
      * `url` — URL input control (`<input>`).

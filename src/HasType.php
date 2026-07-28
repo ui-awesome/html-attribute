@@ -12,28 +12,31 @@ use UIAwesome\Html\Mixin\HasAttributes;
 use UnitEnum;
 
 /**
- * Provides an immutable API for the `type` attribute.
+ * Provides an immutable API for the `type` attribute of form controls.
+ *
+ * Restricted to the `<input>` control types. Elements that read `type` as an open MIME hint declare their own setter
+ * instead of using this trait.
  *
  * @mixin HasAttributes
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/type
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#input_types
  */
 trait HasType
 {
     /**
      * Sets the `type` attribute.
      *
-     * Defines the element type or resource MIME type.
+     * Restricts the value to the `<input>` control types.
      *
      * Usage example:
      * ```php
-     * $element->type('text/css');
-     * $element->type('module');
+     * $element->type('checkbox');
+     * $element->type(\UIAwesome\Html\Attribute\Values\Type::EMAIL);
      * $element->type(null);
      * ```
      *
-     * @param string|Stringable|UnitEnum|null $value Type token or MIME type, or `null` to remove the attribute.
+     * @param string|Stringable|UnitEnum|null $value Input control type, or `null` to remove the attribute.
      *
-     * @throws InvalidArgumentException If the value is not valid.
+     * @throws InvalidArgumentException If the value is not an `<input>` control type.
      *
      * @return static New instance with the updated `type` attribute.
      *

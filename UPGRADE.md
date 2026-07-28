@@ -2,9 +2,54 @@
 
 ## 0.7.0
 
+- The `Type` enum was narrowed to the 22 `<input>` control types; eleven cases were removed.
 - The `ElementAttribute::REFERRERPOLICY` and `ElementAttribute::SRC` cases were removed.
 - The `Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE` and `Message::KEY_MUST_BE_NON_EMPTY_STRING` cases were
   removed.
+
+### `Type` is the `<input>` control type domain
+
+`Type` mixed three unrelated domains behind one name, so `HasType::type()` accepted `checkbox` on a `<link>` and
+rejected valid MIME types such as `application/rss+xml`. It now declares only the `<input>` control types, and
+`HasType` is reserved for form controls.
+
+Removed cases and their replacements:
+
+| Removed case             | Backed value       | Replacement                                          |
+| ------------------------ | ------------------ | ---------------------------------------------------- |
+| `Type::MODULE`           | `module`           | `string` passed to `Script::type()`                  |
+| `Type::IMPORTMAP`        | `importmap`        | `string` passed to `Script::type()`                  |
+| `Type::SPECULATIONRULES` | `speculationrules` | `string` passed to `Script::type()`                  |
+| `Type::TEXT_JAVASCRIPT`  | `text/javascript`  | `string` passed to `Script::type()`                  |
+| `Type::TEXT_CSS`         | `text/css`         | `string` passed to `Link::type()` or `Style::type()` |
+| `Type::TEXT_HTML`        | `text/html`        | `string` passed to `A::type()` or `Link::type()`     |
+| `Type::DECIMAL`          | `1`                | none                                                 |
+| `Type::LOWER_ALPHA`      | `a`                | none                                                 |
+| `Type::LOWER_ROMAN`      | `i`                | none                                                 |
+| `Type::UPPER_ALPHA`      | `A`                | none                                                 |
+| `Type::UPPER_ROMAN`      | `I`                | none                                                 |
+
+The script tokens and MIME types are now plain strings on the matching `ui-awesome/html` elements, which no longer
+validate `type` against a closed list.
+
+Before:
+
+```php
+use UIAwesome\Html\Attribute\Values\Type;
+
+Script::tag()->type(Type::MODULE);
+Style::tag()->type(Type::TEXT_CSS);
+```
+
+After:
+
+```php
+Script::tag()->type('module');
+Style::tag()->type('text/css');
+```
+
+The five `<ol>` numbering markers had no consumer in the ecosystem. If `<ol>` gains a `type()` setter it will declare
+its own closed enum; do not recycle `Type` for it.
 
 ### `referrerpolicy` and `src` are owned by the `Attribute` enum
 
