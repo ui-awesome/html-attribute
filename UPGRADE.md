@@ -30,7 +30,8 @@ Removed cases and their replacements:
 | `Type::UPPER_ROMAN`      | `I`                | none                                                 |
 
 The script tokens and MIME types are now plain strings on the matching `ui-awesome/html` elements, which no longer
-validate `type` against a closed list.
+validate `type` against a closed list. This includes `<source>`: `Source::type()` already accepted plain strings, so
+any removed case previously passed to it becomes its backed value (`'text/html'` for the removed `Type::TEXT_HTML`).
 
 Before:
 

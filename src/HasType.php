@@ -25,7 +25,8 @@ trait HasType
     /**
      * Sets the `type` attribute.
      *
-     * Restricts the value to the `<input>` control types.
+     * Restricts the value to the `<input>` control types. Empty and `null` values bypass validation and produce no
+     * rendered attribute.
      *
      * Usage example:
      * ```php
@@ -36,7 +37,7 @@ trait HasType
      *
      * @param string|Stringable|UnitEnum|null $value Input control type, or `null` to remove the attribute.
      *
-     * @throws InvalidArgumentException If the value is not an `<input>` control type.
+     * @throws InvalidArgumentException If a non-empty value is not an `<input>` control type.
      *
      * @return static New instance with the updated `type` attribute.
      *
