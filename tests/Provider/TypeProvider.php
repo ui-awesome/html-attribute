@@ -27,7 +27,7 @@ final class TypeProvider
         $stringable = new class implements Stringable {
             public function __toString(): string
             {
-                return 'text/css';
+                return 'checkbox';
             }
         };
 
@@ -47,10 +47,10 @@ final class TypeProvider
                 "Should return an empty string when the attribute is set to 'null'.",
             ],
             'replace existing' => [
-                'text/css',
+                'email',
                 ['type' => 'text'],
-                'text/css',
-                ' type="text/css"',
+                'email',
+                ' type="email"',
                 "Should return new 'type' after replacing the existing 'type' attribute.",
             ],
             'string' => [
@@ -64,12 +64,12 @@ final class TypeProvider
                 $stringable,
                 [],
                 $stringable,
-                ' type="text/css"',
+                ' type="checkbox"',
                 'Should return the attribute value after setting it with a Stringable instance.',
             ],
             'unset with null' => [
                 null,
-                ['type' => 'text/css'],
+                ['type' => 'text'],
                 null,
                 '',
                 "Should unset the 'type' attribute when 'null' is provided after a value.",
