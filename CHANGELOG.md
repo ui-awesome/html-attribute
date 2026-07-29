@@ -5,12 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.7.0 Under development
+## 0.7.0 July 29, 2026
 
 - refactor!: remove the unused ElementAttribute REFERRERPOLICY and SRC cases duplicated by the Attribute enum.
 - refactor!: remove the unused exception message cases and consolidate the non-empty key message on ui-awesome/html-helper.
 - test: freeze every public enum surface with contract coverage.
-- chore: require ui-awesome/html-mixin latest version.
 - refactor!: narrow the Type enum to the 22 `<input>` control types, removing the script token, MIME, and `<ol>` marker cases.
 
 ## 0.6.2 July 21, 2026
