@@ -2,72 +2,27 @@
 
 ## 0.7.0
 
-- The `Type` enum was narrowed to the 22 `<input>` control types; eleven cases were removed.
-- The `ElementAttribute::REFERRERPOLICY` and `ElementAttribute::SRC` cases were removed.
-- The `Message::ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE` and `Message::KEY_MUST_BE_NON_EMPTY_STRING` cases were
-  removed.
+### Input type values
 
-### `Type` is the `<input>` control type domain
-
-`Type` mixed three unrelated domains behind one name, so `HasType::type()` accepted `checkbox` on a `<link>` and
-rejected valid MIME types such as `application/rss+xml`. It now declares only the `<input>` control types, and
-`HasType` is reserved for form controls.
-
-Removed cases and their replacements:
-
-| Removed case             | Backed value       | Replacement                                          |
-| ------------------------ | ------------------ | ---------------------------------------------------- |
-| `Type::MODULE`           | `module`           | `string` passed to `Script::type()`                  |
-| `Type::IMPORTMAP`        | `importmap`        | `string` passed to `Script::type()`                  |
-| `Type::SPECULATIONRULES` | `speculationrules` | `string` passed to `Script::type()`                  |
-| `Type::TEXT_JAVASCRIPT`  | `text/javascript`  | `string` passed to `Script::type()`                  |
-| `Type::TEXT_CSS`         | `text/css`         | `string` passed to `Link::type()` or `Style::type()` |
-| `Type::TEXT_HTML`        | `text/html`        | `string` passed to `A::type()` or `Link::type()`     |
-| `Type::DECIMAL`          | `1`                | none                                                 |
-| `Type::LOWER_ALPHA`      | `a`                | none                                                 |
-| `Type::LOWER_ROMAN`      | `i`                | none                                                 |
-| `Type::UPPER_ALPHA`      | `A`                | none                                                 |
-| `Type::UPPER_ROMAN`      | `I`                | none                                                 |
-
-The script tokens and MIME types are now plain strings on the matching `ui-awesome/html` elements, which no longer
-validate `type` against a closed list. This includes `<source>`: `Source::type()` already accepted plain strings, so
-any removed case previously passed to it becomes its backed value (`'text/html'` for the removed `Type::TEXT_HTML`).
-
-Before:
+`Type` now contains only `<input>` control types. Replace removed script tokens and MIME cases with their backed string
+values:
 
 ```php
-use UIAwesome\Html\Attribute\Values\Type;
-
+// Before
 Script::tag()->type(Type::MODULE);
 Style::tag()->type(Type::TEXT_CSS);
-```
 
-After:
-
-```php
+// After
 Script::tag()->type('module');
 Style::tag()->type('text/css');
 ```
 
-The five `<ol>` numbering markers had no consumer in the ecosystem. If `<ol>` gains a `type()` setter it will declare
-its own closed enum; do not recycle `Type` for it.
+The removed ordered-list marker cases (`DECIMAL`, `LOWER_ALPHA`, `LOWER_ROMAN`, `UPPER_ALPHA`, and `UPPER_ROMAN`) have
+no replacement in this package.
 
-### `referrerpolicy` and `src` are owned by the `Attribute` enum
+### Attribute enum ownership
 
-`ElementAttribute` duplicated two cases already provided by `Attribute` with identical backed values. Downstream
-consumers reading either name through `ElementAttribute` must switch to the `Attribute` enum; the backed values
-(`referrerpolicy` and `src`) are unchanged, so rendered markup stays the same.
-
-Before:
-
-```php
-use UIAwesome\Html\Attribute\Values\ElementAttribute;
-
-$this->addAttribute(ElementAttribute::REFERRERPOLICY, $value);
-$this->addAttribute(ElementAttribute::SRC, $value);
-```
-
-After:
+Replace `ElementAttribute::REFERRERPOLICY` and `ElementAttribute::SRC` with the equivalent `Attribute` cases:
 
 ```php
 use UIAwesome\Html\Attribute\Values\Attribute;
@@ -76,201 +31,47 @@ $this->addAttribute(Attribute::REFERRERPOLICY, $value);
 $this->addAttribute(Attribute::SRC, $value);
 ```
 
-### Non-empty key message consolidated on `ui-awesome/html-helper`
+### Exception messages
 
-`UIAwesome\Html\Attribute\Exception\Message` no longer declares `KEY_MUST_BE_NON_EMPTY_STRING`. The exception is raised
-by `ui-awesome/html-helper`, so assert against that package's enum instead. The message string is unchanged.
+`UIAwesome\Html\Attribute\Exception\Message::KEY_MUST_BE_NON_EMPTY_STRING` was removed. Use
+`UIAwesome\Html\Helper\Exception\Message::KEY_MUST_BE_NON_EMPTY_STRING` when asserting that error.
 
-`ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE` was never raised by this package and has no replacement here.
-`ATTRIBUTE_INVALID_VALUE` is unaffected.
-
-Before:
-
-```php
-use UIAwesome\Html\Attribute\Exception\Message;
-
-$this->expectExceptionMessage(Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage());
-```
-
-After:
-
-```php
-use UIAwesome\Html\Helper\Exception\Message;
-
-$this->expectExceptionMessage(Message::KEY_MUST_BE_NON_EMPTY_STRING->getMessage());
-```
+`ATTRIBUTE_VALUE_MUST_BE_SCALAR_OR_CLOSURE` was also removed and has no replacement.
 
 ## 0.6.0
 
-- Element-specific attribute traits were removed from `UIAwesome\Html\Attribute\Element`.
-- Form-specific attribute traits were removed from `UIAwesome\Html\Attribute\Form`.
-- Media and interactive element-specific traits were removed from `UIAwesome\Html\Attribute`.
-- Element-specific enum cases were moved from `Attribute` to `ElementAttribute`.
-- Boolean attribute traits now use the `CanBe*` naming style.
-- Image descriptor traits were renamed to `HasImageSizes` and `HasImageSrcSet`.
+### Element-owned traits
 
-### Element and form traits moved to `ui-awesome/html`
+Traits under `UIAwesome\Html\Attribute\Element\*` and `UIAwesome\Html\Attribute\Form\*`, together with media and
+interactive element traits, were removed. Use the methods exposed by the concrete elements in `ui-awesome/html`, or
+define only the required setters in custom elements.
 
-`ui-awesome/html-attribute` now only owns reusable attribute traits, global attributes, prefix helpers, and shared value
-enums. Element-owned APIs now live with their concrete HTML elements in `ui-awesome/html`.
+### Element-specific enum cases
 
-Remove these imports from application code:
-
-- `UIAwesome\Html\Attribute\Element\HasAlt`
-- `UIAwesome\Html\Attribute\Element\HasDecoding`
-- `UIAwesome\Html\Attribute\Element\HasHeight`
-- `UIAwesome\Html\Attribute\Element\HasHref`
-- `UIAwesome\Html\Attribute\Element\HasLoading`
-- `UIAwesome\Html\Attribute\Element\HasPopoverTarget`
-- `UIAwesome\Html\Attribute\Element\HasPopoverTargetAction`
-- `UIAwesome\Html\Attribute\Element\HasReferrerpolicy`
-- `UIAwesome\Html\Attribute\Element\HasSrc`
-- `UIAwesome\Html\Attribute\Element\HasSrcset`
-- `UIAwesome\Html\Attribute\Element\HasUsemap`
-- `UIAwesome\Html\Attribute\Element\HasWidth`
-- `UIAwesome\Html\Attribute\Form\CanBeChecked`
-- `UIAwesome\Html\Attribute\Form\CanBeMultiple`
-- `UIAwesome\Html\Attribute\Form\CanBeReadonly`
-- `UIAwesome\Html\Attribute\Form\CanBeRequired`
-- `UIAwesome\Html\Attribute\Form\HasAccept`
-- `UIAwesome\Html\Attribute\Form\HasAutocomplete`
-- `UIAwesome\Html\Attribute\Form\HasDirname`
-- `UIAwesome\Html\Attribute\Form\HasForm`
-- `UIAwesome\Html\Attribute\Form\HasList`
-- `UIAwesome\Html\Attribute\Form\HasMax`
-- `UIAwesome\Html\Attribute\Form\HasMaxlength`
-- `UIAwesome\Html\Attribute\Form\HasMin`
-- `UIAwesome\Html\Attribute\Form\HasMinlength`
-- `UIAwesome\Html\Attribute\Form\HasPattern`
-- `UIAwesome\Html\Attribute\Form\HasPlaceholder`
-- `UIAwesome\Html\Attribute\Form\HasSize`
-- `UIAwesome\Html\Attribute\Form\HasStep`
-
-Use the concrete elements from `ui-awesome/html` instead, or keep element-specific setters local to your component.
-
-Before:
+Element-specific attribute names moved from `Attribute` to `ElementAttribute`.
 
 ```php
-use UIAwesome\Html\Attribute\Element\HasSrc;
-use UIAwesome\Html\Attribute\Form\HasPlaceholder;
-
-final class CustomInput
-{
-    use HasPlaceholder;
-    use HasSrc;
-}
-```
-
-After:
-
-```php
-use UIAwesome\Html\Embedded\Img;
-use UIAwesome\Html\Form\InputText;
-
-echo Img::tag()
-    ->src('/logo.png')
-    ->render();
-
-echo InputText::tag()
-    ->placeholder('Search')
-    ->render();
-```
-
-### Media and interactive traits are no longer exported
-
-The following element-owned traits were removed from `ui-awesome/html-attribute` development builds and are owned by
-`ui-awesome/html` elements instead:
-
-- `CanBeAutoplay`
-- `CanBeControls`
-- `CanBeDefault`
-- `CanBeDisableRemotePlayback`
-- `CanBeLoop`
-- `CanBeMuted`
-- `CanBeOpen`
-- `HasClosedby`
-- `HasControlslist`
-- `HasPreload`
-- `HasSrclang`
-
-Use `Audio`, `Video`, `Track`, `Details`, or `Dialog` from `ui-awesome/html` for those methods.
-
-### Enum case migration
-
-Import `ElementAttribute` for element-specific attribute names that were previously accessed through `Attribute` in
-0.6 development builds.
-
-Before:
-
-```php
+// Before
 use UIAwesome\Html\Attribute\Values\Attribute;
 
 $attribute = Attribute::AS;
-```
 
-After:
-
-```php
+// After
 use UIAwesome\Html\Attribute\Values\ElementAttribute;
 
 $attribute = ElementAttribute::AS;
 ```
 
-Moved cases:
+### Renamed traits
 
-- `AS`
-- `AUTOPLAY`
-- `BLOCKING`
-- `CHARSET`
-- `CLOSEDBY`
-- `CONTROLS`
-- `CONTROLSLIST`
-- `DEFAULT`
-- `DISABLEREMOTEPLAYBACK`
-- `DOWNLOAD`
-- `HREFLANG`
-- `HTTP_EQUIV`
-- `IMAGESIZES`
-- `IMAGESRCSET`
-- `KIND`
-- `LABEL`
-- `LIST`
-- `LOOP`
-- `MUTED`
-- `NAME`
-- `OPEN`
-- `PING`
-- `PRELOAD`
-- `SELECTED`
-- `SIZES`
-- `SRCLANG`
-- `VALUE`
+Update these imports; their public setter methods are unchanged:
 
-### Trait rename migration
+| Before           | After            |
+| ---------------- | ---------------- |
+| `HasImagesizes`  | `HasImageSizes`  |
+| `HasImagesrcset` | `HasImageSrcSet` |
+| `HasDisabled`    | `CanBeDisabled`  |
+| `HasSelected`    | `CanBeSelected`  |
 
-Update imports for renamed traits. Public setter method names remain unchanged.
-
-Before:
-
-```php
-use UIAwesome\Html\Attribute\HasImagesizes;
-use UIAwesome\Html\Attribute\HasImagesrcset;
-```
-
-After:
-
-```php
-use UIAwesome\Html\Attribute\HasImageSizes;
-use UIAwesome\Html\Attribute\HasImageSrcSet;
-```
-
-If you used development builds with boolean `Has*` traits, update to the `CanBe*` names:
-
-- `HasDisabled` -> `CanBeDisabled`
-- `HasSelected` -> `CanBeSelected`
-
-### Attribute host requirements
-
-Attribute traits expect the host class to expose `addAttribute()`, `getAttribute()`, and `getAttributes()` behavior.
-Use `UIAwesome\Html\Mixin\HasAttributes` from `ui-awesome/html-mixin:^0.5` or provide compatible methods in custom
-components.
+Attribute traits require the host class to provide compatible `addAttribute()`, `getAttribute()`, and
+`getAttributes()` methods.
