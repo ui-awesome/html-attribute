@@ -4,8 +4,9 @@
 
 ### Input type values
 
-`Type` now contains only `<input>` control types. Replace removed script tokens and MIME cases with their backed string
-values:
+`Type` and `HasType` now cover only `<input>` control types. On the open `type()` setters provided by
+`ui-awesome/html` (`A`, `Link`, `Script`, `Source`, and `Style`), replace removed script tokens and MIME cases with
+their backed string values:
 
 ```php
 // Before
@@ -16,6 +17,9 @@ Style::tag()->type(Type::TEXT_CSS);
 Script::tag()->type('module');
 Style::tag()->type('text/css');
 ```
+
+Custom non-input elements that compose `HasType` must remove the trait and declare their own open `type()` setter.
+Passing a script token or MIME string to `HasType::type()` still throws `InvalidArgumentException`.
 
 The removed ordered-list marker cases (`DECIMAL`, `LOWER_ALPHA`, `LOWER_ROMAN`, `UPPER_ALPHA`, and `UPPER_ROMAN`) have
 no replacement in this package.
