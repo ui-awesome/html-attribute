@@ -42,36 +42,5 @@ $this->addAttribute(Attribute::SRC, $value);
 
 ### Element-owned traits
 
-Traits under `UIAwesome\Html\Attribute\Element\*` and `UIAwesome\Html\Attribute\Form\*`, together with media and
-interactive element traits, were removed. Use the methods exposed by the concrete elements in `ui-awesome/html`, or
-define only the required setters in custom elements.
-
-### Element-specific enum cases
-
-Element-specific attribute names moved from `Attribute` to `ElementAttribute`.
-
-```php
-// Before
-use UIAwesome\Html\Attribute\Values\Attribute;
-
-$attribute = Attribute::AS;
-
-// After
-use UIAwesome\Html\Attribute\Values\ElementAttribute;
-
-$attribute = ElementAttribute::AS;
-```
-
-### Renamed traits
-
-Update these imports; their public setter methods are unchanged:
-
-| Before           | After            |
-| ---------------- | ---------------- |
-| `HasImagesizes`  | `HasImageSizes`  |
-| `HasImagesrcset` | `HasImageSrcSet` |
-| `HasDisabled`    | `CanBeDisabled`  |
-| `HasSelected`    | `CanBeSelected`  |
-
-Attribute traits require the host class to provide compatible `addAttribute()`, `getAttribute()`, and
-`getAttributes()` methods.
+Traits under `UIAwesome\Html\Attribute\Element\*` were removed. Use the methods exposed by concrete elements in
+`ui-awesome/html`, or define only the required setters in custom elements.
