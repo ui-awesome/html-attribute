@@ -17,7 +17,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasImageSrcSet} trait managing the `imagesrcset` HTML attribute.
  *
- * {@see ImagesrcsetProvider} for test case data providers.
+ * {@see ImageSrcSetProvider} for test case data providers.
  */
 #[Group('attribute')]
 final class HasImageSrcSetTest extends TestCase
@@ -52,7 +52,7 @@ final class HasImageSrcSetTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(ImagesrcsetProvider::class, 'values')]
+    #[DataProviderExternal(ImageSrcSetProvider::class, 'values')]
     public function testSetImagesrcsetAttributeValue(
         string|Stringable|UnitEnum|null $imagesrcset,
         array $attributes,

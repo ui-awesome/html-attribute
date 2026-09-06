@@ -17,7 +17,7 @@ use UnitEnum;
 /**
  * Unit tests for the {@see HasImageSizes} trait managing the `imagesizes` HTML attribute.
  *
- * {@see ImagesizesProvider} for test case data providers.
+ * {@see ImageSizesProvider} for test case data providers.
  */
 #[Group('attribute')]
 final class HasImageSizesTest extends TestCase
@@ -52,7 +52,7 @@ final class HasImageSizesTest extends TestCase
     /**
      * @phpstan-param mixed[] $attributes
      */
-    #[DataProviderExternal(ImagesizesProvider::class, 'values')]
+    #[DataProviderExternal(ImageSizesProvider::class, 'values')]
     public function testSetImagesizesAttributeValue(
         string|Stringable|UnitEnum|null $imagesizes,
         array $attributes,
