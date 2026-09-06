@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.8.1 Under development
 
+- chore: update dependencies and remove unused configuration files.
+
 ## 0.8.0 July 31, 2026
 
 - docs: simplify the upgrade guide around consumer-facing API changes.
