@@ -76,6 +76,9 @@ final class RoleProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [
+            ...$staticCase,
+            ...$enumCases,
+        ];
     }
 }

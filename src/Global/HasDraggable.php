@@ -23,12 +23,6 @@ trait HasDraggable
     /**
      * Sets the `draggable` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->draggable(true);
-     * $element->draggable(Draggable::TRUE);
-     * ```
-     *
      * @param bool|string|UnitEnum|null $value Draggable state. Use `true` or `false`, or `null` to remove the
      * attribute.
      *

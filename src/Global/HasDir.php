@@ -21,13 +21,6 @@ trait HasDir
     /**
      * Sets the `dir` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->dir('ltr');
-     * $element->dir('rtl');
-     * $element->dir(Direction::AUTO);
-     * ```
-     *
      * @param string|UnitEnum|null $value Directionality value. Use 'ltr', 'rtl', or 'auto', or `null` to remove the
      * attribute.
      *

@@ -22,13 +22,6 @@ trait HasName
      *
      * Defines the metadata name or form control name.
      *
-     * Usage example:
-     * ```php
-     * $element->name('viewport');
-     * $element->name(MetaName::VIEWPORT);
-     * $element->name(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Name value, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `name` attribute.

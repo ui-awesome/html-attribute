@@ -76,6 +76,9 @@ final class TypeProvider
             ],
         ];
 
-        return [...$staticCases, ...$enumCases];
+        return [
+            ...$staticCases,
+            ...$enumCases,
+        ];
     }
 }

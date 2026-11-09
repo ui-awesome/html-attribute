@@ -22,13 +22,6 @@ trait HasDownload
      *
      * Controls whether the linked resource is treated as a download.
      *
-     * Usage example:
-     * ```php
-     * $element->download(true);
-     * $element->download('my-file.pdf');
-     * $element->download(null);
-     * ```
-     *
      * @param bool|string|Stringable|UnitEnum|null $value Download flag or suggested filename; use `true` to enable
      * downloads without a filename, or `null` to remove the attribute.
      *

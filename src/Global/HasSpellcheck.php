@@ -22,12 +22,6 @@ trait HasSpellcheck
     /**
      * Sets the `spellcheck` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->spellcheck(true);
-     * $element->spellcheck(false);
-     * ```
-     *
      * @param bool|string|null $value Spellcheck state. Use `true` or `false`, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

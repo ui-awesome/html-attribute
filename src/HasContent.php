@@ -22,13 +22,6 @@ trait HasContent
      *
      * Defines the metadata value for the current `name` or `http-equiv` entry.
      *
-     * Usage example:
-     * ```php
-     * $element->content('width=device-width, initial-scale=1');
-     * $element->content('The HTML reference describes all elements...');
-     * $element->content(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Metadata content value, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `content` attribute.

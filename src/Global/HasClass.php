@@ -19,22 +19,6 @@ trait HasClass
     /**
      * Sets the `class` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->class('my-class');
-     * $element->class(Theme::PRIMARY);
-     * $element->class(
-     *     new class implements Stringable {
-     *         public function __toString(): string
-     *         {
-     *            return 'stringable-class';
-     *         }
-     *     },
-     * );
-     * $element->class('another-class', true);
-     * $element->class(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value CSS class value, or `null` to remove the attribute.
      * @param bool $override Whether to override existing classes (`true`) or merge (`false`).
      *

@@ -22,13 +22,6 @@ trait HasMedia
      *
      * Specifies the media query for the linked resource.
      *
-     * Usage example:
-     * ```php
-     * $element->media('screen');
-     * $element->media('screen and (min-width: 768px)');
-     * $element->media(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Media query, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `media` attribute.

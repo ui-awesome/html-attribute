@@ -23,13 +23,6 @@ trait HasFetchpriority
      *
      * Hints the browser about the fetch priority for the resource.
      *
-     * Usage example:
-     * ```php
-     * $element->fetchpriority('high');
-     * $element->fetchpriority(Fetchpriority::HIGH);
-     * $element->fetchpriority(null);
-     * ```
-     *
      * @param string|UnitEnum|null $value Fetch priority token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

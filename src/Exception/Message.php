@@ -26,11 +26,6 @@ enum Message: string
      * @param int|string ...$argument Values to insert into the message template.
      *
      * @return string Formatted error message with interpolated arguments.
-     *
-     * Usage example:
-     * ```php
-     * throw new InvalidArgumentException(Message::ATTRIBUTE_INVALID_VALUE->getMessage('foo', 'bar', 'baz'));
-     * ```
      */
     public function getMessage(int|string ...$argument): string
     {

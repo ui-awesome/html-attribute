@@ -76,6 +76,9 @@ final class AsProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [
+            ...$staticCase,
+            ...$enumCases,
+        ];
     }
 }

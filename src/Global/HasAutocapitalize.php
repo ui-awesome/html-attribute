@@ -21,12 +21,6 @@ trait HasAutocapitalize
     /**
      * Sets the `autocapitalize` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->autocapitalize('sentences')->render();
-     * $element->autocapitalize(\UIAwesome\Html\Attribute\Values\Autocapitalize::SENTENCES)->render();
-     * ```
-     *
      * @param string|UnitEnum|null $value Capitalization behavior ('none', 'off', 'sentences', 'on', 'words',
      * 'characters'), or `null` to remove the attribute.
      *

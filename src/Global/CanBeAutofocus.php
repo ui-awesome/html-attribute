@@ -18,11 +18,6 @@ trait CanBeAutofocus
     /**
      * Sets the `autofocus` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->autofocus(true);
-     * ```
-     *
      * @param bool|null $value Whether to enable autofocus. Use `true` to enable, `false` to disable, or `null` to
      * remove the attribute.
      *

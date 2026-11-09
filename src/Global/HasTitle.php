@@ -20,12 +20,6 @@ trait HasTitle
     /**
      * Sets the `title` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->title('Click to save changes');
-     * $element->title('Enter your full name');
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Advisory title text, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `title` attribute.

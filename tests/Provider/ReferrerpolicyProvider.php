@@ -76,6 +76,9 @@ final class ReferrerpolicyProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [
+            ...$staticCase,
+            ...$enumCases,
+        ];
     }
 }

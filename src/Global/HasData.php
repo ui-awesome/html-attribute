@@ -22,15 +22,6 @@ trait HasData
     /**
      * Sets a `data-*` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->addDataAttribute('role', 'admin');
-     * $element->addDataAttribute('id', static fn(): string => uniqid());
-     * $element->addDataAttribute(DataProperty::ID, '12345');
-     * $element->addDataAttribute('size', ButtonSize::SMALL);
-     * $element->addDataAttribute('role', null);
-     * ```
-     *
      * @param string|UnitEnum $key Data attribute key without the `data-` prefix.
      * @param bool|Closure(): mixed|float|int|string|Stringable|UnitEnum|null $value Data attribute value, or `null` to
      * remove the attribute.
@@ -48,21 +39,6 @@ trait HasData
 
     /**
      * Sets multiple `data-*` attributes.
-     *
-     * Usage example:
-     * ```php
-     * $element->dataAttributes(
-     *     [
-     *         'role' => 'admin',
-     *         'id' => static fn(): string => uniqid(),
-     *     ],
-     * );
-     * $element->dataAttributes(
-     *     [
-     *         'status' => Status::ACTIVE,
-     *     ],
-     * );
-     * ```
      *
      * @param mixed[] $values Associative array of data keys and values. Values may be scalar, Stringable, UnitEnum,
      * Closure, or `null` to remove the attribute.
@@ -84,12 +60,6 @@ trait HasData
 
     /**
      * Removes a `data-*` attribute.
-     *
-     * Usage example:
-     * ```php
-     * $element->removeDataAttribute('role');
-     * $element->removeDataAttribute(DataProperty::ID);
-     * ```
      *
      * @param string|UnitEnum $key Data attribute key without the `data-` prefix.
      *

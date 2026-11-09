@@ -23,12 +23,6 @@ trait HasTranslate
     /**
      * Sets the `translate` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->translate(true);
-     * $element->translate(Translate::NO);
-     * ```
-     *
      * @param bool|string|UnitEnum|null $value Translation behavior. Use 'yes', 'no', `true`, `false`, or `null` to
      * remove the attribute.
      *

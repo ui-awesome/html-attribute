@@ -24,13 +24,6 @@ trait HasHttpEquiv
      *
      * Declares the pragma directive for the metadata entry.
      *
-     * Usage example:
-     * ```php
-     * $element->httpEquiv('refresh');
-     * $element->httpEquiv(HttpEquiv::REFRESH);
-     * $element->httpEquiv(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Pragma directive token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

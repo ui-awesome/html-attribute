@@ -22,13 +22,6 @@ trait HasSrc
      *
      * Specifies the resource URL.
      *
-     * Usage example:
-     * ```php
-     * $element->src('https://example.com/script.js');
-     * $element->src('./local/file.css');
-     * $element->src(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Resource URL, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `src` attribute.

@@ -20,12 +20,6 @@ trait HasId
     /**
      * Sets the `id` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->id('main-navigation');
-     * $element->id('user-profile-form');
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Element identifier, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `id` attribute.

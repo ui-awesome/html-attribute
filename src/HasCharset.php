@@ -24,13 +24,6 @@ trait HasCharset
      *
      * Declares the document character encoding.
      *
-     * Usage example:
-     * ```php
-     * $element->charset('utf-8');
-     * $element->charset(Charset::UTF_8);
-     * $element->charset(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Character encoding token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

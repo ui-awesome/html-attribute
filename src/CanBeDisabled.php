@@ -18,12 +18,6 @@ trait CanBeDisabled
     /**
      * Sets the `disabled` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->disabled(true);
-     * $element->disabled(null);
-     * ```
-     *
      * @param bool|null $value Disabled state. Use `true` to disable, `false` to enable, or `null` to remove the
      * attribute.
      *

@@ -361,6 +361,9 @@ final class EventProvider
             ],
         ];
 
-        return [...$staticCases, ...$enumCases];
+        return [
+            ...$staticCases,
+            ...$enumCases,
+        ];
     }
 }

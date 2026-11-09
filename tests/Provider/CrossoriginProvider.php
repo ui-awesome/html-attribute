@@ -58,6 +58,9 @@ final class CrossoriginProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [
+            ...$staticCase,
+            ...$enumCases,
+        ];
     }
 }

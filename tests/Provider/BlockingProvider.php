@@ -58,6 +58,9 @@ final class BlockingProvider
             ],
         ];
 
-        return [...$staticCase, ...$enumCases];
+        return [
+            ...$staticCase,
+            ...$enumCases,
+        ];
     }
 }

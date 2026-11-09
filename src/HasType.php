@@ -28,13 +28,6 @@ trait HasType
      * Restricts the value to the `<input>` control types. Empty and `null` values bypass validation and produce no
      * rendered attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->type('checkbox');
-     * $element->type(\UIAwesome\Html\Attribute\Values\Type::EMAIL);
-     * $element->type(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Input control type, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If a non-empty value is not an `<input>` control type.

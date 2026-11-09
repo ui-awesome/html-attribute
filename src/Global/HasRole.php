@@ -22,13 +22,6 @@ trait HasRole
     /**
      * Sets the `role` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->role('button');
-     * $element->role('navigation');
-     * $element->role(Role::ALERT);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value ARIA role, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

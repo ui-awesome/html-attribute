@@ -24,13 +24,6 @@ trait HasRel
      *
      * Defines the relationship between the current document and the linked resource.
      *
-     * Usage example:
-     * ```php
-     * $element->rel('noopener');
-     * $element->rel(Rel::NOOPENER);
-     * $element->rel(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Link type token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

@@ -7,11 +7,6 @@ namespace UIAwesome\Html\Attribute\Values;
 /**
  * Represents the `popovertargetaction` attribute values.
  *
- * Usage example:
- * ```php
- * $button->popovertargetaction(PopoverTargetAction::TOGGLE);
- * ```
- *
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction
  */
 enum PopoverTargetAction: string

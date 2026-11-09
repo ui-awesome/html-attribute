@@ -22,13 +22,6 @@ trait HasLang
     /**
      * Sets the `lang` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->lang('en');
-     * $element->lang('es');
-     * $element->lang(Language::ENGLISH_US);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Language tag, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

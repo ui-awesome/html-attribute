@@ -21,12 +21,6 @@ trait HasPopover
     /**
      * Sets the `popover` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->popover('manual');
-     * $element->popover(Popover::AUTO);
-     * ```
-     *
      * @param string|UnitEnum|null $value Popover state ('auto', 'hint', 'manual'), or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the provided value is not valid.

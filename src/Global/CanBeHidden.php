@@ -18,12 +18,6 @@ trait CanBeHidden
     /**
      * Sets the `hidden` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->hidden(true);
-     * $element->hidden(false);
-     * ```
-     *
      * @param bool|null $value Whether to hide the element. Use `true` to hide, `false` to show, or `null` to remove the
      * attribute.
      *

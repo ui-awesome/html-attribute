@@ -23,13 +23,6 @@ trait HasTarget
      *
      * Defines the browsing context that receives the link or form submission.
      *
-     * Usage example:
-     * ```php
-     * $element->target('_blank');
-     * $element->target(Target::BLANK);
-     * $element->target(null);
-     * ```
-     *
      * @param string|UnitEnum|null $value Browsing context name, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

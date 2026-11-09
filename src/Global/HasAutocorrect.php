@@ -21,12 +21,6 @@ trait HasAutocorrect
     /**
      * Sets the `autocorrect` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->autocorrect('on')->render();
-     * $element->autocorrect(\UIAwesome\Html\Attribute\Values\Autocorrect::ON)->render();
-     * ```
-     *
      * @param string|UnitEnum|null $value Autocorrect behavior ('on' or 'off'), or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException if the provided value is not valid.
