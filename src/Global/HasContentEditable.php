@@ -23,13 +23,6 @@ trait HasContentEditable
     /**
      * Sets the `contenteditable` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->contentEditable(true);
-     * $element->contentEditable('plaintext-only');
-     * $element->contentEditable(ContentEditable::TRUE);
-     * ```
-     *
      * @param bool|string|UnitEnum|null $value Content editability value. Use `true`, `false`, or 'plaintext-only', or
      * `null` to remove the attribute.
      *

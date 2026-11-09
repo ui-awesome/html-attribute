@@ -24,13 +24,6 @@ trait HasReferrerpolicy
      *
      * Controls how much referrer information is sent with requests.
      *
-     * Usage example:
-     * ```php
-     * $element->referrerpolicy('no-referrer');
-     * $element->referrerpolicy(Referrerpolicy::NO_REFERRER);
-     * $element->referrerpolicy(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Referrer policy token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

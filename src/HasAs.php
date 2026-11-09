@@ -24,13 +24,6 @@ trait HasAs
      *
      * Identifies the resource type for preload and modulepreload links.
      *
-     * Usage example:
-     * ```php
-     * $element->as('font');
-     * $element->as(AsValue::FONT);
-     * $element->as(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Resource type token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

@@ -479,6 +479,9 @@ final class AriaProvider
             ],
         ];
 
-        return [...$staticCases, ...$enumCases];
+        return [
+            ...$staticCases,
+            ...$enumCases,
+        ];
     }
 }

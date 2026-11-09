@@ -23,13 +23,6 @@ trait HasBlocking
      *
      * Controls whether rendering waits for the external resource.
      *
-     * Usage example:
-     * ```php
-     * $element->blocking('render');
-     * $element->blocking(Blocking::RENDER);
-     * $element->blocking(null);
-     * ```
-     *
      * @param string|UnitEnum|null $value Blocking token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

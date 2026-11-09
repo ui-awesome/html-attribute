@@ -18,12 +18,6 @@ trait CanBeSelected
     /**
      * Sets the `selected` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->selected(true);
-     * $element->selected(null);
-     * ```
-     *
      * @param bool|null $value Selected state. Use `true` to mark selected, `false` to unselect, or `null` to remove
      * the attribute.
      *

@@ -58,6 +58,9 @@ final class AutocapitalizeProvider
             ],
         ];
 
-        return [...$enumCases, ...$staticCases];
+        return [
+            ...$enumCases,
+            ...$staticCases,
+        ];
     }
 }

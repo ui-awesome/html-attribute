@@ -20,12 +20,6 @@ trait HasAccesskey
     /**
      * Sets the `accesskey` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->accesskey('s');
-     * $element->accesskey('1');
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Access key character, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `accesskey` attribute.

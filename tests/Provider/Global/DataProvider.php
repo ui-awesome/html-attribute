@@ -473,6 +473,9 @@ final class DataProvider
             ],
         ];
 
-        return [...$staticCases, ...$enumCases];
+        return [
+            ...$staticCases,
+            ...$enumCases,
+        ];
     }
 }

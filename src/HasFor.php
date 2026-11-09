@@ -20,13 +20,6 @@ trait HasFor
     /**
      * Sets the `for` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->for('username email');
-     * $element->for($forValue);
-     * $element->for(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Space-separated list of related IDs, or `null` to remove the
      * attribute.
      *

@@ -20,12 +20,6 @@ trait HasLabel
     /**
      * Sets the `label` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->label('Group label');
-     * $element->label(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Label text, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `label` attribute.

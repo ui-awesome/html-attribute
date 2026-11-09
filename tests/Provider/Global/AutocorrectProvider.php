@@ -58,6 +58,9 @@ final class AutocorrectProvider
             ],
         ];
 
-        return [...$enumCases, ...$staticCases];
+        return [
+            ...$enumCases,
+            ...$staticCases,
+        ];
     }
 }

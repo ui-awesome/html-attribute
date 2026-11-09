@@ -22,13 +22,6 @@ trait HasPing
      *
      * Defines the space-separated URL list for ping tracking.
      *
-     * Usage example:
-     * ```php
-     * $element->ping('https://example.com/track');
-     * $element->ping('https://a.example/track https://b.example/track');
-     * $element->ping(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Ping URL list, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `ping` attribute.

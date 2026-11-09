@@ -22,12 +22,6 @@ trait HasImageSrcSet
      *
      * Defines the image srcset descriptor list for preload links.
      *
-     * Usage example:
-     * ```php
-     * $element->imagesrcset('image-400.jpg 400w, image-800.jpg 800w');
-     * $element->imagesrcset(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Image srcset descriptor list, or `null` to remove the
      * attribute.
      *

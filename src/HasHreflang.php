@@ -22,13 +22,6 @@ trait HasHreflang
      *
      * Declares the language of the linked resource.
      *
-     * Usage example:
-     * ```php
-     * $element->hreflang('en');
-     * $element->hreflang('es');
-     * $element->hreflang(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value BCP 47 language tag, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `hreflang` attribute.

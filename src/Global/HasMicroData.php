@@ -19,12 +19,6 @@ trait HasMicroData
     /**
      * Sets the `itemid` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element = $element->itemId('http://example.com/item');
-     * $element = $element->itemId(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Microdata item ID, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemid` attribute.
@@ -38,12 +32,6 @@ trait HasMicroData
 
     /**
      * Sets the `itemprop` attribute.
-     *
-     * Usage example:
-     * ```php
-     * $element = $element->itemProp('name');
-     * $element = $element->itemProp(null);
-     * ```
      *
      * @param string|Stringable|UnitEnum|null $value Microdata item property, or `null` to remove the attribute.
      *
@@ -59,12 +47,6 @@ trait HasMicroData
     /**
      * Sets the `itemref` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element = $element->itemRef('additional-info');
-     * $element = $element->itemRef(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Microdata item reference, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemref` attribute.
@@ -79,12 +61,6 @@ trait HasMicroData
     /**
      * Sets the `itemscope` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element = $element->itemScope(true);
-     * $element = $element->itemScope(null);
-     * ```
-     *
      * @param bool|null $value Whether to enable itemscope, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `itemscope` attribute.
@@ -98,12 +74,6 @@ trait HasMicroData
 
     /**
      * Sets the `itemtype` attribute.
-     *
-     * Usage example:
-     * ```php
-     * $element = $element->itemType('http://schema.org/Person');
-     * $element = $element->itemType(null);
-     * ```
      *
      * @param string|Stringable|UnitEnum|null $value Microdata item type, or `null` to remove the attribute.
      *

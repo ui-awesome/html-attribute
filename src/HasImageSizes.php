@@ -22,13 +22,6 @@ trait HasImageSizes
      *
      * Defines the image sizes descriptor list for preload links.
      *
-     * Usage example:
-     * ```php
-     * $element->imagesizes('100vw');
-     * $element->imagesizes('(max-width: 600px) 100vw, 50vw');
-     * $element->imagesizes(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Image sizes descriptor list, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `imagesizes` attribute.

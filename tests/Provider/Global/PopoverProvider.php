@@ -58,6 +58,9 @@ final class PopoverProvider
             ],
         ];
 
-        return [...$enumCases, ...$staticCases];
+        return [
+            ...$enumCases,
+            ...$staticCases,
+        ];
     }
 }

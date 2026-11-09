@@ -21,12 +21,6 @@ trait HasInputMode
     /**
      * Sets the `inputmode` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->inputMode(InputMode::NUMERIC);
-     * $element->inputMode('numeric');
-     * ```
-     *
      * @param string|UnitEnum|null $value Input mode value ('decimal', 'email', 'none', 'numeric', 'search', 'tel',
      * 'text', 'url', or `null` to remove the attribute).
      *

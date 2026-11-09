@@ -23,13 +23,6 @@ trait HasCrossorigin
      *
      * Controls credentialed requests for cross-origin resources.
      *
-     * Usage example:
-     * ```php
-     * $element->crossorigin('anonymous');
-     * $element->crossorigin(Crossorigin::ANONYMOUS);
-     * $element->crossorigin(null);
-     * ```
-     *
      * @param string|UnitEnum|null $value CORS mode token, or `null` to remove the attribute.
      *
      * @throws InvalidArgumentException If the value is not valid.

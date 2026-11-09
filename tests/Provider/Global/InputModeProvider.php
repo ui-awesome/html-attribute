@@ -58,6 +58,9 @@ final class InputModeProvider
             ],
         ];
 
-        return [...$enumCases, ...$staticCases];
+        return [
+            ...$enumCases,
+            ...$staticCases,
+        ];
     }
 }

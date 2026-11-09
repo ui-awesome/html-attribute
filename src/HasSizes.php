@@ -22,13 +22,6 @@ trait HasSizes
      *
      * Defines the icon size descriptors for the linked resource.
      *
-     * Usage example:
-     * ```php
-     * $element->sizes('any');
-     * $element->sizes('16x16 32x32');
-     * $element->sizes(null);
-     * ```
-     *
      * @param string|Stringable|UnitEnum|null $value Icon size list or 'any' token, or `null` to remove the attribute.
      *
      * @return static New instance with the updated `sizes` attribute.

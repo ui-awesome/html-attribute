@@ -21,13 +21,6 @@ trait HasTabindex
     /**
      * Sets the `tabindex` attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->tabIndex(0);
-     * $element->tabIndex(-1);
-     * $element->tabIndex(1);
-     * ```
-     *
      * @param int|string|null $value Tab order value as an integer or string of '-1' or greater, or `null` to remove
      * the attribute.
      *

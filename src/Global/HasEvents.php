@@ -22,14 +22,6 @@ trait HasEvents
     /**
      * Sets an `on*` event attribute.
      *
-     * Usage example:
-     * ```php
-     * $element->addEvent(Event::CLICK, "alert('hello')");
-     * $element->addEvent('click', "alert('x')");
-     * $element->addEvent('submit', static fn(): string => 'return validate()');
-     * $element->addEvent(Event::CLICK, null);
-     * ```
-     *
      * @param string|UnitEnum $key Event attribute key with or without the leading `on` prefix.
      * @param Closure(): mixed|string|Stringable|UnitEnum|null $value JavaScript handler code, or `null` to remove the
      * attribute.
@@ -45,16 +37,6 @@ trait HasEvents
 
     /**
      * Sets multiple `on*` event attributes.
-     *
-     * Usage example:
-     * ```php
-     * $element->events(
-     *     [
-     *         'click' => "alert('Clicked!')",
-     *         'mouseover' => static fn(): string => "console.log('Hover')",
-     *     ],
-     * );
-     * ```
      *
      * @param mixed[] $values Associative array of event keys and handlers. Values may be Stringable, Closure, string,
      * or `null` to remove the attribute.
@@ -76,12 +58,6 @@ trait HasEvents
 
     /**
      * Removes an `on*` event attribute.
-     *
-     * Usage example:
-     * ```php
-     * $element->removeEvent('click');
-     * $element->removeEvent(Event::SUBMIT);
-     * ```
      *
      * @param string|UnitEnum $key Event name or enum case to remove.
      *
