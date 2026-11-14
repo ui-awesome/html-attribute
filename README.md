@@ -26,8 +26,8 @@
 ## Features
 
 <picture>
-    <source media="(max-width: 767px)" srcset="./docs/svgs/features-mobile.svg">
-    <img src="./docs/svgs/features.svg" alt="Feature Overview" style="width: 100%;">
+    <source media="(max-width: 767px)" srcset="https://raw.githubusercontent.com/ui-awesome/html-attribute/main/docs/svgs/features-mobile.svg">
+    <img src="https://raw.githubusercontent.com/ui-awesome/html-attribute/main/docs/svgs/features.svg" alt="Feature Overview" style="width: 100%;">
 </picture>
 
 <p align="center">

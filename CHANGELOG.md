@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.8.2 Under development
 
+- docs: link `README.md` feature images to their public sources.
+
 ## 0.8.1 November 14, 2026
 
 - chore: update dependencies and remove unused configuration files.
