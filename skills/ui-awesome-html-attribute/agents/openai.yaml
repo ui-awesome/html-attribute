@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Awesome HTML Attribute"
+  short_description: "Compose typed HTML attribute traits and values"
+  default_prompt: "Use $ui-awesome-html-attribute to compose typed HTML attribute traits and values in a PHP class."

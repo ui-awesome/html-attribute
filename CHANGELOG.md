@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: update dependencies and remove unused configuration files.
 - chore: remove obsolete scaffold tooling and align package maintenance checks with PHP Forge conventions.
 - docs: refactor documentation in attributes and traits.
+- docs: add AI guidance and discovery, refresh `README.md` status badges, and clarify attribute contracts.
 
 ## 0.8.0 July 31, 2026
 
