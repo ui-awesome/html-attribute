@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.8.2 Under development
+
 ## 0.8.1 November 14, 2026
 
 - chore: update dependencies and remove unused configuration files.
