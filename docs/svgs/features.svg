@@ -18,8 +18,8 @@
         <rect class="box-bg" x="610" y="20" width="570" height="100" rx="6"/>
         <rect x="610" y="20" width="4" height="100" fill="#1f883d"/>
         <text class="title" x="630" y="50">ElementAttribute Enum</text>
-        <text class="content" x="630" y="78">Element-specific attribute names without element trait duplication</text>
-        <text class="content" x="630" y="98">Keeps ownership in ui-awesome/html while sharing constants</text>
+        <text class="content" x="630" y="78">Shared element-specific attribute names for the package traits</text>
+        <text class="content" x="630" y="98">The enum lives here; element implementations may reuse it</text>
     </g>
 
     <g>
